@@ -174,3 +174,10 @@ These 15 supplemental entries were added from primary provider pages and state p
 | Chhattisgarh post-matric | https://postmatric-scholarship.cg.nic.in/ | National Government Services Portal describes the official portal as an online route for state and centrally sponsored scholarship applications. | Current scheme notice, category-specific criteria, institution rules and deadlines. |
 
 These records are discovery aids, not a claim that every student in the named state qualifies. Automated matching is intentionally disabled until full current-cycle criteria are reviewed. A portal's existence does not establish that a scheme is open today.
+
+
+## Haryana Har-Chhatravratti additions — reviewed 7 November 2026
+
+The official [Har-Chhatravratti portal](https://harchhatravratti.highereduhry.ac.in/Index/1000) describes a centralized Haryana scholarship platform bringing 14 schemes across three departments together. Its [eligibility table](https://harchhatravratti.highereduhry.ac.in/Eligibility) lists domicile, institution type, category, income and attendance conditions for individual schemes. The portal notice page reports the 2026–27 higher-education application window open, and the current scheme table lists a 31 December 2026 closing date for several higher-education schemes.
+
+Grantly adds these eight distinct Haryana programme records: Consolidated Stipend Scheme for SC Students; Consolidated Stipend Scheme for Grandchildren of Freedom Fighters; Free Books for SC Students; State Merit Scholarship to Undergraduate Girls; State Meritorious Incentives Scheme; State Meritorious Incentives Scheme (CBSE); State Merit Scholarship to UG/PG Students; and Lower Income Group Scheme. All are manual-review only until each current guideline and award amount has been reviewed in full. Do not assume every programme shares the same eligibility or deadline.
