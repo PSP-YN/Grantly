@@ -68,7 +68,7 @@ describe("Grantly workspace", () => {
     expect(screen.getByRole("heading", { name: "A clearer path from discovery to application." })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /National Scholarship Portal \(NSP\)/ })).toHaveAttribute("href", "https://scholarships.gov.in/");
     expect(screen.getByText(/Do not share OTPs, passwords, PINs/)).toBeInTheDocument();
-    const results = await axe.run(document.body, { runOnly: { type: "tag", values: ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"] }, rules: { "color-contrast": { enabled: false } } });
+    const results = await axe.run(document.body, { runOnly: { type: "tag", values: ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"] } });
     expect(results.violations.map(item => item.id)).toEqual([]);
   });
 
