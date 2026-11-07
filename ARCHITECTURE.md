@@ -11,6 +11,7 @@ flowchart TD
   State --> Eligibility[Eligibility rule evaluator]
   State --> Tracker[Saved items and application tracker]
   State --> Planner[Annual funding planner]
+  State --> Intelligence[Funding scenarios, EMI and narrative review]
   State --> Portal[State and UT portal directory]
   State --> Journey[Actionable journey progress]
   State --> Storage[Browser localStorage]
