@@ -1,15 +1,15 @@
 import { describe, expect, it } from "vitest";
-import { scholarships } from "./data";
+import { categories, scholarships } from "./data";
 
 describe("scholarship catalogue quality", () => {
   it("contains a meaningful India-wide directory and unique stable IDs", () => {
-    expect(scholarships.length).toBeGreaterThanOrEqual(61);
+    expect(scholarships.length).toBeGreaterThanOrEqual(63);
     const ids = scholarships.map(item => item.id);
     expect(new Set(ids).size).toBe(ids.length);
   });
   it("includes the newly catalogued UGC and ministry scholarship programmes", () => {
     const ids = new Set(scholarships.map(item => item.id));
-    for (const id of ["postmatric-sc", "prematric-sc", "prematric-obc", "national-fellowship-sc", "national-fellowship-obc", "pg-indira-single-girl", "pg-university-rank", "pg-sc-st-professional", "aicte-gate-pg", "karnataka-vidyasiri", "maharashtra-shahu", "maharashtra-punjabrao", "maharashtra-eklavya", "wb-svmcm", "wb-aikyashree", "odisha-medhabruti", "telangana-epass-pms", "up-postmatric", "bihar-pms", "gujarat-mysy", "kerala-egrantz"]) expect(ids.has(id)).toBe(true);
+    for (const id of ["pm-cares-children", "postmatric-sc", "prematric-sc", "prematric-obc", "national-fellowship-sc", "national-fellowship-obc", "pg-indira-single-girl", "pg-university-rank", "pg-sc-st-professional", "aicte-gate-pg", "karnataka-vidyasiri", "maharashtra-shahu", "maharashtra-punjabrao", "maharashtra-eklavya", "wb-svmcm", "wb-aikyashree", "odisha-medhabruti", "telangana-epass-pms", "up-postmatric", "bihar-pms", "gujarat-mysy", "kerala-egrantz"]) expect(ids.has(id)).toBe(true);
   });
 
   it("keeps key NSP AY 2026–27 deadline dates source-linked", () => {
@@ -19,7 +19,7 @@ describe("scholarship catalogue quality", () => {
     }
   });
 
-  it("has core metadata and an HTTPS source for every record", () => {
+  it("exposes every catalogue category in the filter controls", () => {\n    const filterCategories = new Set(categories);\n    for (const item of scholarships) expect(filterCategories.has(item.category), item.id).toBe(true);\n  });\n\n  it("keeps PM CARES scholarship scoped to identified beneficiaries", () => {\n    const item = scholarships.find(s => s.id === "pm-cares-children");\n    expect(item).toBeDefined();\n    expect(item?.amountValue).toBe(20000);\n    expect(item?.rules).toHaveLength(0);\n    expect(item?.eligibility.join(" ")).toMatch(/identified PM CARES/i);\n    expect(item?.verificationNote).toMatch(/beneficiary status/i);\n  });\n\n  it("has core metadata and an HTTPS source for every record", () => {
     for (const item of scholarships) {
       expect(item.name.trim(), item.id).not.toBe("");
       expect(item.provider.trim(), item.id).not.toBe("");
