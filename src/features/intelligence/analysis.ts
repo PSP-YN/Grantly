@@ -1,4 +1,6 @@
-export const FUNDING_INTELLIGENCE_STORAGE_KEY = "grantly:funding-intelligence:v1";\n\nexport type FundingInputs = {
+export const FUNDING_INTELLIGENCE_STORAGE_KEY = "grantly:funding-intelligence:v1";
+
+export type FundingInputs = {
   tuition: number;
   housing: number;
   food: number;
@@ -15,7 +17,27 @@ export const FUNDING_INTELLIGENCE_STORAGE_KEY = "grantly:funding-intelligence:v1
   repaymentYears: number;
 };
 
-export const DEFAULT_FUNDING_INPUTS: FundingInputs = {\n  tuition: 0, housing: 0, food: 0, books: 0, transport: 0, otherCosts: 0,\n  institutionalAid: 0, governmentGrants: 0, workIncome: 0, savings: 0,\n  awardedScholarships: 0, proposedScholarship: 0, annualInterestRate: 10, repaymentYears: 5\n};\n\nexport function normalizeFundingInputs(value: unknown): FundingInputs {\n  const record = value && typeof value === "object" ? value as Partial<FundingInputs> : {};\n  const keys = Object.keys(DEFAULT_FUNDING_INPUTS) as (keyof FundingInputs)[];\n  const normalized = Object.fromEntries(keys.map(key => {\n    const candidate = record[key];\n    const fallback = DEFAULT_FUNDING_INPUTS[key];\n    const number = typeof candidate === "number" && Number.isFinite(candidate) ? Math.max(0, candidate) : fallback;\n    return [key, number];\n  })) as FundingInputs;\n  normalized.annualInterestRate = Math.min(100, normalized.annualInterestRate);\n  normalized.repaymentYears = Math.min(40, Math.max(1, normalized.repaymentYears));\n  return normalized;\n}\n\nexport type FundingSnapshot = {
+export const DEFAULT_FUNDING_INPUTS: FundingInputs = {
+  tuition: 0, housing: 0, food: 0, books: 0, transport: 0, otherCosts: 0,
+  institutionalAid: 0, governmentGrants: 0, workIncome: 0, savings: 0,
+  awardedScholarships: 0, proposedScholarship: 0, annualInterestRate: 10, repaymentYears: 5
+};
+
+export function normalizeFundingInputs(value: unknown): FundingInputs {
+  const record = value && typeof value === "object" ? value as Partial<FundingInputs> : {};
+  const keys = Object.keys(DEFAULT_FUNDING_INPUTS) as (keyof FundingInputs)[];
+  const normalized = Object.fromEntries(keys.map(key => {
+    const candidate = record[key];
+    const fallback = DEFAULT_FUNDING_INPUTS[key];
+    const number = typeof candidate === "number" && Number.isFinite(candidate) ? Math.max(0, candidate) : fallback;
+    return [key, number];
+  })) as FundingInputs;
+  normalized.annualInterestRate = Math.min(100, normalized.annualInterestRate);
+  normalized.repaymentYears = Math.min(40, Math.max(1, normalized.repaymentYears));
+  return normalized;
+}
+
+export type FundingSnapshot = {
   annualCost: number;
   confirmedSupport: number;
   projectedSupport: number;
