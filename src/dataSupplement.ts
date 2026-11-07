@@ -65,13 +65,13 @@ export const scholarshipSupplemental: Scholarship[] = [
   },
   {
     id:"pmcares-children-scholarship",name:"PM CARES for Children — Education Support",
-    provider:"Government of India — PM CARES for Children",amount:"Benefits depend on scheme provisions and beneficiary status",amountValue:0,
-    deadline:"Check PM CARES for Children portal and current beneficiary instructions",category:"Need-based",level:"School / higher education",
-    region:"All India",description:"Education and welfare support within the PM CARES for Children programme for eligible registered beneficiaries.",
-    eligibility:["Only children meeting the PM CARES for Children beneficiary definition","Registration / verification and age or education-stage conditions apply","Not a general scholarship open to all students"],
-    tags:["PM CARES","Child welfare","Education support"],source:"https://pmcaresforchildren.in/",sourceLabel:"PM CARES for Children official portal",
-    lastVerified:"2026-11-07",verificationNote:"This is restricted beneficiary support, not a general open scholarship. Confirm registered beneficiary status and education-support terms on the official portal.",
-    initials:"PM",tone:"sage",rules:[],documents:["PM CARES beneficiary registration / confirmation","Current school / college enrollment proof","Documents requested by the official beneficiary process"]
+    provider:"Ministry of Women & Child Development — Government of India",amount:"₹20,000/year education allowance for eligible beneficiaries in Classes I–XII (per official FAQ)",amountValue:20000,
+    deadline:"Beneficiary-specific; check the PM CARES for Children authorities",category:"Need-based",level:"School (Class I–XII)",
+    region:"All India",description:"Education allowance for identified eligible beneficiaries under the PM CARES for Children scheme. This is not a general scholarship open to all students.",
+    eligibility:["Only identified eligible PM CARES for Children beneficiaries","School education from Class I through Class XII","Beneficiary status and the current official process must be confirmed"],
+    tags:["PM CARES","Child welfare","Education support","School"],source:"https://www.spniwcd.wcd.gov.in/pm-cares-for-children-scheme/faqs",sourceLabel:"Ministry of Women & Child Development — PM CARES FAQ",
+    lastVerified:"2026-11-07",verificationNote:"The official WCD FAQ describes ₹20,000 per child per year for eligible identified beneficiaries in Classes I–XII. Confirm beneficiary status and current process with the official authorities. Grantly does not verify enrollment or beneficiary eligibility.",
+    initials:"PM",tone:"sage",rules:[],documents:["PM CARES beneficiary identification / official beneficiary record","School enrollment proof","Current academic details","Documents requested by PM CARES authorities"]
   },
   {
     id:"vidyadhan-sdf",name:"Vidyadhan Scholarship — Sarojini Damodaran Foundation",
