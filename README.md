@@ -22,7 +22,7 @@ Grantly is a student-first education funding workspace built to help Indian lear
 
 The current release is a browser-first prototype. It does not have user accounts, cloud sync, real-time scholarship ingestion, verified live deadlines, secure document storage, official application submission or remote profile transmission. Scholarship providers—not Grantly—make final eligibility and award decisions.
 
-**Catalogue scope:** 77 curated scholarship / fellowship / education-assistance records plus official starting links for all 28 states and 8 union territories. This is a growing source-aware directory, not a complete list of every award available in India. Private, institution, district and department-specific awards may not yet be indexed. Use the official provider links to discover current opportunities.
+**Catalogue scope:** 77 curated scholarship / fellowship / education-assistance records plus official starting links for all 28 states and 8 union territories. This is a growing source-aware directory, not a complete list of every award available in India. The current UI is English-first; native-reviewed Hindi/Kannada and wider Indian-language localization is a roadmap item. Private, institution, district and department-specific awards may not yet be indexed. Use the official provider links to discover current opportunities.
 
 ## Engineering
 
@@ -31,11 +31,11 @@ The current release is a browser-first prototype. It does not have user accounts
 - Rule evaluation is deterministic and tested; incomplete rules remain unknown / manual review.
 - Local persistence is normalized and defensive; exports are user-triggered.
 - Lint, typecheck, tests, production build and dependency audit run in CI.
-- Accessible controls, keyboard support, focus management and reduced-motion support are regression-tested.
+- Accessible controls, keyboard support, focus management and reduced-motion support are regression-tested.\n- Local-timezone-aware deadline sorting/calendar exports and Vercel security headers are included.\n- Canonical metadata, Open Graph basics, robots.txt and sitemap.xml are configured.
 
 ### Development
 
-Requirements: Node.js 22.12+ and npm 10.9+.
+Requirements: Node.js 22.12+ and npm 10.9+. CI uses Node 22.
 
 ```bash
 npm ci
