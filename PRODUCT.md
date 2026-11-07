@@ -30,7 +30,7 @@ Profile context → discover programmes → inspect criteria/source → shortlis
 
 ## MVP scope (implemented)
 - Curated Indian scholarship catalogue with source notes, including central, state, UGC, AICTE, research and selected private programmes.
-- State programme records for Tamil Nadu Pudhumai Penn and Tamil Pudhalvan, West Bengal OASIS, Jharkhand e-Kalyan and Chhattisgarh Post-Matric.
+- State programme records for Haryana Har-Chhatravratti programmes, Tamil Nadu Pudhumai Penn and Tamil Pudhalvan, West Bengal OASIS, Jharkhand e-Kalyan and Chhattisgarh Post-Matric.
 - Search, category filters and sorting.
 - Profile-based deterministic criteria screening for selected schemes.
 - Saved scholarship list.
