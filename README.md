@@ -1,91 +1,271 @@
-# Grantly
+# GRANTLY — Rethinking the Scholarship Experience
 
-**Discover funding. Navigate your future.**
+**A modern, human-centred digital workspace for discovering, understanding, tracking and preparing educational funding applications.**
 
-Grantly is a student-first education funding workspace built to help Indian learners discover support, understand requirements, prepare applications, and plan costs. It is being developed as a long-term product—not only as a hackathon demo.
+[![CI](https://github.com/PSP-YN/Grantly/actions/workflows/ci.yml/badge.svg)](https://github.com/PSP-YN/Grantly/actions/workflows/ci.yml)
+[![TypeScript](https://img.shields.io/badge/TypeScript-strict-blue)](https://www.typescriptlang.org/)
+[![ESLint](https://img.shields.io/badge/Lint-Oxlint-informational)](https://oxc.rs/docs/guide/usage/linter.html)
+[![Tests](https://img.shields.io/badge/Tests-Vitest-success)](https://vitest.dev/)
+[![Accessibility](https://img.shields.io/badge/Accessibility-WCAG%202.1%20AA--oriented-informational)](https://www.w3.org/TR/WCAG21/)
+[![Security](https://img.shields.io/badge/Security-Dependency%20audit-informational)](https://docs.npmjs.com/cli/commands/npm-audit)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-## What students can do
+---
 
-- Search and filter source-linked scholarships, fellowships, state schemes and selected private programmes.
-- Review programme details, source links and review notes.
-- Compare self-reported profile details with a limited set of explicit eligibility rules.
-- Understand matched, unmatched and unknown checks without opaque scores.
-- Save opportunities and track application stages.
-- Prepare document checklists.
-- Estimate tuition and living costs against existing aid and a hypothetical award.
-- Draft personal statements with a structured outline and word counter.
-- Export or restore a local workspace backup and export deadline calendar events when a deadline is explicitly dated.
-- Find official scholarship portals for every Indian state and union territory.
-- Install the PWA and use the cached app shell after an initial online visit.
+## Executive summary
 
-## Product boundaries
+Higher education can change a student's economic future, but finding and applying for financial assistance is often fragmented and difficult. Students may face:
 
-The current release is a browser-first prototype. It does not have user accounts, cloud sync, real-time scholarship ingestion, verified live deadlines, secure document storage, official application submission or remote profile transmission. Scholarship providers—not Grantly—make final eligibility and award decisions.
+- **Search fatigue:** information spread across national, state, institutional and private portals, with inconsistent terminology and changing application windows.
+- **Eligibility uncertainty:** long criteria pages make it difficult to understand which requirements are satisfied, missing or need official confirmation.
+- **Process paralysis:** saved links, documents, application stages and deadlines are easily scattered across notes and spreadsheets.
+- **Writing friction:** applicants need a practical way to structure a personal statement while keeping it authentic to their own experience.
+- **Financial ambiguity:** students may not have a clear estimate of annual education costs, existing support and the remaining funding gap.
 
-**Catalogue scope:** 90 curated scholarship / fellowship / education-assistance records plus official starting links for all 28 states and 8 union territories. This is a growing source-aware directory, not a complete list of every award available in India. Private, institution, district and department-specific awards may not yet be indexed. Use the official provider links to discover current opportunities. The current catalogue includes additional state programmes from Haryana, Tamil Nadu, West Bengal, Jharkhand and Chhattisgarh, alongside existing Karnataka and other state listings.
+**Grantly brings these preparation tasks into one student-controlled workspace.** It combines a curated, source-linked scholarship directory with transparent profile checks, a local application tracker, a document checklist, a funding-gap planner, a personal-statement workspace and a directory of official state and union-territory portals.
 
-## Design system
+Grantly is designed to reduce friction and improve decision clarity. It does not make award decisions, submit applications to providers or guarantee eligibility.
 
-The interface uses an academic navy (`#17324D`), warm ivory (`#F6F1E6`) and terracotta (`#B05230`) palette. The colours form a restrained three-colour identity with neutral supporting text and borders. Layouts are responsive and designed for keyboard and touch use.
+## Product capabilities
 
-## Engineering
+| Experience | What is implemented |
+|---|---|
+| Scholarship discovery | Search, filter and sort a curated directory of source-linked scholarships, fellowships and assistance programmes. |
+| Eligibility screening | Compare profile inputs with the subset of explicit rules encoded for each programme; show matched, mismatched and unknown checks. |
+| Source transparency | Show provider/source links, review dates and notes about the limits of verification. |
+| Application workspace | Save opportunities, track application stages and maintain per-opportunity document checklists. |
+| Funding planner | Estimate annual costs, entered support, coverage, surplus and remaining gap using INR and user-provided values. |
+| Statement workspace | Structure a personal statement around motivation, experience, impact and goals; count words and export the student's own draft. |
+| Workspace portability | Export and restore a validated local workspace backup, including supported planner and statement data. |
+| Deadline calendar | Export calendar events for opportunities with explicit, dated deadlines. |
+| State / UT portal directory | Find official scholarship portal starting points for all Indian states and union territories. |
+| Installable web app | PWA manifest and service-worker caching support an installable app shell after an initial online visit. |
 
-- React + TypeScript + Vite.
-- Feature modules for scholarship search, eligibility, workspace persistence, profile, funding planner, statement drafting and student guides.
-- Rule evaluation is deterministic and tested; incomplete rules remain unknown / manual review.
-- Local persistence is normalized and defensive; exports are user-triggered.
-- Lint, typecheck, tests, production build and dependency audit run in CI.
-- Scholarship filtering is memoized and date handling uses the student's local calendar day.
-- Vercel security headers, canonical metadata, robots.txt and sitemap.xml are configured.
-- Accessible controls, keyboard support, focus management and reduced-motion support are regression-tested.
+### What is deliberately not claimed
 
-### Development
+The current release is a **browser-first, client-side product**. It does not currently provide account authentication, server-side profiles, cloud synchronisation, live scholarship ingestion, automated deadline monitoring, a secure document vault, official application submission, institution integrations, AI essay generation, AI voice-authenticity scoring, loan amortisation, scholarship-displacement prediction or automated appeal generation.
 
-Requirements: Node.js 22.12+ and npm 10.9+.
+The funding planner is a transparent arithmetic estimate—not a verified institutional Cost of Attendance, financial advice or an award-displacement decision. The statement workspace is a writing scaffold, not an AI writing or plagiarism-detection service. These boundaries are explicit to avoid misleading students.
+
+## Scholarship directory: source-aware, not exhaustive
+
+The current catalogue contains **90 curated records** and official portal starting points for **28 states and 8 union territories**. It is a maintained index, not a claim that every scholarship in India is listed.
+
+Each catalogue record includes a provider/source URL, source label, review date, verification note, programme metadata and, where sufficiently supported, explicit eligibility rules. Some entries intentionally require manual review because the available source evidence is not complete enough to encode safe automated checks.
+
+- A review date is not a promise that an application window is open.
+- A listed amount or deadline must be checked against the current official provider notice.
+- An eligibility match means only that the encoded profile checks align; it is not an award or eligibility guarantee.
+- Provider rules and official notices always take precedence over Grantly.
+
+Browse the [complete indexed scholarship catalogue](SCHOLARSHIP_CATALOGUE.md) and the [data-source register](DATA_SOURCES.md).
+
+## Product design principles
+
+1. **Clarity over opaque scores.** Show which checks match, fail or remain unknown.
+2. **Official sources first.** Link students to providers and disclose verification limits.
+3. **Student agency.** Keep the student in control of their profile, drafts, exports and official applications.
+4. **Privacy by default.** The current app keeps workspace data in the browser; it does not upload profile, planner or essay data to a Grantly backend.
+5. **Accessible by design.** Use semantic controls, visible focus, keyboard support, responsive layouts and reduced-motion preferences.
+6. **No false certainty.** Missing rules and uncertain data must remain visible as unknown or manual review.
+
+## System architecture
+
+Grantly uses a React + TypeScript single-page application with a lightweight, feature-oriented structure. Domain calculations and validation are kept separate from presentation where practical.
+
+```text
+grantly/
+├── .github/
+│   └── workflows/ci.yml                 # GitHub Actions quality pipeline
+├── public/
+│   ├── favicon.svg
+│   ├── manifest.webmanifest             # Installable web app metadata
+│   ├── robots.txt
+│   ├── sitemap.xml
+│   └── sw.js                            # App-shell/static-asset caching
+├── src/
+│   ├── features/
+│   │   ├── essay/                       # Draft model, normalization, word count
+│   │   ├── funding-planner/              # Funding arithmetic and validation
+│   │   ├── guide/                       # Student guide and state/UT portal directory
+│   │   ├── profile/                     # Student profile views and editor
+│   │   ├── scholarships/
+│   │   │   ├── components/              # Scholarship cards and details dialog
+│   │   │   ├── calendar.ts               # Deadline calendar export
+│   │   │   └── search.ts                 # Search, filtering and ranking
+│   │   ├── shared/                      # Shared input and dialog utilities
+│   │   └── workspace/                   # Local workspace state, import/export
+│   ├── App.tsx                          # Application shell and navigation
+│   ├── EssayWorkspace.tsx               # Personal statement workspace
+│   ├── FundingPlanner.tsx               # Annual funding-gap planner
+│   ├── data.ts                          # Core scholarship records and types
+│   ├── dataSupplement.ts                # Additional curated records
+│   ├── dataRegional.ts                  # Regional/state programme records
+│   ├── matching.ts                      # Deterministic eligibility rule engine
+│   ├── styles.css                       # Design tokens, layout and responsive styles
+│   └── *.test.ts(x)                     # Unit and component regression tests
+├── ARCHITECTURE.md                      # System boundaries, data flow and security model
+├── CHANGELOG.md                         # Release history
+├── CONTRIBUTING.md                      # Contribution workflow
+├── DATA_SOURCES.md                      # Source register and review notes
+├── PRODUCT.md                           # Product vision and scope
+├── ROADMAP.md                           # Planned product evolution
+├── SCHOLARSHIP_CATALOGUE.md              # Indexed catalogue reference
+├── SECURITY.md                          # Security policy and disclosure process
+├── SUBMISSION.md                        # Demo and submission notes
+└── LICENSE                              # MIT License
+```
+
+### Runtime data flow
+
+```mermaid
+flowchart TD
+  Catalogue[Curated scholarship catalogue] --> Search[Search and filters]
+  Catalogue --> Rules[Eligibility rule evaluator]
+  Profile[Student profile in browser] --> Rules
+  Rules --> Assessment[Met / not-met / unknown]
+  Search --> Discovery[Discovery and detail views]
+  Assessment --> Discovery
+  Discovery --> Workspace[Saved items and application tracker]
+  Workspace --> LocalStorage[(Browser localStorage)]
+  Planner[Funding planner inputs] --> Calculation[Cost / support / gap calculation]
+  Calculation --> LocalStorage
+  Essay[Student-authored statement draft] --> LocalStorage
+  Workspace --> Export[User-triggered export]
+  Planner --> Export
+  Essay --> Export
+```
+
+For module responsibilities, validation boundaries, persistence, security and architectural decisions, see [ARCHITECTURE.md](ARCHITECTURE.md).
+
+## Innovation in the current release
+
+Grantly's value is in connecting previously separate preparation steps into a coherent workflow:
+
+1. **Explainable eligibility checks:** each encoded requirement is evaluated independently. Missing information remains unknown rather than being treated as a match.
+2. **A persistent application workflow:** students can move opportunities through Interested, Preparing, Submitted, Under review and Awarded, with document checklist state retained locally.
+3. **Funding-gap visibility:** students can model annual costs and support in INR and see the estimated uncovered amount, coverage and surplus.
+4. **Student-owned writing support:** a structured four-part outline and word counter help students organise their own experiences without generating claims or fabricating personal stories.
+5. **Portable preparation data:** validated export/import reduces dependence on one browser profile and gives students control over their local workspace data.
+
+These are implemented capabilities, not claims of AI decision-making or integration with scholarship providers.
+
+## Quality engineering and verification
+
+The CI workflow runs the following checks on pushes and pull requests targeting `main`:
+
+| Gate | Command | Purpose |
+|---|---|---|
+| Lint | `npm run lint` | Static lint checks with Oxlint |
+| Type safety | `npm run typecheck` | TypeScript project checks |
+| Unit / component tests | `npm test` | Vitest regression suite |
+| Production build | `npm run build` | TypeScript build and Vite production bundle |
+| Dependency security | `npm audit --audit-level=moderate` | Checks known dependency advisories |
+
+Run the complete local gate with:
 
 ```bash
-npm ci
-npm run dev
 npm run check
 ```
 
+Accessibility tests use axe-core for automated regression checks. Automated results do not establish formal WCAG conformance. Keyboard-only testing, screen-reader review, contrast checks and real-device testing remain part of release validation.
 
-## Frontend Arena quality targets (FQE v3.1)
+### Frontend Arena FQE v3.1 — engineering targets
 
-The following are **engineering targets**, not claimed evaluator results. The Frontend Arena FQE audit assigns a maximum of 40 points across six static repository and quality modules. Grantly is being engineered against these target allocations:
+The following table records the requested score allocation as **targets**, not achieved evaluator scores.
 
-| FQE module | Target | Evidence required before claiming achievement |
+| FQE module | Target | Evidence needed for an achieved score |
 |---|---:|---|
-| Architecture Engine | **6/6** | Explicit module boundaries, validated local-storage/import boundaries, documented data flow, security and deployment constraints |
-| Code Quality Engine | **7/7** | Lint, strict TypeScript, focused modules, deterministic domain logic, regression tests and clean production build |
-| Responsive Design Engine | **7/7** | Verified layouts at narrow phones, common phone widths, tablets and desktop; no horizontal overflow or clipped controls |
-| Performance Engine | **7/7** | Production build and chunk-size review, route-level code splitting, no avoidable eager feature downloads, measured Core Web Vitals on representative devices |
-| Accessibility Engine | **7/7** | WCAG 2.2 AA-oriented semantic and keyboard checks, focus management, contrast verification, automated axe regression tests and manual assistive-technology review |
-| Documentation Engine | **6/6** | Accurate setup, product boundaries, architecture, data sources, security, contribution and release documentation |
-| **Total target** | **40/40** | All six modules independently verified; final score remains controlled by Frontend Arena |
+| Architecture Engine | **6/6** | Clear module boundaries, safe local-data handling, documented data flow and deployment constraints |
+| Code Quality Engine | **7/7** | Lint, TypeScript, regression tests and successful production build |
+| Responsive Design Engine | **7/7** | Verified narrow-phone, phone, tablet and desktop layouts without overflow or clipped controls |
+| Performance Engine | **7/7** | Production bundle inspection, deferred feature loading and measured field/lab performance |
+| Accessibility Engine | **7/7** | Semantic controls, keyboard/focus checks, contrast review, automated tests and manual assistive-technology testing |
+| Documentation Engine | **6/6** | Accurate setup, scope, architecture, source, security, contribution and release documentation |
+| **Total target** | **40/40** | Frontend Arena must independently evaluate the exact submission to establish the actual score |
 
-**Score reporting policy:** these numbers are target scores only. They are not current FQE results, a guarantee, or a representation that Frontend Arena has awarded Grantly 40/40. No achieved module score will be published here unless it is captured from a new evaluation of the exact deployed commit. Automated CI passing is evidence for engineering quality, not proof of a particular FQE score.
+**Score integrity:** Grantly does not claim a 40/40 FQE result or 100/100 FAIE result. A successful CI run is engineering evidence, not a substitute for the evaluator's score. Only publish achieved scores after receiving the evaluation result for the exact submitted commit.
 
-### Current verification status
+See the [latest CI workflow](https://github.com/PSP-YN/Grantly/actions/workflows/ci.yml) for the current automated verification status.
 
-- Repository CI: see the [latest workflow run](https://github.com/PSP-YN/Grantly/actions/workflows/ci.yml); a release candidate is not considered verified until lint, typecheck, tests, production build and dependency audit all pass on the same commit.
-- Deployment: production must be checked against the exact Git commit before release status is updated.
-- Browser quality: automated tests do not replace manual responsive, keyboard, screen-reader, contrast and performance checks on real browsers and devices.
+## Getting started
 
-## Data quality
+### Requirements
 
-Each record includes a source URL, source label, last review date and a note describing verification boundaries. A review date does not mean a deadline is live. A programme may be closed, recurring, institution-limited or awaiting current criteria review. Confirm every application detail with the official scheme notice.
+- Node.js **22.12 or later**
+- npm **10.9 or later**
 
-See:
-- [Product overview](PRODUCT.md)
-- [Architecture](ARCHITECTURE.md)
-- [Roadmap](ROADMAP.md)
-- [Complete indexed scholarship catalogue — all 90 records](SCHOLARSHIP_CATALOGUE.md)
-- [Data source register](DATA_SOURCES.md)
+### Install and run
+
+```bash
+# Clone the repository
+git clone https://github.com/PSP-YN/Grantly.git
+cd Grantly
+
+# Install the locked dependency tree
+npm ci
+
+# Start the local development server
+npm run dev
+```
+
+### Verify before submitting changes
+
+```bash
+npm run lint
+npm run typecheck
+npm test
+npm run build
+npm audit --audit-level=moderate
+```
+
+Or run all gates together:
+
+```bash
+npm run check
+```
+
+### Production preview
+
+```bash
+npm run build
+npm run preview
+```
+
+## Privacy and security
+
+- Student profile, saved scholarships, tracker data, funding inputs and statement drafts are stored in the current browser profile.
+- The current frontend does not transmit these records to a Grantly backend.
+- Browser localStorage is not encrypted or a secure document vault. Anyone with access to the browser profile may be able to access its stored data.
+- Workspace exports may contain personal information. Store and share them carefully.
+- Do not enter passwords, bank credentials, government identity numbers or sensitive document contents.
+- Imported workspace files are size-limited and normalized before being written to local storage.
+
+Read [SECURITY.md](SECURITY.md) for the vulnerability reporting process and [ARCHITECTURE.md](ARCHITECTURE.md) for the current security model. Grantly does not claim FERPA certification or legal compliance certification.
+
+## Open-source governance
+
+- [Architecture and system design](ARCHITECTURE.md)
+- [Contribution guidelines](CONTRIBUTING.md)
 - [Security policy](SECURITY.md)
-- [Contributing](CONTRIBUTING.md)
-- [Submission demo notes](SUBMISSION.md)
+- [Changelog and release history](CHANGELOG.md)
+- [Product overview](PRODUCT.md)
+- [Roadmap](ROADMAP.md)
+- [Scholarship catalogue](SCHOLARSHIP_CATALOGUE.md)
+- [Data sources and verification notes](DATA_SOURCES.md)
+- [MIT License](LICENSE)
+
+## Roadmap
+
+The next major product steps are:
+
+- Authenticated accounts and opt-in cloud synchronisation with a privacy-first data model.
+- A scholarship curation workflow with source evidence, review history and deadline change tracking.
+- Stronger, source-backed eligibility rules with a test case for every encoded criterion.
+- Expanded state, institution and district coverage without implying catalogue exhaustiveness.
+- A secure document workflow only after threat modelling, access control, encryption and retention design.
+- Student usability testing with diverse applicants and accessibility testing with assistive technologies.
 
 ## License
 
-MIT. See [LICENSE](LICENSE).
+Grantly is released under the [MIT License](LICENSE).
