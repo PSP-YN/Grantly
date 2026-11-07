@@ -43,7 +43,7 @@ function App(){
  const subtitle=active==="Applications"?"Keep every deadline, document and next step in one place.":active==="Saved"?"Your shortlist, ready when you are.":"A clearer path to education funding starts here.";
  return <div className="app-shell">
   <aside className={"sidebar "+(mobileNav?"sidebar-open":"")}>
-   <div className="brand"><div className="brand-mark"><GraduationCap size={21}/></div><span>fund<span>navi</span></span><span className="brand-beta">BETA</span></div>
+   <div className="brand"><div className="brand-mark"><GraduationCap size={21}/></div><span>Grantly</span><span className="brand-beta">BETA</span></div>
    <div className="workspace-label">STUDENT WORKSPACE</div>
    <nav className="side-nav" aria-label="Main navigation">
     <button aria-current={active==="Discover"?"page":undefined} className={active==="Discover"?"nav-item active":"nav-item"} onClick={()=>nav("Discover")}><Compass size={18}/> Discover <span className="nav-count">{scholarships.length.toString().padStart(2,"0")}</span></button>
