@@ -37,17 +37,18 @@ Grantly is designed to reduce friction and improve decision clarity. It does not
 | Journey progress | A four-step, actionable preparation checklist links profile completion, shortlist, application tracking and document progress. Its completion indicator is not an eligibility or award prediction. |
 | Application pipeline | A five-stage board supports drag-and-drop and keyboard-accessible stage changes, with document checklist progress for each tracked opportunity. Stages are student-maintained notes, not provider status updates. |
 | Funding planner | Estimate annual costs, entered support, coverage, surplus and remaining gap using INR and user-provided values. |
+| Funding intelligence | Model confirmed and proposed support, estimate an education-loan EMI, flag potential overfunding for provider review and run local statement-clarity diagnostics. |
 | Statement workspace | Structure a personal statement around motivation, experience, impact and goals; count words and export the student's own draft. |
-| Workspace portability | Export and restore a validated local workspace backup, including supported planner and statement data. |
+| Workspace portability | Export and restore a validated local workspace backup, including funding planner, funding-intelligence scenarios and statement data. |
 | Deadline calendar | Export calendar events for opportunities with explicit, dated deadlines. |
 | State / UT portal directory | Find official scholarship portal starting points for all Indian states and union territories. |
 | Installable web app | PWA manifest and service-worker caching support an installable app shell after an initial online visit. |
 
 ### What is deliberately not claimed
 
-The current release is a **browser-first, client-side product**. It does not currently provide account authentication, server-side profiles, cloud synchronisation, live scholarship ingestion, automated deadline monitoring, a secure document vault, official application submission, institution integrations, AI essay generation, AI voice-authenticity scoring, loan amortisation, scholarship-displacement prediction or automated appeal generation.
+The current release is a **browser-first, client-side product**. It does not currently provide account authentication, server-side profiles, cloud synchronisation, live scholarship ingestion, automated deadline monitoring, a secure document vault, official application submission, institution integrations, AI essay generation, AI voice-authenticity scoring, lender integration, loan servicing, statutory scholarship-displacement determination or automated appeals.
 
-The funding planner is a transparent arithmetic estimate—not a verified institutional Cost of Attendance, financial advice or an award-displacement decision. The statement workspace is a writing scaffold, not an AI writing or plagiarism-detection service. These boundaries are explicit to avoid misleading students.
+The funding planner and Funding Intelligence are transparent estimates—not a verified institutional Cost of Attendance, lender quote, financial advice or award-displacement decision. The statement workspace is a writing scaffold, not an AI writing or plagiarism-detection service. These boundaries are explicit to avoid misleading students.
 
 ## Scholarship directory: source-aware, not exhaustive
 
@@ -148,6 +149,9 @@ Grantly's value is in connecting previously separate preparation steps into a co
 3. **Funding-gap visibility:** students can model annual costs and support in INR and see the estimated uncovered amount, coverage and surplus.
 4. **Student-owned writing support:** a structured four-part outline and word counter help students organise their own experiences without generating claims or fabricating personal stories.
 5. **Portable preparation data:** validated export/import reduces dependence on one browser profile and gives students control over their local workspace data.
+6. **Funding Intelligence:** a scenario model separates entered costs, confirmed support and a proposed award; estimates the remaining funding gap and reducing-balance EMI; and flags potential overfunding for provider review.
+7. **Local statement diagnostics:** word and sentence counts, first-person references, generic-phrase flags and an approximate English readability formula provide transparent writing feedback without claiming AI-authorship detection.
+8. **Provider inquiry preparation:** a neutral clarification request helps students ask institutions about stacking and disclosure rules before relying on an award.
 
 These are implemented capabilities, not claims of AI decision-making or integration with scholarship providers.
 

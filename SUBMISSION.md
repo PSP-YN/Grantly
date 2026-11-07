@@ -34,6 +34,9 @@ Current production URL (verify deployment commit before each submission): https:
 - Five-stage application pipeline with drag-and-drop and keyboard-accessible stage transitions.
 - Browser-local profile, planner and statement draft.
 - Funding-gap arithmetic using user-entered annual INR values.
+- Funding Intelligence scenario model with support aggregation, potential overfunding review and reducing-balance EMI estimate.
+- Local statement clarity diagnostics and neutral provider inquiry draft.
+- Persisted funding scenarios included in workspace backup/restore.
 - Validated workspace export/import and dated calendar export.
 - Responsive React + TypeScript application with lazy-loaded secondary workspaces.
 - CI checks for lint, TypeScript, tests, production build and dependency audit.
@@ -44,7 +47,8 @@ Current production URL (verify deployment commit before each submission): https:
 - A source review date does not establish that a scholarship is currently open.
 - The eligibility tool is not an award decision or legal eligibility determination.
 - Funding calculations are estimates based on student-entered figures.
-- The statement workspace does not generate essays or score AI authenticity.
+- The statement workspace does not generate essays or score AI authenticity. Narrative diagnostics are local heuristics, not AI-authorship or plagiarism detection.
+- Loan repayment estimates are illustrative, not a lender quote or financial advice. A potential surplus is not a legal finding of scholarship displacement.
 - There is no account authentication, backend database, cloud sync, secure document vault or official application submission.
 - Browser localStorage is not encrypted or an appropriate store for identity documents, bank details or credentials.
 

@@ -50,14 +50,16 @@ describe("Grantly workspace", () => {
         profile: { course: "B.E. Computer Science", year: "2nd year" }
       },
       fundingPlanner: { tuition: 12345 },
-      essayWorkspace: { draft: "My personal statement", limit: 250 }
+      essayWorkspace: { draft: "My personal statement", limit: 250 },
+      fundingIntelligence: { tuition: 55500, annualInterestRate: 12 }
     };
     const file = new File([JSON.stringify(payload)], "grantly-workspace.json", { type: "application/json" });
     fireEvent.change(screen.getByLabelText("Import Grantly workspace JSON"), { target: { files: [file] } });
     await waitFor(() => expect(JSON.parse(localStorage.getItem("grantly:workspace:v1") || "{}").saved).toEqual(["csss"]));
     expect(JSON.parse(localStorage.getItem("grantly:funding-planner:v1") || "{}").tuition).toBe(12345);
     expect(JSON.parse(localStorage.getItem("grantly:essay-workspace:v1") || "{}").draft).toBe("My personal statement");
-    expect(screen.getByText(/Workspace, funding plan and statement draft restored/)).toBeInTheDocument();
+    expect(JSON.parse(localStorage.getItem("grantly:funding-intelligence:v1") || "{}").tuition).toBe(55500);
+    expect(screen.getByText(/Workspace, funding plan, funding scenarios and statement draft restored/)).toBeInTheDocument();
   });
 
 

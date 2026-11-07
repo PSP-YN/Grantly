@@ -9,10 +9,10 @@ The GRANTLY prompt asks for a unified scholarship discovery and management exper
 | Judging dimension | What Grantly demonstrates | Evidence / judge action |
 |---|---|---|
 | UI / UX | Clear information hierarchy, ink navy / warm ivory / terracotta education palette, consistent cards, responsive shell and purposeful empty states. | Open Discover; compare desktop and 320px mobile layout. |
-| Functionality | Search, category filtering, sorting, save, profile editor, dynamic criteria checks, application stages, document checklist and JSON export. | Run the walkthrough in SUBMISSION.md. |
-| Creativity | Explainable eligibility screening. No fabricated percentages. Missing values remain unknown; incomplete schemes require official review. | Edit the profile and show CSSS rule outcomes changing. |
+| Functionality | Search, filters, save, profile editor, dynamic criteria checks, journey progress, application pipeline, aid-stack scenarios, EMI estimate, statement diagnostics and JSON export. | Run the walkthrough in SUBMISSION.md. |
+| Creativity | Explainable eligibility screening plus an India-focused funding stack, transparent repayment scenario, overfunding coordination prompt and local narrative diagnostics. No AI-authorship claims or statutory displacement conclusions. | Enter a funding scenario and inspect each derived value and its limitations. |
 | Problem alignment | Discovery and application preparation are connected rather than separate features. | Save a scheme, add it to tracker, check documents and change stage. |
-| Code quality | React + TypeScript, typed catalogue, isolated matching module, defensive localStorage parsing, data migration, lint/typecheck/tests and CI. | Review src/matching.ts, src/data.ts, src/dataSupplement.ts, src/dataRegional.ts, src/catalog.ts and GitHub Actions workflow. |
+| Code quality | React + TypeScript, pure calculation/analysis functions, normalized persisted scenario inputs, regression tests, lazy-loaded feature code and CI. | Review src/features/intelligence/analysis.ts and its tests alongside the existing domain modules. |
 | Responsiveness / accessibility | Mobile navigation, semantic landmarks, labelled controls, focus-visible outlines, dialog focus trap/restoration, Escape dismissal, reduced-motion CSS and palette contrast regression tests; browser contrast audit still required. | Keyboard through a dialog; inspect 320px layout. |
 
 ## Strongest demo sequence (about 3 minutes)
