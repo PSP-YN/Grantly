@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { scholarships } from "./data";
+import { scholarships } from "./catalog";
 
 describe("scholarship catalogue quality", () => {
   it("contains a meaningful India-wide directory and unique stable IDs", () => {
