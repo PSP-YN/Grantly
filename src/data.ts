@@ -593,3 +593,99 @@ scholarships.push(
     initials:"MoE",tone:"blue",rules:[],documents:["Class VIII marksheet / selection proof","School enrollment certificate","Income certificate","State selection / verification records","Bank details"]
   }
 );
+
+// Additional central and UGC programmes surfaced from official ministry/UGC sources.
+// Eligibility matching stays disabled until the current rules and exceptions are reviewed.
+scholarships.push(
+  {
+    id:"postmatric-sc",name:"Post-Matric Scholarship for SC Students",
+    provider:"Department of Social Justice & Empowerment",amount:"See current central / state scheme guidelines",amountValue:0,
+    deadline:"Check NSP and your state scholarship portal",category:"Need-based",level:"Post-matric / higher education",
+    region:"All India; implementation and portal can be state-specific",description:"Financial assistance for eligible Scheduled Caste students pursuing education after matriculation.",
+    eligibility:["SC certificate and applicable income criteria","Course and institution rules apply","Fresh / renewal and state implementation conditions vary"],
+    tags:["SC","Post-matric","Government","NSP","State portal"],source:"https://socialjustice.gov.in/schemes",sourceLabel:"Ministry of Social Justice & Empowerment",
+    lastVerified:"2026-11-07",verificationNote:"The Ministry lists Post-Matric Scholarship for SC students as an educational scheme. Check the current state/central guidelines and application route; amounts and deadlines are not assumed here.",
+    initials:"SJ",tone:"gold",rules:[],documents:["SC certificate","Income certificate","Admission / bonafide proof","Previous marksheets","Fee structure","Bank details"]
+  },
+  {
+    id:"prematric-sc",name:"Pre-Matric Scholarship Scheme for SC Students & Others",
+    provider:"Department of Social Justice & Empowerment",amount:"See current scheme guidelines",amountValue:0,
+    deadline:"Check NSP / state welfare portal",category:"Need-based",level:"School education",
+    region:"India; scheme route and class coverage vary",description:"School-level education support under current pre-matric welfare scholarship rules.",
+    eligibility:["SC / scheme-specified beneficiary category","School class and institution rules apply","Income and state implementation conditions apply"],
+    tags:["SC","School","Pre-matric","Government"],source:"https://socialjustice.gov.in/schemes",sourceLabel:"Ministry of Social Justice & Empowerment",
+    lastVerified:"2026-11-07",verificationNote:"Listed among Ministry educational schemes. Confirm the current class range, eligibility and application portal for your state before relying on this entry.",
+    initials:"SJ",tone:"gold",rules:[],documents:["Category certificate","School enrollment proof","Income certificate if required","Academic records","Bank details"]
+  },
+  {
+    id:"prematric-obc",name:"Pre-Matric Scholarship for OBC Students",
+    provider:"Department of Social Justice & Empowerment / State Welfare Departments",amount:"See current scheme guidelines",amountValue:0,
+    deadline:"Check NSP / state welfare portal",category:"Need-based",level:"School education",
+    region:"India; implementation varies by state",description:"Pre-matric education assistance for eligible OBC students under current government scheme rules.",
+    eligibility:["OBC certificate and applicable income rules","Class and school eligibility vary by scheme","State implementation and application route may differ"],
+    tags:["OBC","School","Pre-matric","Government"],source:"https://socialjustice.gov.in/schemes",sourceLabel:"Ministry of Social Justice & Empowerment",
+    lastVerified:"2026-11-07",verificationNote:"The Ministry lists pre-matric OBC scholarship schemes. Check the current central/state guideline, eligible class and portal; this directory record does not imply that every state currently opens the same scheme.",
+    initials:"BC",tone:"blue",rules:[],documents:["OBC certificate","School enrollment proof","Income certificate","Academic records","Bank details"]
+  },
+  {
+    id:"national-fellowship-sc",name:"National Fellowship for Scheduled Caste Students (NFSC)",
+    provider:"Department of Social Justice & Empowerment",amount:"Fellowship; check current NFSC guidelines",amountValue:0,
+    deadline:"Check official fellowship notification",category:"Science & research",level:"PhD / research",
+    region:"All India",description:"Fellowship support for eligible SC candidates pursuing research leading to M.Phil./Ph.D. or covered research programmes under current rules.",
+    eligibility:["SC category and research admission / selection requirements","UGC / university and fellowship rules apply","Current call and award conditions govern eligibility"],
+    tags:["SC","Research","PhD","Fellowship"],source:"https://nsfdc.nic.in/nfsc",sourceLabel:"National Fellowship for SC official information",
+    lastVerified:"2026-11-07",verificationNote:"The Ministry lists the National Fellowship for Scheduled Caste Students. Verify the current application/selection route, fellowship conditions and research eligibility at the official source.",
+    initials:"NFSC",tone:"blue",rules:[],documents:["SC certificate","Research admission / enrollment proof","Academic transcripts","Research proposal if required","Bank details"]
+  },
+  {
+    id:"national-fellowship-obc",name:"National Fellowship for OBC Students (NF-OBC)",
+    provider:"National Backward Classes Finance & Development Corporation / Ministry of Social Justice & Empowerment",amount:"Fellowship; check current NF-OBC guidelines",amountValue:0,
+    deadline:"Check official fellowship notification",category:"Science & research",level:"PhD / research",
+    region:"All India",description:"Research fellowship support for eligible OBC candidates under the current National Fellowship for OBC students scheme.",
+    eligibility:["OBC category and applicable non-creamy-layer criteria","Research admission and academic conditions apply","Current fellowship notification controls selection and award"],
+    tags:["OBC","Research","PhD","Fellowship"],source:"https://nbcfdc.gov.in/NF-OBC",sourceLabel:"National Fellowship for OBC official information",
+    lastVerified:"2026-11-07",verificationNote:"The Ministry's scheme list links the National Fellowship for OBC students. Verify the current eligibility, call status and fellowship details at the official scheme page.",
+    initials:"NFO",tone:"blue",rules:[],documents:["OBC-NCL certificate as required","Research admission proof","Academic transcripts","Research proposal if required","Bank details"]
+  },
+  {
+    id:"pg-indira-single-girl",name:"P.G. Indira Gandhi Scholarship for Single Girl Child",
+    provider:"University Grants Commission (UGC)",amount:"₹36,200 per year (UGC scheme page)",amountValue:36200,
+    deadline:"Check NSP for the current application cycle",category:"Need-based",level:"First-year postgraduate",
+    region:"All India",description:"UGC financial assistance for eligible single girl children pursuing a regular, full-time first-year master's degree.",
+    eligibility:["Single girl child under the scheme definition","Regular full-time first-year PG course","Age up to 30 at admission as described by UGC","Recognized university / college; distance mode excluded"],
+    tags:["UGC","Women","Single girl child","PG","NSP"],source:"https://www.ugc.gov.in/Scholarships/stu_Scholarship4",sourceLabel:"UGC — P.G. Indira Gandhi Scholarship",
+    lastVerified:"2026-11-07",verificationNote:"UGC's scheme page states ₹36,200 per annum, approximately 3,000 slots, two-year tenure and eligibility for single girl child students up to age 30 entering regular first-year PG. Confirm the current call and application route.",
+    initials:"UGC",tone:"gold",rules:[],documents:["PG admission proof","Single girl child declaration / documents required by UGC","Date-of-birth proof","Academic records","Bank details"]
+  },
+  {
+    id:"pg-university-rank",name:"UGC P.G. Scholarship for University Rank Holders",
+    provider:"University Grants Commission",amount:"Check current UGC guidelines",amountValue:0,
+    deadline:"Check NSP for current cycle",category:"Merit-based",level:"Postgraduate",
+    region:"All India",description:"Postgraduate scholarship for eligible undergraduate university rank holders under UGC scheme rules.",
+    eligibility:["First / second rank criteria under current scheme","Eligible undergraduate programme and PG admission conditions","Age, institution and course restrictions apply"],
+    tags:["UGC","Merit","PG","Rank holder"],source:"https://www.ugc.gov.in/Home/student_Corner",sourceLabel:"UGC Student Corner",
+    lastVerified:"2026-11-07",verificationNote:"UGC and DBT scheme listings include the PG scholarship for university rank holders. Verify the current rank, course, institution and age criteria in the scheme notice.",
+    initials:"UGC",tone:"gold",rules:[],documents:["UG degree / rank certificate","PG admission proof","Institution verification","Date-of-birth proof","Bank details"]
+  },
+  {
+    id:"pg-sc-st-professional",name:"UGC P.G. Scholarship for SC/ST Students in Professional Courses",
+    provider:"University Grants Commission",amount:"Check current UGC scheme guidelines",amountValue:0,
+    deadline:"Check NSP for current cycle",category:"Need-based",level:"Postgraduate professional courses",
+    region:"All India",description:"Scholarship support for eligible SC/ST students pursuing specified postgraduate professional courses.",
+    eligibility:["SC/ST category","Eligible PG professional course and institution","Current UGC course and selection conditions apply"],
+    tags:["UGC","SC","ST","Professional course","PG"],source:"https://www.ugc.gov.in/Home/student_Corner",sourceLabel:"UGC Student Corner / DBT scheme listing",
+    lastVerified:"2026-11-07",verificationNote:"UGC/DBT listings include a PG scholarship for SC/ST candidates pursuing professional courses. Verify current programme coverage, award and application dates on the official scheme page.",
+    initials:"UGC",tone:"blue",rules:[],documents:["SC/ST certificate","PG admission proof","Academic transcripts","Institution verification","Bank details"]
+  },
+  {
+    id:"aicte-gate-pg",name:"AICTE PG Scholarship for GATE / GPAT Qualified Students",
+    provider:"All India Council for Technical Education",amount:"Check current AICTE PG scholarship guidelines",amountValue:0,
+    deadline:"Check AICTE / institute notice for current cycle",category:"Technical education",level:"M.E. / M.Tech. / M.Pharm",
+    region:"All India; AICTE-approved institutions and programmes",description:"Postgraduate scholarship for eligible GATE/GPAT-qualified students admitted to covered full-time technical programmes.",
+    eligibility:["Valid GATE / GPAT qualification as required","Eligible full-time postgraduate programme","AICTE-approved institution and course","Current AICTE rules and institute verification apply"],
+    tags:["AICTE","GATE","GPAT","PG","Technical education"],source:"https://www.aicte-india.org/",sourceLabel:"AICTE official website",
+    lastVerified:"2026-11-07",verificationNote:"The DBT central scheme catalogue includes the AICTE PG scholarship for GATE/GPAT-qualified students. Confirm current eligibility, stipend and institute process with AICTE and your institution.",
+    initials:"AICTE",tone:"blue",rules:[],documents:["GATE / GPAT scorecard","PG admission proof","Institution verification","Academic records","Bank details"]
+  }
+);
+
