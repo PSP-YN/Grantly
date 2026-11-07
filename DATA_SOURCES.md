@@ -13,4 +13,4 @@ Records reviewed on **7 November 2026**. A source-review date means the linked p
 | PM YASASVI — Top Class Education in College | [NSP catalogue](https://scholarships.gov.in/All-Scholarships) | Scheme listing and AY 2026–27 student application window through 30 November 2026. | OBC/EBC/DNT proof, institution coverage, income ceiling, benefits and renewal conditions. Automated matching is intentionally disabled. |
 | Higher Education Scholarship for ST Students | [NSP catalogue](https://scholarships.gov.in/All-Scholarships) | Scheme identity and AY 2026–27 NSP student application window through 30 November 2026. | Current Ministry guidelines, institution list, income ceiling, award value and dates. Automated matching is intentionally disabled. |
 
-FundNavi intentionally does not publish unverified deadlines as live. Always follow the current official portal and institution instructions.
+Grantly intentionally does not publish unverified deadlines as live. Always follow the current official portal and institution instructions.
