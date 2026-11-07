@@ -47,7 +47,8 @@ export function filterScholarships(input: {
       if (da && db) return da.localeCompare(db) || a.name.localeCompare(b.name);
       if (da) return -1;
       if (db) return 1;
-      return a.name.localeCompare(b.name);\n    }
+      return a.name.localeCompare(b.name);
+    }
     return matchRank[assessEligibility(a, input.profile).status] - matchRank[assessEligibility(b, input.profile).status] || a.name.localeCompare(b.name);
   });
 }
