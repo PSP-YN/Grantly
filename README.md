@@ -1,14 +1,14 @@
-# FundNavi
+# Grantly
 
 **Discover funding. Navigate your future.**
 
-FundNavi is a frontend-only scholarship discovery and application workspace built for The Outpost — Frontend Mission (GRANTLY challenge). It helps students explore source-linked Indian scholarship programmes, review profile-based eligibility checks, prepare documents, shortlist opportunities and track application progress.
+Grantly is a frontend-only scholarship discovery and application workspace built for The Outpost — Frontend Mission (GRANTLY challenge). It helps students explore source-linked Indian scholarship programmes, review profile-based eligibility checks, prepare documents, shortlist opportunities and track application progress.
 
 ## Product capabilities
 
 - Scholarship discovery with keyword search, category filters and sorting.
 - Transparent, deterministic eligibility checks show met, not-met and unknown criteria. Missing information is never treated as eligible; schemes without fully encoded rules are labelled for official review.
-- Official-source handoff. Students apply on provider sites; FundNavi does not collect application credentials.
+- Official-source handoff. Students apply on provider sites; Grantly does not collect application credentials.
 - Application tracker: Interested → Preparing → Submitted → Under review → Awarded.
 - Per-opportunity document preparation checklist, persisted with the application record.
 - Optional student profile used only for local rule evaluation.
@@ -46,13 +46,13 @@ The production build was opened in a browser and exercised at 320, 360, 390, 430
 
 ## Data integrity
 
-Catalogue records link to official sources and include a source-review date. Scheme criteria and dates can change. A profile check is a screening aid, not a legal or administrative eligibility decision. Where the complete current criteria are not encoded and verified, FundNavi deliberately requires official review rather than displaying a fabricated match percentage.
+Catalogue records link to official sources and include a source-review date. Scheme criteria and dates can change. A profile check is a screening aid, not a legal or administrative eligibility decision. Where the complete current criteria are not encoded and verified, Grantly deliberately requires official review rather than displaying a fabricated match percentage.
 
 The 2026–27 National Scholarship Portal pages and current programme notices should be checked before applying. The project does not scrape or claim real-time availability. Never rely on a sample or cached record as the sole basis for an application.
 
 ## Privacy and security model
 
-FundNavi is intentionally frontend-only to align with the event's frontend mission. The profile, saved list, application stages and document checklist remain in browser localStorage. Local storage is not encrypted, authenticated or suitable for identity documents, bank details, certificates or other sensitive records. Do not enter such information. Use the export action only on a trusted device.
+Grantly is intentionally frontend-only to align with the event's frontend mission. The profile, saved list, application stages and document checklist remain in browser localStorage. Local storage is not encrypted, authenticated or suitable for identity documents, bank details, certificates or other sensitive records. Do not enter such information. Use the export action only on a trusted device.
 
 No secrets or API keys are required. No backend security or production account security is claimed.
 
