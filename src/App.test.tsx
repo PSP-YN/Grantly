@@ -25,6 +25,19 @@ describe("Grantly workspace", () => {
     expect(screen.getByText(/not an award prediction/)).toBeInTheDocument();
   });
 
+
+  it("opens the statement workspace and saves a draft locally with a word count", () => {
+    render(<App />);
+    fireEvent.click(screen.getByRole("button", { name: /Statement workspace/ }));
+    expect(screen.getByRole("heading", { name: "Scholarship statement workspace", level: 1 })).toBeInTheDocument();
+    const draft = screen.getByLabelText("Your statement draft");
+    fireEvent.change(draft, { target: { value: "My goal is to study engineering." } });
+    expect(screen.getByText("6 / 500 words")).toBeInTheDocument();
+    const saved = JSON.parse(localStorage.getItem("grantly:essay-workspace:v1") || "{}");
+    expect(saved.draft).toBe("My goal is to study engineering.");
+    expect(screen.getByText(/Your writing is saved in this browser only/)).toBeInTheDocument();
+  });
+
   it("filters scholarship cards by category", () => {
     render(<App />);
     fireEvent.click(screen.getByRole("button", { name: "Science & research" }));
