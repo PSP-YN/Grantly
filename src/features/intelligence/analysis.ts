@@ -1,4 +1,4 @@
-export type FundingInputs = {
+export const FUNDING_INTELLIGENCE_STORAGE_KEY = "grantly:funding-intelligence:v1";\n\nexport type FundingInputs = {
   tuition: number;
   housing: number;
   food: number;
