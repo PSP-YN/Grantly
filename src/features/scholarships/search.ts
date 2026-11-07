@@ -1,6 +1,6 @@
 import type { Scholarship } from "../../data";
 import { assessEligibility, type StudentProfile } from "../../matching";
-import { parseExplicitDeadline } from "./calendar";
+import { localDateISO, parseExplicitDeadline } from "./calendar";
 
 export type ScholarshipSort = "match" | "amount" | "name" | "deadline";
 export type ScholarshipScope = "Discover" | "Saved" | "Applications";
@@ -45,7 +45,7 @@ export function filterScholarships(input: {
     if (input.sort === "deadline") {
       const da = parseExplicitDeadline(a.deadline);
       const db = parseExplicitDeadline(b.deadline);
-      const today = new Date().toISOString().slice(0,10);
+      const today = localDateISO();
       const pastA = Boolean(da && da < today);
       const pastB = Boolean(db && db < today);
       if (da && db) {
