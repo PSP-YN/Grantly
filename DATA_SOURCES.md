@@ -69,3 +69,24 @@ Key source pages reviewed:
 - [West Bengal Aikyashree](https://wbmdfcscholarship.in/)
 
 **Completeness statement:** this register documents sources used by the current product; it does not certify that the catalogue covers every government, private, institution, district, corporate or charitable scholarship. The catalogue must be maintained with source review dates and scheme-specific verification.
+
+## State programme entries added — reviewed 7 November 2026
+
+These records link directly to state scholarship portals or the responsible government department. The directory is not intended to imply one uniform eligibility rule across each state.
+
+| Catalogue programme | Official portal / source | Validation boundary |
+|---|---|---|
+| Karnataka Vidyasiri | [Karnataka BCWD](https://bcwd.karnataka.gov.in/new-page/PostMatric%20Scholarship%20Application/en), [SSP](https://ssp.postmatric.karnataka.gov.in/homepage.aspx) | Hostel, domicile, income and category rules change by notification. |
+| Maharashtra Rajarshi Chhatrapati Shahu Maharaj Shikshan Shulkh Shishyavrutti | [MahaDBT](https://mahadbt.maharashtra.gov.in/) | DHE/DTE scheme variant and course/family-income criteria require official review. |
+| Maharashtra Dr. Punjabrao Deshmukh Vasatigruh Nirvah Bhatta | [MahaDBT](https://mahadbt.maharashtra.gov.in/) | Hostel allowance eligibility and limits require scheme-specific review. |
+| Maharashtra Eklavya Scholarship | [MahaDBT](https://mahadbt.maharashtra.gov.in/) | DHE marks/course/eligibility conditions must be checked. |
+| West Bengal SVMCM | [Official SVMCM portal](https://svmcm.wbhed.gov.in/) | Level/course marks, income and renewal rules are cycle-specific. |
+| West Bengal Aikyashree | [WBMDFC](https://wbmdfcscholarship.in/) | Minority sub-scheme eligibility and active cycle vary. |
+| Odisha e-Medhabruti | [Odisha State Scholarship Portal](https://scholarship.odisha.gov.in/) | Category, course, marks and award amount must be verified in current notice. |
+| Telangana ePASS Post-Matric | [Telangana ePASS](https://telanganaepass.cgg.gov.in/) | Department/category/course, income and fee rules vary. |
+| Uttar Pradesh Post-Matric Scholarship | [UP Scholarship Portal](https://scholarship.up.gov.in/) | Department/category and fresh/renewal timelines differ. |
+| Bihar Post Matric Scholarship | [Bihar PMS](https://pmsonline.bih.nic.in/) | Category, course, income and cycle-specific rules apply. |
+| Gujarat MYSY | [Official MYSY portal](https://mysy.guj.nic.in/) | Course, qualifying marks, domicile and income rules need current notice. |
+| Kerala e-Grantz | [Official e-Grantz portal](https://egrantz.kerala.gov.in/) | Scheme-specific community, course, institution and income rules vary. |
+
+Each state-specific record has automated eligibility matching disabled until its exact rules and exclusions are reviewed. Scheme amounts and deadlines are intentionally not hardcoded when the official current cycle has not been confirmed.
