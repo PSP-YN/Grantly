@@ -28,7 +28,8 @@ function App(){
  const reviewCount=scholarships.filter(s=>["More details needed","Official review required"].includes(assessEligibility(s,store.profile).status)).length;
  const title=active==="Applications"?"Application tracker":active==="Saved"?"Saved scholarships":active==="Profile"?"Your student profile":active==="Planner"?"Plan your education funding":active==="Essay"?"Scholarship statement workspace":"Find your next opportunity";
  const subtitle=active==="Applications"?"Keep every deadline, document and next step in one place.":active==="Saved"?"Your shortlist, ready when you are.":active==="Planner"?"Estimate costs and support to understand your annual funding gap.":active==="Essay"?"Structure a personal statement with guided prompts, then export your own draft.":"A clearer path to education funding starts here.";
- return <div className="app-shell">\n  <input ref={importInputRef} className="sr-only" type="file" accept=".json,application/json" aria-label="Import Grantly workspace JSON" onChange={e=>{const file=e.target.files?.[0];if(file)void importWorkspaceFile(file);e.currentTarget.value="";}}/>
+ return <div className="app-shell">
+  <input ref={importInputRef} className="sr-only" type="file" accept=".json,application/json" aria-label="Import Grantly workspace JSON" onChange={e=>{const file=e.target.files?.[0];if(file)void importWorkspaceFile(file);e.currentTarget.value="";}}/>
   <aside className={"sidebar "+(mobileNav?"sidebar-open":"")}>
    <div className="brand"><div className="brand-mark"><GraduationCap size={21}/></div><span>Grantly</span><span className="brand-beta">BETA</span></div>
    <div className="workspace-label">STUDENT WORKSPACE</div>
