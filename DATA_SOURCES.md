@@ -143,10 +143,10 @@ These 15 supplemental entries were added from primary provider pages and state p
 | Karnataka Labour Welfare Board Education Assistance | [Karnataka Labour Welfare Board](https://klwb.karnataka.gov.in/) | Worker coverage, board membership/contribution, course and annual application rules must be verified. |
 | Karnataka Minority Welfare Scholarships (SSP / GOKDOM) | [GOKDOM](https://gokdom.karnataka.gov.in/) and [SSP](https://ssp.postmatric.karnataka.gov.in/homepage.aspx) | Directory gateway to multiple department schemes; not one universal award. |
 | Karnataka Construction Workers’ Children Education Assistance | [Karnataka Building and Other Construction Workers Welfare Board](https://karbwwb.karnataka.gov.in/) | Parent registration and beneficiary requirements; verify current board call. |
-| PM CARES for Children — Education Support | [PM CARES for Children](https://pmcaresforchildren.in/) | Restricted to eligible registered beneficiaries; not a general open scholarship. |
+| PM CARES for Children — Education Support | [Ministry of Women & Child Development FAQ](https://www.spniwcd.wcd.gov.in/pm-cares-for-children-scheme/faqs) | FAQ describes ₹20,000/year education allowance for eligible identified beneficiaries in Classes I–XII; not a general scholarship. |
 | Vidyadhan Scholarship | [Sarojini Damodaran Foundation](https://www.vidyadhan.org/) | State/class-specific calls and application windows; not every region opens in every cycle. |
 | Sitaram Jindal Foundation Scholarship | [Foundation FAQ](https://app.sitaramjindalfoundation.org/Student/FAQ) | Course/category-specific eligibility and award; verify current rules and restrictions. |
-| NorthSouth Foundation India Scholarship | [NorthSouth official scholarship page](https://www.northsouth.org/india-impact/india-scholarships/) | 2026–27 guidelines list a 31 October 2026 registration deadline; treat this cycle as closed unless extended. |
+| NorthSouth Foundation India Scholarship | [NorthSouth official scholarship page](https://www.northsouth.org/india-impact/india-scholarships/) | Official process describes registration during the July–October period; treat the 2026–27 registration period as ended and check the next call. |
 | Tata Capital Pankh Scholarship | [Tata Capital Education page](https://www.tatacapital.com/sustainability/education.html) | Programme-specific cycle, course and income criteria. |
 | ONGC Foundation Scholarship | [ONGC Foundation application portal](https://www.ongcscholar.org/) | Confirm current programme name, beneficiary categories and application window. |
 | IndianOil Academic Scholarship | [IndianOil scholarships](https://iocl.com/Scholarships) | Historical programme names do not guarantee a current application cycle; check official notices. |
@@ -184,3 +184,13 @@ These records are discovery aids, not a claim that every student in the named st
 | National Overseas Scholarship for ST Students | [Ministry of Tribal Affairs — NOS Portal](https://overseas.tribal.gov.in/) | 2026–27 application window closed in July 2026. Check the next official call and its current eligibility, university and award rules. |
 
 The catalogue now contains 84 curated entries. This is a growing discovery index—not a complete registry of every central, state, district, university and private scholarship.
+
+
+## Additional records reviewed 7 November 2026
+
+| Programme | Primary source | Status / scope |
+|---|---|---|
+| LIC Golden Jubilee Scholarship Scheme 2026 | [LIC Golden Jubilee Foundation](https://web.licindia.in/en/web/guest/golden-jubilee-foundation) | Official page lists 2026 scheme and instructions. The 2026 window is closed; verify next cycle and current official PDF. |
+| National Overseas Scholarship for ST Students | [Ministry of Tribal Affairs — NOS Portal](https://overseas.tribal.gov.in/) | 2026–27 call closed in July 2026. The next call is not assumed open; check current guidelines. |
+
+The current catalogue contains 84 curated scholarship/fellowship/education-assistance records. This is a discovery index, not an exhaustive national registry.
