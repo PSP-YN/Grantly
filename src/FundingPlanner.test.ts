@@ -12,7 +12,10 @@ describe("funding gap calculator", () => {
     expect(calculateFundingGap({ ...empty, tuition: 10000, existingAid: 12000 }))
       .toEqual({ cost: 10000, support: 12000, gap: 0, surplus: 2000, coverage: 100 });
   });
-  it("normalizes imported budget values and clamps invalid amounts",()=>{\n    expect(normalizeBudget({tuition:1234,housing:-5,food:Infinity,books:"x"})).toEqual({...empty,tuition:1234});\n  });\n  it("avoids a divide-by-zero coverage result", () => {
+  it("normalizes imported budget values and clamps invalid amounts",()=>{
+    expect(normalizeBudget({tuition:1234,housing:-5,food:Infinity,books:"x"})).toEqual({...empty,tuition:1234});
+  });
+  it("avoids a divide-by-zero coverage result", () => {
     expect(calculateFundingGap(empty).coverage).toBe(0);
   });
 });
