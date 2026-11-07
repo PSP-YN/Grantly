@@ -143,7 +143,7 @@ MIT. See [LICENSE](LICENSE).
 
 ## Scholarship directory scope
 
-The catalogue currently contains 62 scholarship / fellowship programme records and a searchable directory of official starting points for all 28 Indian states and 8 union territories. It includes central government, state entry points, UGC, AICTE, research, school, disability, overseas, private-foundation and welfare programmes. This is a **curated discovery index—not a claim that every scholarship in India is listed**. Some state schemes are department-specific and some portals are only a starting route. The official [National Scholarship Portal](https://scholarships.gov.in/All-Scholarships) and state portals remain authoritative for application status and eligibility.
+The catalogue currently contains 63 scholarship / fellowship programme records and a searchable directory of official starting points for all 28 Indian states and 8 union territories. It includes central government, state entry points, UGC, AICTE, research, school, disability, overseas, private-foundation and welfare programmes. This is a **curated discovery index—not a claim that every scholarship in India is listed**. Some state schemes are department-specific and some portals are only a starting route. The official [National Scholarship Portal](https://scholarships.gov.in/All-Scholarships) and state portals remain authoritative for application status and eligibility.
 
 Each record includes source attribution and a review note. Scheme rules and dates change. Records without fully reviewed criteria are labelled for official/manual review and do not generate a profile match.
 
