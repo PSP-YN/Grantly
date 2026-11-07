@@ -31,12 +31,12 @@ export function filterScholarships(input: {
 }): Scholarship[] {
   const saved = new Set(input.savedIds);
   const applications = new Set(input.applicationIds);
-  const term = input.query.trim().normalize("NFKC").toLocaleLowerCase();
+  const terms = input.query.trim().normalize("NFKC").toLocaleLowerCase().split(/\\s+/).filter(Boolean);
   const filtered = input.scholarships.filter(s => {
     if (input.scope === "Saved" && !saved.has(s.id)) return false;
     if (input.scope === "Applications" && !applications.has(s.id)) return false;
     if (input.category !== "All" && s.category !== input.category) return false;
-    return !term || searchableText(s).includes(term);
+    const text = searchableText(s);\n    return terms.length === 0 || terms.every(term => text.includes(term));
   });
   return filtered.sort((a, b) => {
     if (input.sort === "amount") return b.amountValue - a.amountValue || a.name.localeCompare(b.name);
