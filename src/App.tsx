@@ -4,7 +4,7 @@ import { categories, scholarships, type Scholarship } from "./data";
 import FundingPlanner from "./FundingPlanner";
 import EssayWorkspace from "./EssayWorkspace";
 import { assessEligibility } from "./matching";
-import { loadStore, parseWorkspaceExport, STORE_KEY, type Stage, type Store } from "./features/workspace/store";
+import { loadStore, parseWorkspaceExport, STORE_KEY, type Stage, type Profile, type Store } from "./features/workspace/store";
 import { filterScholarships } from "./features/scholarships/search";
 import { buildDeadlineCalendar, parseExplicitDeadline } from "./features/scholarships/calendar";
 import { normalizeBudget, FUNDING_PLANNER_STORAGE_KEY } from "./features/funding-planner/calculations";
@@ -81,7 +81,7 @@ function App(){
   </main>
   {mobileNav&&<button className="mobile-scrim" aria-label="Close navigation" onClick={()=>setMobileNav(false)}/>}
   {selected&&<ScholarshipModal item={selected} saved={store.saved.includes(selected.id)} application={store.applications.find(a=>a.id===selected.id)} assessment={assessEligibility(selected,store.profile)} onClose={()=>setSelected(null)} onSave={()=>toggleSaved(selected.id)} onAdd={()=>addApplication(selected.id)} onToggleDocument={doc=>toggleDocument(selected.id,doc)}/>}
-  {profileOpen&&<ProfileModal profile={store.profile} onClose={()=>setProfileOpen(false)} onSave={p=>{setStore(s=>({...s,profile:p}));setProfileOpen(false);setToast("Profile updated.");}}/>}
+  {profileOpen&&<ProfileModal profile={store.profile} onClose={()=>setProfileOpen(false)} onSave={(p:Profile)=>{setStore(s=>({...s,profile:p}));setProfileOpen(false);setToast("Profile updated.");}}/>}
   {toast&&<div className="toast" role="status"><CheckCircle2 size={17}/>{toast}</div>}
  </div>;
 }
