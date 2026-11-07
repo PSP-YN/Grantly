@@ -209,8 +209,7 @@ export const scholarships: Scholarship[] = [
     tone: "gold",
     rules: [],
     documents: ["Category certificate", "Admission proof from an eligible institution", "Family income certificate", "Previous academic records", "Bank account details"]
-  },,
-
+  },
   {
     id: "pm-cares-children",
     name: "Scholarship for PM CARES Children",
