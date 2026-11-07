@@ -80,21 +80,21 @@ export const scholarships: Scholarship[] = [
   },
   {
     id: "pragati",
-    name: "AICTE Pragati Scholarship",
+    name: "AICTE Pragati Scholarship — Technical Degree",
     provider: "All India Council for Technical Education",
     amount: "See current AICTE scheme guidelines",
     amountValue: 0,
-    deadline: "Check AICTE / NSP notices",
+    deadline: "NSP AY 2026–27 student applications close 30 Nov 2026",
     category: "Technical education",
-    level: "Technical degree / diploma",
+    level: "Technical degree",
     region: "All India",
     description: "Financial assistance scheme for eligible girl students enrolled in approved technical education programmes.",
     eligibility: ["Girl student condition applies", "AICTE-approved technical institution and programme", "Family-income and intake conditions apply"],
     tags: ["Engineering", "Technical", "Women in STEM"],
-    source: "https://www.aicte-india.org/",
-    sourceLabel: "AICTE official website",
+    source: "https://scholarships.gov.in/All-Scholarships",
+    sourceLabel: "National Scholarship Portal — AY 2026–27",
     lastVerified: "2026-11-07",
-    verificationNote: "This record links to the regulator. Confirm the current scheme notice, approved institution list, intake and application dates before relying on it.",
+    verificationNote: "NSP lists the technical degree scheme for AY 2026–27 with student applications through 30 November 2026. Confirm institution approval, current intake, family-income rules and application requirements in the scheme specification.",
     initials: "AI",
     tone: "rose",
     rules: [],
@@ -102,21 +102,21 @@ export const scholarships: Scholarship[] = [
   },
   {
     id: "saksham",
-    name: "AICTE Saksham Scholarship",
+    name: "AICTE Saksham Scholarship — Technical Degree",
     provider: "All India Council for Technical Education",
     amount: "See current AICTE scheme guidelines",
     amountValue: 0,
-    deadline: "Check AICTE / NSP notices",
+    deadline: "NSP AY 2026–27 student applications close 30 Nov 2026",
     category: "Technical education",
-    level: "Technical degree / diploma",
+    level: "Technical degree",
     region: "All India",
     description: "Financial assistance for eligible students with benchmark disabilities pursuing approved technical education.",
     eligibility: ["Benchmark disability criteria apply", "AICTE-approved technical programme", "Family-income and admission conditions apply"],
     tags: ["Engineering", "Accessibility", "Technical"],
-    source: "https://www.aicte-india.org/",
-    sourceLabel: "AICTE official website",
+    source: "https://scholarships.gov.in/All-Scholarships",
+    sourceLabel: "National Scholarship Portal — AY 2026–27",
     lastVerified: "2026-11-07",
-    verificationNote: "This record links to the regulator. Confirm the current scheme notice, disability documentation requirements, approved institution and dates.",
+    verificationNote: "NSP lists the technical degree scheme for AY 2026–27 with student applications through 30 November 2026. Confirm disability threshold, institution approval, income and documents in the current scheme specification.",
     initials: "AI",
     tone: "teal",
     rules: [],
@@ -444,5 +444,152 @@ scholarships.push(
     verificationNote: "The scheme is highly specific. Check current application round, eligible groups, institution/course rules, and required foreign admission documents on the official portal.",
     initials: "NOS", tone: "blue", rules: [],
     documents: ["Foreign university admission offer", "Academic transcripts", "Income and group certificate", "Passport", "Language / test scores as specified"]
+  }
+);
+
+
+// Additional scheme-specific records from the NSP AY 2026–27 listing.
+// Source: https://scholarships.gov.in/All-Scholarships (catalogue page reviewed 07 Nov 2026).
+// No scheme-specific eligibility matcher is enabled until its complete rules are independently verified.
+scholarships.push(
+  {
+    id:"aicte-pragati-diploma",name:"AICTE Pragati Scholarship — Technical Diploma",
+    provider:"All India Council for Technical Education",amount:"See current AICTE scheme specification",amountValue:0,
+    deadline:"NSP AY 2026–27 student applications close 30 Nov 2026",category:"Technical education",level:"Technical diploma",
+    region:"All India",description:"Scholarship for eligible girl students enrolled in approved technical diploma programmes.",
+    eligibility:["Girl-student eligibility applies","AICTE-approved diploma programme and institution","Income, intake and renewal rules are scheme-specific"],
+    tags:["AICTE","Diploma","Women in STEM","NSP"],source:"https://scholarships.gov.in/All-Scholarships",sourceLabel:"National Scholarship Portal — AY 2026–27",
+    lastVerified:"2026-11-07",verificationNote:"NSP lists the diploma scheme for AY 2026–27 with student applications through 30 November 2026. Confirm the current AICTE specification and institution approval before applying.",
+    initials:"AICTE",tone:"blue",rules:[],documents:["Admission proof","Institution verification","Academic records","Income proof if required","Bank details"]
+  },
+  {
+    id:"aicte-saksham-diploma",name:"AICTE Saksham Scholarship — Technical Diploma",
+    provider:"All India Council for Technical Education",amount:"See current AICTE scheme specification",amountValue:0,
+    deadline:"NSP AY 2026–27 student applications close 30 Nov 2026",category:"Technical education",level:"Technical diploma",
+    region:"All India",description:"Scholarship support for eligible specially-abled students pursuing approved technical diploma programmes.",
+    eligibility:["Benchmark disability documentation and threshold apply","AICTE-approved diploma programme and institution","Income, admission and renewal rules apply"],
+    tags:["AICTE","Diploma","Disability","NSP"],source:"https://scholarships.gov.in/All-Scholarships",sourceLabel:"National Scholarship Portal — AY 2026–27",
+    lastVerified:"2026-11-07",verificationNote:"NSP lists the diploma scheme for AY 2026–27 with student applications through 30 November 2026. Verify disability documentation, approved institution and current rules from the official specification.",
+    initials:"AICTE",tone:"teal",rules:[],documents:["Disability certificate / UDID if specified","Admission proof","Institution verification","Academic records","Bank details"]
+  },
+  {
+    id:"pm-usp-sss-jkl",name:"PM-USP Special Scholarship Scheme for Jammu, Kashmir & Ladakh",
+    provider:"Ministry of Education / AICTE",amount:"See current scheme specification",amountValue:0,
+    deadline:"NSP AY 2026–27 student applications close 30 Nov 2026",category:"Merit-based",level:"Undergraduate",
+    region:"Jammu, Kashmir and Ladakh",description:"Higher-education scholarship for eligible students domiciled in Jammu, Kashmir or Ladakh under the PM-USP special scheme.",
+    eligibility:["Domicile and Class XII conditions apply","Eligible course and institution restrictions apply","Income, merit and seat allocation rules apply"],
+    tags:["Jammu & Kashmir","Ladakh","PM-USP","NSP"],source:"https://scholarships.gov.in/All-Scholarships",sourceLabel:"National Scholarship Portal — AY 2026–27",
+    lastVerified:"2026-11-07",verificationNote:"NSP lists the AY 2026–27 scheme with applications through 30 November 2026. Verify current domicile, course, institution and admission rules from the official scheme specification.",
+    initials:"PM",tone:"gold",rules:[],documents:["Domicile certificate","Class XII marksheet","Admission proof","Income proof","Institution verification"]
+  },
+  {
+    id:"pmss-railways",name:"Prime Minister’s Scholarship Scheme — Ministry of Railways",
+    provider:"Ministry of Railways / Railway Board",amount:"See current scheme guidelines",amountValue:0,
+    deadline:"NSP AY 2026–27 student applications close 30 Nov 2026",category:"Merit-based",level:"Professional / higher education",
+    region:"All India",description:"Scholarship for eligible wards of specified Railway Protection Force / Railway Protection Special Force personnel under current rules.",
+    eligibility:["Eligible parent / service status required","Course and academic conditions apply","Fresh and renewal criteria differ"],
+    tags:["Railways","Welfare","Merit","NSP"],source:"https://scholarships.gov.in/All-Scholarships",sourceLabel:"National Scholarship Portal — AY 2026–27",
+    lastVerified:"2026-11-07",verificationNote:"NSP lists the Railway Board scheme for AY 2026–27. Verify eligible personnel categories, course rules and required service documents from the current scheme notice.",
+    initials:"RB",tone:"blue",rules:[],documents:["Railway service proof","Relationship proof","Admission proof","Academic marksheet","Bank details"]
+  },
+  {
+    id:"pm-yasasvi-school",name:"PM YASASVI — Top Class Education in Schools (OBC, EBC & DNT)",
+    provider:"Department of Social Justice & Empowerment",amount:"See current school scheme guidelines",amountValue:0,
+    deadline:"NSP AY 2026–27 student applications listed through 15 Nov 2026",category:"Need-based",level:"School education",
+    region:"India; state participation / school coverage varies",description:"Support for eligible OBC, EBC and DNT students studying in schools covered by the scheme.",
+    eligibility:["OBC, EBC or DNT category criteria apply","School must be covered by the scheme","Income, class and state-level rules apply"],
+    tags:["OBC","EBC","DNT","School","NSP"],source:"https://scholarships.gov.in/All-Scholarships",sourceLabel:"National Scholarship Portal — AY 2026–27",
+    lastVerified:"2026-11-07",verificationNote:"NSP lists applications through 15 November 2026. The portal announcement notes that Rajasthan, Keralam and Karnataka applicants were asked to wait for state-specific opening updates. Check the live state/school status before applying.",
+    initials:"YAS",tone:"gold",rules:[],documents:["Category certificate","School enrollment proof","Income certificate","Academic records","Bank details"]
+  },
+  {
+    id:"prematric-disability",name:"Pre-Matric Scholarship for Students with Disabilities",
+    provider:"Department of Empowerment of Persons with Disabilities",amount:"See current scheme guidelines",amountValue:0,
+    deadline:"NSP listing: student applications closed 31 Oct 2026",category:"Need-based",level:"Pre-matric school education",
+    region:"All India",description:"Support for eligible students with disabilities studying before matriculation.",
+    eligibility:["Disability certification and threshold apply","Class / school and income conditions apply","Current scheme notice governs award and renewal"],
+    tags:["Disability","School","NSP"],source:"https://scholarships.gov.in/All-Scholarships",sourceLabel:"National Scholarship Portal — AY 2026–27",
+    lastVerified:"2026-11-07",verificationNote:"The NSP AY 2026–27 listing showed the student application closing date as 31 October 2026. This record is retained for discovery and reference; it is marked closed as of the review date. Check for any official extension or next cycle.",
+    initials:"DEP",tone:"teal",rules:[],documents:["Disability certificate / UDID if specified","School enrollment proof","Income proof","Academic records","Bank details"]
+  },
+  {
+    id:"beedi-workers-prematric",name:"Education Assistance for Beedi / Cine / IOMC / LSDM Workers’ Wards — Pre-Matric",
+    provider:"Ministry of Labour & Employment",amount:"See current ministry scheme guidelines",amountValue:0,
+    deadline:"NSP listing: student applications closed 31 Oct 2026",category:"Need-based",level:"Pre-matric school education",
+    region:"All India",description:"Education assistance for eligible children of workers in specified beedi, cine, IOMC and LSDM sectors.",
+    eligibility:["Parent / guardian must meet covered-worker criteria","School class, income and academic requirements apply","Current ministry rules define eligible sectors and documentation"],
+    tags:["Workers’ families","School","Labour","NSP"],source:"https://scholarships.gov.in/All-Scholarships",sourceLabel:"National Scholarship Portal — AY 2026–27",
+    lastVerified:"2026-11-07",verificationNote:"NSP showed student applications closed 31 October 2026 for AY 2026–27. This record is retained as a directory entry; confirm any extension or next cycle from the official notice.",
+    initials:"MoL",tone:"blue",rules:[],documents:["Worker identity / employment proof","School enrollment proof","Income proof if required","Academic records","Bank details"]
+  },
+  {
+    id:"beedi-workers-postmatric",name:"Education Assistance for Beedi / Cine / IOMC / LSDM Workers’ Wards — Post-Matric",
+    provider:"Ministry of Labour & Employment",amount:"See current ministry scheme guidelines",amountValue:0,
+    deadline:"NSP listing: student applications closed 31 Oct 2026",category:"Need-based",level:"Post-matric / higher education",
+    region:"All India",description:"Education assistance for eligible post-matric students from covered worker families.",
+    eligibility:["Parent / guardian must meet covered-worker criteria","Post-matric course and institution rules apply","Income and academic conditions are scheme-specific"],
+    tags:["Workers’ families","Post-matric","Labour","NSP"],source:"https://scholarships.gov.in/All-Scholarships",sourceLabel:"National Scholarship Portal — AY 2026–27",
+    lastVerified:"2026-11-07",verificationNote:"NSP showed student applications closed 31 October 2026 for AY 2026–27. Check for official extensions and the next application cycle.",
+    initials:"MoL",tone:"blue",rules:[],documents:["Worker identity / employment proof","Admission proof","Income proof if required","Academic records","Bank details"]
+  },
+  {
+    id:"national-renewable-energy-fellowship",name:"National Renewable Energy Fellowship Scheme",
+    provider:"Ministry of New and Renewable Energy",amount:"See current fellowship guidelines",amountValue:0,
+    deadline:"NSP AY 2026–27 student applications close 30 Nov 2026",category:"Science & research",level:"Higher education / research",
+    region:"All India",description:"Fellowship support associated with renewable-energy education and research under the ministry’s scheme.",
+    eligibility:["Eligible programme / research field required","Institution and academic criteria apply","Current fellowship specification controls selection and award"],
+    tags:["Renewable energy","Research","Fellowship","NSP"],source:"https://scholarships.gov.in/All-Scholarships",sourceLabel:"National Scholarship Portal — AY 2026–27",
+    lastVerified:"2026-11-07",verificationNote:"NSP lists this fellowship in AY 2026–27 with student applications through 30 November 2026. Confirm exact programme scope and current rules from the official specification.",
+    initials:"MNRE",tone:"sage",rules:[],documents:["Research / course admission proof","Academic transcripts","Institution verification","Statement or research proposal if required"]
+  },
+  {
+    id:"isi-stipend",name:"Stipend Scheme for UG & PG Studies at Indian Statistical Institute, Kolkata",
+    provider:"Ministry of Statistics and Programme Implementation / Indian Statistical Institute",amount:"See current ISI stipend policy",amountValue:0,
+    deadline:"NSP AY 2026–27 student applications close 30 Nov 2026",category:"Science & research",level:"Undergraduate / postgraduate",
+    region:"Indian Statistical Institute, Kolkata (eligible programmes)",description:"Stipend support for students in covered undergraduate and postgraduate programmes at ISI Kolkata.",
+    eligibility:["Admission to a covered ISI programme required","Programme and academic continuation rules apply","Current ISI stipend policy is authoritative"],
+    tags:["ISI","Statistics","Mathematics","Research","NSP"],source:"https://scholarships.gov.in/All-Scholarships",sourceLabel:"National Scholarship Portal — AY 2026–27",
+    lastVerified:"2026-11-07",verificationNote:"NSP lists this stipend scheme for AY 2026–27 with applications through 30 November 2026. Confirm covered programme, stipend amount and continuation rules with ISI.",
+    initials:"ISI",tone:"blue",rules:[],documents:["ISI admission proof","Academic records","Programme enrollment proof","Bank details"]
+  },
+  {
+    id:"icar-nts-pg",name:"ICAR National Talent Scholarship — Postgraduate",
+    provider:"Indian Council of Agricultural Research",amount:"See current ICAR guidelines",amountValue:0,
+    deadline:"NSP AY 2026–27 student applications close 30 Nov 2026",category:"Science & research",level:"Agriculture postgraduate",
+    region:"All India (ICAR programme / region conditions)",description:"ICAR postgraduate talent scholarship for eligible students in covered agricultural programmes.",
+    eligibility:["Eligible PG agriculture programme and ICAR institution required","Academic, admission and region rules apply","Current ICAR notification controls"],
+    tags:["ICAR","Agriculture","PG","Research","NSP"],source:"https://scholarships.gov.in/All-Scholarships",sourceLabel:"National Scholarship Portal — AY 2026–27",
+    lastVerified:"2026-11-07",verificationNote:"NSP lists ICAR NTS-PG in AY 2026–27 with applications through 30 November 2026. Confirm the current ICAR notification and institution/course eligibility.",
+    initials:"ICAR",tone:"sage",rules:[],documents:["UG degree / marksheets","PG admission proof","ICAR selection / institution proof","Bank details"]
+  },
+  {
+    id:"icar-jrf-srf",name:"ICAR Junior & Senior Research Fellowships (JRF / SRF)",
+    provider:"Indian Council of Agricultural Research",amount:"See current ICAR fellowship notification",amountValue:0,
+    deadline:"NSP AY 2026–27 student applications close 30 Nov 2026",category:"Science & research",level:"Research fellowship",
+    region:"All India",description:"ICAR fellowship support for eligible research candidates under the current JRF / SRF scheme rules.",
+    eligibility:["Research programme / examination eligibility applies","Academic and institutional conditions apply","Current ICAR fellowship notice controls award and renewal"],
+    tags:["ICAR","JRF","SRF","Research","NSP"],source:"https://scholarships.gov.in/All-Scholarships",sourceLabel:"National Scholarship Portal — AY 2026–27",
+    lastVerified:"2026-11-07",verificationNote:"NSP lists ICAR JRF/SRF in AY 2026–27 with applications through 30 November 2026. Confirm fellowship eligibility, selection process, award and continuation rules from ICAR.",
+    initials:"ICAR",tone:"sage",rules:[],documents:["Academic transcripts","Research admission / selection proof","Institution verification","Bank details"]
+  },
+  {
+    id:"free-coaching-sc-obc",name:"Free Coaching Scheme for SC / OBC / PM CARES Children",
+    provider:"Department of Social Justice & Empowerment",amount:"Coaching support; check current scheme guidelines",amountValue:0,
+    deadline:"NSP AY 2026–27 student applications close 30 Nov 2026",category:"Need-based",level:"Competitive exam preparation",
+    region:"All India",description:"Support for eligible students in covered groups preparing for specified competitive examinations.",
+    eligibility:["SC / OBC / PM CARES beneficiary category rules apply","Covered competitive exam and coaching criteria apply","Current scheme and provider rules define selection"],
+    tags:["SC","OBC","PM CARES","Coaching","NSP"],source:"https://scholarships.gov.in/All-Scholarships",sourceLabel:"National Scholarship Portal — AY 2026–27",
+    lastVerified:"2026-11-07",verificationNote:"NSP lists this welfare scheme in AY 2026–27 with applications through 30 November 2026. Verify covered exams, group eligibility and coaching provider conditions from the current notice.",
+    initials:"SJ",tone:"gold",rules:[],documents:["Category / beneficiary proof","Academic records","Exam preparation / enrollment details","Income proof if required"]
+  },
+  {
+    id:"nmmss",name:"National Means-cum-Merit Scholarship Scheme (NMMSS)",
+    provider:"Department of School Education & Literacy · Ministry of Education",amount:"₹12,000 per year (official scheme)",amountValue:12000,
+    deadline:"NSP AY 2026–27 listing: student applications through 15 Nov 2026; verify portal status",category:"Merit-based",level:"Class IX–XII",
+    region:"India; state/UT selection and school rules apply",description:"Scholarship to support meritorious students from economically weaker sections and help reduce school dropout after Class VIII.",
+    eligibility:["Class VIII selection test and state/UT merit selection required","Parental income ceiling and school type rules apply","Continuation through Classes IX–XII depends on academic requirements"],
+    tags:["School","Merit","Ministry of Education","NSP"],source:"https://scholarships.gov.in/All-Scholarships",sourceLabel:"National Scholarship Portal — AY 2026–27",
+    lastVerified:"2026-11-07",verificationNote:"NSP scheme listing shows applications through 15 November 2026; PIB notices and state timelines can differ. Confirm the student deadline and verification timeline with NSP and the State NMMSS authority. Not for college-level study.",
+    initials:"MoE",tone:"blue",rules:[],documents:["Class VIII marksheet / selection proof","School enrollment certificate","Income certificate","State selection / verification records","Bank details"]
   }
 );
