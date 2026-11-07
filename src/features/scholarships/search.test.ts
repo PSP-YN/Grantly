@@ -21,6 +21,14 @@ describe("filterScholarships",()=>{
   expect(filterScholarships({scholarships:list,savedIds:["b"],applicationIds:["a"],scope:"Saved",category:"All",query:"",sort:"name",profile}).map(s=>s.id)).toEqual(["b"]);
   expect(filterScholarships({scholarships:list,savedIds:["b"],applicationIds:["a"],scope:"Applications",category:"All",query:"",sort:"name",profile}).map(s=>s.id)).toEqual(["a"]);
  });
+
+ it("prioritizes upcoming deadlines and keeps expired dates after them",()=>{
+  const today=new Date();const upcoming=new Date(today);upcoming.setUTCDate(upcoming.getUTCDate()+20);const expired=new Date(today);expired.setUTCDate(expired.getUTCDate()-5);
+  const iso=(date:Date)=>date.toISOString().slice(0,10);
+  const records=[{...base,id:"expired",name:"Expired",deadline:iso(expired)},{...base,id:"upcoming",name:"Upcoming",deadline:iso(upcoming)},{...base,id:"unknown",name:"Unknown",deadline:"Check official portal"}];
+  expect(filterScholarships({scholarships:records,savedIds:[],applicationIds:[],scope:"Discover",category:"All",query:"",sort:"deadline",profile}).map(s=>s.id)).toEqual(["upcoming","expired","unknown"]);
+ });
+
  it("sorts numeric award values descending without treating missing values as known",()=>{
   expect(filterScholarships({scholarships:list,savedIds:[],applicationIds:[],scope:"Discover",category:"All",query:"",sort:"amount",profile}).map(s=>s.id)).toEqual(["b","a"]);
  });
