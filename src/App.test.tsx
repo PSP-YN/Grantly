@@ -15,6 +15,16 @@ describe("Grantly workspace", () => {
     expect(screen.getByText("PM-USP Central Sector Scholarship (CSSS)")).toBeInTheDocument();
   });
 
+
+  it("opens the annual funding planner and exposes its estimate inputs", () => {
+    render(<App />);
+    fireEvent.click(screen.getByRole("button", { name: /Funding planner/ }));
+    expect(screen.getByRole("heading", { name: "Plan your education funding" })).toBeInTheDocument();
+    expect(screen.getByLabelText("Tuition & mandatory fees")).toBeInTheDocument();
+    expect(screen.getByLabelText("Scholarship scenario")).toBeInTheDocument();
+    expect(screen.getByText(/not an award prediction/)).toBeInTheDocument();
+  });
+
   it("filters scholarship cards by category", () => {
     render(<App />);
     fireEvent.click(screen.getByRole("button", { name: "Science & research" }));
