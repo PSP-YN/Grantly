@@ -2,9 +2,9 @@
 
 ## Project
 
-**FundNavi — Discover funding. Navigate your future.**
+**Grantly — Discover funding. Navigate your future.**
 
-FundNavi is a student-first scholarship discovery and application workspace. It brings source-linked opportunities, explainable eligibility screening, document preparation and application tracking into one responsive frontend.
+Grantly is a student-first scholarship discovery and application workspace. It brings source-linked opportunities, explainable eligibility screening, document preparation and application tracking into one responsive frontend.
 
 ## What to demonstrate
 
