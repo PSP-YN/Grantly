@@ -143,7 +143,7 @@ These 15 supplemental entries were added from primary provider pages and state p
 | Karnataka Labour Welfare Board Education Assistance | [Karnataka Labour Welfare Board](https://klwb.karnataka.gov.in/) | Worker coverage, board membership/contribution, course and annual application rules must be verified. |
 | Karnataka Minority Welfare Scholarships (SSP / GOKDOM) | [GOKDOM](https://gokdom.karnataka.gov.in/) and [SSP](https://ssp.postmatric.karnataka.gov.in/homepage.aspx) | Directory gateway to multiple department schemes; not one universal award. |
 | Karnataka Construction Workers’ Children Education Assistance | [Karnataka Building and Other Construction Workers Welfare Board](https://karbwwb.karnataka.gov.in/) | Parent registration and beneficiary requirements; verify current board call. |
-| PM CARES for Children — Education Support | [PM CARES for Children](https://pmcaresforchildren.in/) | Restricted to eligible registered beneficiaries; not a general open scholarship. |
+| PM CARES for Children — Education Support | [Ministry of Women & Child Development FAQ](https://www.spniwcd.wcd.gov.in/pm-cares-for-children-scheme/faqs) | FAQ describes ₹20,000/year education support for eligible identified beneficiaries in Classes I–XII; not a general scholarship. |
 | Vidyadhan Scholarship | [Sarojini Damodaran Foundation](https://www.vidyadhan.org/) | State/class-specific calls and application windows; not every region opens in every cycle. |
 | Sitaram Jindal Foundation Scholarship | [Foundation FAQ](https://app.sitaramjindalfoundation.org/Student/FAQ) | Course/category-specific eligibility and award; verify current rules and restrictions. |
 | NorthSouth Foundation India Scholarship | [NorthSouth official scholarship page](https://www.northsouth.org/india-impact/india-scholarships/) | 2026–27 guidelines list a 31 October 2026 registration deadline; treat this cycle as closed unless extended. |
@@ -181,3 +181,13 @@ These records are discovery aids, not a claim that every student in the named st
 The official [Har-Chhatravratti portal](https://harchhatravratti.highereduhry.ac.in/Index/1000) describes a centralized Haryana scholarship platform bringing 14 schemes across three departments together. Its [eligibility table](https://harchhatravratti.highereduhry.ac.in/Eligibility) lists domicile, institution type, category, income and attendance conditions for individual schemes. The portal notice page reports the 2026–27 higher-education application window open, and the current scheme table lists a 31 December 2026 closing date for several higher-education schemes.
 
 Grantly adds these eight distinct Haryana programme records: Consolidated Stipend Scheme for SC Students; Consolidated Stipend Scheme for Grandchildren of Freedom Fighters; Free Books for SC Students; State Merit Scholarship to Undergraduate Girls; State Meritorious Incentives Scheme; State Meritorious Incentives Scheme (CBSE); State Merit Scholarship to UG/PG Students; and Lower Income Group Scheme. All are manual-review only until each current guideline and award amount has been reviewed in full. Do not assume every programme shares the same eligibility or deadline.
+
+
+## Additional programme sources reviewed 7 November 2026
+
+| Programme | Primary source | Current-cycle note |
+|---|---|---|
+| LIC Golden Jubilee Scholarship Scheme 2026 | [LIC Golden Jubilee Foundation](https://web.licindia.in/en/web/guest/golden-jubilee-foundation) | Official page lists 2026 scheme documents. The 2026 application window has closed; verify the next cycle and current scheme PDF. |
+| National Overseas Scholarship for ST Students | [Ministry of Tribal Affairs — NOS Portal](https://overseas.tribal.gov.in/) | 2026–27 application window closed in July 2026. The next call is not assumed open; confirm current rules on the Ministry portal. |
+
+The current catalogue contains 92 curated records. This is a discovery index, not an exhaustive registry of every central, state, district, university or private scholarship.
