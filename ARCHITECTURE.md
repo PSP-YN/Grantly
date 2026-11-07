@@ -128,3 +128,13 @@ The JSON backup includes the workspace state plus the local funding planner and 
 5. Writes validated values to browser storage only.
 
 No imported profile, financial planner value or statement draft is sent to a server. Export files may contain personal information and should be handled as sensitive user-owned data.
+
+
+## Catalogue composition and filtering
+
+- `data.ts` contains the core scholarship data.
+- `dataSupplement.ts` contains separately reviewed additional programmes.
+- `catalog.ts` merges the two lists, de-duplicates stable IDs, exposes category filters and adjusts special deadline notes.
+- `features/scholarships/search.ts` performs pure filtering and ranking; the React shell memoizes results against search/profile/filter dependencies.
+
+Deadline values are scheme-provided calendar dates. Deadline sorting and calendar exports use the browser's local calendar day to avoid UTC rollover errors for users in India and other time zones. They do not create or infer missing deadlines.
