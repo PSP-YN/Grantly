@@ -16,7 +16,8 @@ describe("scholarship catalogue quality", () => {
   it("exposes filters for state schemes, private foundations and fellowships", () => {
     expect(categories).toContain("State scheme");
     expect(categories).toContain("Private foundation");
-    expect(categories).toContain("Fellowship");\n    expect(categories).toContain("Overseas study");
+    expect(categories).toContain("Fellowship");
+    expect(categories).toContain("Overseas study");
     expect(scholarships.some(item => item.category === "State scheme")).toBe(true);
     expect(scholarships.some(item => item.category === "Private foundation")).toBe(true);
     expect(scholarships.some(item => item.category === "Fellowship")).toBe(true);
