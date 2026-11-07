@@ -5,6 +5,7 @@ export type Profile = StudentProfile;
 export type AppRecord = {id:string;stage:Stage;updated:string;completedDocuments:string[]};
 export type Store = {saved:string[];applications:AppRecord[];profile:Profile};
 export const STORE_KEY="grantly:workspace:v1";
+function clean(value:string):string{return value.replace(/[<>]/g,"").trim().slice(0,120);}
 export const defaultProfile:Profile={course:"",year:"Not specified",state:"",income:"Not specified",category:"Not specified",academicBand:"Not sure",studyMode:"Not specified",otherScholarship:"Not specified",classXiiRegion:"Not specified",applicationRoute:"Not specified"};
 export const defaultStore:Store={saved:[],applications:[],profile:defaultProfile};
 export function loadStore():Store{
