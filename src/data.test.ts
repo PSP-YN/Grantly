@@ -1,15 +1,37 @@
 import { describe, expect, it } from "vitest";
-import { scholarships } from "./catalog";
+import { categories, scholarships } from "./catalog";
 
 describe("scholarship catalogue quality", () => {
   it("contains a meaningful India-wide directory and unique stable IDs", () => {
-    expect(scholarships.length).toBeGreaterThanOrEqual(61);
+    expect(scholarships.length).toBeGreaterThanOrEqual(77);
     const ids = scholarships.map(item => item.id);
     expect(new Set(ids).size).toBe(ids.length);
   });
   it("includes the newly catalogued UGC and ministry scholarship programmes", () => {
     const ids = new Set(scholarships.map(item => item.id));
-    for (const id of ["postmatric-sc", "prematric-sc", "prematric-obc", "national-fellowship-sc", "national-fellowship-obc", "pg-indira-single-girl", "pg-university-rank", "pg-sc-st-professional", "aicte-gate-pg", "karnataka-vidyasiri", "maharashtra-shahu", "maharashtra-punjabrao", "maharashtra-eklavya", "wb-svmcm", "wb-aikyashree", "odisha-medhabruti", "telangana-epass-pms", "up-postmatric", "bihar-pms", "gujarat-mysy", "kerala-egrantz"]) expect(ids.has(id)).toBe(true);
+    for (const id of ["ugc-savitri-single-girl-fellowship","ugc-net-jrf","karnataka-raitha-vidya-nidhi","karnataka-labour-welfare-education","karnataka-minority-scholarships","karnataka-construction-worker-scholarship","pmcares-children-scholarship","vidyadhan-sdf","sitaram-jindal-scholarship","northsouth-foundation-scholarship","tata-capital-pankh","ongc-merit-scholarship","indianoil-scholarship","aditya-birla-scholarship","siemens-scholarship-program","postmatric-sc", "prematric-sc", "prematric-obc", "national-fellowship-sc", "national-fellowship-obc", "pg-indira-single-girl", "pg-university-rank", "pg-sc-st-professional", "aicte-gate-pg", "karnataka-vidyasiri", "maharashtra-shahu", "maharashtra-punjabrao", "maharashtra-eklavya", "wb-svmcm", "wb-aikyashree", "odisha-medhabruti", "telangana-epass-pms", "up-postmatric", "bihar-pms", "gujarat-mysy", "kerala-egrantz"]) expect(ids.has(id)).toBe(true);
+  });
+
+
+  it("exposes filters for state schemes, private foundations and fellowships", () => {
+    expect(categories).toContain("State scheme");
+    expect(categories).toContain("Private foundation");
+    expect(categories).toContain("Fellowship");
+    expect(scholarships.some(item => item.category === "State scheme")).toBe(true);
+    expect(scholarships.some(item => item.category === "Private foundation")).toBe(true);
+    expect(scholarships.some(item => item.category === "Fellowship")).toBe(true);
+  });
+
+  it("keeps the supplemental programme claims cautious and source-backed", () => {
+    const ids = ["ugc-savitri-single-girl-fellowship","ugc-net-jrf","karnataka-raitha-vidya-nidhi","karnataka-labour-welfare-education","karnataka-minority-scholarships","karnataka-construction-worker-scholarship","pmcares-children-scholarship","vidyadhan-sdf","sitaram-jindal-scholarship","northsouth-foundation-scholarship","tata-capital-pankh","ongc-merit-scholarship","indianoil-scholarship","aditya-birla-scholarship","siemens-scholarship-program"];
+    const byId = new Map(scholarships.map(item => [item.id, item]));
+    for (const id of ids) {
+      const item = byId.get(id);
+      expect(item, id).toBeDefined();
+      expect(item?.rules, id).toEqual([]);
+      expect(item?.source, id).toMatch(/^https:\/\//);
+      expect(item?.verificationNote, id).toMatch(/check|confirm|verify|current|official|closed/i);
+    }
   });
 
   it("keeps key NSP AY 2026–27 deadline dates source-linked", () => {
