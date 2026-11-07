@@ -146,7 +146,7 @@ a{color:#1d3557}
 
 /* Palette harmonization: use the education navy/ivory/gold system consistently. */
 .hero-panel{background:#1d3557}
-.hero-panel:before{background:radial-gradient(ellipse at 82% 35%,rgba(196,154,69,.20),transparent 36%),linear-gradient(115deg,transparent 55%,rgba(9,22,41,.38)}
+.hero-panel:before{background:radial-gradient(ellipse at 82% 35%,rgba(196,154,69,.20),transparent 36%),linear-gradient(115deg,transparent 55%,rgba(9,22,41,.38))}
 .hero-kicker{color:#e5cf9d}
 .hero-copy h2 em{color:#e6c16e}
 .hero-copy p{color:#e5eaf0}
