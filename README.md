@@ -34,6 +34,7 @@ Grantly is designed to reduce friction and improve decision clarity. It does not
 | Eligibility screening | Compare profile inputs with the subset of explicit rules encoded for each programme; show matched, mismatched and unknown checks. |
 | Source transparency | Show provider/source links, review dates and notes about the limits of verification. |
 | Application workspace | Save opportunities, track application stages and maintain per-opportunity document checklists. |
+| Journey progress | A four-step, actionable preparation checklist links profile completion, shortlist, application tracking and document progress. Its completion indicator is not an eligibility or award prediction. |
 | Funding planner | Estimate annual costs, entered support, coverage, surplus and remaining gap using INR and user-provided values. |
 | Statement workspace | Structure a personal statement around motivation, experience, impact and goals; count words and export the student's own draft. |
 | Workspace portability | Export and restore a validated local workspace backup, including supported planner and statement data. |
