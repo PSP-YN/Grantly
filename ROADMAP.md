@@ -63,3 +63,10 @@ This roadmap describes proposed product evolution. Items below are not implement
 - Submitting applications without student review.
 - Selling student profile data.
 - Publishing fabricated success rates or award probabilities.
+
+## India-language accessibility
+- [ ] Pilot Hindi and Kannada translations for navigation, profile, tracker, forms, help/privacy and validation messages.
+- [ ] Preserve official scheme titles and source notices where translation could alter meaning.
+- [ ] Require native-speaker review and show translation coverage.
+- [ ] Expand additional Indian-language support based on user research and translation quality.
+- [ ] Validate fonts, screen-reader labels, text expansion, date and currency formats for every supported language.
