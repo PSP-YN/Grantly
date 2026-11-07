@@ -23,7 +23,7 @@ describe("scholarship catalogue quality", () => {
   });
 
   it("keeps the supplemental programme claims cautious and source-backed", () => {
-    const ids = ["tn-pudhumai-penn","tn-tamil-pudhalvan","wb-oasis-postmatric","jharkhand-ekalyan-postmatric","chhattisgarh-postmatric","ugc-savitri-single-girl-fellowship","ugc-net-jrf","karnataka-raitha-vidya-nidhi","karnataka-labour-welfare-education","karnataka-minority-scholarships","karnataka-construction-worker-scholarship","pmcares-children-scholarship","vidyadhan-sdf","sitaram-jindal-scholarship","northsouth-foundation-scholarship","tata-capital-pankh","ongc-merit-scholarship","indianoil-scholarship","aditya-birla-scholarship","siemens-scholarship-program"];
+    const ids = ["tn-pudhumai-penn","tn-tamil-pudhalvan","wb-oasis-postmatric","jharkhand-ekalyan-postmatric","chhattisgarh-postmatric","hr-stipend-sc","hr-stipend-freedom","hr-free-books-sc","hr-ug-girls-merit","hr-merit-incentive","hr-merit-incentive-cbse","hr-ug-pg-merit","hr-lower-income","ugc-savitri-single-girl-fellowship","ugc-net-jrf","karnataka-raitha-vidya-nidhi","karnataka-labour-welfare-education","karnataka-minority-scholarships","karnataka-construction-worker-scholarship","pmcares-children-scholarship","vidyadhan-sdf","sitaram-jindal-scholarship","northsouth-foundation-scholarship","tata-capital-pankh","ongc-merit-scholarship","indianoil-scholarship","aditya-birla-scholarship","siemens-scholarship-program"];
     const byId = new Map(scholarships.map(item => [item.id, item]));
     for (const id of ids) {
       const item = byId.get(id);
