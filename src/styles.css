@@ -293,3 +293,27 @@ a:hover{color:#9D4B2E}
 .journey-next-action strong{color:var(--ink)}
 @media(max-width:700px){.journey-progress{padding:17px}.journey-progress-head h2{font-size:17px}.journey-progress-steps{grid-template-columns:1fr}.journey-step{grid-template-columns:28px minmax(0,1fr) auto}.journey-step button{padding:7px 8px}}
 @media(prefers-reduced-motion:reduce){.journey-progress-track span{transition:none}}
+
+
+/* Accessible scholarship application pipeline */
+.application-pipeline{margin:0 0 26px;padding:22px 24px;background:var(--paper);border:1px solid var(--line);border-radius:14px}
+.pipeline-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:16px}
+.pipeline-heading h2{margin:7px 0 5px;color:var(--ink);font-size:20px;letter-spacing:-.45px}
+.pipeline-heading p{max-width:700px;margin:0;color:var(--muted);font-size:11px;line-height:1.6}
+.pipeline-total{flex:none;padding:6px 9px;border:1px solid var(--line);border-radius:6px;color:var(--navy);font-size:10px;font-weight:700}
+.pipeline-columns{display:grid;grid-template-columns:repeat(5,minmax(190px,1fr));gap:10px;overflow-x:auto;padding:2px 1px 8px}
+.pipeline-column{min-width:0;min-height:170px;padding:11px;background:var(--ivory-soft);border:1px solid var(--line);border-radius:9px}
+.pipeline-column.drop-ready{border-style:dashed;border-color:var(--terracotta)}
+.pipeline-column-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px}
+.pipeline-column-head h3{margin:0;color:var(--ink);font-size:11px}
+.pipeline-column-head span{display:grid;place-items:center;min-width:22px;height:22px;padding:0 5px;border-radius:20px;background:var(--ivory);color:var(--navy);font-size:10px;font-weight:700}
+.pipeline-card{display:grid;gap:7px;margin-bottom:8px;padding:11px;background:var(--paper);border:1px solid var(--line);border-radius:7px;cursor:grab}
+.pipeline-card:active{cursor:grabbing}
+.pipeline-card strong{color:var(--ink);font-size:11px;line-height:1.4}
+.pipeline-provider,.pipeline-doc-progress{color:var(--muted);font-size:9px;line-height:1.45}
+.pipeline-stage-control{display:grid;gap:4px;margin-top:2px;color:var(--muted);font-size:9px}
+.pipeline-stage-control select{width:100%;min-width:0;min-height:30px;padding:4px 6px;border:1px solid var(--line);border-radius:5px;background:var(--paper);color:var(--ink);font:inherit}
+.pipeline-stage-control select:focus-visible{outline:3px solid #2E5874;outline-offset:2px}
+.pipeline-empty,.pipeline-empty-state{margin:0;padding:13px 8px;color:var(--muted);font-size:10px;line-height:1.5}
+.pipeline-empty-state{padding:14px;border:1px dashed var(--line);border-radius:8px}
+@media(max-width:700px){.application-pipeline{padding:17px}.pipeline-heading h2{font-size:17px}.pipeline-columns{grid-template-columns:repeat(5,minmax(210px,1fr))}}
