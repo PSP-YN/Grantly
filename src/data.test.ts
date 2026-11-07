@@ -18,6 +18,7 @@ describe("scholarship catalogue quality", () => {
     expect(categories).toContain("Private foundation");
     expect(categories).toContain("Fellowship");
     expect(categories).toContain("Overseas study");
+    for (const item of scholarships) expect(categories).toContain(item.category);
     expect(scholarships.some(item => item.category === "State scheme")).toBe(true);
     expect(scholarships.some(item => item.category === "Private foundation")).toBe(true);
     expect(scholarships.some(item => item.category === "Fellowship")).toBe(true);
