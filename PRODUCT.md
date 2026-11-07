@@ -35,6 +35,7 @@ Profile context → discover programmes → inspect criteria/source → shortlis
 - Profile-based deterministic criteria screening for selected schemes.
 - Saved scholarship list.
 - Local application tracker and per-scholarship document checklist.
+- Discovery-page journey panel with four actionable preparation steps and a transparent completion indicator derived from profile, shortlist, tracker and document checklist state.
 - Local JSON export.
 - Funding planner with cost/support/gap arithmetic.
 - Responsive UI and automated tests.
