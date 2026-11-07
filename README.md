@@ -187,6 +187,23 @@ The following table records the requested score allocation as **targets**, not a
 
 See the [latest CI workflow](https://github.com/PSP-YN/Grantly/actions/workflows/ci.yml) for the current automated verification status.
 
+### FAIE 100-point product assessment framework
+
+The following is a **target allocation for product development**, not a score awarded by Frontend Arena or an independent auditor. The target weights total 100 points; current capabilities and outstanding evidence are stated separately.
+
+| Assessment pillar | Target allocation | Current implementation and evidence status |
+|---|---:|---|
+| Problem alignment and features | **25/25 target** | Implemented: source-linked discovery, explicit profile checks, saved opportunities, application pipeline, document checklist and funding-gap estimates. Not implemented: verified live-feed coverage, persona switching and automated displacement appeals. |
+| UI/UX and responsiveness | **20/20 target** | Responsive React interface and tested desktop/mobile layouts. Dark/light theme switching, celebration/confetti interactions and broad moderated user testing are not claimed. |
+| Functionality and interactivity | **25/25 target** | Implemented: search/filter/sort, eligibility review, local workspace, funding arithmetic, statement outline, word count, export/import and dated calendar export. Not implemented: AI voice-authenticity scoring, loan-debt freedom simulator, secure document locker or provider submission integration. |
+| Code quality and architecture | **10/10 target** | React + TypeScript, feature modules, deterministic rule logic, defensive local persistence, regression tests and CI. Continue extracting application-shell orchestration where evidence justifies it. |
+| Performance and accessibility | **10/10 target** | Lazy-loaded secondary views, production build checks, responsive smoke tests, focus management and axe-core regression checks. Formal WCAG conformance, zero CLS and a sub-100 kB main chunk are not claimed. |
+| Innovation and creativity | **5/5 target** | Current differentiation: explainable eligibility checks, integrated application preparation, INR funding-gap planning and portable student-owned data. The proposed AI voice and loan/displacement engines are future research, not current features. |
+| Documentation and governance | **5/5 target** | README, architecture, product, roadmap, data sources, catalogue, contribution, security, changelog, submission notes, MIT license and CI workflow are maintained. |
+| **Total target allocation** | **100/100** | **Not an achieved score.** Actual marks require independent evaluation of the exact submitted version. |
+
+Do not describe any target allocation above as a verified result. The FQE six-module 40-point targets and this FAIE seven-pillar 100-point framework are different score models and must not be conflated.
+
 ## Getting started
 
 ### Requirements
