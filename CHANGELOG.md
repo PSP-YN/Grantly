@@ -2,7 +2,7 @@
 
 ## 1.0.0 — 2026-11-07
 
-- Rebranded the frontend as FundNavi.
+- Rebranded the frontend as Grantly.
 - Replaced hardcoded fit percentages with transparent, typed eligibility rules.
 - Added source review notes and manual-review states for schemes without sufficiently verified rules.
 - Added document preparation checklist to the application tracker.
