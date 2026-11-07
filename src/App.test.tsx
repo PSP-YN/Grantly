@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach, afterEach } from "vitest";
+import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
 import { cleanup, fireEvent, render, screen, within, waitFor } from "@testing-library/react";
 import App from "./App";
 import axe from "axe-core";
@@ -70,6 +70,31 @@ describe("Grantly workspace", () => {
     expect(screen.getByText(/Do not share OTPs, passwords, PINs/)).toBeInTheDocument();
     const results = await axe.run(document.body, { runOnly: { type: "tag", values: ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"] }, rules: { "color-contrast": { enabled: false } } });
     expect(results.violations.map(item => item.id)).toEqual([]);
+  });
+
+
+  it("clears profile, tracker, planner and essay data after explicit confirmation", async () => {
+    localStorage.setItem("grantly:workspace:v1", JSON.stringify({ saved: ["csss"], applications: [], profile: { course: "CSE" } }));
+    localStorage.setItem("grantly:funding-planner:v1", JSON.stringify({ tuition: 45000 }));
+    localStorage.setItem("grantly:essay-workspace:v1", JSON.stringify({ draft: "Private draft" }));
+    const confirmation = vi.spyOn(window, "confirm").mockReturnValue(true);
+    render(<App />);
+    fireEvent.click(screen.getByRole("button", { name: /Clear local data/ }));
+    await waitFor(() => expect(JSON.parse(localStorage.getItem("grantly:workspace:v1") || "{}").saved).toEqual([]));
+    expect(localStorage.getItem("grantly:funding-planner:v1")).toBeNull();
+    expect(localStorage.getItem("grantly:essay-workspace:v1")).toBeNull();
+    expect(screen.getByText(/Grantly local data cleared/)).toBeInTheDocument();
+    expect(confirmation).toHaveBeenCalledTimes(1);
+    confirmation.mockRestore();
+  });
+
+  it("does not clear local data when the confirmation is declined", () => {
+    localStorage.setItem("grantly:funding-planner:v1", JSON.stringify({ tuition: 45000 }));
+    const confirmation = vi.spyOn(window, "confirm").mockReturnValue(false);
+    render(<App />);
+    fireEvent.click(screen.getByRole("button", { name: /Clear local data/ }));
+    expect(localStorage.getItem("grantly:funding-planner:v1")).not.toBeNull();
+    confirmation.mockRestore();
   });
 
   it("filters scholarship cards by category", () => {
