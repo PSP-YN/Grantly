@@ -20,12 +20,12 @@ const money = (value: number) => new Intl.NumberFormat("en-IN", {
   style: "currency", currency: "INR", maximumFractionDigits: 0
 }).format(Number.isFinite(value) ? value : 0);
 
-function NumberField({ label, value, onChange, suffix, step = 1000 }: {
-  label: string; value: number; onChange: (value: number) => void; suffix?: string; step?: number;
+function NumberField({ label, value, onChange, suffix, step = 1000, max }: {
+  label: string; value: number; onChange: (value: number) => void; suffix?: string; step?: number; max?: number;
 }) {
   return <label className="intelligence-field">
     <span>{label}</span>
-    <div><input aria-label={label} type="number" min="0" step={step} value={value} onChange={event => onChange(Math.max(0, Number(event.target.value) || 0))}/><small>{suffix ?? "₹ / year"}</small></div>
+    <div><input aria-label={label} type="number" min="0" max={max} step={step} value={value} onChange={event => onChange(Math.max(0, Number(event.target.value) || 0))}/><small>{suffix ?? "₹ / year"}</small></div>
   </label>;
 }
 
@@ -114,8 +114,8 @@ export default function FundingIntelligence({ profile, applications }: Props) {
     <section className="intelligence-section" aria-labelledby="loan-model-title">
       <div className="intelligence-section-heading"><div><span className="eyebrow">02 / REPAYMENT SCENARIO</span><h3 id="loan-model-title">Estimate the remaining education loan</h3><p>Illustrative EMI for the projected gap only; it is not a loan offer or financial advice.</p></div><Calculator size={22}/></div>
       <div className="intelligence-fields intelligence-loan-fields">
-        <NumberField label="Illustrative annual interest rate (%)" value={inputs.annualInterestRate} suffix="% p.a." step={0.25} onChange={v=>update("annualInterestRate",v)}/>
-        <NumberField label="Repayment term (years)" value={inputs.repaymentYears} suffix="years" step={1} onChange={v=>update("repaymentYears",Math.max(1,v))}/>
+        <NumberField label="Illustrative annual interest rate (%)" value={inputs.annualInterestRate} suffix="% p.a." step={0.25} max={100} onChange={v=>update("annualInterestRate",Math.min(100,v))}/>
+        <NumberField label="Repayment term (years)" value={inputs.repaymentYears} suffix="years" step={1} max={40} onChange={v=>update("repaymentYears",Math.min(40,Math.max(1,v)))}/>
       </div>
       <div className="intelligence-results intelligence-loan-results">
         <article><span>Estimated monthly EMI</span><strong>{money(result.monthlyEmi)}</strong><small>Assumes a reducing-balance loan</small></article>
