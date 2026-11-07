@@ -1,8 +1,8 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { lazy, Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { ArrowDownUp, ArrowRight, Bookmark, BookOpen, BookOpenText, CalendarDays, Check, CheckCircle2, ExternalLink, ChevronDown, Clock3, Compass, Download, FileCheck2, GraduationCap, MapPin, Menu, Search, ShieldCheck, SlidersHorizontal, Sparkles, Trash2, Target, UserRound, Wallet } from "lucide-react";
 import { categories, scholarships, type Scholarship } from "./catalog";
-import FundingPlanner from "./FundingPlanner";
-import EssayWorkspace from "./EssayWorkspace";
+const FundingPlanner = lazy(() => import("./FundingPlanner"));
+const EssayWorkspace = lazy(() => import("./EssayWorkspace"));
 import { assessEligibility } from "./matching";
 import { parseWorkspaceExport, STORE_KEY, defaultStore, type Profile } from "./features/workspace/store";
 import { useWorkspace } from "./features/workspace/useWorkspace";
@@ -11,10 +11,11 @@ import { buildDeadlineCalendar, parseExplicitDeadline } from "./features/scholar
 import { normalizeBudget, FUNDING_PLANNER_STORAGE_KEY } from "./features/funding-planner/calculations";
 import { normalizeEssayDraft, ESSAY_STORAGE_KEY } from "./features/essay/draft";
 import ScholarshipCard from "./features/scholarships/components/ScholarshipCard";
-import ScholarshipModal from "./features/scholarships/components/ScholarshipModal";
-import ProfilePage from "./features/profile/ProfilePage";
-import ProfileModal from "./features/profile/ProfileModal";
-import StudentGuide from "./features/guide/StudentGuide";
+const ScholarshipModal = lazy(() => import("./features/scholarships/components/ScholarshipModal"));
+const ProfilePage = lazy(() => import("./features/profile/ProfilePage"));
+const ProfileModal = lazy(() => import("./features/profile/ProfileModal"));
+const StudentGuide = lazy(() => import("./features/guide/StudentGuide"));
+const FeatureFallback = () => <div className="feature-loading" role="status" aria-live="polite">Loading workspace…</div>;
 import { scholarshipPortals } from "./features/guide/portalDirectory";
 
 function clean(v:string){return v.replace(/[<>]/g,"").trim().slice(0,120);}
@@ -75,7 +76,7 @@ function App(){
      {discover&&<section className="hero-panel"><div className="hero-copy"><div className="hero-kicker"><Sparkles size={14}/> YOUR NEXT CHAPTER STARTS HERE</div><h2>Make your ambition<br/><em>more affordable.</em></h2><p>Explore funding opportunities that fit your goals. Save the right ones, track your progress, and stay in control.</p><button className="hero-cta" onClick={()=>document.getElementById("scholarship-search")?.focus()}>Explore scholarships <ArrowRight size={16}/></button></div><div className="hero-art" aria-hidden="true"><div className="orbit orbit-one"/><div className="orbit orbit-two"/><div className="hero-sun"/><div className="hero-book"><BookOpen size={48}/></div><div className="float-card float-one"><span className="float-check"><Check size={12}/></span><span>Opportunity found</span></div><div className="float-card float-two"><CheckCircle2 size={15}/><span>Clear eligibility checks</span></div><div className="hero-stamp">FUTURE<br/>FUNDED</div></div></section>}
      {discover&&<section className="stats-grid" aria-label="Scholarship overview"><div className="stat-card"><div className="stat-icon mint"><Target size={18}/></div><div><span>Potential matches</span><strong>{alignedCount.toString().padStart(2,"0")} <small>profile-aligned</small></strong></div><span className="stat-note">Rule-based, self-reported checks</span></div><div className="stat-card"><div className="stat-icon peach"><Bookmark size={18}/></div><div><span>Saved for later</span><strong>{store.saved.length.toString().padStart(2,"0")} <small>scholarships</small></strong></div><span className="stat-note">Your shortlist</span></div><div className="stat-card"><div className="stat-icon lilac"><Clock3 size={18}/></div><div><span>Needs a closer look</span><strong>{reviewCount.toString().padStart(2,"0")} <small>opportunities</small></strong></div><span className="stat-note">Missing or manual checks</span></div></section>}
      {active==="Applications"&&<section className="tracker-summary"><div><div className="stat-icon mint"><FileCheck2 size={18}/></div><span><strong>{store.applications.length}</strong> opportunities in your tracker</span></div><p>Update a stage as you make progress. Your changes are saved on this device.</p><button className="outline-button" onClick={exportDeadlineCalendar}><CalendarDays size={15}/> Export deadline calendar</button></section>}
-     {active==="Planner"&&<FundingPlanner/>}{active==="Essay"&&<EssayWorkspace/>}{active==="Guide"&&<StudentGuide/>}
+     {active==="Planner"&&<Suspense fallback={<FeatureFallback/>}><FundingPlanner/></Suspense>}{active==="Essay"&&<Suspense fallback={<FeatureFallback/>}><EssayWorkspace/></Suspense>}{active==="Guide"&&<Suspense fallback={<FeatureFallback/>}><StudentGuide/></Suspense>}
      {active!=="Planner"&&active!=="Essay"&&active!=="Guide"&&<section className="listing-section" id="scholarship-search"><div className="section-head"><div><div className="eyebrow">OPPORTUNITIES</div><h2>{active==="Applications"?"Your applications":active==="Saved"?"Your saved list":"Scholarships worth exploring"}</h2><p>{discover?"Source-linked opportunities with transparent eligibility checks.":"Manage your opportunities in one place."}</p></div><div className="result-count" aria-live="polite">{visible.length} results</div></div>
       <div className="toolbar"><label className="search-box"><Search size={17}/><input id="scholarship-search" value={query} onChange={e=>setQuery(clean(e.target.value))} placeholder="Search by name, provider or keyword..." aria-label="Search scholarships"/></label><label className="sort-select"><ArrowDownUp size={15}/><select value={sort} onChange={e=>setSort(e.target.value)} aria-label="Sort scholarships"><option value="match">Best match</option><option value="amount">Highest amount</option><option value="name">Name A–Z</option><option value="deadline">Deadline</option></select><ChevronDown size={14}/></label><label className="catalogue-select"><GraduationCap size={15}/><select value={levelFilter} onChange={e=>setLevelFilter(e.target.value)} aria-label="Filter by education level"><option>All levels</option>{[...new Set(scholarships.map(item=>item.level))].sort().map(level=><option key={level}>{level}</option>)}</select></label><label className="catalogue-select"><MapPin size={15}/><select value={stateFilter} onChange={e=>setStateFilter(e.target.value)} aria-label="Filter by state or union territory"><option>All India</option>{scholarshipPortals.map(item=><option key={item.state}>{item.state}</option>)}</select></label></div>
       <div className="filter-row" role="group" aria-label="Filter scholarships by category"><span className="filter-label"><SlidersHorizontal size={14}/> FILTER BY</span>{categories.map(c=><button key={c} aria-pressed={category===c} className={category===c?"filter-chip selected":"filter-chip"} onClick={()=>setCategory(c)}>{c}</button>)}</div>
@@ -83,13 +84,13 @@ function App(){
       {visible.length?<div className="scholarship-grid">{visible.map(s=><ScholarshipCard key={s.id} item={s} saved={store.saved.includes(s.id)} assessment={assessEligibility(s,store.profile)} application={store.applications.find(a=>a.id===s.id)} onSave={()=>toggleSaved(s.id)} onOpen={()=>setSelected(s)} onStage={stage=>updateStage(s.id,stage)} onAdd={()=>addApplication(s.id)}/>)}</div>:<div className="empty-state"><div><Search size={24}/></div><h3>No scholarships found</h3><p>Try a different search term or clear your filters.</p><button className="outline-button" onClick={()=>{setQuery("");setCategory("All");setLevelFilter("All levels");setStateFilter("All India");}}>Clear filters</button></div>}
      </section>}
     </>}
-    {active==="Profile"&&<ProfilePage profile={store.profile} completion={profileCompletion} onEdit={()=>setProfileOpen(true)}/>}
+    {active==="Profile"&&<Suspense fallback={<FeatureFallback/>}><ProfilePage profile={store.profile} completion={profileCompletion} onEdit={()=>setProfileOpen(true)}/></Suspense>}
     <footer className="page-footer"><span>© 2026 GRANTLY</span><span>Designed to make opportunity easier to reach.</span><button onClick={()=>setToast("This is a frontend demonstration. No personal data leaves this device.")}>Privacy & data <ArrowRight size={12}/></button></footer>
    </div>
   </main>
   {mobileNav&&<button className="mobile-scrim" aria-label="Close navigation" onClick={()=>setMobileNav(false)}/>}
-  {selected&&<ScholarshipModal item={selected} saved={store.saved.includes(selected.id)} application={store.applications.find(a=>a.id===selected.id)} assessment={assessEligibility(selected,store.profile)} onClose={()=>setSelected(null)} onSave={()=>toggleSaved(selected.id)} onAdd={()=>addApplication(selected.id)} onToggleDocument={doc=>toggleDocument(selected.id,doc)}/>}
-  {profileOpen&&<ProfileModal profile={store.profile} onClose={()=>setProfileOpen(false)} onSave={(p:Profile)=>{setStore(s=>({...s,profile:p}));setProfileOpen(false);setToast("Profile updated.");}}/>}
+  {selected&&<Suspense fallback={<FeatureFallback/>}><ScholarshipModal item={selected} saved={store.saved.includes(selected.id)} application={store.applications.find(a=>a.id===selected.id)} assessment={assessEligibility(selected,store.profile)} onClose={()=>setSelected(null)} onSave={()=>toggleSaved(selected.id)} onAdd={()=>addApplication(selected.id)} onToggleDocument={doc=>toggleDocument(selected.id,doc)}/></Suspense>}
+  {profileOpen&&<Suspense fallback={<FeatureFallback/>}><ProfileModal profile={store.profile} onClose={()=>setProfileOpen(false)} onSave={(p:Profile)=>{setStore(s=>({...s,profile:p}));setProfileOpen(false);setToast("Profile updated.");}}/></Suspense>}
   {toast&&<div className="toast" role="status"><CheckCircle2 size={17}/>{toast}</div>}
  </div>;
 }
