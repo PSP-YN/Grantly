@@ -12,6 +12,13 @@ describe("scholarship catalogue quality", () => {
     for (const id of ["postmatric-sc", "prematric-sc", "prematric-obc", "national-fellowship-sc", "national-fellowship-obc", "pg-indira-single-girl", "pg-university-rank", "pg-sc-st-professional", "aicte-gate-pg", "karnataka-vidyasiri", "maharashtra-shahu", "maharashtra-punjabrao", "maharashtra-eklavya", "wb-svmcm", "wb-aikyashree", "odisha-medhabruti", "telangana-epass-pms", "up-postmatric", "bihar-pms", "gujarat-mysy", "kerala-egrantz"]) expect(ids.has(id)).toBe(true);
   });
 
+  it("keeps key NSP AY 2026–27 deadline dates source-linked", () => {
+    const byId = new Map(scholarships.map(item => [item.id, item]));
+    for (const id of ["aicte-swanath-degree", "aicte-swanath-diploma", "pmss-capf", "pmss-police-martyred", "postmatric-disability", "top-class-disability", "national-pg-scholarship"]) {
+      expect(byId.get(id)?.deadline).toContain("30 Nov 2026");
+    }
+  });
+
   it("has core metadata and an HTTPS source for every record", () => {
     for (const item of scholarships) {
       expect(item.name.trim(), item.id).not.toBe("");
