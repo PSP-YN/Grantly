@@ -39,7 +39,7 @@ Grantly brings the preparation process into a single workspace while keeping off
 - Keep the model transparent: this is a planning estimate, not an award prediction, institutional COA determination or financial advice.
 
 ### India-wide scholarship access
-- A source-aware catalogue of 62 scholarship / fellowship records, including central government, UGC, AICTE, research, school, disability, private foundation and welfare programmes.
+- A source-aware catalogue of 63 scholarship / fellowship records, including central government, UGC, AICTE, research, school, disability, private foundation and welfare programmes.
 - Searchable official scholarship portal routes for all 28 states and 8 union territories. Some state portals host multiple schemes and departments; Grantly explicitly avoids claiming this directory is exhaustive.
 - Source and review notes, and official/manual-review status where eligibility rules are incomplete.
 
