@@ -10,16 +10,21 @@ This roadmap describes proposed product evolution. Items below are not implement
 - [x] Browser-local workspace export.
 - [x] Funding gap calculator based on user-entered values.
 - [x] Searchable state/UT portal directory (28 states + 8 UTs).
-- [x] Curated catalogue expanded to 77 scholarship / fellowship / education assistance records.
+- [x] Curated catalogue expanded to 82 scholarship / fellowship / education assistance records.
 - [x] PWA shell and service-worker offline fallback after an online visit.
 - [x] Workspace state and common mutations extracted into a tested hook.
 - [x] Responsive UI and automated unit/component/accessibility checks.
 - [ ] Validate usability with students across multiple devices and assistive technologies.
 - [ ] Add a reviewed scheme ingestion workflow with academic-year validity, scheme owner, last-verified date, deadline status and stale-record monitoring.
 - [ ] Expand regional language support (Hindi, Kannada, Tamil, Telugu, Bengali and more) with native review.
-- [x] Add source-reviewed UGC, Karnataka state, and private foundation listings with manual-review boundaries.\n- [ ] Expand source verification coverage with a transparent data-review process.
+- [x] Add source-reviewed UGC, Karnataka state, and private foundation listings with manual-review boundaries.
+- [x] Add official-source state programme records for Tamil Nadu, West Bengal, Jharkhand and Chhattisgarh.
+- [ ] Expand source verification coverage with a transparent data-review process.
 
 ## Stage 1 — Trust and data quality
+- [ ] Complete App.tsx orchestration extraction into dedicated feature-level route/view components without changing user-visible behavior.
+- [ ] Add end-to-end browser tests for discovery → shortlist → tracker → document checklist → export/import workflows.
+- [ ] Add automated catalogue duplicate, stale-source and deadline-date validation in CI.
 - Source schema with provider, URL, reviewed-at date, academic year, rule version and review status.
 - Data change log and stale-record warnings.
 - Better rule-coverage indicators for requirements not represented.

@@ -22,7 +22,11 @@ Grantly is a student-first education funding workspace built to help Indian lear
 
 The current release is a browser-first prototype. It does not have user accounts, cloud sync, real-time scholarship ingestion, verified live deadlines, secure document storage, official application submission or remote profile transmission. Scholarship providers—not Grantly—make final eligibility and award decisions.
 
-**Catalogue scope:** 77 curated scholarship / fellowship / education-assistance records plus official starting links for all 28 states and 8 union territories. This is a growing source-aware directory, not a complete list of every award available in India. Private, institution, district and department-specific awards may not yet be indexed. Use the official provider links to discover current opportunities.
+**Catalogue scope:** 82 curated scholarship / fellowship / education-assistance records plus official starting links for all 28 states and 8 union territories. This is a growing source-aware directory, not a complete list of every award available in India. Private, institution, district and department-specific awards may not yet be indexed. Use the official provider links to discover current opportunities. The current catalogue includes additional state programmes from Tamil Nadu, West Bengal, Jharkhand and Chhattisgarh, alongside existing Karnataka and other state listings.
+
+## Design system
+
+The interface uses an academic navy (`#17324D`), warm ivory (`#FBF8F1`) and terracotta (`#B85C38`) palette. The colours form a restrained three-colour identity with neutral supporting text and borders. Layouts are responsive and designed for keyboard and touch use.
 
 ## Engineering
 

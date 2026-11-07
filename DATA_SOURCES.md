@@ -161,3 +161,16 @@ These 15 supplemental entries were added from primary provider pages and state p
 - A closed or next-cycle listing remains useful for planning but must not be advertised as open.
 - Rule-based eligibility is disabled unless scheme-specific criteria have been reviewed and encoded.
 - Never enter Aadhaar, bank credentials, OTPs or document scans into Grantly.
+
+
+## Additional state programme sources reviewed 7 November 2026
+
+| Programme | Official source | What the source supports | What students must confirm |
+|---|---|---|---|
+| Tamil Nadu Pudhumai Penn | https://tils.tn.gov.in/schemes | Government scheme page describes ₹1,000 monthly DBT assistance and school-history conditions. | Current UMIS process, eligible school types, course scope, continuation and application window. |
+| Tamil Nadu Tamil Pudhalvan | https://tils.tn.gov.in/schemes | Government scheme page describes the parallel monthly assistance for eligible male students. | Current UMIS process, school-history conditions, course scope and application window. |
+| West Bengal OASIS post-matric | https://www.oasis.wb.gov.in/ | Official OASIS portal displays 2026–27 application announcements for SC/ST/OBC post-matric and related pre-matric schemes. | Category-specific rules, income limits, dates, OTR and institution verification. |
+| Jharkhand e-Kalyan post-matric | https://ekalyan.cgg.gov.in/ | Government technical partner describes e-Kalyan as supporting pre- and post-matric scholarships for SC/ST/BC students. | Current notification, income limits, domicile, category rules and application dates. |
+| Chhattisgarh post-matric | https://postmatric-scholarship.cg.nic.in/ | National Government Services Portal describes the official portal as an online route for state and centrally sponsored scholarship applications. | Current scheme notice, category-specific criteria, institution rules and deadlines. |
+
+These records are discovery aids, not a claim that every student in the named state qualifies. Automated matching is intentionally disabled until full current-cycle criteria are reviewed. A portal's existence does not establish that a scheme is open today.

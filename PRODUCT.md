@@ -29,7 +29,8 @@ Profile context → discover programmes → inspect criteria/source → shortlis
 - Make the app useful on low-end phones and unreliable connections.
 
 ## MVP scope (implemented)
-- Curated Indian scholarship catalogue with source notes.
+- Curated Indian scholarship catalogue with source notes, including central, state, UGC, AICTE, research and selected private programmes.
+- State programme records for Tamil Nadu Pudhumai Penn and Tamil Pudhalvan, West Bengal OASIS, Jharkhand e-Kalyan and Chhattisgarh Post-Matric.
 - Search, category filters and sorting.
 - Profile-based deterministic criteria screening for selected schemes.
 - Saved scholarship list.
@@ -37,6 +38,10 @@ Profile context → discover programmes → inspect criteria/source → shortlis
 - Local JSON export.
 - Funding planner with cost/support/gap arithmetic.
 - Responsive UI and automated tests.
+
+## Coverage and trust boundary
+
+The catalogue is a curated discovery index, not a complete national registry. The National Scholarship Portal, state portals, university notices and private providers publish changing programme lists. Some records are scheme-specific; others are entry points to an official state programme or portal. Records without a complete reviewed rule set are manual-review only and never receive a positive automated eligibility decision.
 
 ## Explicitly out of scope for current prototype
 - Account registration and identity verification.

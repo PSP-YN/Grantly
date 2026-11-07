@@ -23,7 +23,7 @@ flowchart TD
 
 | Module | Responsibility | Current boundary |
 |---|---|---|
-| `App.tsx` | Main shell, discover/saved/tracker/profile views, application state and dialogs | UI orchestration; no network persistence |
+| `App.tsx` | Main shell, discover/saved/tracker/profile views, application state and dialogs | UI orchestration remains a refactoring target; no network persistence |
 | `features/workspace/useWorkspace.ts` | Workspace state, local persistence and common tracker mutations | Browser-only state; no backend sync |
 | `features/guide/portalDirectory.ts` | State / UT scholarship portal directory | Portal starting points, not an exhaustive scheme registry |
 | `features/guide/StateScholarshipPortalDirectory.tsx` | Searchable state/UT portal directory UI | External official routes; current rules are provider-owned |
@@ -33,6 +33,10 @@ flowchart TD
 | `EssayWorkspace.tsx` | Guided personal statement outline, word count, local draft persistence and text export | No essay generation, plagiarism scoring or remote writing service |
 | `styles.css` | Layout, visual tokens, responsive behavior and reduced-motion handling | CSS-based design system |
 | `*.test.ts(x)` | Rule, component, workflow and accessibility regression tests | Tests do not replace browser/assistive-tech testing |
+
+## Catalogue composition
+
+`data.ts` contains the core typed catalogue. `dataSupplement.ts` adds reviewed national, private, UGC and Karnataka programmes. `dataRegional.ts` adds state-level programme records whose official sources were reviewed on 7 November 2026. `catalog.ts` composes these lists and de-duplicates by stable ID. New records with incomplete or conditional rules must use an empty `rules` array and a clear manual-review note.
 
 ## Data flow
 
