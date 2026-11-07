@@ -7,7 +7,7 @@ import { assessEligibility } from "./matching";
 import { parseWorkspaceExport, STORE_KEY, defaultStore, type Profile } from "./features/workspace/store";
 import { useWorkspace } from "./features/workspace/useWorkspace";
 import { filterScholarships } from "./features/scholarships/search";
-import { buildDeadlineCalendar, localDateISO, parseExplicitDeadline } from "./features/scholarships/calendar";
+import { buildDeadlineCalendar, parseExplicitDeadline } from "./features/scholarships/calendar";
 import { normalizeBudget, FUNDING_PLANNER_STORAGE_KEY } from "./features/funding-planner/calculations";
 import { normalizeEssayDraft, ESSAY_STORAGE_KEY } from "./features/essay/draft";
 import ScholarshipCard from "./features/scholarships/components/ScholarshipCard";
