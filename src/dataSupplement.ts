@@ -69,8 +69,8 @@ export const scholarshipSupplemental: Scholarship[] = [
     deadline:"Check PM CARES for Children portal and current beneficiary instructions",category:"Need-based",level:"School / higher education",
     region:"All India",description:"Education and welfare support within the PM CARES for Children programme for eligible registered beneficiaries.",
     eligibility:["Only children meeting the PM CARES for Children beneficiary definition","Registration / verification and age or education-stage conditions apply","Not a general scholarship open to all students"],
-    tags:["PM CARES","Child welfare","Education support"],source:"https://pmcaresforchildren.in/",sourceLabel:"PM CARES for Children official portal",
-    lastVerified:"2026-11-07",verificationNote:"This is restricted beneficiary support, not a general open scholarship. Confirm registered beneficiary status and education-support terms on the official portal.",
+    tags:["PM CARES","Child welfare","Education support"],source:"https://www.spniwcd.wcd.gov.in/pm-cares-for-children-scheme/faqs",sourceLabel:"Ministry of Women & Child Development — PM CARES FAQ",
+    lastVerified:"2026-11-07",verificationNote:"The official MWCD FAQ describes ₹20,000/year support (monthly allowance plus academic allowance) for eligible registered PM CARES for Children beneficiaries in Classes I–XII. This is not a general scholarship. Confirm current beneficiary status and process with authorities.",
     initials:"PM",tone:"sage",rules:[],documents:["PM CARES beneficiary registration / confirmation","Current school / college enrollment proof","Documents requested by the official beneficiary process"]
   },
   {
