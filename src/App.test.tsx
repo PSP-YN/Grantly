@@ -20,8 +20,8 @@ describe("Grantly workspace", () => {
     render(<App />);
     fireEvent.click(screen.getByRole("button", { name: /Funding planner/ }));
     expect(screen.getByRole("heading", { name: "Plan your education funding", level: 1 })).toBeInTheDocument();
-    expect(screen.getByLabelText("Tuition & mandatory fees")).toBeInTheDocument();
-    expect(screen.getByLabelText("Scholarship scenario")).toBeInTheDocument();
+    expect(screen.getByRole("spinbutton", { name: /Tuition & mandatory fees/ })).toBeInTheDocument();
+    expect(screen.getByRole("spinbutton", { name: /Scholarship scenario/ })).toBeInTheDocument();
     expect(screen.getByText(/not an award prediction/)).toBeInTheDocument();
   });
 
