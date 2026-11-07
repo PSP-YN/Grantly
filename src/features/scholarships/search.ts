@@ -31,7 +31,7 @@ export function filterScholarships(input: {
 }): Scholarship[] {
   const saved = new Set(input.savedIds);
   const applications = new Set(input.applicationIds);
-  const terms = input.query.trim().normalize("NFKC").toLocaleLowerCase().split(/\\s+/).filter(Boolean);
+  const terms = input.query.trim().normalize("NFKC").toLocaleLowerCase().split(/\s+/).filter(Boolean);
   const filtered = input.scholarships.filter(s => {
     if (input.scope === "Saved" && !saved.has(s.id)) return false;
     if (input.scope === "Applications" && !applications.has(s.id)) return false;
