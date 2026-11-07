@@ -2,7 +2,14 @@ import { useEffect, useMemo, useState } from "react";
 import { Activity, AlertTriangle, Calculator, CheckCircle2, ClipboardList, FileText, Gauge, Wallet } from "lucide-react";
 import type { Profile, AppRecord, Stage } from "../workspace/store";
 import { scholarships } from "../../catalog";
-import { calculateFundingSnapshot, reviewNarrative, normalizeFundingInputs, DEFAULT_FUNDING_INPUTS, FUNDING_INTELLIGENCE_STORAGE_KEY, type FundingInputs } from "./analysis";\n\nfunction loadFundingInputs(): FundingInputs {\n  try {\n    const raw = localStorage.getItem(FUNDING_INTELLIGENCE_STORAGE_KEY);\n    return raw ? normalizeFundingInputs(JSON.parse(raw)) : DEFAULT_FUNDING_INPUTS;\n  } catch { return DEFAULT_FUNDING_INPUTS; }\n}
+import { calculateFundingSnapshot, reviewNarrative, normalizeFundingInputs, DEFAULT_FUNDING_INPUTS, FUNDING_INTELLIGENCE_STORAGE_KEY, type FundingInputs } from "./analysis";
+
+function loadFundingInputs(): FundingInputs {
+  try {
+    const raw = localStorage.getItem(FUNDING_INTELLIGENCE_STORAGE_KEY);
+    return raw ? normalizeFundingInputs(JSON.parse(raw)) : DEFAULT_FUNDING_INPUTS;
+  } catch { return DEFAULT_FUNDING_INPUTS; }
+}
 
 type Props = {
   profile: Profile;
