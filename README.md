@@ -56,11 +56,11 @@ The following are **engineering targets**, not claimed evaluator results. The Fr
 
 | FQE module | Target | Evidence required before claiming achievement |
 |---|---:|---|
+| Architecture Engine | **6/6** | Explicit module boundaries, validated local-storage/import boundaries, documented data flow, security and deployment constraints |
+| Code Quality Engine | **7/7** | Lint, strict TypeScript, focused modules, deterministic domain logic, regression tests and clean production build |
+| Responsive Design Engine | **7/7** | Verified layouts at narrow phones, common phone widths, tablets and desktop; no horizontal overflow or clipped controls |
 | Performance Engine | **7/7** | Production build and chunk-size review, route-level code splitting, no avoidable eager feature downloads, measured Core Web Vitals on representative devices |
 | Accessibility Engine | **7/7** | WCAG 2.2 AA-oriented semantic and keyboard checks, focus management, contrast verification, automated axe regression tests and manual assistive-technology review |
-| Responsive Design Engine | **7/7** | Verified layouts at narrow phones, common phone widths, tablets and desktop; no horizontal overflow or clipped controls |
-| Code Quality Engine | **7/7** | Lint, strict TypeScript, focused modules, deterministic domain logic, regression tests and clean production build |
-| Architecture Engine | **6/6** | Explicit module boundaries, validated local-storage/import boundaries, documented data flow, security and deployment constraints |
 | Documentation Engine | **6/6** | Accurate setup, product boundaries, architecture, data sources, security, contribution and release documentation |
 | **Total target** | **40/40** | All six modules independently verified; final score remains controlled by Frontend Arena |
 
