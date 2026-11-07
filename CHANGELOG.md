@@ -10,16 +10,23 @@
 - Aligned PWA manifest and icons with the navy / ivory / terracotta palette.
 - Updated PM CARES education assistance amount/source from the MWCD FAQ.
 
-## Unreleased — India-wide student product expansion\n- Added 15 additional UGC, Karnataka welfare, PM CARES and private-foundation records (77 total curated entries).\n- Added separate catalog composition module to isolate supplemental scholarship data from the original data file.\n- Added filter categories for state schemes, private foundations and fellowships.\n- Replaced the navy/blue UI with forest green, parchment and academic gold across CSS, browser theme metadata, PWA manifest and icons.\n- Documented a conflicting NSP CSSS renewal deadline snapshot instead of silently choosing one date.\n\n## Previous India-wide student product expansion
+## Unreleased — national catalogue expansion
+- Added 13 state programme records from Haryana, Tamil Nadu, West Bengal, Jharkhand and Chhattisgarh (90 total curated entries).
+- Added separate catalog composition module to isolate supplemental scholarship data from the original data file.
+- Added filter categories for state schemes, private foundations and fellowships.
+- Updated the palette to ink navy, warm ivory and terracotta; PWA icons and metadata aligned in the engineering hardening update.
+- Documented a conflicting NSP CSSS renewal deadline snapshot instead of silently choosing one date.
+
+## Previous India-wide student product expansion
 - Added 9 central / UGC scholarship and fellowship records in the previous update (62 records at that point).
 - Added searchable portal starting points for all 28 states and 8 union territories.
 - Added 12 state-specific scholarship / education-aid records from official state portals (Karnataka, Maharashtra, West Bengal, Odisha, Telangana, Uttar Pradesh, Bihar, Gujarat and Kerala).
-- Previous update used navy, ivory and gold; current branch replaces it with forest green, parchment and academic gold.
+- Earlier iterations explored navy/ivory/gold and forest/parchment/gold; the current palette is navy/ivory/terracotta.
 - Added PWA manifest and same-origin service-worker shell caching with offline navigation fallback.
 - Added online/offline connectivity notices.
 - Extracted workspace persistence and tracker actions into a custom hook.
 - Added portal directory and workspace hook regression tests.
-- Enabled axe color-contrast checking in the app accessibility test.
+- Axe semantic checks are run with the color-contrast rule excluded in jsdom; palette token contrast is separately tested.
 
 ## Unreleased — Deadline integrity improvements
 - Updated selected AY 2026–27 NSP deadline records from the official NSP listing.
