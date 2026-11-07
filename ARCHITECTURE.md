@@ -29,7 +29,8 @@ flowchart TD
 | `features/guide/StateScholarshipPortalDirectory.tsx` | Searchable state/UT portal directory UI | External official routes; current rules are provider-owned |
 | `data.ts` | Typed scholarship catalogue, official-source metadata and criteria | Curated static data; not live/authoritative |
 | `matching.ts` | Deterministic criteria evaluation | Only evaluates encoded rules; unknowns stay unknown |
-| `FundingPlanner.tsx` | Annual cost/support inputs, gap calculation, local persistence and JSON export | User-entered values only; no financial data API |\n| `EssayWorkspace.tsx` | Guided personal statement outline, word count, local draft persistence and text export | No essay generation, plagiarism scoring or remote writing service |
+| `FundingPlanner.tsx` | Annual cost/support inputs, gap calculation, local persistence and JSON export | User-entered values only; no financial data API |
+| `EssayWorkspace.tsx` | Guided personal statement outline, word count, local draft persistence and text export | No essay generation, plagiarism scoring or remote writing service |
 | `styles.css` | Layout, visual tokens, responsive behavior and reduced-motion handling | CSS-based design system |
 | `*.test.ts(x)` | Rule, component, workflow and accessibility regression tests | Tests do not replace browser/assistive-tech testing |
 
@@ -106,7 +107,16 @@ This is an appropriate boundary for a prototype, not for a multi-user production
 ## Architectural evolution
 
 The application shell coordinates the current page state. Workspace persistence and tracker mutations have been extracted into the useWorkspace hook; portal directory data and UI live under features/guide. Next refactor candidates include route-level views and a source/data validation service, based on measurable testability and bundle needs—not artificial architecture.
-\n## Feature boundaries\n\n- `features/workspace/store.ts`: validates and hydrates browser-local saved IDs, application stages, document checklist values and profile fields. The local store is treated as untrusted input.\n- `features/scholarships/search.ts`: pure filtering and ranking across name, provider, category, region, description, tags, source notes and eligibility text.\n- `matching.ts`: pure rule-based eligibility screening with explicit unknown states.\n- `data.ts`: scholarship catalogue records and source/review metadata.\n\nThe application shell still coordinates the current page state. Further extraction into feature-specific components should follow user-facing testing and avoid introducing a complex state-management framework without a need.\n
+
+## Feature boundaries
+
+- `features/workspace/store.ts`: validates and hydrates browser-local saved IDs, application stages, document checklist values and profile fields. The local store is treated as untrusted input.
+- `features/scholarships/search.ts`: pure filtering and ranking across name, provider, category, region, description, tags, source notes and eligibility text.
+- `matching.ts`: pure rule-based eligibility screening with explicit unknown states.
+- `data.ts`: scholarship catalogue records and source/review metadata.
+
+The application shell still coordinates the current page state. Further extraction into feature-specific components should follow user-facing testing and avoid introducing a complex state-management framework without a need.
+
 ## Workspace portability
 
 The JSON backup includes the workspace state plus the local funding planner and essay draft. The import path:
