@@ -5,6 +5,8 @@ All notable changes to Grantly are documented here.
 ## [Unreleased] — 2026-11-07
 
 ### Product
+- Added Funding Intelligence: INR annual cost and support scenarios, potential-overfunding coordination prompts, reducing-balance EMI estimates, local narrative diagnostics and provider inquiry preparation.
+- Persisted funding scenarios and included them in validated workspace backup/restore.
 - Added a five-stage scholarship application pipeline with drag-and-drop movement, keyboard-accessible stage selection, and per-opportunity document checklist progress.
 - Added a live four-step student journey panel that turns profile completion, saved opportunities, tracked applications and required-document checklist state into actionable next steps.
 - Added a pure progress derivation module and unit tests; progress is explicitly not presented as eligibility, award probability or provider readiness.
