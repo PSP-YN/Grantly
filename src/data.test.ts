@@ -43,7 +43,8 @@ describe("scholarship catalogue quality", () => {
     expect(pmcares?.source).toContain("spniwcd.wcd.gov.in");
     expect(pmcares?.eligibility.join(" ")).toMatch(/not a general scholarship/i);
   });
-\n  it("keeps key NSP AY 2026–27 deadline dates source-linked", () => {
+
+  it("keeps key NSP AY 2026–27 deadline dates source-linked", () => {
     const byId = new Map(scholarships.map(item => [item.id, item]));
     for (const id of ["aicte-swanath-degree", "aicte-swanath-diploma", "pmss-capf", "pmss-police-martyred", "postmatric-disability", "top-class-disability", "national-pg-scholarship"]) {
       expect(byId.get(id)?.deadline).toContain("30 Nov 2026");
