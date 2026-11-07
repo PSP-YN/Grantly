@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { calculateFundingGap } from "./features/funding-planner/calculations";
+import { calculateFundingGap, normalizeBudget } from "./features/funding-planner/calculations";
 
 const empty = { tuition: 0, housing: 0, food: 0, books: 0, transport: 0, other: 0, existingAid: 0, scholarship: 0 };
 
@@ -12,7 +12,7 @@ describe("funding gap calculator", () => {
     expect(calculateFundingGap({ ...empty, tuition: 10000, existingAid: 12000 }))
       .toEqual({ cost: 10000, support: 12000, gap: 0, surplus: 2000, coverage: 100 });
   });
-  it("avoids a divide-by-zero coverage result", () => {
+  it("normalizes imported budget values and clamps invalid amounts",()=>{\n    expect(normalizeBudget({tuition:1234,housing:-5,food:Infinity,books:"x"})).toEqual({...empty,tuition:1234});\n  });\n  it("avoids a divide-by-zero coverage result", () => {
     expect(calculateFundingGap(empty).coverage).toBe(0);
   });
 });
