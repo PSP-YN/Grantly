@@ -11,6 +11,7 @@ flowchart TD
   State --> Eligibility[Eligibility rule evaluator]
   State --> Tracker[Saved items and application tracker]
   State --> Planner[Annual funding planner]
+  State --> Portal[State and UT portal directory]
   State --> Storage[Browser localStorage]
   Catalogue[Source-linked scholarship catalogue] --> Discovery
   Catalogue --> Eligibility
@@ -23,6 +24,9 @@ flowchart TD
 | Module | Responsibility | Current boundary |
 |---|---|---|
 | `App.tsx` | Main shell, discover/saved/tracker/profile views, application state and dialogs | UI orchestration; no network persistence |
+| `features/workspace/useWorkspace.ts` | Workspace state, local persistence and common tracker mutations | Browser-only state; no backend sync |
+| `features/guide/portalDirectory.ts` | State / UT scholarship portal directory | Portal starting points, not an exhaustive scheme registry |
+| `features/guide/StateScholarshipPortalDirectory.tsx` | Searchable state/UT portal directory UI | External official routes; current rules are provider-owned |
 | `data.ts` | Typed scholarship catalogue, official-source metadata and criteria | Curated static data; not live/authoritative |
 | `matching.ts` | Deterministic criteria evaluation | Only evaluates encoded rules; unknowns stay unknown |
 | `FundingPlanner.tsx` | Annual cost/support inputs, gap calculation, local persistence and JSON export | User-entered values only; no financial data API |\n| `EssayWorkspace.tsx` | Guided personal statement outline, word count, local draft persistence and text export | No essay generation, plagiarism scoring or remote writing service |
@@ -62,6 +66,15 @@ For a single academic year:
 
 This is arithmetic based on user inputs. It does not verify whether grants can be stacked, whether aid displaces institutional funding, whether funds are taxable, or whether a college's cost estimate is complete.
 
+## Offline delivery
+
+- The production build registers a service worker.
+- The service worker caches the application shell and same-origin static assets after an online visit.
+- Navigation uses network-first with cached HTML fallback; same-origin static resources use cache-first.
+- External government portal pages are not cached or proxied.
+- Scholarship deadlines and provider information are not guaranteed to be current while offline.
+- PWA installation and offline behavior must be verified on real browsers and devices before being advertised as a supported service-level guarantee.
+
 ## Persistence and privacy
 
 - Workspace data is stored in localStorage in the current browser profile.
@@ -92,7 +105,7 @@ This is an appropriate boundary for a prototype, not for a multi-user production
 
 ## Architectural evolution
 
-The next modularization step is to extract scholarship discovery/filtering into a domain service, workspace persistence into a storage adapter, eligibility logic into a versioned rules module, exports into a dedicated service, and views into route-level components. Refactor when driven by testability and product needs, not to create an artificial enterprise architecture.
+The application shell coordinates the current page state. Workspace persistence and tracker mutations have been extracted into the useWorkspace hook; portal directory data and UI live under features/guide. Next refactor candidates include route-level views and a source/data validation service, based on measurable testability and bundle needs—not artificial architecture.
 \n## Feature boundaries\n\n- `features/workspace/store.ts`: validates and hydrates browser-local saved IDs, application stages, document checklist values and profile fields. The local store is treated as untrusted input.\n- `features/scholarships/search.ts`: pure filtering and ranking across name, provider, category, region, description, tags, source notes and eligibility text.\n- `matching.ts`: pure rule-based eligibility screening with explicit unknown states.\n- `data.ts`: scholarship catalogue records and source/review metadata.\n\nThe application shell still coordinates the current page state. Further extraction into feature-specific components should follow user-facing testing and avoid introducing a complex state-management framework without a need.\n
 ## Workspace portability
 
