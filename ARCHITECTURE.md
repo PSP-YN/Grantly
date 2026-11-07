@@ -132,3 +132,14 @@ The JSON backup includes the workspace state plus the local funding planner and 
 5. Writes validated values to browser storage only.
 
 No imported profile, financial planner value or statement draft is sent to a server. Export files may contain personal information and should be handled as sensitive user-owned data.
+
+
+## Catalogue composition and search optimization
+
+- `data.ts` contains the core scholarship records.
+- `dataSupplement.ts` contains separately reviewed Central, UGC, state and private programmes.
+- `dataRegional.ts` contains additional state-specific records.
+- `catalog.ts` merges the collections and de-duplicates stable IDs.
+- `features/scholarships/search.ts` provides pure filter/ranking behavior. The React shell memoizes scholarship results and eligibility summary against their profile/search dependencies.
+
+Deadline sorting and all-day calendar filtering use the browser's local calendar date rather than UTC day boundaries. No date is inferred for records without an explicit date.
