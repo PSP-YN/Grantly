@@ -35,6 +35,7 @@ Grantly is designed to reduce friction and improve decision clarity. It does not
 | Source transparency | Show provider/source links, review dates and notes about the limits of verification. |
 | Application workspace | Save opportunities, track application stages and maintain per-opportunity document checklists. |
 | Funding planner | Estimate annual costs, entered support, coverage, surplus and remaining gap using INR and user-provided values. |
+| Funding intelligence | Model confirmed and proposed support, estimate an education-loan EMI, flag potential overfunding for provider review, manage the application pipeline and run local statement-clarity diagnostics. |
 | Statement workspace | Structure a personal statement around motivation, experience, impact and goals; count words and export the student's own draft. |
 | Workspace portability | Export and restore a validated local workspace backup, including supported planner and statement data. |
 | Deadline calendar | Export calendar events for opportunities with explicit, dated deadlines. |
@@ -148,6 +149,20 @@ Grantly's value is in connecting previously separate preparation steps into a co
 5. **Portable preparation data:** validated export/import reduces dependence on one browser profile and gives students control over their local workspace data.
 
 These are implemented capabilities, not claims of AI decision-making or integration with scholarship providers.
+
+## Funding intelligence
+
+The Funding Intelligence workspace extends the basic funding-gap planner into a transparent scenario model:
+
+- **Annual cost model:** tuition, housing, food, books, transport and other eligible costs are entered separately in INR.
+- **Aid stacking scenarios:** confirmed institutional support, government grants, work income, savings and awarded scholarships are separated from a proposed new scholarship.
+- **Potential overfunding flag:** when entered support exceeds entered costs, the interface prompts the student to verify stacking, disclosure and eligible-cost rules with the provider. It does not assert a legal displacement decision.
+- **Education-loan estimate:** calculates an illustrative reducing-balance EMI, total repayment and interest for the projected gap using a user-entered rate and term.
+- **Application pipeline:** stage-based board lets students move tracked scholarships through Interested, Preparing, Submitted, Under review and Awarded.
+- **Statement diagnostics:** local word, sentence, first-person and generic-phrase checks provide writing feedback. This is not AI-authorship detection, plagiarism detection or an authenticity score.
+- **Provider inquiry draft:** prepares a neutral request for written clarification about overlapping aid; it is not a statutory appeal or legal advice.
+
+Funding scenario inputs are persisted in browser localStorage and included in validated workspace export/import. Awarded scholarship values are derived from the catalogue's stated amount value; confirm whether each amount is annual, renewable, stackable or restricted before relying on a scenario. No data is sent to a Grantly backend.
 
 ## Quality engineering and verification
 
