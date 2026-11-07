@@ -267,3 +267,29 @@ a:hover{color:#9D4B2E}
 
 /* Async feature chunks retain a stable layout while loading. */
 .feature-loading{min-height:180px;display:grid;place-items:center;padding:32px;color:var(--muted);font-size:14px;font-weight:600;border:1px solid var(--line);border-radius:16px;background:var(--paper)}
+
+
+/* Actionable student journey progress */
+.journey-progress{margin:0 0 28px;padding:22px 24px;background:var(--paper);border:1px solid var(--line);border-radius:14px}
+.journey-progress-head{display:flex;align-items:flex-start;justify-content:space-between;gap:20px}
+.journey-progress-head h2{margin:7px 0 5px;color:var(--ink);font-size:20px;letter-spacing:-.45px}
+.journey-progress-head p{max-width:680px;margin:0;color:var(--muted);font-size:11px;line-height:1.6}
+.journey-progress-count{display:grid;gap:3px;flex:none;text-align:right}
+.journey-progress-count strong{color:var(--navy);font-size:27px;line-height:1}
+.journey-progress-count span{color:var(--muted);font-size:10px}
+.journey-progress-track{height:7px;margin:17px 0;background:var(--ivory);border-radius:99px;overflow:hidden}
+.journey-progress-track span{display:block;height:100%;background:var(--terracotta);border-radius:inherit;transition:width .2s ease}
+.journey-progress-steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px 16px;margin:0;padding:0;list-style:none}
+.journey-step{display:grid;grid-template-columns:28px minmax(0,1fr) auto;align-items:center;gap:10px;min-width:0;padding:12px 0;border-top:1px solid var(--line)}
+.journey-step-index{display:grid;place-items:center;width:26px;height:26px;border:1px solid var(--line);border-radius:50%;color:var(--muted);font-size:11px;font-weight:700}
+.journey-step.complete .journey-step-index{border-color:var(--terracotta);background:var(--ivory);color:var(--navy)}
+.journey-step-copy{display:grid;gap:4px;min-width:0}
+.journey-step-copy strong{color:var(--ink);font-size:11px}
+.journey-step-copy span{color:var(--muted);font-size:10px;line-height:1.45}
+.journey-step button{border:1px solid var(--line);border-radius:6px;padding:7px 9px;background:var(--paper);color:var(--navy);font-size:10px;font-weight:700;white-space:nowrap}
+.journey-step button:hover{border-color:var(--terracotta);background:var(--ivory)}
+.journey-step button:focus-visible{outline:3px solid #2E5874;outline-offset:2px}
+.journey-next-action{margin:12px 0 0;padding-top:11px;border-top:1px solid var(--line);color:var(--muted);font-size:10px;line-height:1.5}
+.journey-next-action strong{color:var(--ink)}
+@media(max-width:700px){.journey-progress{padding:17px}.journey-progress-head h2{font-size:17px}.journey-progress-steps{grid-template-columns:1fr}.journey-step{grid-template-columns:28px minmax(0,1fr) auto}.journey-step button{padding:7px 8px}}
+@media(prefers-reduced-motion:reduce){.journey-progress-track span{transition:none}}
