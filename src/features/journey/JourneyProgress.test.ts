@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { buildJourneySteps } from "./JourneyProgress";
+import { buildJourneySteps } from "./journeyProgress";
 import type { Scholarship } from "../../data";
 import type { AppRecord } from "../workspace/store";
 
