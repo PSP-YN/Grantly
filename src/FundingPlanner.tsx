@@ -1,16 +1,6 @@
 import { useMemo, useState } from "react";
 import { Calculator, Download, ShieldCheck } from "lucide-react";
-
-type Budget = {
-  tuition: number;
-  housing: number;
-  food: number;
-  books: number;
-  transport: number;
-  other: number;
-  existingAid: number;
-  scholarship: number;
-};
+import { calculateFundingGap, type Budget } from "./features/funding-planner/calculations";
 
 const initialBudget: Budget = {
   tuition: 0, housing: 0, food: 0, books: 0, transport: 0, other: 0,
@@ -32,12 +22,6 @@ function loadBudget(): Budget {
   } catch {
     return initialBudget;
   }
-}
-
-export function calculateFundingGap(budget: Budget) {
-  const cost = budget.tuition + budget.housing + budget.food + budget.books + budget.transport + budget.other;
-  const support = budget.existingAid + budget.scholarship;
-  return { cost, support, gap: Math.max(0, cost - support), surplus: Math.max(0, support - cost), coverage: cost === 0 ? 0 : Math.min(100, Math.round((support / cost) * 100)) };
 }
 
 export default function FundingPlanner() {
