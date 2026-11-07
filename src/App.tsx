@@ -37,9 +37,17 @@ function App(){
  const exportDeadlineCalendar=()=>{const tracked=scholarships.filter(item=>store.applications.some(a=>a.id===item.id));const today=localDateISO(new Date());const dated=tracked.filter(item=>{const date=parseExplicitDeadline(item.deadline);return date&&date>=today;});if(!dated.length){setToast("No tracked scholarships have an upcoming explicitly stated deadline date.");return;}const content=buildDeadlineCalendar(dated);const url=URL.createObjectURL(new Blob([content],{type:"text/calendar;charset=utf-8"}));const link=document.createElement("a");link.href=url;link.download="grantly-scholarship-deadlines.ics";document.body.appendChild(link);link.click();link.remove();window.setTimeout(()=>URL.revokeObjectURL(url),1000);setToast("Calendar exported with "+dated.length+" explicit deadline(s). Verify each date with the official provider.");};
 
  const discover=active==="Discover";
- const profileCompletion=Math.round(([store.profile.course,store.profile.year!=="Not specified",store.profile.state,store.profile.income!=="Not specified",store.profile.category!=="Not specified",store.profile.academicBand!=="Not sure",store.profile.studyMode!=="Not specified",store.profile.otherScholarship!=="Not specified",store.profile.classXiiRegion!=="Not specified",store.profile.applicationRoute!=="Not specified"].filter(Boolean).length/10)*100);
- const alignedCount=scholarships.filter(s=>assessEligibility(s,store.profile).status==="Profile checks align").length;
- const reviewCount=scholarships.filter(s=>["More details needed","Official review required"].includes(assessEligibility(s,store.profile).status)).length;
+ const profileCompletion=useMemo(()=>Math.round(([store.profile.course,store.profile.year!=="Not specified",store.profile.state,store.profile.income!=="Not specified",store.profile.category!=="Not specified",store.profile.academicBand!=="Not sure",store.profile.studyMode!=="Not specified",store.profile.otherScholarship!=="Not specified",store.profile.classXiiRegion!=="Not specified",store.profile.applicationRoute!=="Not specified"].filter(Boolean).length/10)*100),[store.profile]);
+ const eligibilitySummary=useMemo(()=>{
+  let alignedCount=0,reviewCount=0;
+  for(const scholarship of scholarships){
+   const status=assessEligibility(scholarship,store.profile).status;
+   if(status==="Profile checks align")alignedCount++;
+   if(status==="More details needed"||status==="Official review required")reviewCount++;
+  }
+  return {alignedCount,reviewCount};
+ },[store.profile]);
+ const {alignedCount,reviewCount}=eligibilitySummary;
  const title=active==="Applications"?"Application tracker":active==="Saved"?"Saved scholarships":active==="Profile"?"Your student profile":active==="Planner"?"Plan your education funding":active==="Essay"?"Scholarship statement workspace":active==="Guide"?"Student application guide":"Find your next opportunity";
  const subtitle=active==="Applications"?"Keep every deadline, document and next step in one place.":active==="Saved"?"Your shortlist, ready when you are.":active==="Planner"?"Estimate costs and support to understand your annual funding gap.":active==="Essay"?"Structure a personal statement with guided prompts, then export your own draft.":active==="Guide"?"A practical checklist for finding, verifying and applying to scholarships.":"A clearer path to education funding starts here.";
  return <div className="app-shell">
