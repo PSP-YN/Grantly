@@ -9,7 +9,7 @@ beforeEach(() => { cleanup(); localStorage.clear(); });
 describe("Grantly workspace", () => {
   it("renders the discovery workspace and source transparency notice", () => {
     render(<App />);
-    expect(screen.getByText("fund", { exact: true })).toBeInTheDocument();
+    expect(screen.getByText("Grantly", { exact: true })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: "Find your next opportunity" })).toBeInTheDocument();
     expect(screen.getByText(/A profile match is not an eligibility decision/)).toBeInTheDocument();
     expect(screen.getByText("PM-USP Central Sector Scholarship (CSSS)")).toBeInTheDocument();
