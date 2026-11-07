@@ -4,11 +4,14 @@ import { categories, scholarships, type Scholarship } from "./data";
 import FundingPlanner from "./FundingPlanner";
 import EssayWorkspace from "./EssayWorkspace";
 import { assessEligibility, type EligibilityAssessment } from "./matching";
-import { loadStore, STORE_KEY, type Stage, type Profile, type AppRecord, type Store } from "./features/workspace/store";
+import { loadStore, parseWorkspaceExport, STORE_KEY, type Stage, type Profile, type AppRecord, type Store } from "./features/workspace/store";
 import { filterScholarships } from "./features/scholarships/search";
 import { buildDeadlineCalendar, parseExplicitDeadline } from "./features/scholarships/calendar";
+import { normalizeBudget, FUNDING_PLANNER_STORAGE_KEY } from "./features/funding-planner/calculations";
+import { normalizeEssayDraft, ESSAY_STORAGE_KEY } from "./features/essay/draft";
 function clean(v:string){return v.replace(/[<>]/g,"").trim().slice(0,120);}
 function App(){
+ const importInputRef=useRef<HTMLInputElement>(null);
  const [store,setStore]=useState<Store>(loadStore),[active,setActive]=useState("Discover"),[query,setQuery]=useState(""),[category,setCategory]=useState("All"),[sort,setSort]=useState("match"),[selected,setSelected]=useState<Scholarship|null>(null),[toast,setToast]=useState(""),[profileOpen,setProfileOpen]=useState(false),[mobileNav,setMobileNav]=useState(false);
  useEffect(()=>{try{localStorage.setItem(STORE_KEY,JSON.stringify(store));}catch{/* Browser storage may be disabled; the current session remains usable. */}},[store]);
  useEffect(()=>{if(!toast)return;const t=window.setTimeout(()=>setToast(""),2600);return()=>window.clearTimeout(t);},[toast]);
@@ -18,7 +21,9 @@ function App(){
  const toggleSaved=(id:string)=>setStore(p=>({...p,saved:p.saved.includes(id)?p.saved.filter(x=>x!==id):[...p.saved,id]}));
  const addApplication=(id:string)=>{setStore(p=>({...p,applications:p.applications.some(a=>a.id===id)?p.applications:[...p.applications,{id,stage:"Interested",updated:"Today",completedDocuments:[]}]}));setToast("Added to your application tracker.");};
  const toggleDocument=(id:string,doc:string)=>setStore(p=>({...p,applications:p.applications.map(a=>a.id===id?{...a,completedDocuments:a.completedDocuments.includes(doc)?a.completedDocuments.filter(x=>x!==doc):[...a.completedDocuments,doc]}:a)}));
- const exportWorkspace=()=>{const payload=JSON.stringify({product:"Grantly",exportedAt:new Date().toISOString(),workspace:store},null,2);const url=URL.createObjectURL(new Blob([payload],{type:"application/json"}));const link=document.createElement("a");link.href=url;link.download="grantly-workspace.json";document.body.appendChild(link);link.click();link.remove();window.setTimeout(()=>URL.revokeObjectURL(url),1000);setToast("Workspace export downloaded.");};
+ const readStoredJson=(key:string)=>{try{const raw=localStorage.getItem(key);return raw?JSON.parse(raw):null;}catch{return null;}};
+ const exportWorkspace=()=>{const payload=JSON.stringify({product:"Grantly",exportedAt:new Date().toISOString(),workspace:store,fundingPlanner:normalizeBudget(readStoredJson(FUNDING_PLANNER_STORAGE_KEY)),essayWorkspace:normalizeEssayDraft(readStoredJson(ESSAY_STORAGE_KEY))},null,2);const url=URL.createObjectURL(new Blob([payload],{type:"application/json"}));const link=document.createElement("a");link.href=url;link.download="grantly-workspace.json";document.body.appendChild(link);link.click();link.remove();window.setTimeout(()=>URL.revokeObjectURL(url),1000);setToast("Complete workspace backup downloaded.");};
+ const importWorkspaceFile=async(file:File)=>{if(file.size>2*1024*1024){setToast("Import file is too large (maximum 2 MB).");return;}try{const imported=parseWorkspaceExport(await file.text());setStore(imported.store);if(imported.fundingPlanner)localStorage.setItem(FUNDING_PLANNER_STORAGE_KEY,JSON.stringify(imported.fundingPlanner));if(imported.essayWorkspace)localStorage.setItem(ESSAY_STORAGE_KEY,JSON.stringify(imported.essayWorkspace));setActive("Discover");setToast("Workspace, funding plan and statement draft restored.");}catch(error){setToast(error instanceof Error?error.message:"Could not import this workspace file.");}};
  const exportDeadlineCalendar=()=>{const tracked=scholarships.filter(item=>store.applications.some(a=>a.id===item.id));const dated=tracked.filter(item=>parseExplicitDeadline(item.deadline));if(!dated.length){setToast("No tracked scholarships have a clearly stated deadline date yet.");return;}const content=buildDeadlineCalendar(dated);const url=URL.createObjectURL(new Blob([content],{type:"text/calendar;charset=utf-8"}));const link=document.createElement("a");link.href=url;link.download="grantly-scholarship-deadlines.ics";document.body.appendChild(link);link.click();link.remove();window.setTimeout(()=>URL.revokeObjectURL(url),1000);setToast("Calendar exported with "+dated.length+" explicit deadline(s). Verify each date with the official provider.");};
  const updateStage=(id:string,stage:Stage)=>setStore(p=>({...p,applications:p.applications.map(a=>a.id===id?{...a,stage,updated:"Today"}:a)}));
  const discover=active==="Discover";
@@ -28,6 +33,7 @@ function App(){
  const title=active==="Applications"?"Application tracker":active==="Saved"?"Saved scholarships":active==="Profile"?"Your student profile":active==="Planner"?"Plan your education funding":active==="Essay"?"Scholarship statement workspace":"Find your next opportunity";
  const subtitle=active==="Applications"?"Keep every deadline, document and next step in one place.":active==="Saved"?"Your shortlist, ready when you are.":active==="Planner"?"Estimate costs and support to understand your annual funding gap.":active==="Essay"?"Structure a personal statement with guided prompts, then export your own draft.":"A clearer path to education funding starts here.";
  return <div className="app-shell">
+  <input ref={importInputRef} className="sr-only" type="file" accept=".json,application/json" aria-label="Import Grantly workspace JSON" onChange={e=>{const file=e.target.files?.[0];if(file)void importWorkspaceFile(file);e.currentTarget.value="";}}/>
   <aside className={"sidebar "+(mobileNav?"sidebar-open":"")}>
    <div className="brand"><div className="brand-mark"><GraduationCap size={21}/></div><span>Grantly</span><span className="brand-beta">BETA</span></div>
    <div className="workspace-label">STUDENT WORKSPACE</div>
@@ -42,6 +48,7 @@ function App(){
    <nav className="side-nav" aria-label="Account navigation">
     <button aria-current={active==="Profile"?"page":undefined} className={active==="Profile"?"nav-item active":"nav-item"} onClick={()=>nav("Profile")}><UserRound size={18}/> Student profile</button>
     <button className="nav-item" onClick={exportWorkspace}><Download size={18}/> Export my data</button>
+    <button className="nav-item" onClick={()=>importInputRef.current?.click()}><FileCheck2 size={18}/> Import my data</button>
    </nav>
    <div className="sidebar-spacer"/>
    <div className="sidebar-tip"><div className="tip-icon"><Sparkles size={16}/></div><strong>Small steps. Big futures.</strong><p>Complete your profile to get more relevant scholarship matches.</p><button onClick={()=>setProfileOpen(true)}>Complete profile <ArrowRight size={14}/></button></div>
