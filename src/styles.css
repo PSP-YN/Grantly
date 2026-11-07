@@ -317,3 +317,57 @@ a:hover{color:#9D4B2E}
 .pipeline-empty,.pipeline-empty-state{margin:0;padding:13px 8px;color:var(--muted);font-size:10px;line-height:1.5}
 .pipeline-empty-state{padding:14px;border:1px dashed var(--line);border-radius:8px}
 @media(max-width:700px){.application-pipeline{padding:17px}.pipeline-heading h2{font-size:17px}.pipeline-columns{grid-template-columns:repeat(5,minmax(210px,1fr))}}
+
+/* Funding intelligence: scenario modelling and student decision support */
+.intelligence-workspace{display:grid;gap:18px}
+.intelligence-intro,.intelligence-section{background:var(--surface,#fffefa);border:1px solid var(--line,#e9e3d8);border-radius:12px;padding:20px}
+.intelligence-intro{display:flex;align-items:center;justify-content:space-between;gap:24px;background:linear-gradient(120deg,#f5eadc,#fffefa 65%);border-color:#ead7c4}
+.intelligence-intro h2{font-family:var(--serif);font-size:clamp(22px,3vw,32px);line-height:1.2;color:#17324d;margin:8px 0}
+.intelligence-intro p,.intelligence-section-heading p{font-size:12px;line-height:1.6;color:#526171;max-width:720px;margin:0}
+.intelligence-intro-mark{display:grid;justify-items:center;gap:8px;color:#9d4b2e;min-width:130px}
+.intelligence-intro-mark span{font-size:9px;font-weight:800;letter-spacing:1px;text-transform:uppercase}
+.intelligence-section{display:grid;gap:16px}
+.intelligence-section-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;color:#9d4b2e}
+.intelligence-section-heading h3{font-family:var(--serif);font-size:20px;color:#17324d;margin:5px 0}
+.intelligence-section-heading>svg{flex-shrink:0;margin-top:5px}
+.intelligence-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.intelligence-panel{border:1px solid #e9e3d8;border-radius:9px;padding:15px;min-width:0}
+.intelligence-panel h4{font-size:13px;color:#17324d;margin:0 0 13px}
+.intelligence-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.intelligence-field{display:grid;gap:5px;min-width:0}
+.intelligence-field>span,.intelligence-draft-label{font-size:10px;font-weight:700;color:#526171}
+.intelligence-field>div{display:flex;align-items:center;border:1px solid #e9e3d8;border-radius:7px;background:#fff;padding:0 9px;min-width:0}
+.intelligence-field input{width:100%;min-width:0;border:0;outline:0;background:transparent;padding:9px 0;font:inherit;font-size:12px;color:#17324d}
+.intelligence-field small{font-size:9px;color:#7b8793;white-space:nowrap}
+.intelligence-total{display:flex;justify-content:space-between;gap:10px;border-top:1px solid #e9e3d8;margin-top:14px;padding-top:12px;font-size:10px;color:#526171}
+.intelligence-total strong{font-size:14px;color:#17324d}
+.intelligence-results{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.intelligence-results article{display:grid;gap:5px;border:1px solid #e9e3d8;border-radius:8px;padding:12px;min-width:0}
+.intelligence-results article span{font-size:9px;color:#526171}
+.intelligence-results article strong{font-family:var(--serif);font-size:clamp(16px,2vw,22px);color:#17324d;overflow-wrap:anywhere}
+.intelligence-results article small{font-size:9px;line-height:1.4;color:#7b8793}
+.intelligence-progress{height:9px;background:#eee9e1;border-radius:10px;overflow:hidden}
+.intelligence-progress span{display:block;height:100%;background:#397b68;border-radius:10px;transition:width .2s}
+.intelligence-alert,.intelligence-note{display:flex;align-items:flex-start;gap:10px;padding:12px;border-radius:8px;font-size:11px;line-height:1.55;margin:0}
+.intelligence-alert{background:#fff4e9;color:#82451f;border:1px solid #efd4ba}
+.intelligence-note{background:#edf5f0;color:#315d4e;border:1px solid #d5e7db}
+.intelligence-alert svg,.intelligence-note svg{flex-shrink:0;margin-top:1px}
+.intelligence-alert p,.intelligence-note p{margin:0}
+.intelligence-loan-fields{max-width:520px}
+.intelligence-stage-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px}
+.intelligence-stage{background:#faf8f3;border:1px solid #e9e3d8;border-radius:8px;padding:10px;min-width:0;display:grid;align-content:start;gap:9px}
+.intelligence-stage>div{display:flex;justify-content:space-between;gap:8px;align-items:center}
+.intelligence-stage>div strong{font-size:10px;color:#17324d}
+.intelligence-stage>div span{font-size:10px;font-weight:800;color:#9d4b2e}
+.intelligence-stage>p{font-size:9px;color:#7b8793;margin:0}
+.intelligence-stage label{display:grid;gap:6px;padding-top:8px;border-top:1px solid #e9e3d8;font-size:9px;line-height:1.4;color:#35485a;overflow-wrap:anywhere}
+.intelligence-stage select{width:100%;min-width:0;border:1px solid #e1d9ce;border-radius:5px;background:#fff;padding:6px;font-size:9px;color:#17324d}
+.intelligence-draft{width:100%;min-height:160px;resize:vertical;border:1px solid #e1d9ce;border-radius:8px;background:#fff;padding:12px;font:inherit;font-size:12px;line-height:1.6;color:#17324d}
+.intelligence-writing-results{grid-template-columns:repeat(4,minmax(0,1fr))}
+.intelligence-suggestions{margin:0;padding-left:18px;display:grid;gap:7px;color:#526171;font-size:11px;line-height:1.5}
+.intelligence-inquiry{display:grid;gap:10px}
+.intelligence-inquiry textarea{width:100%;min-height:220px;border:1px solid #e1d9ce;border-radius:8px;padding:12px;background:#fff;font:inherit;font-size:11px;line-height:1.6;color:#35485a;white-space:pre-wrap}
+.intelligence-inquiry .outline-button{justify-self:start}
+.intelligence-disclaimer{font-size:10px;line-height:1.55;color:#7b8793;margin:0;padding:0 3px}
+@media(max-width:900px){.intelligence-stage-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.intelligence-results{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.intelligence-intro{align-items:flex-start}.intelligence-intro-mark{min-width:78px}.intelligence-intro-mark svg{width:24px}.intelligence-intro-mark span{font-size:7px;text-align:center}.intelligence-grid{grid-template-columns:1fr}.intelligence-fields{grid-template-columns:1fr}.intelligence-stage-grid{grid-template-columns:1fr}.intelligence-section,.intelligence-intro{padding:14px}.intelligence-results{grid-template-columns:repeat(2,minmax(0,1fr))}}
