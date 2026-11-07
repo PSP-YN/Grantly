@@ -94,7 +94,7 @@ This is an appropriate boundary for a prototype, not for a multi-user production
 - Do not store secrets, credentials, bank details, government identity numbers or uploaded document contents.
 - A production architecture would need a threat model, authenticated sessions, server-side authorization, input validation, secure document storage, encryption, audit trails, retention/deletion policies, monitoring, backups and incident response.
 
-## Performance and accessibility
+## Hosting, security headers and cache\n\nVercel serves the static frontend and applies the configured security response headers (CSP, nosniff, frame protection, referrer policy, permissions policy, HSTS and COOP). Static hashed assets are immutable-cached; the service worker cache version must be bumped whenever the app shell changes. These settings reduce browser attack surface but do not substitute for a backend threat model.\n\n## Performance and accessibility
 
 - Keep domain logic pure and independently testable where possible.
 - Avoid making a performance claim without measurements from a production build and target browser.
