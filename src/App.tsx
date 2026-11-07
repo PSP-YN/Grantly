@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowDownUp, ArrowRight, Bookmark, BookOpen, BookOpenText, CalendarDays, Check, CheckCircle2, ExternalLink, ChevronDown, Clock3, Compass, Download, FileCheck2, GraduationCap, MapPin, Menu, Search, ShieldCheck, SlidersHorizontal, Sparkles, Trash2, Target, UserRound, Wallet } from "lucide-react";
-import { categories, scholarships, type Scholarship } from "./data";
+import { categories, scholarships, type Scholarship } from "./catalog";
 import FundingPlanner from "./FundingPlanner";
 import EssayWorkspace from "./EssayWorkspace";
 import { assessEligibility } from "./matching";
