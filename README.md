@@ -38,6 +38,16 @@ Grantly brings the preparation process into a single workspace while keeping off
 - Export a funding-plan JSON snapshot.
 - Keep the model transparent: this is a planning estimate, not an award prediction, institutional COA determination or financial advice.
 
+### India-wide scholarship access
+- A source-aware catalogue of 50 scholarship / fellowship records, including central government, UGC, AICTE, research, school, disability, private foundation and welfare programmes.
+- Searchable official scholarship portal routes for all 28 states and 8 union territories. Some state portals host multiple schemes and departments; Grantly explicitly avoids claiming this directory is exhaustive.
+- Source and review notes, and official/manual-review status where eligibility rules are incomplete.
+
+### Offline-first support
+- Installable Progressive Web App (PWA) shell.
+- Service worker caches same-origin app assets after the first online visit.
+- Student profile, shortlist, application tracker, planner and essay drafts remain in browser storage. Official portals and deadline verification still require internet.
+
 ## Product principles
 
 1. **Evidence over false certainty.** Every automated screening result is limited to rules that are explicitly represented.
@@ -87,8 +97,11 @@ npm run check
 
 ```
 src/
-  App.tsx                 Workspace shell, discovery and application tracker
+  App.tsx                 Workspace shell and route coordination
   FundingPlanner.tsx      Annual education-cost planning UI and calculations
+  features/workspace/useWorkspace.ts  Local persistence and tracker mutations
+  features/guide/portalDirectory.ts   State/UT portal directory data
+  features/guide/StateScholarshipPortalDirectory.tsx  Searchable state/UT portal UI
   data.ts                 Source-linked scholarship catalogue and encoded rules
   matching.ts             Explainable eligibility rule evaluation
   styles.css              Responsive visual system and interaction styles
@@ -118,7 +131,7 @@ Read [SECURITY.md](SECURITY.md) before using the prototype with personal informa
 
 ## Product status
 
-**Current:** local browser workspace for scholarship discovery, transparent screening, application preparation and funding-gap estimates.
+**Current:** local browser workspace for scholarship discovery, transparent screening, application preparation, funding-gap estimates, statement drafting, and state/UT portal navigation. Installable PWA shell with cached same-origin assets after first visit.
 
 **Not currently implemented:** real-time scholarship ingestion, verified deadline alerts, official application submission, authenticated user accounts, cloud sync, secure file storage, financial institution integrations, AI-generated essays or live award predictions.
 
@@ -127,7 +140,7 @@ See [ROADMAP.md](ROADMAP.md) for the proposed path from prototype to a dependabl
 ## License
 
 MIT. See [LICENSE](LICENSE).
-\n## Scholarship directory scope\n\nThe catalogue includes central government schemes, selected state-level entry points (including Karnataka SSP), technical education, disability support, research, overseas study and selected private-foundation awards. It is a **curated starting directory**, not a claim to list every scholarship available in India. The official [National Scholarship Portal](https://scholarships.gov.in/All-Scholarships) and [Karnataka SSP](https://ssp.postmatric.karnataka.gov.in/homepage.aspx) remain authoritative for active schemes, application windows and eligibility.\n\nEach record includes source attribution and a review note. Scheme rules and dates change. Records without fully reviewed criteria are labelled for official/manual review and do not generate a profile match.\n
+\n## Scholarship directory scope\n\nThe catalogue currently contains 50 scholarship / fellowship programme records and a searchable directory of official starting points for all 28 Indian states and 8 union territories. It includes central government, state entry points, UGC, AICTE, research, school, disability, overseas, private-foundation and welfare programmes. This is a **curated discovery index—not a claim that every scholarship in India is listed**. Some state schemes are department-specific and some portals are only a starting route. The official [National Scholarship Portal](https://scholarships.gov.in/All-Scholarships) and state portals remain authoritative for application status and eligibility.\n\nEach record includes source attribution and a review note. Scheme rules and dates change. Records without fully reviewed criteria are labelled for official/manual review and do not generate a profile match.\n
 ## Workspace backup and restore
 
 Students can export a Grantly JSON backup and restore it later in another browser profile. The backup includes the local student profile, saved scholarship IDs, application stages and checklist state, funding-planner inputs, and statement draft. Imported records are normalized against known scholarship IDs and valid checklist options before being accepted. Files remain under the student's control; Grantly does not upload the backup. Treat the export as personal data and store it securely.
