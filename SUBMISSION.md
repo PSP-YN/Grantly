@@ -17,11 +17,12 @@ Current production URL (verify deployment commit before each submission): https:
 4. Explain the distinction between a profile check that matches, one that does not match, and a missing or unencoded requirement that remains unknown / manual review.
 5. Edit the student profile and show how explicit rule outcomes change.
 6. On Discover, use the journey-progress panel to follow the next action from profile completion through shortlist, application tracking and document checklist progress.
-7. Save an opportunity, add it to the application tracker, update its stage and mark a document checklist item.
-8. Open the funding planner. Enter sample annual INR costs and support; explain the estimated gap, coverage and surplus.
-9. Open the statement workspace. Demonstrate the four-part outline, word counter and local draft export.
-10. Open the state / UT portal directory and show how the student reaches the official provider portal.
-11. Explain that final eligibility and applications remain with the scholarship provider.
+7. In My Applications, demonstrate the five-stage pipeline. Move a tracked opportunity by drag-and-drop or the keyboard-accessible stage selector, then inspect its document progress.
+8. Save an opportunity, add it to the application tracker, update its stage and mark a document checklist item.
+9. Open the funding planner. Enter sample annual INR costs and support; explain the estimated gap, coverage and surplus.
+10. Open the statement workspace. Demonstrate the four-part outline, word counter and local draft export.
+11. Open the state / UT portal directory and show how the student reaches the official provider portal.
+12. Explain that final eligibility and applications remain with the scholarship provider.
 
 ## What is implemented
 
@@ -30,6 +31,7 @@ Current production URL (verify deployment commit before each submission): https:
 - Deterministic eligibility checks for a subset of encoded programme criteria.
 - Saved opportunities, application stages and document checklist.
 - Actionable four-step student journey progress derived from live local workspace state.
+- Five-stage application pipeline with drag-and-drop and keyboard-accessible stage transitions.
 - Browser-local profile, planner and statement draft.
 - Funding-gap arithmetic using user-entered annual INR values.
 - Validated workspace export/import and dated calendar export.
