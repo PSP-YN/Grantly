@@ -66,9 +66,9 @@ describe("Grantly workspace", () => {
     fireEvent.click(screen.getByRole("button", { name: /Student guide/ }));
     expect(screen.getByRole("heading", { name: "Student application guide", level: 1 })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: "A clearer path from discovery to application." })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /National Scholarship Portal \(NSP\)/ })).toHaveAttribute("href", "https://scholarships.gov.in/");
+    expect(screen.getByRole("link", { name: /Read the official NSP student instructions/ })).toHaveAttribute("href", "https://scholarships.gov.in/Students");
     expect(screen.getByText(/Do not share OTPs, passwords, PINs/)).toBeInTheDocument();
-    const results = await axe.run(document.body, { runOnly: { type: "tag", values: ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"] }, rules: { "color-contrast": { enabled: false } } });
+    const results = await axe.run(document.body, { runOnly: { type: "tag", values: ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"] } });
     expect(results.violations.map(item => item.id)).toEqual([]);
   });
 
@@ -95,6 +95,19 @@ describe("Grantly workspace", () => {
     fireEvent.click(screen.getByRole("button", { name: /Clear local data/ }));
     expect(localStorage.getItem("grantly:funding-planner:v1")).not.toBeNull();
     confirmation.mockRestore();
+  });
+
+
+  it("filters scholarships by education level and domicile state", () => {
+    render(<App />);
+    const level = screen.getByLabelText("Filter by education level");
+    fireEvent.change(level, { target: { value: "Undergraduate" } });
+    expect(screen.getByText("PM-USP Central Sector Scholarship (CSSS)")).toBeInTheDocument();
+    expect(screen.queryByText("INSPIRE Scholarship for Higher Education (SHE)")).not.toBeInTheDocument();
+    fireEvent.change(level, { target: { value: "All levels" } });
+    fireEvent.change(screen.getByLabelText("Filter by state or union territory"), { target: { value: "Karnataka" } });
+    fireEvent.change(screen.getByLabelText("Search scholarships"), { target: { value: "Karnataka SSP" } });
+    expect(screen.getByText(/Karnataka State Scholarship Portal/)).toBeInTheDocument();
   });
 
   it("filters scholarship cards by category", () => {

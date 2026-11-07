@@ -1,5 +1,16 @@
 # Changelog
 
+## Unreleased — India-wide student product expansion
+- Added 9 additional central / UGC scholarship and fellowship records (catalogue now contains 62 programme records).
+- Added searchable portal starting points for all 28 states and 8 union territories.
+- Added 12 state-specific scholarship / education-aid records from official state portals (Karnataka, Maharashtra, West Bengal, Odisha, Telangana, Uttar Pradesh, Bihar, Gujarat and Kerala).
+- Reworked the visual palette to academic navy, warm ivory and restrained gold.
+- Added PWA manifest and same-origin service-worker shell caching with offline navigation fallback.
+- Added online/offline connectivity notices.
+- Extracted workspace persistence and tracker actions into a custom hook.
+- Added portal directory and workspace hook regression tests.
+- Enabled axe color-contrast checking in the app accessibility test.
+
 ## Unreleased — Product workspace improvements
 - Added an annual Funding Planner for education costs, existing aid and hypothetical scholarship scenarios.
 - Added uncovered funding, coverage and surplus calculations with clear limitations.
@@ -15,7 +26,15 @@
 - Added local JSON workspace export.
 - Expanded optional profile inputs to cover relevant academic and course conditions.
 - Improved privacy disclosure, responsive form behavior and submission documentation.
-\n## Unreleased — India-wide directory and engineering refactor\n- Expanded the catalogue from the original initial records to include additional central, state, technical, disability, research, overseas and private scholarship programmes.\n- Added explicit catalogue scope and links to NSP and Karnataka SSP.\n- Added catalogue source/metadata integrity tests.\n- Extracted workspace persistence and scholarship search/ranking into independently testable feature modules.\n- Added deadline sorting.\n- Changed the visual system to education-focused ink navy, ivory and achievement gold.\n
+
+## Unreleased — India-wide directory and engineering refactor
+- Expanded the catalogue from the original initial records to include additional central, state, technical, disability, research, overseas and private scholarship programmes.
+- Added explicit catalogue scope and links to NSP and Karnataka SSP.
+- Added catalogue source/metadata integrity tests.
+- Extracted workspace persistence and scholarship search/ranking into independently testable feature modules.
+- Added deadline sorting.
+- Changed the visual system to education-focused ink navy, ivory and achievement gold.
+
 ## Unreleased — Full workspace portability
 - Added a complete JSON backup of saved scholarships, tracker state, profile, funding planner and statement draft.
 - Added a file-based restore flow with 2 MB size limit and data normalization for known scheme IDs, tracker stages, checklist items, budget values and essay fields.

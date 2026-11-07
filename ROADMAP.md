@@ -9,8 +9,14 @@ This roadmap describes proposed product evolution. Items below are not implement
 - [x] Per-application document checklist.
 - [x] Browser-local workspace export.
 - [x] Funding gap calculator based on user-entered values.
+- [x] Searchable state/UT portal directory (28 states + 8 UTs).
+- [x] Curated catalogue expanded to 62 scholarship / fellowship records.
+- [x] PWA shell and service-worker offline fallback after an online visit.
+- [x] Workspace state and common mutations extracted into a tested hook.
 - [x] Responsive UI and automated unit/component/accessibility checks.
 - [ ] Validate usability with students across multiple devices and assistive technologies.
+- [ ] Add a reviewed scheme ingestion workflow with academic-year validity, scheme owner, last-verified date, deadline status and stale-record monitoring.
+- [ ] Expand regional language support (Hindi, Kannada, Tamil, Telugu, Bengali and more) with native review.
 - [ ] Expand source verification coverage with a transparent data-review process.
 
 ## Stage 1 — Trust and data quality

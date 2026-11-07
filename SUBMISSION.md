@@ -58,3 +58,8 @@ Grantly is a student-first scholarship discovery and application workspace. It b
 - [ ] Demo walkthrough is rehearsed and remains within the event's rules.
 
 A deployment URL is intentionally absent until deployment is authorized.
+
+
+## Product direction note
+
+The hackathon submission is one milestone in Grantly's product development. The application and repository are now documented as an ongoing student education-funding workspace. Competition-specific descriptions and scoring materials are not the product's main README or roadmap.
