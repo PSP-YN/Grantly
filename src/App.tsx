@@ -4,7 +4,8 @@ import { categories, scholarships, type Scholarship } from "./data";
 import FundingPlanner from "./FundingPlanner";
 import EssayWorkspace from "./EssayWorkspace";
 import { assessEligibility } from "./matching";
-import { parseWorkspaceExport, STORE_KEY, defaultStore, type Profile, type Store } from "./features/workspace/store";\nimport { useWorkspace } from "./features/workspace/useWorkspace";
+import { parseWorkspaceExport, STORE_KEY, defaultStore, type Profile, type Store } from "./features/workspace/store";
+import { useWorkspace } from "./features/workspace/useWorkspace";
 import { filterScholarships } from "./features/scholarships/search";
 import { buildDeadlineCalendar, parseExplicitDeadline } from "./features/scholarships/calendar";
 import { normalizeBudget, FUNDING_PLANNER_STORAGE_KEY } from "./features/funding-planner/calculations";
@@ -13,16 +14,19 @@ import ScholarshipCard from "./features/scholarships/components/ScholarshipCard"
 import ScholarshipModal from "./features/scholarships/components/ScholarshipModal";
 import ProfilePage from "./features/profile/ProfilePage";
 import ProfileModal from "./features/profile/ProfileModal";
-import StudentGuide from "./features/guide/StudentGuide";\nimport { scholarshipPortals } from "./features/guide/portalDirectory";
+import StudentGuide from "./features/guide/StudentGuide";
+import { scholarshipPortals } from "./features/guide/portalDirectory";
 
 function clean(v:string){return v.replace(/[<>]/g,"").trim().slice(0,120);}
 function App(){
  const importInputRef=useRef<HTMLInputElement>(null);
  const [store,setStore]=useState<Store>(loadStore),[active,setActive]=useState("Discover"),[query,setQuery]=useState(""),[category,setCategory]=useState("All"),[sort,setSort]=useState("match"),[levelFilter,setLevelFilter]=useState("All levels"),[stateFilter,setStateFilter]=useState("All India"),[selected,setSelected]=useState<Scholarship|null>(null),[toast,setToast]=useState(""),[profileOpen,setProfileOpen]=useState(false),[mobileNav,setMobileNav]=useState(false);
  useEffect(()=>{try{localStorage.setItem(STORE_KEY,JSON.stringify(store));}catch{/* Browser storage may be disabled; the current session remains usable. */}},[store]);
- useEffect(()=>{if(!toast)return;const t=window.setTimeout(()=>setToast(""),2600);return()=>window.clearTimeout(t);},[toast]);\n useEffect(()=>{const offline=()=>setToast("You are offline. Your local workspace remains available; official scholarship portals need internet.");const online=()=>setToast("Connection restored. Verify current scheme information on official portals.");window.addEventListener("offline",offline);window.addEventListener("online",online);return()=>{window.removeEventListener("offline",offline);window.removeEventListener("online",online);};},[]);
+ useEffect(()=>{if(!toast)return;const t=window.setTimeout(()=>setToast(""),2600);return()=>window.clearTimeout(t);},[toast]);
+ useEffect(()=>{const offline=()=>setToast("You are offline. Your local workspace remains available; official scholarship portals need internet.");const online=()=>setToast("Connection restored. Verify current scheme information on official portals.");window.addEventListener("offline",offline);window.addEventListener("online",online);return()=>{window.removeEventListener("offline",offline);window.removeEventListener("online",online);};},[]);
  useEffect(()=>{const k=(e:KeyboardEvent)=>{if(e.key==="Escape"){setSelected(null);setProfileOpen(false);setMobileNav(false);}};window.addEventListener("keydown",k);return()=>window.removeEventListener("keydown",k);},[]);
- const filtered=filterScholarships({scholarships,savedIds:store.saved,applicationIds:store.applications.map(a=>a.id),scope:active as "Discover"|"Saved"|"Applications",category,query,sort:sort as "match"|"amount"|"name"|"deadline",profile:store.profile});\n const visible=filtered.filter(item=>(levelFilter==="All levels"||item.level===levelFilter)&&(stateFilter==="All India"||/all india|^india$/i.test(item.region)||item.region.toLocaleLowerCase().includes(stateFilter.toLocaleLowerCase())));
+ const filtered=filterScholarships({scholarships,savedIds:store.saved,applicationIds:store.applications.map(a=>a.id),scope:active as "Discover"|"Saved"|"Applications",category,query,sort:sort as "match"|"amount"|"name"|"deadline",profile:store.profile});
+ const visible=filtered.filter(item=>(levelFilter==="All levels"||item.level===levelFilter)&&(stateFilter==="All India"||/all india|^india$/i.test(item.region)||item.region.toLocaleLowerCase().includes(stateFilter.toLocaleLowerCase())));
  const nav=(name:string)=>{setActive(name);setCategory("All");setQuery("");setLevelFilter("All levels");setStateFilter("All India");setMobileNav(false);};
  const toggleSaved=(id:string)=>setStore(p=>({...p,saved:p.saved.includes(id)?p.saved.filter(x=>x!==id):[...p.saved,id]}));
  const addApplication=(id:string)=>{setStore(p=>({...p,applications:p.applications.some(a=>a.id===id)?p.applications:[...p.applications,{id,stage:"Interested",updated:"Today",completedDocuments:[]}]}));setToast("Added to your application tracker.");};
