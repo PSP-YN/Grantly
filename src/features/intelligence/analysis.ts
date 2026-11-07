@@ -87,7 +87,7 @@ export function calculateFundingSnapshot(input: FundingInputs): FundingSnapshot 
     projectedCoveragePercent,
     monthlyEmi,
     totalRepayment,
-    totalInterest: Math.max(0, totalRepayment - principal)
+    totalInterest: monthlyRate === 0 ? 0 : Math.max(0, Number((totalRepayment - principal).toFixed(2)))
   };
 }
 
