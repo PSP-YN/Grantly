@@ -1,7 +1,8 @@
 import { scholarships } from "../../data";
 import type { StudentProfile } from "../../matching";
 import { normalizeBudget, type Budget } from "../funding-planner/calculations";
-import { normalizeEssayDraft, type EssayDraft } from "../essay/draft";\nimport { normalizeFundingInputs, type FundingInputs } from "../intelligence/analysis";
+import { normalizeEssayDraft, type EssayDraft } from "../essay/draft";
+import { normalizeFundingInputs, type FundingInputs } from "../intelligence/analysis";
 
 export type Stage = "Interested"|"Preparing"|"Submitted"|"Under review"|"Awarded";
 export type Profile = StudentProfile;
