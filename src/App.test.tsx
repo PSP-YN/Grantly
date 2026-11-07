@@ -66,7 +66,7 @@ describe("Grantly workspace", () => {
     fireEvent.click(screen.getByRole("button", { name: /Student guide/ }));
     expect(screen.getByRole("heading", { name: "Student application guide", level: 1 })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: "A clearer path from discovery to application." })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /National Scholarship Portal \(NSP\)/ })).toHaveAttribute("href", "https://scholarships.gov.in/");
+    expect(screen.getByRole("link", { name: /Read the official NSP student instructions/ })).toHaveAttribute("href", "https://scholarships.gov.in/Students");
     expect(screen.getByText(/Do not share OTPs, passwords, PINs/)).toBeInTheDocument();
     const results = await axe.run(document.body, { runOnly: { type: "tag", values: ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"] } });
     expect(results.violations.map(item => item.id)).toEqual([]);
