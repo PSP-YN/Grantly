@@ -7,7 +7,11 @@ const MONTHS: Record<string, string> = {
   nov:"11", november:"11", dec:"12", december:"12"
 };
 
-export function localDateISO(date: Date): string {\n  return `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,"0")}-${String(date.getDate()).padStart(2,"0")}`;\n}\n\nexport function parseExplicitDeadline(value: string): string | null {
+export function localDateISO(date: Date): string {
+  return `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,"0")}-${String(date.getDate()).padStart(2,"0")}`;
+}
+
+export function parseExplicitDeadline(value: string): string | null {
   const iso = value.match(/\b(20\d{2})-(\d{2})-(\d{2})\b/);
   if (iso) return iso[0];
   const date = value.match(/\b(\d{1,2})\s+(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\s+(20\d{2})\b/i);
