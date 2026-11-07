@@ -1,8 +1,8 @@
 # Changelog
 
 ## Unreleased — India-wide student product expansion
-- Added 9 additional central / UGC scholarship and fellowship records (catalogue now contains 50 programme records).
-- Added searchable portal starting points for all 28 states and 8 union territories.
+- Added 9 additional central / UGC scholarship and fellowship records (catalogue now contains 62 programme records).
+- Added searchable portal starting points for all 28 states and 8 union territories.\n- Added 12 state-specific scholarship / education-aid records from official state portals (Karnataka, Maharashtra, West Bengal, Odisha, Telangana, Uttar Pradesh, Bihar, Gujarat and Kerala).
 - Reworked the visual palette to academic navy, warm ivory and restrained gold.
 - Added PWA manifest and same-origin service-worker shell caching with offline navigation fallback.
 - Added online/offline connectivity notices.
