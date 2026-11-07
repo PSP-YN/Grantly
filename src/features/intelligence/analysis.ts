@@ -29,7 +29,7 @@ export function normalizeFundingInputs(value: unknown): FundingInputs {
   const normalized = Object.fromEntries(keys.map(key => {
     const candidate = record[key];
     const fallback = DEFAULT_FUNDING_INPUTS[key];
-    const number = typeof candidate === "number" && Number.isFinite(candidate) ? Math.max(0, candidate) : fallback;
+    const number = typeof candidate === "number" && Number.isFinite(candidate) ? Math.min(1_000_000_000_000, Math.max(0, candidate)) : fallback;
     return [key, number];
   })) as FundingInputs;
   normalized.annualInterestRate = Math.min(100, normalized.annualInterestRate);
@@ -51,7 +51,7 @@ export type FundingSnapshot = {
   totalInterest: number;
 };
 
-const nonNegative = (value: number) => Number.isFinite(value) ? Math.max(0, value) : 0;
+const nonNegative = (value: number) => Number.isFinite(value) ? Math.min(1_000_000_000_000, Math.max(0, value)) : 0;
 
 export function calculateFundingSnapshot(input: FundingInputs): FundingSnapshot {
   const annualCost = [
