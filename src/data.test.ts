@@ -29,7 +29,7 @@ describe("scholarship catalogue quality", () => {
     expect(item).toBeDefined();
     expect(item?.amountValue).toBe(20000);
     expect(item?.rules).toHaveLength(0);
-    expect(item?.eligibility.join(" ")).toMatch(/identified PM CARES/i);
+    expect(item?.eligibility.join(" ")).toMatch(/identified as eligible PM CARES/i);
     expect(item?.verificationNote).toMatch(/beneficiary status/i);
   });
 
