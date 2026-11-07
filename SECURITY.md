@@ -32,6 +32,7 @@ Vercel applies:
 - `Referrer-Policy: strict-origin-when-cross-origin`
 - `Permissions-Policy` disabling camera, microphone and geolocation
 - `Cross-Origin-Opener-Policy: same-origin`
+- A same-origin Content Security Policy with no external script, frame, object or form destinations
 - Long-lived immutable caching only for Vite content-hashed `/assets/` output; fixed-name shell assets use a shorter cache period.
 
 These browser protections do not replace a threat model or backend security architecture. Grantly remains frontend-only and does not provide authenticated or encrypted remote storage.
