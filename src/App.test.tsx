@@ -20,8 +20,8 @@ describe("Grantly workspace", () => {
     render(<App />);
     fireEvent.click(screen.getByRole("button", { name: /Funding planner/ }));
     expect(await screen.findByRole("heading", { name: "Plan your education funding", level: 1 })).toBeInTheDocument();
-    expect(screen.getByRole("spinbutton", { name: /Tuition & mandatory fees/ })).toBeInTheDocument();
-    expect(screen.getByRole("spinbutton", { name: /Scholarship scenario/ })).toBeInTheDocument();
+    expect(await screen.findByRole("spinbutton", { name: /Tuition & mandatory fees/ })).toBeInTheDocument();
+    expect(await screen.findByRole("spinbutton", { name: /Scholarship scenario/ })).toBeInTheDocument();
     expect(screen.getByText(/not an award prediction/)).toBeInTheDocument();
   });
 
@@ -30,7 +30,7 @@ describe("Grantly workspace", () => {
     render(<App />);
     fireEvent.click(screen.getByRole("button", { name: /Statement workspace/ }));
     expect(await screen.findByRole("heading", { name: "Scholarship statement workspace", level: 1 })).toBeInTheDocument();
-    const draft = screen.getByLabelText("Your statement draft");
+    const draft = await screen.findByLabelText("Your statement draft");
     fireEvent.change(draft, { target: { value: "My goal is to study engineering." } });
     expect(screen.getByText("6 / 500 words")).toBeInTheDocument();
     const saved = JSON.parse(localStorage.getItem("grantly:essay-workspace:v1") || "{}");
