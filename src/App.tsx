@@ -5,7 +5,8 @@ import FundingPlanner from "./FundingPlanner";
 import EssayWorkspace from "./EssayWorkspace";
 import { assessEligibility, type EligibilityAssessment } from "./matching";
 import { loadStore, STORE_KEY, type Stage, type Profile, type AppRecord, type Store } from "./features/workspace/store";
-import { filterScholarships } from "./features/scholarships/search";\nimport { buildDeadlineCalendar, parseExplicitDeadline } from "./features/scholarships/calendar";
+import { filterScholarships } from "./features/scholarships/search";
+import { buildDeadlineCalendar, parseExplicitDeadline } from "./features/scholarships/calendar";
 function clean(v:string){return v.replace(/[<>]/g,"").trim().slice(0,120);}
 function App(){
  const [store,setStore]=useState<Store>(loadStore),[active,setActive]=useState("Discover"),[query,setQuery]=useState(""),[category,setCategory]=useState("All"),[sort,setSort]=useState("match"),[selected,setSelected]=useState<Scholarship|null>(null),[toast,setToast]=useState(""),[profileOpen,setProfileOpen]=useState(false),[mobileNav,setMobileNav]=useState(false);
