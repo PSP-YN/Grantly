@@ -39,7 +39,7 @@ Grantly brings the preparation process into a single workspace while keeping off
 - Keep the model transparent: this is a planning estimate, not an award prediction, institutional COA determination or financial advice.
 
 ### India-wide scholarship access
-- A source-aware catalogue of 50 scholarship / fellowship records, including central government, UGC, AICTE, research, school, disability, private foundation and welfare programmes.
+- A source-aware catalogue of 62 scholarship / fellowship records, including central government, UGC, AICTE, research, school, disability, private foundation and welfare programmes.
 - Searchable official scholarship portal routes for all 28 states and 8 union territories. Some state portals host multiple schemes and departments; Grantly explicitly avoids claiming this directory is exhaustive.
 - Source and review notes, and official/manual-review status where eligibility rules are incomplete.
 
@@ -140,7 +140,7 @@ See [ROADMAP.md](ROADMAP.md) for the proposed path from prototype to a dependabl
 ## License
 
 MIT. See [LICENSE](LICENSE).
-\n## Scholarship directory scope\n\nThe catalogue currently contains 50 scholarship / fellowship programme records and a searchable directory of official starting points for all 28 Indian states and 8 union territories. It includes central government, state entry points, UGC, AICTE, research, school, disability, overseas, private-foundation and welfare programmes. This is a **curated discovery index—not a claim that every scholarship in India is listed**. Some state schemes are department-specific and some portals are only a starting route. The official [National Scholarship Portal](https://scholarships.gov.in/All-Scholarships) and state portals remain authoritative for application status and eligibility.\n\nEach record includes source attribution and a review note. Scheme rules and dates change. Records without fully reviewed criteria are labelled for official/manual review and do not generate a profile match.\n
+\n## Scholarship directory scope\n\nThe catalogue currently contains 62 scholarship / fellowship programme records and a searchable directory of official starting points for all 28 Indian states and 8 union territories. It includes central government, state entry points, UGC, AICTE, research, school, disability, overseas, private-foundation and welfare programmes. This is a **curated discovery index—not a claim that every scholarship in India is listed**. Some state schemes are department-specific and some portals are only a starting route. The official [National Scholarship Portal](https://scholarships.gov.in/All-Scholarships) and state portals remain authoritative for application status and eligibility.\n\nEach record includes source attribution and a review note. Scheme rules and dates change. Records without fully reviewed criteria are labelled for official/manual review and do not generate a profile match.\n
 ## Workspace backup and restore
 
 Students can export a Grantly JSON backup and restore it later in another browser profile. The backup includes the local student profile, saved scholarship IDs, application stages and checklist state, funding-planner inputs, and statement draft. Imported records are normalized against known scholarship IDs and valid checklist options before being accepted. Files remain under the student's control; Grantly does not upload the backup. Treat the export as personal data and store it securely.
