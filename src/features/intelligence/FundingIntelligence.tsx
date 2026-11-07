@@ -20,8 +20,8 @@ const money = (value: number) => new Intl.NumberFormat("en-IN", {
   style: "currency", currency: "INR", maximumFractionDigits: 0
 }).format(Number.isFinite(value) ? value : 0);
 
-function NumberField({ label, value, onChange, suffix }: {
-  label: string; value: number; onChange: (value: number) => void; suffix?: string;
+function NumberField({ label, value, onChange, suffix, step = 1000 }: {
+  label: string; value: number; onChange: (value: number) => void; suffix?: string; step?: number;
 }) {
   return <label className="intelligence-field">
     <span>{label}</span>
@@ -29,7 +29,7 @@ function NumberField({ label, value, onChange, suffix }: {
   </label>;
 }
 
-export default function FundingIntelligence({ profile, applications, onStageChange }: Props) {
+export default function FundingIntelligence({ profile, applications }: Props) {
   const [inputs, setInputs] = useState<FundingInputs>(loadFundingInputs);
   useEffect(() => {
     try { localStorage.setItem(FUNDING_INTELLIGENCE_STORAGE_KEY, JSON.stringify(inputs)); } catch { /* Keep the in-memory scenario usable when storage is unavailable. */ }
