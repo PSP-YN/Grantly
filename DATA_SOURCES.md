@@ -130,3 +130,12 @@ The official [NSP scheme catalogue](https://scholarships.gov.in/All-Scholarships
 - National Scholarship for Post Graduate Studies
 
 The same NSP page lists some schemes with **15 November 2026** student deadlines (including PM YASASVI school-level and NMMS) and others as **closed on 31 October 2026** (including pre-matric disability and worker-ward assistance). Do not infer that all NSP programmes share a deadline. Dates are a snapshot checked on 7 November 2026; verify the portal before applying because government schedules can change.
+
+
+## Additional verified entry — 7 November 2026
+
+| Catalogue record | Source | Scope / review note |
+|---|---|---|
+| Scholarship for PM CARES Children | [Ministry of Women & Child Development — PM CARES FAQ](https://www.spniwcd.wcd.gov.in/pm-cares-for-children-scheme/faqs) | ₹20,000/year is described for identified PM CARES beneficiaries in Classes I–XII. This is not a general public scholarship; beneficiary status and the current process must be confirmed with official authorities. |
+
+The current official NSP catalogue is a dynamic academic-year list. Grantly's local catalogue is a curated snapshot, not a live mirror of every scheme. Verify each scheme's eligibility, current application window, amount, institution coverage and renewal conditions before applying.
