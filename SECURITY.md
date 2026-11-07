@@ -2,7 +2,7 @@
 
 ## Scope
 
-FundNavi is a frontend-only hackathon application. It has no authentication, backend API, database, server-side processing or remote profile transmission.
+Grantly is a frontend-only hackathon application. It has no authentication, backend API, database, server-side processing or remote profile transmission.
 
 ## Reporting
 
