@@ -255,3 +255,11 @@ a:hover{color:#8c6925}
 .state-portal-footnote{margin:14px 0 0;color:#5b6570;font-size:10px;line-height:1.6}
 @media(max-width:1100px){.state-portal-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:640px){.state-portal-directory{padding:16px}.state-portal-grid{grid-template-columns:1fr}.state-portal-heading h3{font-size:18px}}
+
+/* Scholarship discovery filters */
+.catalogue-select{display:flex;align-items:center;gap:7px;height:40px;min-width:0;padding:0 10px;border:1px solid #e5ddce;border-radius:8px;background:#fffdf8;color:#1c3a58}
+.catalogue-select select{min-width:0;max-width:210px;border:0;outline:none;background:transparent;color:#1c2f43;font-size:11px;font-weight:600}
+.catalogue-select select:focus-visible{outline:none}
+.catalogue-select:focus-within{outline:3px solid #c89b3c;outline-offset:2px}
+@media(max-width:900px){.toolbar{flex-wrap:wrap}.catalogue-select{flex:1}.catalogue-select select{width:100%;max-width:none}}
+@media(max-width:500px){.catalogue-select{width:100%}.catalogue-select select{flex:1}}
