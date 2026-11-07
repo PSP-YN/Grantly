@@ -46,7 +46,6 @@ export function filterScholarships(input: {
     if (input.sort === "deadline") {
       const da = parseExplicitDeadline(a.deadline);
       const db = parseExplicitDeadline(b.deadline);
-      const today = new Date().toISOString().slice(0,10);
       const pastA = Boolean(da && da < today);
       const pastB = Boolean(db && db < today);
       if (da && db) {
