@@ -12,9 +12,11 @@ flowchart TD
   State --> Tracker[Saved items and application tracker]
   State --> Planner[Annual funding planner]
   State --> Portal[State and UT portal directory]
+  State --> Journey[Actionable journey progress]
   State --> Storage[Browser localStorage]
   Catalogue[Source-linked scholarship catalogue] --> Discovery
   Catalogue --> Eligibility
+  Catalogue --> Journey
   Storage --> State
   UI --> Export[User-triggered JSON export]
 ```
@@ -25,6 +27,7 @@ flowchart TD
 |---|---|---|
 | `App.tsx` | Main shell, discover/saved/tracker/profile views, application state and dialogs | UI orchestration remains a refactoring target; no network persistence |
 | `features/workspace/useWorkspace.ts` | Workspace state, local persistence and common tracker mutations | Browser-only state; no backend sync |
+| `features/journey/JourneyProgress.tsx` | Derives a four-step student workspace preparation checklist from profile completion, saved opportunities, tracked applications and required-document completion | Progress describes local preparation only; it is not an eligibility score, award probability or provider readiness decision |
 | `features/guide/portalDirectory.ts` | State / UT scholarship portal directory | Portal starting points, not an exhaustive scheme registry |
 | `features/guide/StateScholarshipPortalDirectory.tsx` | Searchable state/UT portal directory UI | External official routes; current rules are provider-owned |
 | `data.ts` | Typed scholarship catalogue, official-source metadata and criteria | Curated static data; not live/authoritative |
