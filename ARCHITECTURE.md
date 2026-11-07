@@ -25,7 +25,7 @@ flowchart TD
 | `App.tsx` | Main shell, discover/saved/tracker/profile views, application state and dialogs | UI orchestration; no network persistence |
 | `data.ts` | Typed scholarship catalogue, official-source metadata and criteria | Curated static data; not live/authoritative |
 | `matching.ts` | Deterministic criteria evaluation | Only evaluates encoded rules; unknowns stay unknown |
-| `FundingPlanner.tsx` | Annual cost/support inputs, gap calculation, local persistence and JSON export | User-entered values only; no financial data API |
+| `FundingPlanner.tsx` | Annual cost/support inputs, gap calculation, local persistence and JSON export | User-entered values only; no financial data API |\n| `EssayWorkspace.tsx` | Guided personal statement outline, word count, local draft persistence and text export | No essay generation, plagiarism scoring or remote writing service |
 | `styles.css` | Layout, visual tokens, responsive behavior and reduced-motion handling | CSS-based design system |
 | `*.test.ts(x)` | Rule, component, workflow and accessibility regression tests | Tests do not replace browser/assistive-tech testing |
 
@@ -68,7 +68,7 @@ This is arithmetic based on user inputs. It does not verify whether grants can b
 - Browser storage can be unavailable, cleared or modified by the user or scripts.
 - localStorage is not encrypted, authenticated or a secure document vault.
 - Current export is a user-triggered JSON file.
-- No data is sent to a remote service by the current application.
+- No data is sent to a remote service by the current application. This includes profile, planner and essay draft data.
 
 This is an appropriate boundary for a prototype, not for a multi-user production financial aid service.
 
