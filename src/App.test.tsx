@@ -171,8 +171,7 @@ describe("Grantly workspace", () => {
   it("passes axe-core WCAG semantic checks on the discovery view", async () => {
     render(<App />);
     const results = await axe.run(document.body, {
-      runOnly: { type: "tag", values: ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"] },
-      rules: { "color-contrast": { enabled: false } }
+      runOnly: { type: "tag", values: ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"] }
     });
     expect(results.violations.map(item => item.id)).toEqual([]);
   });
