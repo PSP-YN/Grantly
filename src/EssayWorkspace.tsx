@@ -2,16 +2,8 @@ import { useMemo, useState } from "react";
 import { Download, FileText, ShieldCheck } from "lucide-react";
 import { countWords } from "./features/essay/wordCount";
 
-type EssayDraft = { prompt: string; motivation: string; experience: string; impact: string; goals: string; draft: string; limit: number };
-const key = "grantly:essay-workspace:v1";
-const empty: EssayDraft = { prompt: "", motivation: "", experience: "", impact: "", goals: "", draft: "", limit: 500 };
-function load(): EssayDraft {
-  try {
-    const value = JSON.parse(localStorage.getItem(key) ?? "null") as Partial<EssayDraft> | null;
-    if (!value) return empty;
-    return { ...empty, ...value, limit: typeof value.limit === "number" && value.limit >= 1 && value.limit <= 10000 ? Math.round(value.limit) : 500 };
-  } catch { return empty; }
-}
+import { normalizeEssayDraft, ESSAY_STORAGE_KEY, EMPTY_ESSAY_DRAFT, type EssayDraft } from "./features/essay/draft";
+function load():EssayDraft{try{return normalizeEssayDraft(JSON.parse(localStorage.getItem(ESSAY_STORAGE_KEY)??"null"));}catch{return EMPTY_ESSAY_DRAFT;}}
 
 export default function EssayWorkspace() {
   const [draft, setDraft] = useState<EssayDraft>(load);
@@ -19,7 +11,7 @@ export default function EssayWorkspace() {
   const update = (field: keyof EssayDraft, value: string | number) => {
     const next = { ...draft, [field]: value };
     setDraft(next);
-    try { localStorage.setItem(key, JSON.stringify(next)); } catch { /* Keep the current editing session usable. */ }
+    try { localStorage.setItem(ESSAY_STORAGE_KEY, JSON.stringify(next)); } catch { /* Keep the current editing session usable. */ }
   };
   const download = () => {
     const content = [
