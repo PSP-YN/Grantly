@@ -58,3 +58,14 @@ This roadmap describes proposed product evolution. Items below are not implement
 - Submitting applications without student review.
 - Selling student profile data.
 - Publishing fabricated success rates or award probabilities.
+
+## India-wide coverage expansion
+
+- [x] Searchable scholarship catalogue with source links and review notes.
+- [x] State / UT scholarship portal directory.
+- [x] Add selected Central, State, UGC, AICTE, private, research and beneficiary-specific programmes.
+- [ ] Establish an ongoing source-review owner and revision history for each record.
+- [ ] Expand scheme coverage in partnership with official institutions and state education/welfare departments.
+- [ ] Add data freshness status and archived previous academic-year records.
+
+**Coverage policy:** do not claim “all scholarships in India” until an independently maintained, comprehensive, authoritative source dataset exists. Treat each state portal as a discovery route, not proof of every local award.
