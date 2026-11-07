@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { ArrowDownUp, ArrowRight, Bookmark, BookOpen, BookOpenText, CalendarDays, Check, CheckCircle2, ExternalLink, ChevronDown, Clock3, Compass, Download, FileCheck2, GraduationCap, MapPin, Menu, Search, ShieldCheck, SlidersHorizontal, Sparkles, Trash2, Target, UserRound, Wallet } from "lucide-react";
 import { categories, scholarships, type Scholarship } from "./catalog";
 import FundingPlanner from "./FundingPlanner";
@@ -26,8 +26,9 @@ function App(){
  useEffect(()=>{if(!toast)return;const t=window.setTimeout(()=>setToast(""),2600);return()=>window.clearTimeout(t);},[toast]);
  useEffect(()=>{const offline=()=>setToast("You are offline. Your local workspace remains available; official scholarship portals need internet.");const online=()=>setToast("Connection restored. Verify current scheme information on official portals.");window.addEventListener("offline",offline);window.addEventListener("online",online);return()=>{window.removeEventListener("offline",offline);window.removeEventListener("online",online);};},[]);
  useEffect(()=>{const k=(e:KeyboardEvent)=>{if(e.key==="Escape"){setSelected(null);setProfileOpen(false);setMobileNav(false);}};window.addEventListener("keydown",k);return()=>window.removeEventListener("keydown",k);},[]);
- const filtered=filterScholarships({scholarships,savedIds:store.saved,applicationIds:store.applications.map(a=>a.id),scope:active as "Discover"|"Saved"|"Applications",category,query,sort:sort as "match"|"amount"|"name"|"deadline",profile:store.profile});
- const visible=filtered.filter(item=>(levelFilter==="All levels"||item.level===levelFilter)&&(stateFilter==="All India"||/all india|^india$/i.test(item.region)||item.region.toLocaleLowerCase().includes(stateFilter.toLocaleLowerCase())));
+ const applicationIds=useMemo(()=>store.applications.map(a=>a.id),[store.applications]);
+ const filtered=useMemo(()=>filterScholarships({scholarships,savedIds:store.saved,applicationIds,scope:active as "Discover"|"Saved"|"Applications",category,query,sort:sort as "match"|"amount"|"name"|"deadline",profile:store.profile}),[store.saved,applicationIds,active,category,query,sort,store.profile]);
+ const visible=useMemo(()=>filtered.filter(item=>(levelFilter==="All levels"||item.level===levelFilter)&&(stateFilter==="All India"||/all india|^india$/i.test(item.region)||item.region.toLocaleLowerCase().includes(stateFilter.toLocaleLowerCase()))),[filtered,levelFilter,stateFilter]);
  const nav=(name:string)=>{setActive(name);setCategory("All");setQuery("");setLevelFilter("All levels");setStateFilter("All India");setMobileNav(false);};
  const addApplication=(id:string)=>{addToTracker(id);setToast("Added to your application tracker.");};
  const readStoredJson=(key:string)=>{try{const raw=localStorage.getItem(key);return raw?JSON.parse(raw):null;}catch{return null;}};
