@@ -69,8 +69,8 @@ export function calculateFundingSnapshot(input: FundingInputs): FundingSnapshot 
   const projectedCoveragePercent = annualCost > 0 ? Math.min(100, projectedSupport / annualCost * 100) : 0;
 
   const principal = projectedGap;
-  const months = Math.max(1, Math.round(nonNegative(input.repaymentYears || 1) * 12));
-  const monthlyRate = nonNegative(input.annualInterestRate) / 1200;
+  const months = Math.max(1, Math.round(Math.min(40, nonNegative(input.repaymentYears || 1)) * 12));
+  const monthlyRate = Math.min(100, nonNegative(input.annualInterestRate)) / 1200;
   const monthlyEmi = principal === 0 ? 0 : monthlyRate === 0
     ? principal / months
     : principal * monthlyRate * Math.pow(1 + monthlyRate, months) / (Math.pow(1 + monthlyRate, months) - 1);
