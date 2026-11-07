@@ -133,3 +133,11 @@ body{background:#f7f3e9;color:#1d2f4a}
 .essay-count{color:#1d3557;background:#f2ead8}
 button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline-color:#c49a45}
 a{color:#1d3557}
+
+.directory-coverage{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:16px 18px;margin:12px 0 20px;background:#fffdf8;border:1px solid #e6dfd0;border-left:4px solid #c49a45;border-radius:9px}
+.directory-coverage strong{font-size:13px;color:#1d3557}
+.directory-coverage p{font-size:11px;line-height:1.6;color:#59677b;margin:5px 0 0;max-width:640px}
+.directory-links{display:flex;flex-direction:column;gap:8px;flex:none}
+.directory-links a{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;color:#1d3557;text-decoration:none}
+.directory-links a:hover{text-decoration:underline;color:#8b6826}
+@media(max-width:680px){.directory-coverage{align-items:flex-start;flex-direction:column}.directory-links{flex-direction:row;flex-wrap:wrap}}
