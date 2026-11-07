@@ -1,5 +1,20 @@
 # Changelog
 
+All notable changes to Grantly are documented here.
+
+## [Unreleased] — 2026-11-07
+
+### Documentation
+- Rewrote the README around the product's real student journey, current feature set, architecture, data boundaries, quality gates and governance.
+- Added the requested FAIE seven-pillar 100-point target framework and retained the separate FQE six-module 40-point target framework; both are explicitly marked as targets, not achieved evaluator scores.
+- Updated submission walkthrough and evidence notes to reflect implemented functionality and current limitations.
+
+### Maintenance
+- Removed the duplicate favicon asset and its obsolete service-worker precache entry.
+- Kept the manifest and document icon reference aligned to the remaining Grantly icon.
+- Verified the change set with GitHub Actions CI.
+
+
 ## Unreleased — hardening and accessibility
 - Memoized scholarship filtering and level/state visibility.
 - Corrected deadline sorting and calendar export to use local dates; added India/US timezone boundary tests.
