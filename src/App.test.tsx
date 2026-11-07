@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, afterEach } from "vitest";
-import { cleanup, fireEvent, render, screen, within } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen, within, waitFor } from "@testing-library/react";
 import App from "./App";
 import axe from "axe-core";
 
@@ -36,6 +36,18 @@ describe("Grantly workspace", () => {
     const saved = JSON.parse(localStorage.getItem("grantly:essay-workspace:v1") || "{}");
     expect(saved.draft).toBe("My goal is to study engineering.");
     expect(screen.getByText(/Your writing is saved in this browser only/)).toBeInTheDocument();
+  });
+
+\n  it("imports a validated workspace JSON file and persists its records", async () => {
+    render(<App />);
+    const payload = { product: "Grantly", exportedAt: "2026-11-07T00:00:00Z", workspace: {
+      saved: ["csss"], applications: [{ id: "csss", stage: "Preparing", completedDocuments: [] }],
+      profile: { course: "B.E. Computer Science", year: "2nd year" }
+    }};
+    const file = new File([JSON.stringify(payload)], "grantly-workspace.json", { type: "application/json" });
+    fireEvent.change(screen.getByLabelText("Import Grantly workspace JSON"), { target: { files: [file] } });
+    await waitFor(() => expect(JSON.parse(localStorage.getItem("grantly:workspace:v1") || "{}").saved).toEqual(["csss"]));
+    expect(screen.getByText(/Workspace imported/)).toBeInTheDocument();
   });
 
   it("filters scholarship cards by category", () => {
