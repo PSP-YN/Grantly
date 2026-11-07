@@ -1,19 +1,13 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Activity, AlertTriangle, Calculator, CheckCircle2, ClipboardList, FileText, Gauge, Wallet } from "lucide-react";
 import type { Profile, AppRecord, Stage } from "../workspace/store";
 import { scholarships } from "../../catalog";
-import { calculateFundingSnapshot, reviewNarrative, type FundingInputs } from "./analysis";
+import { calculateFundingSnapshot, reviewNarrative, normalizeFundingInputs, DEFAULT_FUNDING_INPUTS, type FundingInputs } from "./analysis";\n\nexport const FUNDING_INTELLIGENCE_STORAGE_KEY = "grantly:funding-intelligence:v1";\n\nfunction loadFundingInputs(): FundingInputs {\n  try {\n    const raw = localStorage.getItem(FUNDING_INTELLIGENCE_STORAGE_KEY);\n    return raw ? normalizeFundingInputs(JSON.parse(raw)) : DEFAULT_FUNDING_INPUTS;\n  } catch { return DEFAULT_FUNDING_INPUTS; }\n}
 
 type Props = {
   profile: Profile;
   applications: AppRecord[];
   onStageChange: (id: string, stage: Stage) => void;
-};
-
-const initialInputs: FundingInputs = {
-  tuition: 0, housing: 0, food: 0, books: 0, transport: 0, otherCosts: 0,
-  institutionalAid: 0, governmentGrants: 0, workIncome: 0, savings: 0,
-  awardedScholarships: 0, proposedScholarship: 0, annualInterestRate: 10, repaymentYears: 5
 };
 
 const money = (value: number) => new Intl.NumberFormat("en-IN", {
@@ -30,7 +24,7 @@ function NumberField({ label, value, onChange, suffix }: {
 }
 
 export default function FundingIntelligence({ profile, applications, onStageChange }: Props) {
-  const [inputs, setInputs] = useState<FundingInputs>(initialInputs);
+  const [inputs, setInputs] = useState<FundingInputs>(loadFundingInputs);\n  useEffect(() => {\n    try { localStorage.setItem(FUNDING_INTELLIGENCE_STORAGE_KEY, JSON.stringify(inputs)); } catch { /* Keep the in-memory scenario usable when storage is unavailable. */ }\n  }, [inputs]);
   const [draft, setDraft] = useState("");
   const [showInquiry, setShowInquiry] = useState(false);
   const [notice, setNotice] = useState("");
