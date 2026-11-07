@@ -16,20 +16,20 @@ describe("Grantly workspace", () => {
   });
 
 
-  it("opens the annual funding planner and exposes its estimate inputs", () => {
+  it("opens the annual funding planner and exposes its estimate inputs", async () => {
     render(<App />);
     fireEvent.click(screen.getByRole("button", { name: /Funding planner/ }));
-    expect(screen.getByRole("heading", { name: "Plan your education funding", level: 1 })).toBeInTheDocument();
+    expect(await screen.findByRole("heading", { name: "Plan your education funding", level: 1 })).toBeInTheDocument();
     expect(screen.getByRole("spinbutton", { name: /Tuition & mandatory fees/ })).toBeInTheDocument();
     expect(screen.getByRole("spinbutton", { name: /Scholarship scenario/ })).toBeInTheDocument();
     expect(screen.getByText(/not an award prediction/)).toBeInTheDocument();
   });
 
 
-  it("opens the statement workspace and saves a draft locally with a word count", () => {
+  it("opens the statement workspace and saves a draft locally with a word count", async () => {
     render(<App />);
     fireEvent.click(screen.getByRole("button", { name: /Statement workspace/ }));
-    expect(screen.getByRole("heading", { name: "Scholarship statement workspace", level: 1 })).toBeInTheDocument();
+    expect(await screen.findByRole("heading", { name: "Scholarship statement workspace", level: 1 })).toBeInTheDocument();
     const draft = screen.getByLabelText("Your statement draft");
     fireEvent.change(draft, { target: { value: "My goal is to study engineering." } });
     expect(screen.getByText("6 / 500 words")).toBeInTheDocument();
@@ -64,7 +64,7 @@ describe("Grantly workspace", () => {
   it("opens the student guide with official portal links and accessible guidance", async () => {
     render(<App />);
     fireEvent.click(screen.getByRole("button", { name: /Student guide/ }));
-    expect(screen.getByRole("heading", { name: "Student application guide", level: 1 })).toBeInTheDocument();
+    expect(await screen.findByRole("heading", { name: "Student application guide", level: 1 })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: "A clearer path from discovery to application." })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /Read the official NSP student instructions/ })).toHaveAttribute("href", "https://scholarships.gov.in/Students");
     expect(screen.getByText(/Do not share OTPs, passwords, PINs/)).toBeInTheDocument();
@@ -117,10 +117,10 @@ describe("Grantly workspace", () => {
     expect(screen.queryByText("AICTE Pragati Scholarship")).not.toBeInTheDocument();
   });
 
-  it("opens the scholarship details and explains unknown profile checks", () => {
+  it("opens the scholarship details and explains unknown profile checks", async () => {
     render(<App />);
     fireEvent.click(screen.getAllByRole("button", { name: /View details/ })[0]);
-    const dialog = screen.getByRole("dialog");
+    const dialog = await screen.findByRole("dialog");
     expect(within(dialog).getByText("Profile-based checks")).toBeInTheDocument();
     expect(within(dialog).getAllByText("More details needed")[0]).toBeInTheDocument();
     expect(within(dialog).getAllByText("Not provided")[0]).toBeInTheDocument();
@@ -134,10 +134,10 @@ describe("Grantly workspace", () => {
     expect(saved).toContain("csss");
   });
 
-  it("edits and saves the student profile", () => {
+  it("edits and saves the student profile", async () => {
     render(<App />);
     fireEvent.click(screen.getByRole("button", { name: "Edit profile" }));
-    fireEvent.change(screen.getByLabelText("Course / programme"), { target: { value: "B.E. Computer Science" } });
+    fireEvent.change(await screen.findByLabelText("Course / programme"), { target: { value: "B.E. Computer Science" } });
     fireEvent.change(screen.getByLabelText("Current year"), { target: { value: "1st year" } });
     fireEvent.change(screen.getByLabelText("Class XII academic standing"), { target: { value: "Above 80th percentile" } });
     fireEvent.change(screen.getByLabelText("Annual family income"), { target: { value: "₹2.5–4.5 lakh" } });
@@ -149,17 +149,18 @@ describe("Grantly workspace", () => {
     expect(profile.course).toBe("B.E. Computer Science");
     expect(profile.academicBand).toBe("Above 80th percentile");
     fireEvent.click(screen.getAllByRole("button", { name: /View details/ })[0]);
+    await screen.findByRole("dialog");
     expect(screen.getAllByText("Profile checks align").length).toBeGreaterThan(0);
   });
 
-  it("tracks an opportunity, updates its stage and persists document checklist state", () => {
+  it("tracks an opportunity, updates its stage and persists document checklist state", async () => {
     render(<App />);
     fireEvent.click(screen.getAllByRole("button", { name: /Track/ })[0]);
     fireEvent.click(screen.getByRole("button", { name: /My applications/ }));
     const stage = screen.getAllByLabelText("TRACKING STAGE")[0];
     fireEvent.change(stage, { target: { value: "Submitted" } });
     fireEvent.click(screen.getByRole("button", { name: /View scholarship details/ }));
-    const dialog = screen.getByRole("dialog");
+    const dialog = await screen.findByRole("dialog");
     const documentBox = within(dialog).getByLabelText("Class XII marksheet");
     fireEvent.click(documentBox);
     const app = JSON.parse(localStorage.getItem("grantly:workspace:v1") || "{}").applications[0];
