@@ -3,13 +3,13 @@ import { categories, scholarships } from "./catalog";
 
 describe("scholarship catalogue quality", () => {
   it("contains a meaningful India-wide directory and unique stable IDs", () => {
-    expect(scholarships.length).toBeGreaterThanOrEqual(90);
+    expect(scholarships.length).toBeGreaterThanOrEqual(92);
     const ids = scholarships.map(item => item.id);
     expect(new Set(ids).size).toBe(ids.length);
   });
   it("includes the newly catalogued UGC and ministry scholarship programmes", () => {
     const ids = new Set(scholarships.map(item => item.id));
-    for (const id of ["tn-pudhumai-penn","tn-tamil-pudhalvan","wb-oasis-postmatric","jharkhand-ekalyan-postmatric","chhattisgarh-postmatric","hr-stipend-sc","hr-stipend-freedom","hr-free-books-sc","hr-ug-girls-merit","hr-merit-incentive","hr-merit-incentive-cbse","hr-ug-pg-merit","hr-lower-income","ugc-savitri-single-girl-fellowship","ugc-net-jrf","karnataka-raitha-vidya-nidhi","karnataka-labour-welfare-education","karnataka-minority-scholarships","karnataka-construction-worker-scholarship","pmcares-children-scholarship","vidyadhan-sdf","sitaram-jindal-scholarship","northsouth-foundation-scholarship","tata-capital-pankh","ongc-merit-scholarship","indianoil-scholarship","aditya-birla-scholarship","siemens-scholarship-program","postmatric-sc", "prematric-sc", "prematric-obc", "national-fellowship-sc", "national-fellowship-obc", "pg-indira-single-girl", "pg-university-rank", "pg-sc-st-professional", "aicte-gate-pg", "karnataka-vidyasiri", "maharashtra-shahu", "maharashtra-punjabrao", "maharashtra-eklavya", "wb-svmcm", "wb-aikyashree", "odisha-medhabruti", "telangana-epass-pms", "up-postmatric", "bihar-pms", "gujarat-mysy", "kerala-egrantz"]) expect(ids.has(id)).toBe(true);
+    for (const id of ["tn-pudhumai-penn","tn-tamil-pudhalvan","wb-oasis-postmatric","jharkhand-ekalyan-postmatric","chhattisgarh-postmatric","lic-golden-jubilee-2026","national-overseas-st-students","hr-stipend-sc","hr-stipend-freedom","hr-free-books-sc","hr-ug-girls-merit","hr-merit-incentive","hr-merit-incentive-cbse","hr-ug-pg-merit","hr-lower-income","lic-golden-jubilee-2026","national-overseas-st-students","ugc-savitri-single-girl-fellowship","ugc-net-jrf","karnataka-raitha-vidya-nidhi","karnataka-labour-welfare-education","karnataka-minority-scholarships","karnataka-construction-worker-scholarship","pmcares-children-scholarship","vidyadhan-sdf","sitaram-jindal-scholarship","northsouth-foundation-scholarship","tata-capital-pankh","ongc-merit-scholarship","indianoil-scholarship","aditya-birla-scholarship","siemens-scholarship-program","postmatric-sc", "prematric-sc", "prematric-obc", "national-fellowship-sc", "national-fellowship-obc", "pg-indira-single-girl", "pg-university-rank", "pg-sc-st-professional", "aicte-gate-pg", "karnataka-vidyasiri", "maharashtra-shahu", "maharashtra-punjabrao", "maharashtra-eklavya", "wb-svmcm", "wb-aikyashree", "odisha-medhabruti", "telangana-epass-pms", "up-postmatric", "bihar-pms", "gujarat-mysy", "kerala-egrantz"]) expect(ids.has(id)).toBe(true);
   });
 
 
