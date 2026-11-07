@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { countWords } from "./EssayWorkspace";
+import { countWords } from "./features/essay/wordCount";
 
 describe("statement word count", () => {
   it("counts words separated by spaces, newlines or tabs", () => {

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { calculateFundingGap } from "./FundingPlanner";
+import { calculateFundingGap } from "./features/funding-planner/calculations";
 
 const empty = { tuition: 0, housing: 0, food: 0, books: 0, transport: 0, other: 0, existingAid: 0, scholarship: 0 };
 

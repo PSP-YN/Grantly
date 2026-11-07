@@ -127,3 +127,4 @@ See [ROADMAP.md](ROADMAP.md) for the proposed path from prototype to a dependabl
 ## License
 
 MIT. See [LICENSE](LICENSE).
+\n## Scholarship directory scope\n\nThe catalogue includes central government schemes, selected state-level entry points (including Karnataka SSP), technical education, disability support, research, overseas study and selected private-foundation awards. It is a **curated starting directory**, not a claim to list every scholarship available in India. The official [National Scholarship Portal](https://scholarships.gov.in/All-Scholarships) and [Karnataka SSP](https://ssp.postmatric.karnataka.gov.in/homepage.aspx) remain authoritative for active schemes, application windows and eligibility.\n\nEach record includes source attribution and a review note. Scheme rules and dates change. Records without fully reviewed criteria are labelled for official/manual review and do not generate a profile match.\n

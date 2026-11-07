@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { Download, FileText, ShieldCheck } from "lucide-react";
+import { countWords } from "./features/essay/wordCount";
 
 type EssayDraft = { prompt: string; motivation: string; experience: string; impact: string; goals: string; draft: string; limit: number };
 const key = "grantly:essay-workspace:v1";
@@ -11,7 +12,6 @@ function load(): EssayDraft {
     return { ...empty, ...value, limit: typeof value.limit === "number" && value.limit >= 1 && value.limit <= 10000 ? Math.round(value.limit) : 500 };
   } catch { return empty; }
 }
-export const countWords = (text: string) => text.trim() ? text.trim().split(/\s+/).length : 0;
 
 export default function EssayWorkspace() {
   const [draft, setDraft] = useState<EssayDraft>(load);
