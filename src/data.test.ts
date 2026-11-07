@@ -33,7 +33,7 @@ describe("scholarship catalogue quality", () => {
     expect(item?.verificationNote).toMatch(/beneficiary status/i);
   });
 
-  it("has core metadata and an HTTPS source for every record", () =>
+  it("has core metadata and an HTTPS source for every record", () => {
     for (const item of scholarships) {
       expect(item.name.trim(), item.id).not.toBe("");
       expect(item.provider.trim(), item.id).not.toBe("");
