@@ -26,7 +26,7 @@ The current release is a browser-first prototype. It does not have user accounts
 
 ## Design system
 
-The interface uses an academic navy (`#17324D`), warm ivory (`#FBF8F1`) and terracotta (`#B85C38`) palette. The colours form a restrained three-colour identity with neutral supporting text and borders. Layouts are responsive and designed for keyboard and touch use.
+The interface uses an academic navy (`#17324D`), warm ivory (`#F6F1E6`) and terracotta (`#B05230`) palette. The colours form a restrained three-colour identity with neutral supporting text and borders. Layouts are responsive and designed for keyboard and touch use.
 
 ## Engineering
 
