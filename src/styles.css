@@ -141,3 +141,5 @@ a{color:#1d3557}
 .directory-links a{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;color:#1d3557;text-decoration:none}
 .directory-links a:hover{text-decoration:underline;color:#8b6826}
 @media(max-width:680px){.directory-coverage{align-items:flex-start;flex-direction:column}.directory-links{flex-direction:row;flex-wrap:wrap}}
+
+.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
