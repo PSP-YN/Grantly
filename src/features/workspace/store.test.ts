@@ -16,9 +16,15 @@ describe("workspace import normalization",()=>{
   expect(value.profile.course).toBe("script B.E. CSE");
   expect(value.profile.income).toBe("Not specified");
  });
- it("accepts a Grantly export envelope and rejects unrelated JSON",()=>{
-  const payload={product:"Grantly",exportedAt:"2026-11-07T00:00:00Z",workspace:{saved:["csss"],applications:[],profile:{}}};
-  expect(parseWorkspaceExport(JSON.stringify(payload)).saved).toEqual(["csss"]);
+ it("accepts a full Grantly export with planner and essay data",()=>{
+  const payload={product:"Grantly",exportedAt:"2026-11-07T00:00:00Z",workspace:{saved:["csss"],applications:[],profile:{}},fundingPlanner:{tuition:12345},essayWorkspace:{draft:"A real student story",limit:250}};
+  const parsed=parseWorkspaceExport(JSON.stringify(payload));
+  expect(parsed.store.saved).toEqual(["csss"]);
+  expect(parsed.fundingPlanner?.tuition).toBe(12345);
+  expect(parsed.essayWorkspace?.draft).toBe("A real student story");
+  expect(parsed.essayWorkspace?.limit).toBe(250);
+ });
+ it("rejects unrelated JSON and malformed content",()=>{
   expect(()=>parseWorkspaceExport(JSON.stringify({hello:"world"}))).toThrow(/not a Grantly/);
   expect(()=>parseWorkspaceExport("invalid-json")).toThrow();
  });
