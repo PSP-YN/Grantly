@@ -220,7 +220,7 @@ scholarships.push(
   {
     id: "aicte-swanath-degree", name: "AICTE Swanath Scholarship — Technical Degree",
     provider: "All India Council for Technical Education", amount: "Check current AICTE guidelines", amountValue: 0,
-    deadline: "Check current NSP scheme notice", category: "Technical education", level: "Technical degree",
+    deadline: "NSP AY 2026–27 student applications close 30 Nov 2026", category: "Technical education", level: "Technical degree",
     region: "All India", description: "Support for eligible students under the AICTE Swanath scheme pursuing approved technical degree programmes.",
     eligibility: ["Specific eligible beneficiary categories apply", "AICTE-approved technical institution and programme", "Current scheme guidelines define award and documentation"],
     tags: ["AICTE", "Technical", "Welfare", "NSP"], source: "https://scholarships.gov.in/All-Scholarships",
@@ -232,7 +232,7 @@ scholarships.push(
   {
     id: "aicte-swanath-diploma", name: "AICTE Swanath Scholarship — Technical Diploma",
     provider: "All India Council for Technical Education", amount: "Check current AICTE guidelines", amountValue: 0,
-    deadline: "Check current NSP scheme notice", category: "Technical education", level: "Technical diploma",
+    deadline: "NSP AY 2026–27 student applications close 30 Nov 2026", category: "Technical education", level: "Technical diploma",
     region: "All India", description: "Support for eligible students enrolled in approved technical diploma programmes under Swanath.",
     eligibility: ["Scheme-defined beneficiary category", "AICTE-approved diploma institution", "Current scheme specification governs eligibility"],
     tags: ["AICTE", "Diploma", "Welfare", "NSP"], source: "https://scholarships.gov.in/All-Scholarships",
@@ -244,7 +244,7 @@ scholarships.push(
   {
     id: "pmss-capf", name: "Prime Minister’s Scholarship Scheme — CAPF & Assam Rifles",
     provider: "Ministry of Home Affairs / Welfare and Rehabilitation Board", amount: "Check current scheme guidelines", amountValue: 0,
-    deadline: "NSP AY 2026–27 notice: verify current deadline", category: "Merit-based", level: "Professional / higher education",
+    deadline: "NSP AY 2026–27 student applications close 30 Nov 2026", category: "Merit-based", level: "Professional / higher education",
     region: "All India", description: "Scholarship for eligible wards and widows of CAPF and Assam Rifles personnel under scheme-specific conditions.",
     eligibility: ["Relationship to eligible CAPF / Assam Rifles personnel required", "Course and academic performance restrictions apply", "Fresh and renewal rules differ"],
     tags: ["CAPF", "Defence families", "NSP"], source: "https://scholarships.gov.in/All-Scholarships",
@@ -256,7 +256,7 @@ scholarships.push(
   {
     id: "pmss-police-martyred", name: "Prime Minister’s Scholarship Scheme — Wards of Police Personnel Martyred in Terror/Naxal Attacks",
     provider: "Ministry of Home Affairs", amount: "Check current scheme guidelines", amountValue: 0,
-    deadline: "Check NSP current notice", category: "Merit-based", level: "Higher education",
+    deadline: "NSP AY 2026–27 student applications close 30 Nov 2026", category: "Merit-based", level: "Higher education",
     region: "All India", description: "Scholarship for eligible wards of State/UT police personnel martyred in terror or Naxal attacks.",
     eligibility: ["Eligible parent service and martyrdom circumstances required", "Course and academic rules apply", "Official verification is mandatory"],
     tags: ["Police families", "Welfare", "NSP"], source: "https://scholarships.gov.in/All-Scholarships",
@@ -268,7 +268,7 @@ scholarships.push(
   {
     id: "postmatric-disability", name: "Post-Matric Scholarship for Students with Disabilities",
     provider: "Department of Empowerment of Persons with Disabilities", amount: "See current scheme guidelines", amountValue: 0,
-    deadline: "Check NSP current notice", category: "Need-based", level: "Post-matric / higher education",
+    deadline: "NSP AY 2026–27 student applications close 30 Nov 2026", category: "Need-based", level: "Post-matric / higher education",
     region: "All India", description: "Support for eligible students with disabilities continuing education after matriculation.",
     eligibility: ["Disability and certification criteria apply", "Course, income and academic conditions apply", "Current scheme notice determines award and renewal"],
     tags: ["Disability", "Accessibility", "NSP"], source: "https://scholarships.gov.in/All-Scholarships",
@@ -280,7 +280,7 @@ scholarships.push(
   {
     id: "top-class-disability", name: "Scholarship for Top Class Education for Students with Disabilities",
     provider: "Department of Empowerment of Persons with Disabilities", amount: "See current scheme guidelines", amountValue: 0,
-    deadline: "Check NSP current notice", category: "Need-based", level: "Higher education",
+    deadline: "NSP AY 2026–27 student applications close 30 Nov 2026", category: "Need-based", level: "Higher education",
     region: "Eligible institutions across India", description: "Support for eligible students with disabilities studying at institutions covered by the current scheme.",
     eligibility: ["Disability documentation required", "Institution and course must be covered", "Income and award rules are scheme-specific"],
     tags: ["Disability", "Higher education", "NSP"], source: "https://scholarships.gov.in/All-Scholarships",
@@ -292,7 +292,7 @@ scholarships.push(
   {
     id: "national-pg-scholarship", name: "National Scholarship for Post Graduate Studies",
     provider: "University Grants Commission", amount: "Check current UGC guidelines", amountValue: 0,
-    deadline: "Check NSP current notice", category: "Merit-based", level: "Postgraduate",
+    deadline: "NSP AY 2026–27 student applications close 30 Nov 2026", category: "Merit-based", level: "Postgraduate",
     region: "All India", description: "UGC scholarship programme for eligible postgraduate students under current scheme rules.",
     eligibility: ["Fresh postgraduate enrolment and age/course rules apply", "Institution eligibility and exclusions apply", "Scheme guidelines define selection and award"],
     tags: ["UGC", "PG", "Merit", "NSP"], source: "https://scholarships.gov.in/All-Scholarships",
