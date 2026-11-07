@@ -263,3 +263,7 @@ a:hover{color:#9D4B2E}
 .catalogue-select:focus-within{outline:3px solid #B05230;outline-offset:2px}
 @media(max-width:900px){.toolbar{flex-wrap:wrap}.catalogue-select{flex:1}.catalogue-select select{width:100%;max-width:none}}
 @media(max-width:500px){.catalogue-select{width:100%}.catalogue-select select{flex:1}}
+
+
+/* Async feature chunks retain a stable layout while loading. */
+.feature-loading{min-height:180px;display:grid;place-items:center;padding:32px;color:var(--muted);font-size:14px;font-weight:600;border:1px solid var(--line);border-radius:16px;background:var(--paper)}
