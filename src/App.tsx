@@ -9,6 +9,7 @@ import { filterScholarships } from "./features/scholarships/search";
 import { buildDeadlineCalendar, parseExplicitDeadline } from "./features/scholarships/calendar";
 function clean(v:string){return v.replace(/[<>]/g,"").trim().slice(0,120);}
 function App(){
+ const importInputRef=useRef<HTMLInputElement>(null);
  const [store,setStore]=useState<Store>(loadStore),[active,setActive]=useState("Discover"),[query,setQuery]=useState(""),[category,setCategory]=useState("All"),[sort,setSort]=useState("match"),[selected,setSelected]=useState<Scholarship|null>(null),[toast,setToast]=useState(""),[profileOpen,setProfileOpen]=useState(false),[mobileNav,setMobileNav]=useState(false);
  useEffect(()=>{try{localStorage.setItem(STORE_KEY,JSON.stringify(store));}catch{/* Browser storage may be disabled; the current session remains usable. */}},[store]);
  useEffect(()=>{if(!toast)return;const t=window.setTimeout(()=>setToast(""),2600);return()=>window.clearTimeout(t);},[toast]);
