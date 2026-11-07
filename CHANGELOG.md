@@ -1,6 +1,23 @@
 # Changelog
 
-## Unreleased — India-wide student product expansion\n- Added 15 additional UGC, Karnataka welfare, PM CARES and private-foundation records (77 total curated entries).\n- Added separate catalog composition module to isolate supplemental scholarship data from the original data file.\n- Added filter categories for state schemes, private foundations and fellowships.\n- Replaced the navy/blue UI with forest green, parchment and academic gold across CSS, browser theme metadata, PWA manifest and icons.\n- Documented a conflicting NSP CSSS renewal deadline snapshot instead of silently choosing one date.\n\n## Previous India-wide student product expansion
+## Unreleased — hardening and accessibility
+- Memoized scholarship filtering and level/state visibility.
+- Corrected deadline sorting and calendar export to use local dates; added India/US timezone boundary tests.
+- Added Vercel CSP, HSTS, nosniff, frame protection, referrer, permissions and COOP headers.
+- Added canonical URL, sitemap.xml and robots.txt.
+- Bumped the service-worker cache for stale shell invalidation.
+- Aligned the PWA manifest and icons with the current navy/ivory/terracotta palette.
+- Added palette contrast regression tests.
+- Updated PM CARES education support from the official MWCD FAQ.
+
+## Unreleased — India-wide student product expansion
+- Added 15 additional UGC, Karnataka welfare, PM CARES and private-foundation records (77 total curated entries).
+- Added separate catalog composition module to isolate supplemental scholarship data from the original data file.
+- Added filter categories for state schemes, private foundations and fellowships.
+- Replaced the navy/blue UI with forest green, parchment and academic gold across CSS, browser theme metadata, PWA manifest and icons.
+- Documented a conflicting NSP CSSS renewal deadline snapshot instead of silently choosing one date.
+
+## Previous India-wide student product expansion
 - Added 9 central / UGC scholarship and fellowship records in the previous update (62 records at that point).
 - Added searchable portal starting points for all 28 states and 8 union territories.
 - Added 12 state-specific scholarship / education-aid records from official state portals (Karnataka, Maharashtra, West Bengal, Odisha, Telangana, Uttar Pradesh, Bihar, Gujarat and Kerala).
