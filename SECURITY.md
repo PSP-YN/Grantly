@@ -22,3 +22,10 @@ Report suspected vulnerabilities privately to the repository owner. Include a re
 Browser localStorage is not an authenticated or encrypted data store. Income bands, category and academic details are personal information; they are optional and remain in this browser. Do not enter identity numbers, bank details, credentials, certificates or other sensitive records.
 
 A real multi-user product would require a threat model, authentication, authorization, server-side validation, secure document handling, encryption in transit and at rest, audit logging, retention/deletion controls, monitoring, backups, incident response and privacy/legal review. These controls are not currently implemented.
+
+
+## Hosting hardening
+
+Vercel applies `Content-Security-Policy`, `X-Content-Type-Options: nosniff`, `X-Frame-Options: DENY`, strict referrer policy, restrictive Permissions Policy, COOP and HSTS. Only hashed Vite assets receive immutable cache headers; the service worker is revalidated on update checks.
+
+These controls reduce browser-side exposure but do not replace a backend threat model. Grantly does not currently provide authenticated or encrypted remote storage.
