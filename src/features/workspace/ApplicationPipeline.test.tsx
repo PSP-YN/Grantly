@@ -1,5 +1,8 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import { describe, expect, it, vi } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
+import { cleanup } from "@testing-library/react";
+
+afterEach(() => cleanup());
 import ApplicationPipeline from "./ApplicationPipeline";
 import type { AppRecord } from "./store";
 import type { Scholarship } from "../../data";
