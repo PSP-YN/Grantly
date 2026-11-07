@@ -689,3 +689,129 @@ scholarships.push(
   }
 );
 
+// State-level programme entries. These records point to official state portals;
+// details are deliberately not auto-matched until scheme-specific rules are reviewed.
+scholarships.push(
+  {
+    id:"karnataka-vidyasiri",name:"Karnataka Vidyasiri — Food & Accommodation Scheme",
+    provider:"Karnataka Backward Classes Welfare Department",amount:"Check current SSP / BCWD notification",amountValue:0,
+    deadline:"Check current Karnataka SSP notice",category:"Need-based",level:"Post-matric / higher education",
+    region:"Karnataka",description:"Food and accommodation assistance for eligible Karnataka students who meet the current department criteria and do not receive covered hostel facilities.",
+    eligibility:["Karnataka domicile and department/category criteria apply","Course, hostel status, distance and income requirements vary","Current BCWD/SSP notice determines eligibility and benefit"],
+    tags:["Karnataka","Vidyasiri","BCWD","Hostel support","SSP"],source:"https://bcwd.karnataka.gov.in/new-page/PostMatric%20Scholarship%20Application/en",sourceLabel:"Karnataka Backward Classes Welfare Department",
+    lastVerified:"2026-11-07",verificationNote:"Karnataka department and university pages identify Vidyasiri food/accommodation support. Confirm current income/category/hostel rules and application window on the official SSP / BCWD notice.",
+    initials:"KAR",tone:"gold",rules:[],documents:["Karnataka domicile / residence proof","Category certificate if required","Income certificate","College enrollment proof","Hostel / distance proof as required"]
+  },
+  {
+    id:"maharashtra-shahu",name:"Maharashtra Rajarshi Chhatrapati Shahu Maharaj Shikshan Shulkh Shishyavrutti",
+    provider:"Government of Maharashtra — MahaDBT",amount:"Fee support; check current scheme guidelines",amountValue:0,
+    deadline:"Check current MahaDBT academic-year notice",category:"Need-based",level:"Higher education / professional courses",
+    region:"Maharashtra",description:"Tuition and examination fee support under Maharashtra's Shahu Maharaj fee scholarship scheme for eligible students.",
+    eligibility:["Maharashtra domicile and scheme category conditions","Course, institution, income and admission requirements apply","Fresh/renewal and fee limits vary by department"],
+    tags:["Maharashtra","MahaDBT","Fee support","EBC"],source:"https://mahadbt.maharashtra.gov.in/",sourceLabel:"MahaDBT — Government of Maharashtra",
+    lastVerified:"2026-11-07",verificationNote:"MahaDBT and the Maharashtra Directorate of Higher Education list Shahu Maharaj fee scholarship variants. Check the exact DHE/DTE scheme card and current eligibility before applying.",
+    initials:"MH",tone:"gold",rules:[],documents:["Maharashtra domicile proof","Admission and fee receipt","Income / category documents as required","Academic records","Bank details"]
+  },
+  {
+    id:"maharashtra-punjabrao",name:"Maharashtra Dr. Punjabrao Deshmukh Vasatigruh Nirvah Bhatta Yojna",
+    provider:"Government of Maharashtra — MahaDBT",amount:"Hostel / maintenance allowance; check current guidelines",amountValue:0,
+    deadline:"Check current MahaDBT academic-year notice",category:"Need-based",level:"Higher education / professional courses",
+    region:"Maharashtra",description:"Hostel and maintenance assistance for eligible students under Maharashtra's Dr. Punjabrao Deshmukh scheme.",
+    eligibility:["Maharashtra domicile and eligible course/institution","Hosteller, income and family/landholder conditions may apply","Current MahaDBT rules determine allowance and exclusions"],
+    tags:["Maharashtra","MahaDBT","Hostel","Maintenance"],source:"https://mahadbt.maharashtra.gov.in/",sourceLabel:"MahaDBT — Government of Maharashtra",
+    lastVerified:"2026-11-07",verificationNote:"The Maharashtra portal lists Dr. Punjabrao Deshmukh hostel maintenance support. Confirm current eligibility, hosteller criteria and benefit caps from the official scheme notice.",
+    initials:"MH",tone:"blue",rules:[],documents:["Domicile proof","Admission proof","Hostel certificate / rent documents","Income / eligibility proof","Bank details"]
+  },
+  {
+    id:"maharashtra-eklavya",name:"Maharashtra Eklavya Scholarship",
+    provider:"Directorate of Higher Education, Government of Maharashtra",amount:"Check current MahaDBT scheme guidelines",amountValue:0,
+    deadline:"Check current MahaDBT academic-year notice",category:"Merit-based",level:"Postgraduate",
+    region:"Maharashtra",description:"Merit scholarship for eligible Maharashtra postgraduate students under current Directorate of Higher Education rules.",
+    eligibility:["Maharashtra domicile and postgraduate enrollment","Academic merit and course rules apply","Current DHE scheme notice governs selection"],
+    tags:["Maharashtra","MahaDBT","Merit","PG"],source:"https://mahadbt.maharashtra.gov.in/",sourceLabel:"MahaDBT — Government of Maharashtra",
+    lastVerified:"2026-11-07",verificationNote:"MahaDBT lists Eklavya Scholarship among Directorate of Higher Education schemes. Verify current marks, course, income and application rules on the official scheme page.",
+    initials:"MH",tone:"gold",rules:[],documents:["Domicile proof","UG marksheets","PG admission proof","Income proof if required","Bank details"]
+  },
+  {
+    id:"wb-svmcm",name:"West Bengal Swami Vivekananda Merit-cum-Means Scholarship (SVMCM)",
+    provider:"Government of West Bengal — Higher Education Department",amount:"See current SVMCM course-wise rate table",amountValue:0,
+    deadline:"Check current SVMCM application window",category:"Merit-based",level:"School / undergraduate / postgraduate / research",
+    region:"West Bengal",description:"Merit-cum-means scholarship for eligible students in West Bengal across covered education levels.",
+    eligibility:["West Bengal domicile and family-income criteria","Minimum marks vary by level/course","Course, institution and renewal rules vary"],
+    tags:["West Bengal","SVMCM","Merit-cum-means","State"],source:"https://svmcm.wbhed.gov.in/",sourceLabel:"SVMCM — West Bengal Higher Education",
+    lastVerified:"2026-11-07",verificationNote:"SVMCM is the official West Bengal scholarship portal. Check the current cycle's level-specific marks, income ceiling, amount and deadline.",
+    initials:"WB",tone:"gold",rules:[],documents:["West Bengal domicile proof","Academic marksheets","Admission proof","Income certificate","Bank details"]
+  },
+  {
+    id:"wb-aikyashree",name:"West Bengal Aikyashree Minority Scholarship",
+    provider:"West Bengal Minorities Development & Finance Corporation (WBMDFC)",amount:"Check current scheme and course-wise guidelines",amountValue:0,
+    deadline:"Check current Aikyashree application window",category:"Need-based",level:"School / undergraduate / postgraduate",
+    region:"West Bengal",description:"Minority student scholarship programmes administered through Aikyashree, including scheme types determined by current eligibility.",
+    eligibility:["Eligible notified minority community","Domicile, income, marks and course requirements differ by sub-scheme","Fresh/renewal and portal rules vary"],
+    tags:["West Bengal","Minority","Aikyashree","State"],source:"https://wbmdfcscholarship.in/",sourceLabel:"WBMDFC Aikyashree official portal",
+    lastVerified:"2026-11-07",verificationNote:"Aikyashree is the official WBMDFC scholarship portal. Confirm the current sub-scheme (pre/post matric, merit-cum-means or other), income, marks and date before applying.",
+    initials:"WB",tone:"blue",rules:[],documents:["Minority certificate / self-declaration as required","Domicile proof","Academic records","Income certificate","Bank details"]
+  },
+  {
+    id:"odisha-medhabruti",name:"Odisha e-Medhabruti Merit Scholarship",
+    provider:"Government of Odisha — Higher Education Department",amount:"Check current e-Medhabruti course/category rates",amountValue:0,
+    deadline:"Check Odisha State Scholarship Portal for current call",category:"Merit-based",level:"Undergraduate / postgraduate / professional courses",
+    region:"Odisha",description:"Merit scholarship programme for eligible Odisha students pursuing covered higher education courses.",
+    eligibility:["Odisha domicile and course eligibility","Academic merit and institution requirements apply","Current category/course rules and renewal conditions apply"],
+    tags:["Odisha","e-Medhabruti","Merit","State"],source:"https://scholarship.odisha.gov.in/",sourceLabel:"Odisha State Scholarship Portal",
+    lastVerified:"2026-11-07",verificationNote:"Odisha's official State Scholarship Portal is the source for e-Medhabruti. Verify current academic-year categories, marks, award value and deadline.",
+    initials:"OD",tone:"gold",rules:[],documents:["Odisha domicile proof","Academic marksheets","Admission proof","Income proof if required","Bank details"]
+  },
+  {
+    id:"telangana-epass-pms",name:"Telangana ePASS Post-Matric Scholarship / Fee Reimbursement",
+    provider:"Government of Telangana — Social Welfare / Welfare Departments",amount:"Fee reimbursement and maintenance support; check current rules",amountValue:0,
+    deadline:"Check current Telangana ePASS timeline",category:"Need-based",level:"Post-matric / higher education",
+    region:"Telangana",description:"State post-matric scholarship and fee-reimbursement programmes for eligible students through ePASS.",
+    eligibility:["Telangana domicile and welfare category criteria","Course, college approval, income and academic rules vary by scheme","Fresh/renewal verification and fee rules apply"],
+    tags:["Telangana","ePASS","Post-matric","Fee reimbursement"],source:"https://telanganaepass.cgg.gov.in/",sourceLabel:"Telangana ePASS official portal",
+    lastVerified:"2026-11-07",verificationNote:"The official Telangana ePASS portal lists pre/post-matric services, eligible courses and colleges. Check scheme-specific income, category, attendance and deadline details.",
+    initials:"TG",tone:"blue",rules:[],documents:["Telangana residence proof","Category / caste certificate if applicable","Income certificate","College admission and fee details","Bank details"]
+  },
+  {
+    id:"up-postmatric",name:"Uttar Pradesh Post-Matric Scholarship and Fee Reimbursement",
+    provider:"Government of Uttar Pradesh — Social Welfare / Backward Classes / Minority Departments",amount:"Check current UP scheme and course-wise guidelines",amountValue:0,
+    deadline:"Check current UP Scholarship portal timetable",category:"Need-based",level:"Intermediate / undergraduate / postgraduate / professional",
+    region:"Uttar Pradesh; outside-state institution rules may apply",description:"Post-matric scholarship and fee reimbursement for eligible students under UP's department-specific schemes.",
+    eligibility:["Scheme-specific SC/ST/OBC/minority/general eligibility","Domicile, institution, income and course rules vary","Fresh/renewal and biometric/verification requirements may apply"],
+    tags:["Uttar Pradesh","Post-matric","Fee reimbursement","State"],source:"https://scholarship.up.gov.in/",sourceLabel:"UP Scholarship and Fee Reimbursement official portal",
+    lastVerified:"2026-11-07",verificationNote:"UP's official portal publishes separate schedules for pre/post-matric, categories and fresh/renewal. Confirm the current academic-year timetable and applicable department notice.",
+    initials:"UP",tone:"gold",rules:[],documents:["UP domicile proof where required","Category certificate","Income certificate","Admission and fee details","Academic records","Bank details"]
+  },
+  {
+    id:"bihar-pms",name:"Bihar Post Matric Scholarship (PMS)",
+    provider:"Government of Bihar — Welfare Departments",amount:"Check current Bihar PMS scheme guidelines",amountValue:0,
+    deadline:"Check Bihar PMS current application window",category:"Need-based",level:"Post-matric / higher education",
+    region:"Bihar",description:"Post-matric education assistance for eligible Bihar students under category-specific welfare schemes.",
+    eligibility:["Bihar domicile and category criteria","Income, course, institution and fee rules apply","Fresh/renewal and verification conditions vary"],
+    tags:["Bihar","PMS","Post-matric","State"],source:"https://pmsonline.bih.nic.in/",sourceLabel:"Bihar Post Matric Scholarship official portal",
+    lastVerified:"2026-11-07",verificationNote:"Bihar PMS is the official post-matric application route for covered categories. Confirm the current cycle, eligible courses, income ceiling and documents from the portal.",
+    initials:"BR",tone:"blue",rules:[],documents:["Bihar domicile proof","Category certificate","Income certificate","Admission and fee details","Academic marksheets","Bank details"]
+  },
+  {
+    id:"gujarat-mysy",name:"Gujarat Mukhyamantri Yuva Swavalamban Yojana (MYSY)",
+    provider:"Government of Gujarat",amount:"Check current MYSY course-specific benefit guidelines",amountValue:0,
+    deadline:"Check current MYSY application cycle",category:"Merit-based",level:"Undergraduate / diploma / professional courses",
+    region:"Gujarat",description:"Merit-based financial support for eligible Gujarat students pursuing covered higher education courses.",
+    eligibility:["Gujarat domicile and qualifying examination criteria","Course, admission, income and merit requirements apply","Current scheme rules and renewal conditions govern"],
+    tags:["Gujarat","MYSY","Merit","State"],source:"https://mysy.guj.nic.in/",sourceLabel:"Gujarat MYSY official portal",
+    lastVerified:"2026-11-07",verificationNote:"MYSY is the official Gujarat scheme portal. Check current course-specific eligibility, qualifying marks, income, benefit and deadlines.",
+    initials:"GJ",tone:"gold",rules:[],documents:["Gujarat domicile proof","Qualifying exam marksheet","Admission proof","Income certificate","Bank details"]
+  },
+  {
+    id:"kerala-egrantz",name:"Kerala e-Grantz Post-Matric Scholarship Support",
+    provider:"Government of Kerala — Scheduled Castes / Scheduled Tribes / Backward Classes Development Departments",amount:"Scheme and course-wise aid; check current e-Grantz notice",amountValue:0,
+    deadline:"Check current Kerala e-Grantz application status",category:"Need-based",level:"Post-matric / higher education",
+    region:"Kerala",description:"Scholarship and education assistance routed through Kerala e-Grantz for eligible students in covered communities.",
+    eligibility:["Kerala residence and department/community criteria","Course, institution, income and fee requirements vary","Current department scheme notice governs"],
+    tags:["Kerala","e-Grantz","Post-matric","State"],source:"https://egrantz.kerala.gov.in/",sourceLabel:"Kerala e-Grantz official portal",
+    lastVerified:"2026-11-07",verificationNote:"e-Grantz is Kerala's official scholarship/education assistance portal. Check current community, course, institution and deadline details with the responsible department.",
+    initials:"KL",tone:"blue",rules:[],documents:["Kerala residence proof","Category certificate if required","Income certificate","Admission proof","Academic records","Bank details"]
+  }
+);
+
+
