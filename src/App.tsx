@@ -4,7 +4,7 @@ import { categories, scholarships, type Scholarship } from "./data";
 import FundingPlanner from "./FundingPlanner";
 import EssayWorkspace from "./EssayWorkspace";
 import { assessEligibility } from "./matching";
-import { parseWorkspaceExport, STORE_KEY, defaultStore, type Profile, type Store } from "./features/workspace/store";
+import { parseWorkspaceExport, STORE_KEY, defaultStore, type Profile } from "./features/workspace/store";
 import { useWorkspace } from "./features/workspace/useWorkspace";
 import { filterScholarships } from "./features/scholarships/search";
 import { buildDeadlineCalendar, parseExplicitDeadline } from "./features/scholarships/calendar";
