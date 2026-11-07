@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-function useDialogFocus(){
+export function useDialogFocus(){
  const ref=useRef<HTMLElement|null>(null);
  useEffect(()=>{
   const node=ref.current;if(!node)return;
