@@ -131,3 +131,7 @@ MIT. See [LICENSE](LICENSE).
 ## Workspace backup and restore
 
 Students can export a Grantly JSON backup and restore it later in another browser profile. The backup includes the local student profile, saved scholarship IDs, application stages and checklist state, funding-planner inputs, and statement draft. Imported records are normalized against known scholarship IDs and valid checklist options before being accepted. Files remain under the student's control; Grantly does not upload the backup. Treat the export as personal data and store it securely.
+
+## National Scholarship Portal coverage
+
+Grantly includes separate directory records for the NSP AY 2026–27 schemes added in this catalogue update, including degree/diploma distinctions for AICTE Pragati and Saksham, school scholarships, worker-family assistance, research fellowships, ICAR programmes and PMSS Railways. Scheme windows are date-stamped snapshots—not live deadline monitoring. Always re-check the [official NSP catalogue](https://scholarships.gov.in/All-Scholarships) and current scheme specifications.
