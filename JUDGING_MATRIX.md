@@ -8,7 +8,7 @@ The GRANTLY prompt asks for a unified scholarship discovery and management exper
 
 | Judging dimension | What Grantly demonstrates | Evidence / judge action |
 |---|---|---|
-| UI / UX | Clear information hierarchy, forest-green / parchment / academic-gold education palette, consistent cards, responsive shell and purposeful empty states. | Open Discover; compare desktop and 320px mobile layout. |
+| UI / UX | Clear information hierarchy, ink navy / warm ivory / terracotta academic palette, consistent cards, responsive shell and purposeful empty states. | Open Discover; compare desktop and 320px mobile layout. |
 | Functionality | Search, category filtering, sorting, save, profile editor, dynamic criteria checks, application stages, document checklist and JSON export. | Run the walkthrough in SUBMISSION.md. |
 | Creativity | Explainable eligibility screening. No fabricated percentages. Missing values remain unknown; incomplete schemes require official review. | Edit the profile and show CSSS rule outcomes changing. |
 | Problem alignment | Discovery and application preparation are connected rather than separate features. | Save a scheme, add it to tracker, check documents and change stage. |
