@@ -22,3 +22,16 @@ Report suspected vulnerabilities privately to the repository owner. Include a re
 Browser localStorage is not an authenticated or encrypted data store. Income bands, category and academic details are personal information; they are optional and remain in this browser. Do not enter identity numbers, bank details, credentials, certificates or other sensitive records.
 
 A real multi-user product would require a threat model, authentication, authorization, server-side validation, secure document handling, encryption in transit and at rest, audit logging, retention/deletion controls, monitoring, backups, incident response and privacy/legal review. These controls are not currently implemented.
+
+
+## Hosting controls
+
+The Vercel configuration applies:
+- `X-Content-Type-Options: nosniff`
+- `X-Frame-Options: DENY`
+- `Referrer-Policy: strict-origin-when-cross-origin`
+- A restrictive `Permissions-Policy` disabling camera, microphone and geolocation
+- `Cross-Origin-Opener-Policy: same-origin`
+- Long-lived immutable caching only for Vite's content-hashed `/assets/` output; public shell assets use a shorter cache lifetime.
+
+These headers reduce browser-side exposure but do not replace application security review, threat modeling or a backend security architecture.
