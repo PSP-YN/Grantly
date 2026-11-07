@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react";
-import { ArrowDownUp, ArrowRight, Bookmark, BookOpen, CalendarDays, CheckCircle2, ChevronDown, Clock3, Compass, Download, FileCheck2, GraduationCap, Menu, Search, ShieldCheck, SlidersHorizontal, Sparkles, Target, UserRound, Wallet } from "lucide-react";
+import { ArrowDownUp, ArrowRight, Bookmark, BookOpen, CalendarDays, Check, CheckCircle2, ExternalLink, ChevronDown, Clock3, Compass, Download, FileCheck2, GraduationCap, Menu, Search, ShieldCheck, SlidersHorizontal, Sparkles, Target, UserRound, Wallet } from "lucide-react";
 import { categories, scholarships, type Scholarship } from "./data";
 import FundingPlanner from "./FundingPlanner";
 import EssayWorkspace from "./EssayWorkspace";
 import { assessEligibility } from "./matching";
-import { loadStore, parseWorkspaceExport, STORE_KEY, type Stage, type Profile, type Store } from "./features/workspace/store";
+import { loadStore, parseWorkspaceExport, STORE_KEY, type Stage, type Store } from "./features/workspace/store";
 import { filterScholarships } from "./features/scholarships/search";
 import { buildDeadlineCalendar, parseExplicitDeadline } from "./features/scholarships/calendar";
 import { normalizeBudget, FUNDING_PLANNER_STORAGE_KEY } from "./features/funding-planner/calculations";
