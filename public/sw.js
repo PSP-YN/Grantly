@@ -1,4 +1,4 @@
-const CACHE_NAME = "grantly-shell-v1";
+const CACHE_NAME = "grantly-shell-v2";
 const CORE_ASSETS = ["/", "/index.html", "/favicon.svg", "/grantly-icon.svg", "/manifest.webmanifest"];
 
 self.addEventListener("install", event => {
