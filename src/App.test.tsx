@@ -38,7 +38,8 @@ describe("Grantly workspace", () => {
     expect(screen.getByText(/Your writing is saved in this browser only/)).toBeInTheDocument();
   });
 
-\n  it("imports a validated workspace JSON file and persists its records", async () => {
+
+  it("imports a validated workspace JSON file and persists its records", async () => {
     render(<App />);
     const payload = { product: "Grantly", exportedAt: "2026-11-07T00:00:00Z", workspace: {
       saved: ["csss"], applications: [{ id: "csss", stage: "Preparing", completedDocuments: [] }],
