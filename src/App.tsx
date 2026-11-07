@@ -6,12 +6,12 @@ type Stage = "Interested"|"Preparing"|"Submitted"|"Under review"|"Awarded";
 type Profile = StudentProfile;
 type AppRecord = {id:string;stage:Stage;updated:string;completedDocuments:string[]};
 type Store = {saved:string[];applications:AppRecord[];profile:Profile};
-const STORE_KEY="fundnavi:workspace:v1";
+const STORE_KEY="grantly:workspace:v1";
 const defaultProfile:Profile={course:"",year:"Not specified",state:"",income:"Not specified",category:"Not specified",academicBand:"Not sure",studyMode:"Not specified",otherScholarship:"Not specified",classXiiRegion:"Not specified",applicationRoute:"Not specified"};
 const defaultStore:Store={saved:[],applications:[],profile:defaultProfile};
 function loadStore():Store{
  try{
-  const raw=localStorage.getItem(STORE_KEY)??localStorage.getItem("grantly:workspace:v1");if(!raw)return defaultStore;
+  const raw=localStorage.getItem(STORE_KEY)??localStorage.getItem("fundnavi:workspace:v1");if(!raw)return defaultStore;
   const parsed=JSON.parse(raw) as Partial<Store>;
   const ids=new Set(scholarships.map(item=>item.id));
   const stages:Stage[]=["Interested","Preparing","Submitted","Under review","Awarded"];
@@ -33,7 +33,7 @@ function App(){
  const toggleSaved=(id:string)=>setStore(p=>({...p,saved:p.saved.includes(id)?p.saved.filter(x=>x!==id):[...p.saved,id]}));
  const addApplication=(id:string)=>{setStore(p=>({...p,applications:p.applications.some(a=>a.id===id)?p.applications:[...p.applications,{id,stage:"Interested",updated:"Today",completedDocuments:[]}]}));setToast("Added to your application tracker.");};
  const toggleDocument=(id:string,doc:string)=>setStore(p=>({...p,applications:p.applications.map(a=>a.id===id?{...a,completedDocuments:a.completedDocuments.includes(doc)?a.completedDocuments.filter(x=>x!==doc):[...a.completedDocuments,doc]}:a)}));
- const exportWorkspace=()=>{const payload=JSON.stringify({product:"FundNavi",exportedAt:new Date().toISOString(),workspace:store},null,2);const url=URL.createObjectURL(new Blob([payload],{type:"application/json"}));const link=document.createElement("a");link.href=url;link.download="fundnavi-workspace.json";document.body.appendChild(link);link.click();link.remove();window.setTimeout(()=>URL.revokeObjectURL(url),1000);setToast("Workspace export downloaded.");};
+ const exportWorkspace=()=>{const payload=JSON.stringify({product:"Grantly",exportedAt:new Date().toISOString(),workspace:store},null,2);const url=URL.createObjectURL(new Blob([payload],{type:"application/json"}));const link=document.createElement("a");link.href=url;link.download="grantly-workspace.json";document.body.appendChild(link);link.click();link.remove();window.setTimeout(()=>URL.revokeObjectURL(url),1000);setToast("Workspace export downloaded.");};
  const updateStage=(id:string,stage:Stage)=>setStore(p=>({...p,applications:p.applications.map(a=>a.id===id?{...a,stage,updated:"Today"}:a)}));
  const discover=active==="Discover";
  const profileCompletion=Math.round(([store.profile.course,store.profile.year!=="Not specified",store.profile.state,store.profile.income!=="Not specified",store.profile.category!=="Not specified",store.profile.academicBand!=="Not sure",store.profile.studyMode!=="Not specified",store.profile.otherScholarship!=="Not specified",store.profile.classXiiRegion!=="Not specified",store.profile.applicationRoute!=="Not specified"].filter(Boolean).length/10)*100);
@@ -70,12 +70,12 @@ function App(){
      <section className="listing-section" id="scholarship-search"><div className="section-head"><div><div className="eyebrow">OPPORTUNITIES</div><h2>{active==="Applications"?"Your applications":active==="Saved"?"Your saved list":"Scholarships worth exploring"}</h2><p>{discover?"Source-linked opportunities with transparent eligibility checks.":"Manage your opportunities in one place."}</p></div><div className="result-count" aria-live="polite">{visible.length} results</div></div>
       <div className="toolbar"><label className="search-box"><Search size={17}/><input id="scholarship-search" value={query} onChange={e=>setQuery(clean(e.target.value))} placeholder="Search by name, provider or keyword..." aria-label="Search scholarships"/></label><label className="sort-select"><ArrowDownUp size={15}/><select value={sort} onChange={e=>setSort(e.target.value)} aria-label="Sort scholarships"><option value="match">Best match</option><option value="amount">Highest amount</option><option value="name">Name A–Z</option></select><ChevronDown size={14}/></label></div>
       <div className="filter-row" role="group" aria-label="Filter scholarships by category"><span className="filter-label"><SlidersHorizontal size={14}/> FILTER BY</span>{categories.map(c=><button key={c} aria-pressed={category===c} className={category===c?"filter-chip selected":"filter-chip"} onClick={()=>setCategory(c)}>{c}</button>)}</div>
-      <div className="data-note"><ShieldCheck size={15}/><span>FundNavi checks only the criteria shown against details you choose to provide. A profile match is not an eligibility decision. Confirm the current scheme notice, dates, institution list and documents with the official provider.</span></div>
+      <div className="data-note"><ShieldCheck size={15}/><span>Grantly checks only the criteria shown against details you choose to provide. A profile match is not an eligibility decision. Confirm the current scheme notice, dates, institution list and documents with the official provider.</span></div>
       {visible.length?<div className="scholarship-grid">{visible.map(s=><ScholarshipCard key={s.id} item={s} saved={store.saved.includes(s.id)} assessment={assessEligibility(s,store.profile)} application={store.applications.find(a=>a.id===s.id)} onSave={()=>toggleSaved(s.id)} onOpen={()=>setSelected(s)} onStage={stage=>updateStage(s.id,stage)} onAdd={()=>addApplication(s.id)}/>)}</div>:<div className="empty-state"><div><Search size={24}/></div><h3>No scholarships found</h3><p>Try a different search term or clear your filters.</p><button className="outline-button" onClick={()=>{setQuery("");setCategory("All");}}>Clear filters</button></div>}
      </section>
     </>}
     {active==="Profile"&&<ProfilePage profile={store.profile} completion={profileCompletion} onEdit={()=>setProfileOpen(true)}/>}
-    <footer className="page-footer"><span>© 2026 FUNDNAVI</span><span>Designed to make opportunity easier to reach.</span><button onClick={()=>setToast("This is a frontend demonstration. No personal data leaves this device.")}>Privacy & data <ArrowRight size={12}/></button></footer>
+    <footer className="page-footer"><span>© 2026 GRANTLY</span><span>Designed to make opportunity easier to reach.</span><button onClick={()=>setToast("This is a frontend demonstration. No personal data leaves this device.")}>Privacy & data <ArrowRight size={12}/></button></footer>
    </div>
   </main>
   {mobileNav&&<button className="mobile-scrim" aria-label="Close navigation" onClick={()=>setMobileNav(false)}/>}
