@@ -65,8 +65,8 @@ describe("Grantly workspace", () => {
     render(<App />);
     fireEvent.click(screen.getByRole("button", { name: /Student guide/ }));
     expect(await screen.findByRole("heading", { name: "Student application guide", level: 1 })).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: "A clearer path from discovery to application." })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /Read the official NSP student instructions/ })).toHaveAttribute("href", "https://scholarships.gov.in/Students");
+    expect(await screen.findByRole("heading", { name: "A clearer path from discovery to application." })).toBeInTheDocument();
+    expect(await screen.findByRole("link", { name: /Read the official NSP student instructions/ })).toHaveAttribute("href", "https://scholarships.gov.in/Students");
     expect(screen.getByText(/Do not share OTPs, passwords, PINs/)).toBeInTheDocument();
     const results = await axe.run(document.body, { runOnly: { type: "tag", values: ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"] } });
     expect(results.violations.map(item => item.id)).toEqual([]);
