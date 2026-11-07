@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { scholarships } from "./data";
+import { scholarships } from "./catalog";
 import { assessEligibility, type StudentProfile } from "./matching";
 
 const profile: StudentProfile = {

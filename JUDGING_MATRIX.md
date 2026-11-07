@@ -8,11 +8,11 @@ The GRANTLY prompt asks for a unified scholarship discovery and management exper
 
 | Judging dimension | What Grantly demonstrates | Evidence / judge action |
 |---|---|---|
-| UI / UX | Clear information hierarchy, restrained education-focused palette, consistent cards, responsive shell and purposeful empty states. | Open Discover; compare desktop and 320px mobile layout. |
+| UI / UX | Clear information hierarchy, forest-green / parchment / academic-gold education palette, consistent cards, responsive shell and purposeful empty states. | Open Discover; compare desktop and 320px mobile layout. |
 | Functionality | Search, category filtering, sorting, save, profile editor, dynamic criteria checks, application stages, document checklist and JSON export. | Run the walkthrough in SUBMISSION.md. |
 | Creativity | Explainable eligibility screening. No fabricated percentages. Missing values remain unknown; incomplete schemes require official review. | Edit the profile and show CSSS rule outcomes changing. |
 | Problem alignment | Discovery and application preparation are connected rather than separate features. | Save a scheme, add it to tracker, check documents and change stage. |
-| Code quality | React + TypeScript, typed catalogue, isolated matching module, defensive localStorage parsing, data migration, lint/typecheck/tests and CI. | Review src/matching.ts, src/data.ts and GitHub Actions workflow. |
+| Code quality | React + TypeScript, typed catalogue, isolated matching module, defensive localStorage parsing, data migration, lint/typecheck/tests and CI. | Review src/matching.ts, src/data.ts, src/dataSupplement.ts, src/catalog.ts and GitHub Actions workflow. |
 | Responsiveness / accessibility | Mobile navigation, semantic landmarks, labelled controls, focus-visible outlines, dialog focus trap/restoration, Escape dismissal, reduced-motion CSS and browser contrast checks. | Keyboard through a dialog; inspect 320px layout. |
 
 ## Strongest demo sequence (about 3 minutes)
@@ -31,7 +31,7 @@ The GRANTLY prompt asks for a unified scholarship discovery and management exper
 
 **Are the match results guaranteed?** No. The engine only evaluates the explicitly encoded rules against self-reported profile values. Unknown or incomplete scheme rules remain in official-review state.
 
-**Are deadlines real-time?** No. The app labels the source-review date and current NSP catalogue window. Users must verify the live provider page before applying.
+**Are deadlines real-time?** No. The app labels source review dates and explicitly distinguishes current, expired, unknown and next-cycle information; verify the live provider page before applying. Users must verify the live provider page before applying.
 
 **Where is student data stored?** In the current browser's localStorage. There is no remote transmission. It is not encrypted or authenticated, so sensitive documents and identity numbers must not be entered.
 
