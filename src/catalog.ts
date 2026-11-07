@@ -6,7 +6,7 @@ const uniqueSupplemental = scholarshipSupplemental.filter(item => !existingIds.h
 baseScholarships.push(...uniqueSupplemental);
 
 export const scholarships = baseScholarships;
-export const categories = [...baseCategories, "State scheme", "Private foundation", "Fellowship"];
+export const categories = [...baseCategories, "State scheme", "Private foundation", "Fellowship", "Overseas study"];
 export const scholarshipCount = scholarships.length;
 export type { Scholarship };
 
