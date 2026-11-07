@@ -209,9 +209,32 @@ export const scholarships: Scholarship[] = [
     tone: "gold",
     rules: [],
     documents: ["Category certificate", "Admission proof from an eligible institution", "Family income certificate", "Previous academic records", "Bank account details"]
+  },,
+
+  {
+    id: "pm-cares-children",
+    name: "Scholarship for PM CARES Children",
+    provider: "Department of Social Justice & Empowerment · Government of India",
+    amount: "₹20,000 / year (Classes I–XII)",
+    amountValue: 20000,
+    deadline: "Beneficiary-specific; check PM CARES for Children authorities",
+    category: "School education",
+    level: "School (Class I–XII)",
+    region: "All India",
+    description: "Education allowance for eligible identified beneficiaries under the PM CARES for Children scheme. This is not a general scholarship open to all students.",
+    eligibility: ["Only children identified as eligible PM CARES for Children beneficiaries", "School education from Class I through Class XII", "Beneficiary and school records must meet the current official scheme process"],
+    tags: ["PM CARES", "School education", "Welfare", "Government of India"],
+    source: "https://www.spniwcd.wcd.gov.in/pm-cares-for-children-scheme/faqs",
+    sourceLabel: "Ministry of Women & Child Development — PM CARES FAQ",
+    lastVerified: "2026-11-07",
+    verificationNote: "The official FAQ describes ₹20,000 per child per year (₹1,000 monthly allowance plus ₹8,000 annual academic allowance) for eligible PM CARES beneficiaries in Classes I–XII. Confirm beneficiary status and current process with the official authorities; Grantly does not verify enrolment in this scheme.",
+    initials: "PM",
+    tone: "sage",
+    rules: [],
+    documents: ["PM CARES beneficiary identification / official beneficiary record", "School enrolment proof", "Current academic details", "Any documents specifically requested by the PM CARES for Children authorities"]
   },
 ];
-export const categories = ["All", "Merit-based", "Need-based", "Technical education", "Science & research"];
+export const categories = ["All", "Merit-based", "Need-based", "Technical education", "Science & research", "School education"];
 
 
 // Supplemental directory entries. Eligibility matching intentionally remains disabled
