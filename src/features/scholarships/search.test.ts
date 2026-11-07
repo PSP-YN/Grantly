@@ -15,7 +15,8 @@ const list = [base,{...base,id:"b",name:"Beta",provider:"Provider B",amountValue
 describe("filterScholarships",()=>{
  it("searches across description, tag and category",()=>{
   expect(filterScholarships({scholarships:list,savedIds:[],applicationIds:[],scope:"Discover",category:"All",query:"medical",sort:"name",profile}).map(s=>s.id)).toEqual(["b"]);
-  expect(filterScholarships({scholarships:list,savedIds:[],applicationIds:[],scope:"Discover",category:"All",query:"ENGINEERING",sort:"name",profile}).map(s=>s.id)).toEqual(["a"]);\n  expect(filterScholarships({scholarships:list,savedIds:[],applicationIds:[],scope:"Discover",category:"All",query:"Alpha engineering",sort:"name",profile}).map(s=>s.id)).toEqual(["a"]);
+  expect(filterScholarships({scholarships:list,savedIds:[],applicationIds:[],scope:"Discover",category:"All",query:"ENGINEERING",sort:"name",profile}).map(s=>s.id)).toEqual(["a"]);
+  expect(filterScholarships({scholarships:list,savedIds:[],applicationIds:[],scope:"Discover",category:"All",query:"Alpha engineering",sort:"name",profile}).map(s=>s.id)).toEqual(["a"]);
  });
  it("restricts saved and application scopes",()=>{
   expect(filterScholarships({scholarships:list,savedIds:["b"],applicationIds:["a"],scope:"Saved",category:"All",query:"",sort:"name",profile}).map(s=>s.id)).toEqual(["b"]);
