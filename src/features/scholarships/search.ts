@@ -1,6 +1,6 @@
 import type { Scholarship } from "../../data";
 import { assessEligibility, type StudentProfile } from "../../matching";
-import { parseExplicitDeadline } from "./calendar";
+import { localDateISO, parseExplicitDeadline } from "./calendar";
 
 export type ScholarshipSort = "match" | "amount" | "name" | "deadline";
 export type ScholarshipScope = "Discover" | "Saved" | "Applications";
@@ -39,7 +39,7 @@ export function filterScholarships(input: {
     const text = searchableText(s);
     return terms.length === 0 || terms.every(term => text.includes(term));
   });
-  return filtered.sort((a, b) => {
+  const today = localDateISO(new Date());\n  return filtered.sort((a, b) => {
     if (input.sort === "amount") return b.amountValue - a.amountValue || a.name.localeCompare(b.name);
     if (input.sort === "name") return a.name.localeCompare(b.name);
     if (input.sort === "deadline") {
