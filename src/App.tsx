@@ -44,7 +44,8 @@ function App(){
    <div className="workspace-label second-label">YOUR ACCOUNT</div>
    <nav className="side-nav" aria-label="Account navigation">
     <button aria-current={active==="Profile"?"page":undefined} className={active==="Profile"?"nav-item active":"nav-item"} onClick={()=>nav("Profile")}><UserRound size={18}/> Student profile</button>
-    <button className="nav-item" onClick={exportWorkspace}><Download size={18}/> Export my data</button>\n    <button className="nav-item" onClick={()=>importInputRef.current?.click()}><FileCheck2 size={18}/> Import my data</button>
+    <button className="nav-item" onClick={exportWorkspace}><Download size={18}/> Export my data</button>
+    <button className="nav-item" onClick={()=>importInputRef.current?.click()}><FileCheck2 size={18}/> Import my data</button>
    </nav>
    <div className="sidebar-spacer"/>
    <div className="sidebar-tip"><div className="tip-icon"><Sparkles size={16}/></div><strong>Small steps. Big futures.</strong><p>Complete your profile to get more relevant scholarship matches.</p><button onClick={()=>setProfileOpen(true)}>Complete profile <ArrowRight size={14}/></button></div>
