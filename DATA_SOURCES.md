@@ -161,3 +161,13 @@ These 15 supplemental entries were added from primary provider pages and state p
 - A closed or next-cycle listing remains useful for planning but must not be advertised as open.
 - Rule-based eligibility is disabled unless scheme-specific criteria have been reviewed and encoded.
 - Never enter Aadhaar, bank credentials, OTPs or document scans into Grantly.
+
+
+## Additional scholarship records reviewed 7 November 2026
+
+| Record | Primary source | Status / scope |
+|---|---|---|
+| LIC Golden Jubilee Scholarship Scheme 2026 | [LIC Golden Jubilee Foundation](https://web.licindia.in/en/web/guest/golden-jubilee-foundation) | Official page lists 2026 scheme documents. Applications are closed as of this review; verify the next cycle and current PDF. |
+| National Overseas Scholarship for ST Students | [Ministry of Tribal Affairs — NOS Portal](https://overseas.tribal.gov.in/) | 2026–27 call closed in July 2026. The next call is not assumed open. Check current Ministry guidelines for income, age, course, university and award rules. |
+
+The catalogue now contains 79 curated records. The State/UT portal directory is a set of official discovery routes, not a claim that every district, university or department award is indexed.
