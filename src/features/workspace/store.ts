@@ -2,6 +2,7 @@ import { scholarships } from "../../data";
 import type { StudentProfile } from "../../matching";
 import { normalizeBudget, type Budget } from "../funding-planner/calculations";
 import { normalizeEssayDraft, type EssayDraft } from "../essay/draft";
+import { normalizeFundingInputs, type FundingInputs } from "../intelligence/analysis";
 
 export type Stage = "Interested"|"Preparing"|"Submitted"|"Under review"|"Awarded";
 export type Profile = StudentProfile;
@@ -42,13 +43,13 @@ export function normalizeStore(value:unknown):Store {
   return {saved,applications,profile:readProfile(parsed.profile)};
 }
 
-export type WorkspaceImport={store:Store;fundingPlanner?:Budget;essayWorkspace?:EssayDraft};
+export type WorkspaceImport={store:Store;fundingPlanner?:Budget;essayWorkspace?:EssayDraft;fundingIntelligence?:FundingInputs};
 export function parseWorkspaceExport(raw:string):WorkspaceImport {
   const parsed:unknown=JSON.parse(raw);
   if(!parsed||typeof parsed!=="object")throw new Error("Invalid Grantly workspace file.");
-  const record=parsed as {product?:unknown;workspace?:unknown;fundingPlanner?:unknown;essayWorkspace?:unknown};
+  const record=parsed as {product?:unknown;workspace?:unknown;fundingPlanner?:unknown;essayWorkspace?:unknown;fundingIntelligence?:unknown};
   if(record.product!=="Grantly"||!record.workspace||typeof record.workspace!=="object")throw new Error("This file is not a Grantly workspace export.");
-  return {store:normalizeStore(record.workspace),...(Object.prototype.hasOwnProperty.call(record,"fundingPlanner")?{fundingPlanner:normalizeBudget(record.fundingPlanner)}:{}),...(Object.prototype.hasOwnProperty.call(record,"essayWorkspace")?{essayWorkspace:normalizeEssayDraft(record.essayWorkspace)}:{})};
+  return {store:normalizeStore(record.workspace),...(Object.prototype.hasOwnProperty.call(record,"fundingPlanner")?{fundingPlanner:normalizeBudget(record.fundingPlanner)}:{}),...(Object.prototype.hasOwnProperty.call(record,"essayWorkspace")?{essayWorkspace:normalizeEssayDraft(record.essayWorkspace)}:{}),...(Object.prototype.hasOwnProperty.call(record,"fundingIntelligence")?{fundingIntelligence:normalizeFundingInputs(record.fundingIntelligence)}:{})};
 }
 
 export function loadStore():Store {
