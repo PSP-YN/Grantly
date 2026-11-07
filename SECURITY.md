@@ -32,6 +32,7 @@ Vercel applies browser-side security headers including:
 - `Referrer-Policy: strict-origin-when-cross-origin`
 - A restrictive `Permissions-Policy` disabling camera, microphone and geolocation
 - `Cross-Origin-Opener-Policy: same-origin`
+- `Strict-Transport-Security` (HSTS) for HTTPS
 - A same-origin Content Security Policy (no external scripts, frames, objects or form destinations)
 - Immutable cache headers only for content-hashed Vite assets; the service worker is revalidated on each update check.
 
