@@ -1,6 +1,22 @@
 # Changelog
 
-## Unreleased — performance, security and SEO\n- Memoized catalogue filtering and state/level visibility to avoid recalculating rule assessments on unrelated renders.\n- Fixed scholarship deadline sorting and calendar filtering to use local dates instead of UTC day boundaries.\n- Added timezone-boundary regression coverage for calendar date conversion.\n- Added Vercel security response headers, canonical metadata, sitemap and robots rules.\n- Bumped service-worker cache version to invalidate old shell assets after updates.\n- Added a documented three-anchor forest-green, parchment and academic-gold design system.\n- Updated PM CARES education assistance amount and eligibility boundary from the Ministry of Women & Child Development FAQ.\n\n## Unreleased — India-wide student product expansion\n- Added 15 additional UGC, Karnataka welfare, PM CARES and private-foundation records (77 total curated entries).\n- Added separate catalog composition module to isolate supplemental scholarship data from the original data file.\n- Added filter categories for state schemes, private foundations and fellowships.\n- Replaced the navy/blue UI with forest green, parchment and academic gold across CSS, browser theme metadata, PWA manifest and icons.\n- Documented a conflicting NSP CSSS renewal deadline snapshot instead of silently choosing one date.\n\n## Previous India-wide student product expansion
+## Unreleased — performance, security and SEO
+- Memoized catalogue filtering and state/level visibility to avoid recalculating rule assessments on unrelated renders.
+- Fixed scholarship deadline sorting and calendar filtering to use local dates instead of UTC day boundaries.
+- Added timezone-boundary regression coverage for calendar date conversion.
+- Added Vercel security response headers, canonical metadata, sitemap and robots rules.
+- Bumped service-worker cache version to invalidate old shell assets after updates.
+- Added a documented three-anchor forest-green, parchment and academic-gold design system.
+- Updated PM CARES education assistance amount and eligibility boundary from the Ministry of Women & Child Development FAQ.
+
+## Unreleased — India-wide student product expansion
+- Added 15 additional UGC, Karnataka welfare, PM CARES and private-foundation records (77 total curated entries).
+- Added separate catalog composition module to isolate supplemental scholarship data from the original data file.
+- Added filter categories for state schemes, private foundations and fellowships.
+- Replaced the navy/blue UI with forest green, parchment and academic gold across CSS, browser theme metadata, PWA manifest and icons.
+- Documented a conflicting NSP CSSS renewal deadline snapshot instead of silently choosing one date.
+
+## Previous India-wide student product expansion
 - Added 9 central / UGC scholarship and fellowship records in the previous update (62 records at that point).
 - Added searchable portal starting points for all 28 states and 8 union territories.
 - Added 12 state-specific scholarship / education-aid records from official state portals (Karnataka, Maharashtra, West Bengal, Odisha, Telangana, Uttar Pradesh, Bihar, Gujarat and Kerala).
