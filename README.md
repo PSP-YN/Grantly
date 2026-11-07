@@ -31,7 +31,9 @@ The current release is a browser-first prototype. It does not have user accounts
 - Rule evaluation is deterministic and tested; incomplete rules remain unknown / manual review.
 - Local persistence is normalized and defensive; exports are user-triggered.
 - Lint, typecheck, tests, production build and dependency audit run in CI.
-- Accessible controls, keyboard support, focus management and reduced-motion support are regression-tested.\n- Local-timezone-aware deadline sorting/calendar exports and Vercel security headers are included.\n- Canonical metadata, Open Graph basics, robots.txt and sitemap.xml are configured.
+- Accessible controls, keyboard support, focus management and reduced-motion support are regression-tested.
+- Local-timezone-aware deadline sorting/calendar exports and Vercel security headers are included.
+- Canonical metadata, Open Graph basics, robots.txt and sitemap.xml are configured.
 
 ### Development
 
