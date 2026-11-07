@@ -55,6 +55,7 @@ See:
 - [Product overview](PRODUCT.md)
 - [Architecture](ARCHITECTURE.md)
 - [Roadmap](ROADMAP.md)
+- [Complete indexed scholarship catalogue — all 82 records](SCHOLARSHIP_CATALOGUE.md)
 - [Data source register](DATA_SOURCES.md)
 - [Security policy](SECURITY.md)
 - [Contributing](CONTRIBUTING.md)
