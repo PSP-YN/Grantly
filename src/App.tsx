@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react";
-import { ArrowDownUp, ArrowRight, Bookmark, BookOpen, BookOpenText, CalendarDays, Check, CheckCircle2, ExternalLink, ChevronDown, Clock3, Compass, Download, FileCheck2, GraduationCap, Menu, Search, ShieldCheck, SlidersHorizontal, Sparkles, Target, UserRound, Wallet } from "lucide-react";
+import { ArrowDownUp, ArrowRight, Bookmark, BookOpen, BookOpenText, CalendarDays, Check, CheckCircle2, ExternalLink, ChevronDown, Clock3, Compass, Download, FileCheck2, GraduationCap, Menu, Search, ShieldCheck, SlidersHorizontal, Sparkles, Trash2, Target, UserRound, Wallet } from "lucide-react";
 import { categories, scholarships, type Scholarship } from "./data";
 import FundingPlanner from "./FundingPlanner";
 import EssayWorkspace from "./EssayWorkspace";
 import { assessEligibility } from "./matching";
-import { loadStore, parseWorkspaceExport, STORE_KEY, type Stage, type Profile, type Store } from "./features/workspace/store";
+import { loadStore, parseWorkspaceExport, STORE_KEY, defaultStore, type Stage, type Profile, type Store } from "./features/workspace/store";
 import { filterScholarships } from "./features/scholarships/search";
 import { buildDeadlineCalendar, parseExplicitDeadline } from "./features/scholarships/calendar";
 import { normalizeBudget, FUNDING_PLANNER_STORAGE_KEY } from "./features/funding-planner/calculations";
@@ -30,6 +30,7 @@ function App(){
  const readStoredJson=(key:string)=>{try{const raw=localStorage.getItem(key);return raw?JSON.parse(raw):null;}catch{return null;}};
  const exportWorkspace=()=>{const payload=JSON.stringify({product:"Grantly",exportedAt:new Date().toISOString(),workspace:store,fundingPlanner:normalizeBudget(readStoredJson(FUNDING_PLANNER_STORAGE_KEY)),essayWorkspace:normalizeEssayDraft(readStoredJson(ESSAY_STORAGE_KEY))},null,2);const url=URL.createObjectURL(new Blob([payload],{type:"application/json"}));const link=document.createElement("a");link.href=url;link.download="grantly-workspace.json";document.body.appendChild(link);link.click();link.remove();window.setTimeout(()=>URL.revokeObjectURL(url),1000);setToast("Complete workspace backup downloaded.");};
  const importWorkspaceFile=async(file:File)=>{if(file.size>2*1024*1024){setToast("Import file is too large (maximum 2 MB).");return;}try{const imported=parseWorkspaceExport(await file.text());setStore(imported.store);if(imported.fundingPlanner)localStorage.setItem(FUNDING_PLANNER_STORAGE_KEY,JSON.stringify(imported.fundingPlanner));if(imported.essayWorkspace)localStorage.setItem(ESSAY_STORAGE_KEY,JSON.stringify(imported.essayWorkspace));setActive("Discover");setToast("Workspace, funding plan and statement draft restored.");}catch(error){setToast(error instanceof Error?error.message:"Could not import this workspace file.");}};
+ const clearLocalData=()=>{if(!window.confirm("Clear your Grantly profile, saved scholarships, tracker, funding plan and statement draft from this browser? This cannot be undone unless you exported a backup."))return;try{[STORE_KEY,"fundnavi:workspace:v1",FUNDING_PLANNER_STORAGE_KEY,ESSAY_STORAGE_KEY].forEach(key=>localStorage.removeItem(key));setStore(defaultStore);setActive("Discover");setSelected(null);setProfileOpen(false);setToast("Grantly local data cleared from this browser.");}catch{setToast("Browser storage could not be cleared. Check your browser storage permissions.");}};
  const exportDeadlineCalendar=()=>{const tracked=scholarships.filter(item=>store.applications.some(a=>a.id===item.id));const today=new Date().toISOString().slice(0,10);const dated=tracked.filter(item=>{const date=parseExplicitDeadline(item.deadline);return date&&date>=today;});if(!dated.length){setToast("No tracked scholarships have an upcoming explicitly stated deadline date.");return;}const content=buildDeadlineCalendar(dated);const url=URL.createObjectURL(new Blob([content],{type:"text/calendar;charset=utf-8"}));const link=document.createElement("a");link.href=url;link.download="grantly-scholarship-deadlines.ics";document.body.appendChild(link);link.click();link.remove();window.setTimeout(()=>URL.revokeObjectURL(url),1000);setToast("Calendar exported with "+dated.length+" explicit deadline(s). Verify each date with the official provider.");};
  const updateStage=(id:string,stage:Stage)=>setStore(p=>({...p,applications:p.applications.map(a=>a.id===id?{...a,stage,updated:"Today"}:a)}));
  const discover=active==="Discover";
@@ -56,6 +57,7 @@ function App(){
     <button aria-current={active==="Profile"?"page":undefined} className={active==="Profile"?"nav-item active":"nav-item"} onClick={()=>nav("Profile")}><UserRound size={18}/> Student profile</button>
     <button className="nav-item" onClick={exportWorkspace}><Download size={18}/> Export my data</button>
     <button className="nav-item" onClick={()=>importInputRef.current?.click()}><FileCheck2 size={18}/> Import my data</button>
+    <button className="nav-item nav-danger" onClick={clearLocalData}><Trash2 size={18}/> Clear local data</button>
    </nav>
    <div className="sidebar-spacer"/>
    <div className="sidebar-tip"><div className="tip-icon"><Sparkles size={16}/></div><strong>Small steps. Big futures.</strong><p>Complete your profile to get more relevant scholarship matches.</p><button onClick={()=>setProfileOpen(true)}>Complete profile <ArrowRight size={14}/></button></div>

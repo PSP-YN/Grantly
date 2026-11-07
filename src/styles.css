@@ -203,3 +203,5 @@ a{color:#1d3557}
 .guide-footer-note button{flex:none}
 @media(max-width:760px){.guide-columns,.guide-portal-grid{grid-template-columns:1fr}.guide-hero{padding:18px}.guide-hero h2{font-size:21px}.guide-footer-note{align-items:flex-start;flex-wrap:wrap}.guide-footer-note button{margin-left:auto}}
 @media(prefers-reduced-motion:reduce){.guide-portal:hover{transition:none}}
+
+.nav-danger{color:#775b21}.nav-danger svg{color:#775b21}.nav-danger:hover{background:#f2ead8;color:#1d3557}
