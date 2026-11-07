@@ -9,7 +9,7 @@ const regionalIds = new Set(baseScholarships.map(item => item.id));
 baseScholarships.push(...scholarshipRegional.filter(item => !regionalIds.has(item.id)));
 
 export const scholarships = baseScholarships;
-export const categories = [...baseCategories, "State scheme", "Private foundation", "Fellowship"];
+export const categories = [...baseCategories, "State scheme", "Private foundation", "Fellowship", "Overseas study"];
 export const scholarshipCount = scholarships.length;
 export type { Scholarship };
 

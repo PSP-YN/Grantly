@@ -174,3 +174,13 @@ These 15 supplemental entries were added from primary provider pages and state p
 | Chhattisgarh post-matric | https://postmatric-scholarship.cg.nic.in/ | National Government Services Portal describes the official portal as an online route for state and centrally sponsored scholarship applications. | Current scheme notice, category-specific criteria, institution rules and deadlines. |
 
 These records are discovery aids, not a claim that every student in the named state qualifies. Automated matching is intentionally disabled until full current-cycle criteria are reviewed. A portal's existence does not establish that a scheme is open today.
+
+
+## Additional programmes reviewed 7 November 2026
+
+| Programme | Official source | Current-cycle note |
+|---|---|---|
+| LIC Golden Jubilee Scholarship Scheme 2026 | [LIC Golden Jubilee Foundation](https://web.licindia.in/en/web/guest/golden-jubilee-foundation) | LIC lists the 2026 scheme and instructions. The 2026 application window has closed; verify next cycle and current official PDF. |
+| National Overseas Scholarship for ST Students | [Ministry of Tribal Affairs — NOS Portal](https://overseas.tribal.gov.in/) | 2026–27 application window closed in July 2026. Check the next official call and its current eligibility, university and award rules. |
+
+The catalogue now contains 84 curated entries. This is a growing discovery index—not a complete registry of every central, state, district, university and private scholarship.
