@@ -94,3 +94,14 @@ This is an appropriate boundary for a prototype, not for a multi-user production
 
 The next modularization step is to extract scholarship discovery/filtering into a domain service, workspace persistence into a storage adapter, eligibility logic into a versioned rules module, exports into a dedicated service, and views into route-level components. Refactor when driven by testability and product needs, not to create an artificial enterprise architecture.
 \n## Feature boundaries\n\n- `features/workspace/store.ts`: validates and hydrates browser-local saved IDs, application stages, document checklist values and profile fields. The local store is treated as untrusted input.\n- `features/scholarships/search.ts`: pure filtering and ranking across name, provider, category, region, description, tags, source notes and eligibility text.\n- `matching.ts`: pure rule-based eligibility screening with explicit unknown states.\n- `data.ts`: scholarship catalogue records and source/review metadata.\n\nThe application shell still coordinates the current page state. Further extraction into feature-specific components should follow user-facing testing and avoid introducing a complex state-management framework without a need.\n
+## Workspace portability
+
+The JSON backup includes the workspace state plus the local funding planner and essay draft. The import path:
+
+1. Rejects files larger than 2 MB.
+2. Requires the Grantly export envelope.
+3. Validates scholarship IDs, tracker stages, document checklist values and profile strings.
+4. Clamps numeric planner values and bounds essay fields / word-limit settings.
+5. Writes validated values to browser storage only.
+
+No imported profile, financial planner value or statement draft is sent to a server. Export files may contain personal information and should be handled as sensitive user-owned data.
