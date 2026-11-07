@@ -39,3 +39,33 @@ These are distinct scheme records, not eligibility guarantees. The official NSP 
 | NMMSS | NSP catalogue listing through 15 Nov 2026 | School scholarship only; state/UT selection and verification timelines can differ. |
 
 Primary source: [NSP AY 2026–27 — All Scholarships](https://scholarships.gov.in/All-Scholarships). NSP’s live listing is the authority for active status and application windows; Grantly’s date label is a snapshot and may become stale.
+
+## UGC / ministry additions — reviewed 7 November 2026
+
+| Catalogue record | Official source | Notes |
+|---|---|---|
+| Post-Matric Scholarship for SC Students | [Social Justice Ministry schemes](https://socialjustice.gov.in/schemes) | State/central implementation and income/course rules must be checked. |
+| Pre-Matric Scholarship Scheme for SC Students & Others | [Social Justice Ministry schemes](https://socialjustice.gov.in/schemes) | Scheme coverage and portal vary by state and academic year. |
+| Pre-Matric Scholarship for OBC Students | [Social Justice Ministry schemes](https://socialjustice.gov.in/schemes) | Verify current guidelines and implementation route. |
+| National Fellowship for SC Students | [NSFDC / NFSC](https://nsfdc.nic.in/nfsc) | Fellowship; current call and selection process require official confirmation. |
+| National Fellowship for OBC Students | [NBCFDC / NF-OBC](https://nbcfdc.gov.in/NF-OBC) | Fellowship; current call and eligibility require official confirmation. |
+| PG Indira Gandhi Scholarship for Single Girl Child | [UGC scheme page](https://www.ugc.gov.in/Scholarships/stu_Scholarship4) | UGC states ₹36,200/year, first-year regular PG, age up to 30 at admission, and single-girl-child criteria; verify current NSP call. |
+| UGC PG Scholarship for University Rank Holders | [UGC Student Corner](https://www.ugc.gov.in/Home/student_Corner) | Current rank/course/age criteria and cycle require verification. |
+| UGC PG Scholarship for SC/ST Professional Courses | [UGC Student Corner](https://www.ugc.gov.in/Home/student_Corner) | Current course list, selection and award need official confirmation. |
+| AICTE PG Scholarship for GATE/GPAT | [AICTE](https://www.aicte-india.org/) and [DBT scheme list](https://dbtbharat.gov.in/central-scheme/list) | Current qualification, programme, institute and stipend conditions require confirmation. |
+
+## State and UT portal index
+
+The `src/features/guide/portalDirectory.ts` file includes starting links for all 28 states and 8 UTs. State/UT government portal domains are used where a route is available; NSP is used as a **discovery fallback** for some regions, not as an assertion that all local schemes are hosted on NSP. Students must check department-specific portals and scheme notices.
+
+Key source pages reviewed:
+- [NSP AY 2026–27 scheme catalogue](https://scholarships.gov.in/All-Scholarships)
+- [NSP student instructions](https://scholarships.gov.in/Students)
+- [UGC Student Corner](https://www.ugc.gov.in/Home/student_Corner)
+- [Karnataka SSP](https://ssp.postmatric.karnataka.gov.in/homepage.aspx)
+- [Maharashtra MahaDBT](https://mahadbt.maharashtra.gov.in/)
+- [Telangana ePASS](https://telanganaepass.cgg.gov.in/)
+- [Odisha State Scholarship Portal](https://scholarship.odisha.gov.in/)
+- [West Bengal Aikyashree](https://wbmdfcscholarship.in/)
+
+**Completeness statement:** this register documents sources used by the current product; it does not certify that the catalogue covers every government, private, institution, district, corporate or charitable scholarship. The catalogue must be maintained with source review dates and scheme-specific verification.
