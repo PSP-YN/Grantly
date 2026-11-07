@@ -1,63 +1,74 @@
-# The Outpost — Frontend Mission submission notes
+# Grantly — Frontend Arena submission notes
 
-## Project
+## Product
 
-**Grantly — Discover funding. Navigate your future.**
+**GRANTLY — Rethinking the Scholarship Experience**
 
-Grantly is a student-first scholarship discovery and application workspace. It brings source-linked opportunities, explainable eligibility screening, document preparation and application tracking into one responsive frontend.
+A modern, human-centred digital workspace for discovering, understanding, tracking and preparing educational funding applications.
 
-## What to demonstrate
+Repository: https://github.com/PSP-YN/Grantly  
+Current production URL (verify deployment commit before each submission): https://grantly-scholarship.vercel.app
 
-1. Open Discover and explain the difference between a profile check, missing information and a manual official review.
-2. Search for a scholarship and filter by category.
-3. Open PM-USP CSSS and show its criteria checks.
-4. Edit the profile to change income band, academic standing and study mode; show how the assessment changes.
-5. Add the opportunity to the tracker and mark a document as prepared.
-6. Change the application stage and show persistence.
-7. Export the local workspace JSON.
-8. Open the official source and explain that final applications happen on the provider portal.
+## Demonstration walkthrough
 
-## Differentiation
+1. Open Discover and explain how Grantly combines scholarship search with an application-preparation workspace.
+2. Search for a programme and use category / region filters.
+3. Open a scholarship detail view and inspect its provider, source link, verification note and encoded criteria.
+4. Explain the distinction between a profile check that matches, one that does not match, and a missing or unencoded requirement that remains unknown / manual review.
+5. Edit the student profile and show how explicit rule outcomes change.
+6. Save an opportunity, add it to the application tracker, update its stage and mark a document checklist item.
+7. Open the funding planner. Enter sample annual INR costs and support; explain the estimated gap, coverage and surplus.
+8. Open the statement workspace. Demonstrate the four-part outline, word counter and local draft export.
+9. Open the state / UT portal directory and show how the student reaches the official provider portal.
+10. Explain that final eligibility and applications remain with the scholarship provider.
 
-- No invented fit percentages: each check is traceable to a stated profile field and rule.
-- Unknown criteria stay unknown; unencoded scheme conditions are disclosed for manual review.
-- Application preparation is part of discovery rather than a disconnected bookmark list.
-- Sensitive data is not required; optional profile values stay in local browser storage.
-- No backend, API or database dependency.
+## What is implemented
 
-## Judging alignment
+- Curated source-linked directory of 90 scholarship / fellowship / education-assistance records.
+- Official starting links for all 28 Indian states and 8 union territories.
+- Deterministic eligibility checks for a subset of encoded programme criteria.
+- Saved opportunities, application stages and document checklist.
+- Browser-local profile, planner and statement draft.
+- Funding-gap arithmetic using user-entered annual INR values.
+- Validated workspace export/import and dated calendar export.
+- Responsive React + TypeScript application with lazy-loaded secondary workspaces.
+- CI checks for lint, TypeScript, tests, production build and dependency audit.
 
-- UI/UX: consistent design system, clear information hierarchy, responsive layouts.
-- Functionality: search, filters, sorting, profile, save, tracker, checklist and export.
-- Creativity: transparent eligibility explanations and preparation workflow.
-- Problem alignment: one connected discovery-to-application journey.
-- Code quality: typed catalogue, isolated matching engine, defensive persistence and tests.
-- Accessibility: keyboard operation, focus management, labels, live result count and reduced motion.
+## Explicit product boundaries
 
-## QA evidence
+- The catalogue is not exhaustive and is not a live scholarship feed.
+- A source review date does not establish that a scholarship is currently open.
+- The eligibility tool is not an award decision or legal eligibility determination.
+- Funding calculations are estimates based on student-entered figures.
+- The statement workspace does not generate essays or score AI authenticity.
+- There is no account authentication, backend database, cloud sync, secure document vault or official application submission.
+- Browser localStorage is not encrypted or an appropriate store for identity documents, bank details or credentials.
 
-- GitHub Actions runs lint, TypeScript typecheck, automated tests, production build and dependency audit. Refer to the latest workflow result for exact status.
-- Tests cover eligibility rules, catalogue metadata and unique IDs, profile/workspace persistence, scholarship filtering, funding calculations, statement word count, deadline calendar logic and palette anchor contrast.
-- axe-core semantic checks run in jsdom; its color-contrast rule is excluded because jsdom cannot reliably compute rendered contrast. The palette-token contrast test is not a full UI contrast audit.
-- Previous browser smoke checks covered responsive and keyboard flows; repeat them against the next live deployment after the current Vercel quota restriction clears.
-- The latest live deployment has not yet been verified against the merged 90-record catalogue and new response headers. Do not claim the current live site contains changes until a fresh deployment is ready and tested.
-- npm audit status is recorded in the latest CI run; avoid hardcoding a zero-vulnerability claim without rechecking.
+## Quality evidence
+
+The latest successful CI workflow is linked from the repository README. The automated pipeline runs:
+
+- `npm run lint`
+- `npm run typecheck`
+- `npm test`
+- `npm run build`
+- `npm audit --audit-level=moderate`
+
+Automated checks are necessary but do not establish formal WCAG conformance, production reliability or a particular Frontend Arena score. Manually verify keyboard navigation, dialog focus, contrast, screen-reader behavior and real-device layouts against the exact deployment being submitted.
+
+## Score reporting
+
+The README records the requested six-module FQE allocation as a **40/40 engineering target**. It is not an achieved score. Do not state that Grantly received 40/40 FQE or 100/100 FAIE unless the evaluator reports those scores for the exact submitted version.
 
 ## Final submission checklist
 
-- [ ] Public GitHub repository is accessible.
-- [ ] npm ci succeeds from a clean checkout.
-- [ ] Lint, typecheck, tests, production build and dependency audit pass.
-- [ ] Browser smoke test passes at mobile and desktop widths.
-- [ ] No placeholder actions or console errors remain.
-- [ ] Deployment is created only after owner authorization.
-- [ ] Live deployment is opened and smoke-tested.
-- [ ] GitHub URL and live URL are entered in the official submission form.
-- [ ] Demo walkthrough is rehearsed and remains within the event's rules.
+- [ ] Public GitHub repository opens without authentication.
+- [ ] Latest `main` commit has a successful CI run.
+- [ ] The live deployment is built from the exact intended `main` commit.
+- [ ] Production URL opens and core workflows are smoke-tested.
+- [ ] No browser console errors or broken primary actions remain.
+- [ ] Desktop, tablet and narrow-phone layouts are reviewed.
+- [ ] Keyboard-only navigation and dialog focus are checked.
+- [ ] The official submission form contains the correct repository and live URLs.
+- [ ] The final evaluation attempt is used only after the release has been reviewed.
 
-A deployment URL is intentionally absent until deployment is authorized.
-
-
-## Product direction note
-
-The hackathon submission is one milestone in Grantly's product development. The application and repository are now documented as an ongoing student education-funding workspace. Competition-specific descriptions and scoring materials are not the product's main README or roadmap.
