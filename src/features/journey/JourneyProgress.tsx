@@ -1,17 +1,6 @@
 import type { AppRecord } from "../workspace/store";
 import type { Scholarship } from "../../data";
 
-type Destination = "Profile" | "Saved" | "Applications";
-
-type JourneyStep = {
-  id: string;
-  title: string;
-  detail: string;
-  complete: boolean;
-  action: Destination;
-  actionLabel: string;
-};
-
 import { buildJourneySteps } from "./journeyProgress";
 
 export default function JourneyProgress(props: {
@@ -19,7 +8,7 @@ export default function JourneyProgress(props: {
   savedCount: number;
   applications: AppRecord[];
   scholarships: Scholarship[];
-  onNavigate: (destination: Destination) => void;
+  onNavigate: (destination: "Profile" | "Saved" | "Applications") => void;
 }) {
   const steps = buildJourneySteps(props);
   const completed = steps.filter(step => step.complete).length;
