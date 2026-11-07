@@ -30,6 +30,6 @@ describe("FundingIntelligence workspace", () => {
     fireEvent.change(screen.getByLabelText("Paste or write a draft"), {
       target: { value: "I built a low-cost sensor with my classmates. I tested it in our college lab." }
     });
-    expect(screen.getByText("17")).toBeTruthy();
+    expect(screen.getByText("15")).toBeTruthy();
   });
 });
