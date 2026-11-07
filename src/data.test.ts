@@ -19,7 +19,21 @@ describe("scholarship catalogue quality", () => {
     }
   });
 
-  it("exposes every catalogue category in the filter controls", () => {\n    const filterCategories = new Set(categories);\n    for (const item of scholarships) expect(filterCategories.has(item.category), item.id).toBe(true);\n  });\n\n  it("keeps PM CARES scholarship scoped to identified beneficiaries", () => {\n    const item = scholarships.find(s => s.id === "pm-cares-children");\n    expect(item).toBeDefined();\n    expect(item?.amountValue).toBe(20000);\n    expect(item?.rules).toHaveLength(0);\n    expect(item?.eligibility.join(" ")).toMatch(/identified PM CARES/i);\n    expect(item?.verificationNote).toMatch(/beneficiary status/i);\n  });\n\n  it("has core metadata and an HTTPS source for every record", () => {
+  it("exposes every catalogue category in the filter controls", () => {
+    const filterCategories = new Set(categories);
+    for (const item of scholarships) expect(filterCategories.has(item.category), item.id).toBe(true);
+  });
+
+  it("keeps PM CARES scholarship scoped to identified beneficiaries", () => {
+    const item = scholarships.find(s => s.id === "pm-cares-children");
+    expect(item).toBeDefined();
+    expect(item?.amountValue).toBe(20000);
+    expect(item?.rules).toHaveLength(0);
+    expect(item?.eligibility.join(" ")).toMatch(/identified PM CARES/i);
+    expect(item?.verificationNote).toMatch(/beneficiary status/i);
+  });
+
+  it("has core metadata and an HTTPS source for every record", () =>
     for (const item of scholarships) {
       expect(item.name.trim(), item.id).not.toBe("");
       expect(item.provider.trim(), item.id).not.toBe("");
