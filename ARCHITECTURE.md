@@ -142,4 +142,4 @@ No imported profile, financial planner value or statement draft is sent to a ser
 - `catalog.ts` merges the collections and de-duplicates stable IDs.
 - `features/scholarships/search.ts` provides pure filter/ranking behavior. The React shell memoizes scholarship results and eligibility summary against their profile/search dependencies.
 
-Deadline sorting and all-day calendar filtering use the browser's local calendar date rather than UTC day boundaries. No date is inferred for records without an explicit date.
+Deadline sorting and all-day calendar filtering use the India Standard Time (IST) rather than UTC day boundaries. No date is inferred for records without an explicit date.
