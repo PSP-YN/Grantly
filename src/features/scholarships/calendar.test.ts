@@ -16,8 +16,10 @@ describe("deadline calendar",()=>{
   expect(parseExplicitDeadline("31 Feb 2026")).toBeNull();
  });
  it("exports only dated opportunities and escapes ICS text",()=>{
-  const calendar=buildDeadlineCalendar([base,{...base,id:"undated",deadline:"Check portal",name:"No date"}],new Date("2026-11-07T00:00:00Z"));
+  const calendar=buildDeadlineCalendar([base,{...base,id:"undated",deadline:"Check portal",name:"No date"},{...base,id:"expired",deadline:"01 Nov 2026",name:"Expired"}],new Date("2026-11-07T00:00:00Z"));
   expect(calendar).toContain("DTSTART;VALUE=DATE:20261130");
+  expect(calendar).toContain("DTEND;VALUE=DATE:20261201");
+  expect(calendar).not.toContain("Expired");
   expect(calendar).toContain("SUMMARY:Scholarship deadline: Sample Award");
   expect(calendar).not.toContain("No date");
   expect(calendar).toContain("TRIGGER:-P1D");

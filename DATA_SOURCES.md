@@ -117,3 +117,16 @@ These records link directly to state scholarship portals or the responsible gove
 | Kerala e-Grantz | [Official e-Grantz portal](https://egrantz.kerala.gov.in/) | Scheme-specific community, course, institution and income rules vary. |
 
 Each state-specific record has automated eligibility matching disabled until its exact rules and exclusions are reviewed. Scheme amounts and deadlines are intentionally not hardcoded when the official current cycle has not been confirmed.
+
+## Current NSP cycle date snapshot — AY 2026–27
+
+The official [NSP scheme catalogue](https://scholarships.gov.in/All-Scholarships) lists multiple AY 2026–27 applications as closing on **30 November 2026**, with verification windows extending into December. The app currently records this date for these scheme entries:
+
+- AICTE Swanath (technical degree and diploma)
+- PMSS CAPF / Assam Rifles
+- PMSS for wards of police personnel martyred in terror / Naxal attacks
+- Post-Matric Scholarship for Students with Disabilities
+- Top Class Education for Students with Disabilities
+- National Scholarship for Post Graduate Studies
+
+The same NSP page lists some schemes with **15 November 2026** student deadlines (including PM YASASVI school-level and NMMS) and others as **closed on 31 October 2026** (including pre-matric disability and worker-ward assistance). Do not infer that all NSP programmes share a deadline. Dates are a snapshot checked on 7 November 2026; verify the portal before applying because government schedules can change.

@@ -26,16 +26,20 @@ function escapeIcs(value: string): string {
 
 export function buildDeadlineCalendar(items: Scholarship[], generatedAt = new Date()): string {
   const stamp = generatedAt.toISOString().replace(/[-:]/g,"").replace(/\.\d{3}Z$/,"Z");
+  const today = generatedAt.toISOString().slice(0,10);
   const events = items.flatMap(item => {
     const date = parseExplicitDeadline(item.deadline);
-    if (!date) return [];
+    if (!date || date < today) return [];
     const dateStamp = date.replace(/-/g,"");
+    const endDate = new Date(`${date}T00:00:00.000Z`);
+    endDate.setUTCDate(endDate.getUTCDate() + 1);
+    const endStamp = endDate.toISOString().slice(0,10).replace(/-/g,"");
     return [
       "BEGIN:VEVENT",
       `UID:grantly-${item.id}-${dateStamp}@grantly.app`,
       `DTSTAMP:${stamp}`,
       `DTSTART;VALUE=DATE:${dateStamp}`,
-      `DTEND;VALUE=DATE:${dateStamp}`,
+      `DTEND;VALUE=DATE:${endStamp}`,
       `SUMMARY:${escapeIcs(`Scholarship deadline: ${item.name}`)}`,
       `DESCRIPTION:${escapeIcs(`Verify deadline and eligibility on the official source: ${item.source}`)}`,
       "STATUS:CONFIRMED",
