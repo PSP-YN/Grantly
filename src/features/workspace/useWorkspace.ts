@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { loadStore, STORE_KEY, type AppRecord, type Stage, type Store } from "./store";
+import { loadStore, STORE_KEY, type Stage, type Store } from "./store";
 
 /**
  * Owns browser workspace persistence and common tracker mutations.
