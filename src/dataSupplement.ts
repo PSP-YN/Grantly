@@ -96,11 +96,11 @@ export const scholarshipSupplemental: Scholarship[] = [
   {
     id:"northsouth-foundation-scholarship",name:"NorthSouth Foundation India Scholarship",
     provider:"NorthSouth Foundation",amount:"Course-dependent total award; current guideline lists course-wise support",amountValue:0,
-    deadline:"AY 2026–27 online registration listed through 31 Oct 2026; check next call / renewal",category:"Private foundation",level:"Engineering / diploma / medicine / selected undergraduate courses",
+    deadline:"AY 2026–27 registration period (Jul–Oct) appears to have ended; check next call / renewal",category:"Private foundation",level:"Engineering / diploma / medicine / selected undergraduate courses",
     region:"Selected chapters across India",description:"Merit and financial-need scholarship for selected undergraduate engineering, medical, diploma and other eligible courses.",
     eligibility:["Course and rank criteria vary by scholarship type","Academic marks and family income ceilings apply","Chapter, college and approved branch rules apply"],
     tags:["NorthSouth Foundation","Merit","Need-based","Engineering","Medical"],source:"https://www.northsouth.org/india-impact/india-scholarships/",sourceLabel:"NorthSouth Foundation official scholarship page",
-    lastVerified:"2026-11-07",verificationNote:"Official 2026–27 guidelines list course-specific eligibility and an application deadline of 31 October 2026. Treat this cycle as closed unless the foundation posts an extension; check next call and renewal.",
+    lastVerified:"2026-11-07",verificationNote:"The official page describes registration during July–October and course-specific eligibility, but does not publish a fixed day in the displayed process. Treat the 2026–27 registration period as likely ended; check next call and renewal.",
     initials:"NSF",tone:"gold",rules:[],documents:["Qualifying exam marks and rank proof","Admission proof for approved course / institution","Family income proof","Chapter-specific application and attestation"]
   },
   {
