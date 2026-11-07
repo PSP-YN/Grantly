@@ -1,6 +1,5 @@
 import { describe, expect, it } from "vitest";
-
-const countWords = (text: string) => text.trim() ? text.trim().split(/\s+/).length : 0;
+import { countWords } from "./EssayWorkspace";
 
 describe("statement word count", () => {
   it("counts words separated by spaces, newlines or tabs", () => {
