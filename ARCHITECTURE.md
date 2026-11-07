@@ -98,7 +98,7 @@ This is an appropriate boundary for a prototype, not for a multi-user production
 - Do not store secrets, credentials, bank details, government identity numbers or uploaded document contents.
 - A production architecture would need a threat model, authenticated sessions, server-side authorization, input validation, secure document storage, encryption, audit trails, retention/deletion policies, monitoring, backups and incident response.
 
-## Hosting and security\n\nVercel applies the configured Content Security Policy, HSTS, nosniff, frame protection, referrer policy, permissions policy and COOP headers. Hashed assets use immutable caching; the service-worker shell cache is versioned and must be bumped when app-shell assets change. These headers are defense-in-depth for the static frontend, not a substitute for backend controls.\n\n## Hosting and security
+## Hosting and security
 
 Vercel applies the configured Content Security Policy, HSTS, nosniff, frame protection, referrer policy, permissions policy and COOP headers. Hashed assets use immutable caching; the service-worker shell cache is versioned and must be bumped when app-shell assets change. These headers are defense-in-depth for the static frontend, not a substitute for backend controls.
 
