@@ -14,10 +14,12 @@ This roadmap describes proposed product evolution. Items below are not implement
 - [x] PWA shell and service-worker offline fallback after an online visit.
 - [x] Workspace state and common mutations extracted into a tested hook.
 - [x] Responsive UI and automated unit/component/accessibility checks.
-- [ ] Validate usability with students across multiple devices and assistive technologies.\n- [ ] Add native-reviewed Hindi and Kannada UI localization, then expand language coverage based on usage and feedback.
+- [ ] Validate usability with students across multiple devices and assistive technologies.
+- [ ] Add native-reviewed Hindi and Kannada UI localization, then expand language coverage based on usage and feedback.
 - [ ] Add a reviewed scheme ingestion workflow with academic-year validity, scheme owner, last-verified date, deadline status and stale-record monitoring.
 - [ ] Expand regional language support (Hindi, Kannada, Tamil, Telugu, Bengali and more) with native review.
-- [x] Add source-reviewed UGC, Karnataka state, and private foundation listings with manual-review boundaries.\n- [ ] Expand source verification coverage with a transparent data-review process.
+- [x] Add source-reviewed UGC, Karnataka state, and private foundation listings with manual-review boundaries.
+- [ ] Expand source verification coverage with a transparent data-review process.
 
 ## Stage 1 — Trust and data quality
 - Source schema with provider, URL, reviewed-at date, academic year, rule version and review status.
@@ -34,7 +36,8 @@ This roadmap describes proposed product evolution. Items below are not implement
 - Import/export validation and recovery.
 - User notes, milestones and reminder preferences.
 - Calendar export only for verified dates.
-- Better empty, error and storage-quota states.\n- Add an accessible language selector only after translated UI strings and review workflows exist.
+- Better empty, error and storage-quota states.
+- Add an accessible language selector only after translated UI strings and review workflows exist.
 - Manual accessibility testing and usability study.
 
 ## Stage 3 — Multi-device product discovery (requires privacy/security design)
