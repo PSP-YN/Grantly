@@ -97,6 +97,19 @@ describe("Grantly workspace", () => {
     confirmation.mockRestore();
   });
 
+
+  it("filters scholarships by education level and domicile state", () => {
+    render(<App />);
+    const level = screen.getByLabelText("Filter by education level");
+    fireEvent.change(level, { target: { value: "Undergraduate" } });
+    expect(screen.getByText("PM-USP Central Sector Scholarship (CSSS)")).toBeInTheDocument();
+    expect(screen.queryByText("INSPIRE Scholarship for Higher Education (SHE)")).not.toBeInTheDocument();
+    fireEvent.change(level, { target: { value: "All levels" } });
+    fireEvent.change(screen.getByLabelText("Filter by state or union territory"), { target: { value: "Karnataka" } });
+    fireEvent.change(screen.getByLabelText("Search scholarships"), { target: { value: "Karnataka SSP" } });
+    expect(screen.getByText(/Karnataka State Scholarship Portal/)).toBeInTheDocument();
+  });
+
   it("filters scholarship cards by category", () => {
     render(<App />);
     fireEvent.click(screen.getByRole("button", { name: "Science & research" }));
