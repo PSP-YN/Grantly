@@ -1,5 +1,7 @@
 import { scholarships } from "../../data";
 import type { StudentProfile } from "../../matching";
+import { normalizeBudget, type Budget } from "../funding-planner/calculations";
+import { normalizeEssayDraft, type EssayDraft } from "../essay/draft";
 
 export type Stage = "Interested"|"Preparing"|"Submitted"|"Under review"|"Awarded";
 export type Profile = StudentProfile;
@@ -40,12 +42,13 @@ export function normalizeStore(value:unknown):Store {
   return {saved,applications,profile:readProfile(parsed.profile)};
 }
 
-export function parseWorkspaceExport(raw:string):Store {
+export type WorkspaceImport={store:Store;fundingPlanner?:Budget;essayWorkspace?:EssayDraft};
+export function parseWorkspaceExport(raw:string):WorkspaceImport {
   const parsed:unknown=JSON.parse(raw);
   if(!parsed||typeof parsed!=="object")throw new Error("Invalid Grantly workspace file.");
-  const record=parsed as {product?:unknown;workspace?:unknown};
+  const record=parsed as {product?:unknown;workspace?:unknown;fundingPlanner?:unknown;essayWorkspace?:unknown};
   if(record.product!=="Grantly"||!record.workspace||typeof record.workspace!=="object")throw new Error("This file is not a Grantly workspace export.");
-  return normalizeStore(record.workspace);
+  return {store:normalizeStore(record.workspace),...(Object.prototype.hasOwnProperty.call(record,"fundingPlanner")?{fundingPlanner:normalizeBudget(record.fundingPlanner)}:{}),...(Object.prototype.hasOwnProperty.call(record,"essayWorkspace")?{essayWorkspace:normalizeEssayDraft(record.essayWorkspace)}:{})};
 }
 
 export function loadStore():Store {
