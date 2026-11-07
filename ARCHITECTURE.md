@@ -136,3 +136,20 @@ The JSON backup includes the workspace state plus the local funding planner and 
 5. Writes validated values to browser storage only.
 
 No imported profile, financial planner value or statement draft is sent to a server. Export files may contain personal information and should be handled as sensitive user-owned data.
+
+## Runtime loading and feature boundaries
+
+The application shell owns navigation, workspace composition, global notifications, and cross-feature coordination. Feature-specific behaviour is kept in focused modules under `src/features/` (scholarships, profile, guide, workspace, essay, and funding planner), while reusable UI is kept in feature component folders.
+
+Secondary workspaces and overlays are loaded with React lazy imports and local Suspense boundaries:
+
+- Funding planner and statement workspace are loaded only when their navigation destinations are opened.
+- Student guide and profile page are loaded on demand.
+- Scholarship detail and profile-edit dialogs are loaded only when opened.
+- Each boundary exposes a semantic `role="status"` loading message, so deferred loading is announced to assistive technology and does not leave a blank region.
+
+This keeps the initial discovery route from eagerly downloading every secondary workflow. The scholarship catalogue and discovery components remain in the initial route because they are required for the primary user journey. Build output should be inspected after each significant feature addition to ensure that code splitting continues to produce separate feature chunks and that no oversized shared chunk is introduced.
+
+## Verification expectations
+
+The CI workflow runs linting, TypeScript checks, unit/component tests, a production build, and an npm dependency audit. Before a release, also inspect the generated asset sizes, test keyboard-only navigation and dialog focus behaviour, and validate the deployed experience at narrow mobile, tablet, and desktop widths. A passing CI run is necessary but does not replace real-browser responsive, accessibility, and performance audits.
