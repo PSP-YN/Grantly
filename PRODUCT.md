@@ -36,6 +36,7 @@ Profile context → discover programmes → inspect criteria/source → shortlis
 - Saved scholarship list.
 - Local application tracker and per-scholarship document checklist.
 - Discovery-page journey panel with four actionable preparation steps and a transparent completion indicator derived from profile, shortlist, tracker and document checklist state.
+- Five-stage application pipeline with drag-and-drop movement, keyboard-accessible stage selection and per-opportunity document progress.
 - Local JSON export.
 - Funding planner with cost/support/gap arithmetic.
 - Responsive UI and automated tests.
