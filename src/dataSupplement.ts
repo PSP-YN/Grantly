@@ -152,5 +152,41 @@ export const scholarshipSupplemental: Scholarship[] = [
     tags:["Siemens","Engineering","Girls in STEM","Industry mentoring"],source:"https://www.siemens.com/en-gb/company/sustainability/corporate-citizenship-india/scholarship-program/",sourceLabel:"Siemens Scholarship Program official page",
     lastVerified:"2026-11-07",verificationNote:"The Siemens official page states that 2026–27 applications are closed and describes programme eligibility. Treat as next-cycle preparation only; verify current official terms when applications reopen.",
     initials:"S",tone:"gold",rules:[],documents:["First-year government engineering college enrollment proof","SSC / HSC marksheets","Family income proof","Branch / age documentation","Current Siemens application documents"]
-  }
+  },
+
+  {
+    id:"lic-golden-jubilee-2026",name:"LIC Golden Jubilee Scholarship Scheme 2026",
+    provider:"LIC Golden Jubilee Foundation — Life Insurance Corporation of India",
+    amount:"₹50,000/year for medicine; ₹40,000/year engineering; ₹20,000/year other eligible UG/diploma/vocational; ₹15,000/year special Class X girl-child category",
+    amountValue:50000,
+    deadline:"2026 application window closed; check LIC for the next cycle",
+    category:"Private foundation",level:"Class XI / Undergraduate / Diploma / ITI",
+    region:"All India",description:"Merit and need-based education support for eligible students entering higher education or vocational courses under LIC's 2026 scholarship call.",
+    eligibility:["Minimum qualifying marks and first-year admission conditions apply","Family income limit and any permitted relaxation are defined by the current LIC scheme document","General and special girl-child categories have different qualifying levels and courses","The 2026 application window has closed"],
+    tags:["LIC","Merit","Need-based","Class 10","Class 12","Undergraduate","Diploma"],
+    source:"https://web.licindia.in/en/web/guest/golden-jubilee-foundation",
+    sourceLabel:"LIC Golden Jubilee Foundation — official 2026 scheme page",
+    lastVerified:"2026-11-07",
+    verificationNote:"LIC's official Golden Jubilee Foundation page lists the 2026 scheme and related instructions. The application window is closed as of this review; verify the next cycle, income limit, qualifying year and award details against the current official PDF. No automated eligibility match is provided.",
+    initials:"LIC",tone:"gold",rules:[],
+    documents:["Class X / XII / diploma qualifying marksheet","Current first-year admission proof","Family income certificate","Course and institution details","Bank and identity documents requested by LIC"]
+  },
+  {
+    id:"national-overseas-st-students",name:"National Overseas Scholarship for ST Students",
+    provider:"Ministry of Tribal Affairs — Government of India",
+    amount:"Tuition, maintenance, travel and related allowances under current scheme guidelines",
+    amountValue:0,
+    deadline:"Selection year 2026–27 applications closed; check the next official call",
+    category:"Overseas study",level:"Master's / PhD / Postdoctoral study abroad",
+    region:"All India — eligible ST and PVTG applicants",
+    description:"Central Sector support for selected eligible Scheduled Tribe and Particularly Vulnerable Tribal Group students pursuing postgraduate, doctoral or postdoctoral study abroad.",
+    eligibility:["Scheduled Tribe / PVTG category eligibility applies","Family income ceiling, age limits, eligible course and foreign university requirements apply","Selection and admission timelines are defined by the Ministry's current guidelines","Selection year 2026–27 application window has closed"],
+    tags:["ST","PVTG","Overseas study","Master's","PhD","Postdoctoral","Government of India"],
+    source:"https://overseas.tribal.gov.in/",
+    sourceLabel:"Ministry of Tribal Affairs — National Overseas Scholarship portal",
+    lastVerified:"2026-11-07",
+    verificationNote:"The Ministry portal and scheme page describe 20 annual awards, the ₹6 lakh family income ceiling, age/course rules and overseas study scope. The 2026–27 call closed in July 2026. Confirm the next call, eligibility and approved university list on the official portal; no automated eligibility match is provided.",
+    initials:"MoTA",tone:"sage",rules:[],
+    documents:["ST / PVTG certificate","Family income certificate","Qualifying academic marksheets","Foreign university admission / offer as required","Passport and current Ministry application documents"]
+  },
 ];
