@@ -11,6 +11,11 @@
 - Added portal directory and workspace hook regression tests.
 - Enabled axe color-contrast checking in the app accessibility test.
 
+## Unreleased — Deadline integrity improvements
+- Updated selected AY 2026–27 NSP deadline records from the official NSP listing.
+- Fixed calendar export to exclude past deadlines and use an exclusive next-day DTEND for all-day events.
+- Added regression tests for expired events and ICS event duration.
+
 ## Unreleased — Product workspace improvements
 - Added an annual Funding Planner for education costs, existing aid and hypothetical scholarship scenarios.
 - Added uncovered funding, coverage and surplus calculations with clear limitations.
