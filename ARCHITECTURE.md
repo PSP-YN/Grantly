@@ -128,3 +128,13 @@ The JSON backup includes the workspace state plus the local funding planner and 
 5. Writes validated values to browser storage only.
 
 No imported profile, financial planner value or statement draft is sent to a server. Export files may contain personal information and should be handled as sensitive user-owned data.
+
+
+## Design system
+
+The interface uses a restrained three-part educational palette:
+- **Ink navy** — primary text, navigation and high-contrast structural surfaces.
+- **Warm ivory** — page and content backgrounds.
+- **Academic green** — primary action, progress and positive state.
+
+Semantic error/warning styling is separate from the brand palette. Use the CSS custom properties and shared component styles rather than introducing new colors ad hoc. Validate contrast in actual component states; color tokens alone do not prove WCAG compliance.
