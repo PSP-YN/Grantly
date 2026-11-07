@@ -10,7 +10,7 @@ flowchart TD
   State --> Discovery[Search, filters, sorting]
   State --> Eligibility[Eligibility rule evaluator]
   State --> Tracker[Saved items and application tracker]
-  State --> Planner[Annual funding planner]
+  State --> Planner[Annual funding planner]\n  State --> Intelligence[Funding scenarios, EMI and narrative review]
   State --> Portal[State and UT portal directory]
   State --> Storage[Browser localStorage]
   Catalogue[Source-linked scholarship catalogue] --> Discovery
@@ -29,7 +29,7 @@ flowchart TD
 | `features/guide/StateScholarshipPortalDirectory.tsx` | Searchable state/UT portal directory UI | External official routes; current rules are provider-owned |
 | `data.ts` | Typed scholarship catalogue, official-source metadata and criteria | Curated static data; not live/authoritative |
 | `matching.ts` | Deterministic criteria evaluation | Only evaluates encoded rules; unknowns stay unknown |
-| `FundingPlanner.tsx` | Annual cost/support inputs, gap calculation, local persistence and JSON export | User-entered values only; no financial data API |
+| `FundingPlanner.tsx` | Annual cost/support inputs, gap calculation, local persistence and JSON export | User-entered values only; no financial data API |\n| `features/intelligence/analysis.ts` | Pure INR cost/support aggregation, reducing-balance EMI estimate, scenario normalization and local narrative diagnostics | Scenario arithmetic only; no lender integration, AI-authorship detection or legal aid-displacement determination |\n| `features/intelligence/FundingIntelligence.tsx` | Funding stack, application stage board, statement diagnostics and provider inquiry draft | Browser-local estimates and text; no secure document vault or provider submission |
 | `EssayWorkspace.tsx` | Guided personal statement outline, word count, local draft persistence and text export | No essay generation, plagiarism scoring or remote writing service |
 | `styles.css` | Layout, visual tokens, responsive behavior and reduced-motion handling | CSS-based design system |
 | `*.test.ts(x)` | Rule, component, workflow and accessibility regression tests | Tests do not replace browser/assistive-tech testing |
@@ -46,7 +46,7 @@ flowchart TD
 4. The UI reports met / not-met / unknown results. A scheme without enough verified rules requires official review.
 5. Students may save an opportunity or add it to the tracker; checklist and stage changes are stored locally.
 6. The Funding Planner calculates cost, support, gap and coverage from the values the student enters.
-7. Export actions create files in the user's browser. No profile or planner record is transmitted remotely.
+7. Funding Intelligence combines user-entered annual costs and support, derives awarded catalogue values from tracker stages, estimates an EMI and flags a potential surplus for manual provider review.\n8. Local narrative diagnostics inspect text in the browser and do not infer authorship or use a remote AI service.\n9. Export actions create files in the user's browser. No profile or planner record is transmitted remotely.
 
 ## Eligibility model
 
@@ -153,3 +153,12 @@ This keeps the initial discovery route from eagerly downloading every secondary 
 ## Verification expectations
 
 The CI workflow runs linting, TypeScript checks, unit/component tests, a production build, and an npm dependency audit. Before a release, also inspect the generated asset sizes, test keyboard-only navigation and dialog focus behaviour, and validate the deployed experience at narrow mobile, tablet, and desktop widths. A passing CI run is necessary but does not replace real-browser responsive, accessibility, and performance audits.
+
+
+## Funding intelligence model
+
+- `analysis.ts` contains pure functions for annual cost, confirmed support, proposed support, remaining gap, surplus, coverage and reducing-balance EMI.
+- Awarded scholarships are derived from the user's tracker and the catalogue's numeric `amountValue` field. The student must verify award cadence, stacking rules and eligible costs with the provider.
+- A projected surplus is a coordination prompt only. Grantly does not determine statutory scholarship displacement, institutional packaging rules or legal entitlement.
+- Narrative review uses local word/sentence counts, first-person references, phrase flags and an approximate English readability formula. It is not AI detection, plagiarism detection or a measure of truthfulness.
+- Scenario inputs use `grantly:funding-intelligence:v1` in browser localStorage and are normalized at load/import boundaries. Workspace backup includes the scenario values.
