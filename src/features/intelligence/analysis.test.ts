@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { calculateFundingSnapshot, reviewNarrative, type FundingInputs } from "./analysis";
+import { calculateFundingSnapshot, normalizeFundingInputs, reviewNarrative, type FundingInputs } from "./analysis";
 
 const base: FundingInputs = {
   tuition: 100000, housing: 50000, food: 30000, books: 5000, transport: 5000, otherCosts: 10000,
@@ -28,6 +28,13 @@ describe("funding intelligence calculations", () => {
     const result = calculateFundingSnapshot({ ...base, annualInterestRate: 0, repaymentYears: 5 });
     expect(result.monthlyEmi).toBe(125000 / 60);
     expect(result.totalInterest).toBe(0);
+  });
+
+  it("normalizes imported scenario values and bounds loan assumptions", () => {
+    const normalized = normalizeFundingInputs({ tuition: -5, annualInterestRate: 900, repaymentYears: 80 });
+    expect(normalized.tuition).toBe(0);
+    expect(normalized.annualInterestRate).toBe(100);
+    expect(normalized.repaymentYears).toBe(40);
   });
 
   it("clamps invalid negative inputs to zero", () => {
