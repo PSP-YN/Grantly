@@ -59,3 +59,9 @@
 - Added canonical SEO metadata, robots.txt and sitemap.xml.
 - Added Vercel security headers and safe caching for hashed assets; made the service worker revalidate and bumped its cache version.
 - Added a design-system specification for the academic navy, ivory and terracotta palette.
+
+
+## Unreleased — scholarship time and source quality
+- Deadline date calculations now explicitly use Asia/Kolkata (IST), with timezone-boundary tests.
+- Updated PM CARES school education support from the Ministry of Women & Child Development FAQ and constrained it to eligible beneficiaries.
+- Added LIC Golden Jubilee 2026 and National Overseas Scholarship for ST Students; their application windows are labelled closed.
