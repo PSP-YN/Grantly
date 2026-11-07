@@ -1,5 +1,6 @@
 import type { Scholarship } from "../../data";
 import { assessEligibility, type StudentProfile } from "../../matching";
+import { parseExplicitDeadline } from "./calendar";
 
 export type ScholarshipSort = "match" | "amount" | "name" | "deadline";
 export type ScholarshipScope = "Discover" | "Saved" | "Applications";
@@ -40,7 +41,7 @@ export function filterScholarships(input: {
   return filtered.sort((a, b) => {
     if (input.sort === "amount") return b.amountValue - a.amountValue || a.name.localeCompare(b.name);
     if (input.sort === "name") return a.name.localeCompare(b.name);
-    if (input.sort === "deadline") return a.deadline.localeCompare(b.deadline) || a.name.localeCompare(b.name);
+    if (input.sort === "deadline") {\n      const da = parseExplicitDeadline(a.deadline);\n      const db = parseExplicitDeadline(b.deadline);\n      if (da && db) return da.localeCompare(db) || a.name.localeCompare(b.name);\n      if (da) return -1;\n      if (db) return 1;\n      return a.name.localeCompare(b.name);\n    }
     return matchRank[assessEligibility(a, input.profile).status] - matchRank[assessEligibility(b, input.profile).status] || a.name.localeCompare(b.name);
   });
 }
