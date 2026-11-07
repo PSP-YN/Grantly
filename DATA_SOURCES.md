@@ -4,7 +4,7 @@ Records reviewed on **7 November 2026**. A source-review date means the linked p
 
 | Catalogue entry | Official source | What is grounded | What still requires applicant verification |
 |---|---|---|---|
-| PM-USP CSSS | [NSP](https://scholarships.gov.in/Students), [Ministry FAQ](https://www.education.gov.in/sites/upload_files/mhrd/files/upload_document/FAQs_PM_USP_CSSS_scheme_AY_2025_26.pdf) | Merit-cum-means scheme; above 80th percentile in relevant Class XII board stream; regular course; family income up to ₹4.5 lakh; no other scholarship / fee reimbursement; amount ₹12,000/year for the first three undergraduate years, ₹20,000/year for technical courses in years four/five, and ₹20,000/year at postgraduate level (per 2025–26 Ministry FAQ). | AY 2026–27 scheme specification, fresh vs renewal status, board percentile, course and individual conditions. NSP lists the 2026–27 renewal window through 30 November; the fresh application window is not listed as open. |
+| PM-USP CSSS | [NSP](https://scholarships.gov.in/Students), [Ministry FAQ](https://www.education.gov.in/sites/upload_files/mhrd/files/upload_document/FAQs_PM_USP_CSSS_scheme_AY_2025_26.pdf) | Merit-cum-means scheme; above 80th percentile in relevant Class XII board stream; regular course; family income up to ₹4.5 lakh; no other scholarship / fee reimbursement; amount ₹12,000/year for the first three undergraduate years, ₹20,000/year for technical courses in years four/five, and ₹20,000/year at postgraduate level (per 2025–26 Ministry FAQ). | AY 2026–27 scheme specification, fresh vs renewal status, board percentile, course and individual conditions. NSP student announcement reports a renewal deadline of 31 October 2026 while a scheme-listing snapshot has shown 30 November 2026. Grantly surfaces this conflict; verify the live scheme-specific notice. Fresh application status is not confirmed. |
 | INSPIRE-SHE | [Official INSPIRE FAQ](https://www.online-inspire.gov.in/Account/FAQ) | SHE programme, ₹80,000 annual scheme value and listed academic/course routes. | Current application call, age, course exclusions, same-year entry and alternative qualifying routes. Automated matching is intentionally disabled because multiple qualifying routes and exclusions need a complete review. |
 | AICTE Pragati | [AICTE](https://www.aicte-india.org/) | Scheme identity and regulator source. | Current guidelines, approved institution, intake, income ceiling, award value and dates. Automated matching is intentionally disabled. |
 | AICTE Saksham | [AICTE](https://www.aicte-india.org/) | Scheme identity and regulator source. | Current guidelines, disability documentation, approved institution, income ceiling, award value and dates. Automated matching is intentionally disabled. |
@@ -120,7 +120,7 @@ Each state-specific record has automated eligibility matching disabled until its
 
 ## Current NSP cycle date snapshot — AY 2026–27
 
-The official [NSP scheme catalogue](https://scholarships.gov.in/All-Scholarships) lists multiple AY 2026–27 applications as closing on **30 November 2026**, with verification windows extending into December. The app currently records this date for these scheme entries:
+The official [NSP scheme catalogue](https://scholarships.gov.in/All-Scholarships) has scheme-specific date snapshots. Some entries show **30 November 2026**, some **15 November 2026**, and some have closed on **31 October 2026**. The student announcements and individual scheme listings can display conflicting snapshots; do not assume a single deadline applies across the portal. The app currently records this date for these scheme entries:
 
 - AICTE Swanath (technical degree and diploma)
 - PMSS CAPF / Assam Rifles
@@ -130,3 +130,34 @@ The official [NSP scheme catalogue](https://scholarships.gov.in/All-Scholarships
 - National Scholarship for Post Graduate Studies
 
 The same NSP page lists some schemes with **15 November 2026** student deadlines (including PM YASASVI school-level and NMMS) and others as **closed on 31 October 2026** (including pre-matric disability and worker-ward assistance). Do not infer that all NSP programmes share a deadline. Dates are a snapshot checked on 7 November 2026; verify the portal before applying because government schedules can change.
+
+## Additional catalogue entries — reviewed 7 November 2026
+
+These 15 supplemental entries were added from primary provider pages and state portals. They have **no automated eligibility rules** until the complete current eligibility criteria and exclusions are independently reviewed.
+
+| Catalogue entry | Primary source | Important qualification |
+|---|---|---|
+| UGC Savitribai Jyotirao Phule Fellowship for Single Girl Child | [UGC fellowship page](https://www.ugc.gov.in/Fellowship/stu_Fellowship3/stu_Fellowship3) | PhD / single-girl-child fellowship; confirm active call, slots and application instructions. |
+| UGC Junior Research Fellowship (NET-JRF) | [UGC JRF page](https://www.ugc.gov.in/Fellowship/stu_Fellowship1) | Award is tied to qualifying NET-JRF / joint-test results, award validity and research joining conditions. |
+| Karnataka Mukhyamantri Raitha Vidya Nidhi | [Karnataka SSP](https://ssp.postmatric.karnataka.gov.in/homepage.aspx), [Kodagu district Agriculture page](https://kodagu.nic.in/en/department-of-agriculture/) | Farmer / eligible agricultural-labourer family linkage, FRUITS and current scheme conditions apply. |
+| Karnataka Labour Welfare Board Education Assistance | [Karnataka Labour Welfare Board](https://klwb.karnataka.gov.in/) | Worker coverage, board membership/contribution, course and annual application rules must be verified. |
+| Karnataka Minority Welfare Scholarships (SSP / GOKDOM) | [GOKDOM](https://gokdom.karnataka.gov.in/) and [SSP](https://ssp.postmatric.karnataka.gov.in/homepage.aspx) | Directory gateway to multiple department schemes; not one universal award. |
+| Karnataka Construction Workers’ Children Education Assistance | [Karnataka Building and Other Construction Workers Welfare Board](https://karbwwb.karnataka.gov.in/) | Parent registration and beneficiary requirements; verify current board call. |
+| PM CARES for Children — Education Support | [PM CARES for Children](https://pmcaresforchildren.in/) | Restricted to eligible registered beneficiaries; not a general open scholarship. |
+| Vidyadhan Scholarship | [Sarojini Damodaran Foundation](https://www.vidyadhan.org/) | State/class-specific calls and application windows; not every region opens in every cycle. |
+| Sitaram Jindal Foundation Scholarship | [Foundation FAQ](https://app.sitaramjindalfoundation.org/Student/FAQ) | Course/category-specific eligibility and award; verify current rules and restrictions. |
+| NorthSouth Foundation India Scholarship | [NorthSouth official scholarship page](https://www.northsouth.org/india-impact/india-scholarships/) | 2026–27 guidelines list a 31 October 2026 registration deadline; treat this cycle as closed unless extended. |
+| Tata Capital Pankh Scholarship | [Tata Capital Education page](https://www.tatacapital.com/sustainability/education.html) | Programme-specific cycle, course and income criteria. |
+| ONGC Foundation Scholarship | [ONGC Foundation application portal](https://www.ongcscholar.org/) | Confirm current programme name, beneficiary categories and application window. |
+| IndianOil Academic Scholarship | [IndianOil scholarships](https://iocl.com/Scholarships) | Historical programme names do not guarantee a current application cycle; check official notices. |
+| Aditya Birla Scholarships Programme | [Aditya Birla Scholars](https://www.adityabirlascholars.net/) | Institution / nomination restricted; not open to every Indian college. |
+| Siemens Scholarship Program | [Siemens India official programme](https://www.siemens.com/en-gb/company/sustainability/corporate-citizenship-india/scholarship-program/) | Siemens states 2026–27 applications are closed; this is a next-cycle planning record. |
+
+## Data handling and status rules
+
+- The catalogue is a **discovery index**, not an exhaustive list of all Indian scholarships.
+- A provider link may be a programme landing page, application portal or state gateway. It must be labelled accordingly.
+- "Check current call" means Grantly has not confirmed an active application window.
+- A closed or next-cycle listing remains useful for planning but must not be advertised as open.
+- Rule-based eligibility is disabled unless scheme-specific criteria have been reviewed and encoded.
+- Never enter Aadhaar, bank credentials, OTPs or document scans into Grantly.
