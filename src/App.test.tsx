@@ -48,7 +48,7 @@ describe("Grantly workspace", () => {
     const file = new File([JSON.stringify(payload)], "grantly-workspace.json", { type: "application/json" });
     fireEvent.change(screen.getByLabelText("Import Grantly workspace JSON"), { target: { files: [file] } });
     await waitFor(() => expect(JSON.parse(localStorage.getItem("grantly:workspace:v1") || "{}").saved).toEqual(["csss"]));
-    expect(screen.getByText(/Workspace imported/)).toBeInTheDocument();
+    expect(JSON.parse(localStorage.getItem("grantly:funding-planner:v1") || "{}").tuition).toBe(12345);\n    expect(JSON.parse(localStorage.getItem("grantly:essay-workspace:v1") || "{}").draft).toBe("My personal statement");\n    expect(screen.getByText(/Workspace, funding plan and statement draft restored/)).toBeInTheDocument();
   });
 
   it("filters scholarship cards by category", () => {
