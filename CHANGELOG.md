@@ -49,3 +49,13 @@
 - Expanded the directory to 41 records and separated AICTE Pragati/Saksham degree and diploma entries.
 - Added PM-USP SSS J&K/Ladakh, PMSS Railways, PM YASASVI school scheme, NMMSS, worker-family pre/post-matric assistance, pre-matric disability, ICAR NTS-PG/JRF/SRF, ISI stipend, renewable energy fellowship and Free Coaching scheme records.
 - Recorded open/closed application windows as NSP snapshots and added explicit state-specific / school-level cautions.
+
+
+## Unreleased — product hardening and catalogue extension (7 November 2026)
+- Added LIC Golden Jubilee Scholarship 2026 and National Overseas Scholarship for ST Students with closed-cycle and manual-review notices.
+- Expanded catalogue filters to include overseas study.
+- Memoized scholarship search and state/education-level filters to reduce redundant work during UI interactions.
+- Corrected deadline sorting and calendar export to use local calendar dates instead of UTC day boundaries.
+- Updated SEO canonical metadata, sitemap and robots discovery.
+- Added browser security headers and corrected cache policy so only content-hashed assets receive immutable caching.
+- Versioned the service-worker cache after shell changes.
