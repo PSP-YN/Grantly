@@ -44,7 +44,13 @@ export function filterScholarships(input: {
     if (input.sort === "deadline") {
       const da = parseExplicitDeadline(a.deadline);
       const db = parseExplicitDeadline(b.deadline);
-      if (da && db) return da.localeCompare(db) || a.name.localeCompare(b.name);
+      const today = new Date().toISOString().slice(0,10);
+      const pastA = Boolean(da && da < today);
+      const pastB = Boolean(db && db < today);
+      if (da && db) {
+        if (pastA !== pastB) return pastA ? 1 : -1;
+        return pastA ? db.localeCompare(da) || a.name.localeCompare(b.name) : da.localeCompare(db) || a.name.localeCompare(b.name);
+      }
       if (da) return -1;
       if (db) return 1;
       return a.name.localeCompare(b.name);

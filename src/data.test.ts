@@ -2,7 +2,8 @@ import { describe, expect, it } from "vitest";
 import { scholarships } from "./data";
 
 describe("scholarship catalogue quality", () => {
-  it("contains unique stable IDs", () => {
+  it("contains a meaningful India-wide directory and unique stable IDs", () => {
+    expect(scholarships.length).toBeGreaterThanOrEqual(40);
     const ids = scholarships.map(item => item.id);
     expect(new Set(ids).size).toBe(ids.length);
   });
