@@ -1,4 +1,4 @@
-name: FundNavi CI
+name: Grantly CI
 
 on:
   push:
