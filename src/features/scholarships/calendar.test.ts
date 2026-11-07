@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { buildDeadlineCalendar, parseExplicitDeadline } from "./calendar";
+import { buildDeadlineCalendar, localDateISO, parseExplicitDeadline } from "./calendar";
 import type { Scholarship } from "../../data";
 
 const base: Scholarship = {
@@ -8,7 +8,7 @@ const base: Scholarship = {
   description:"sample",eligibility:[],tags:[],source:"https://example.org/award",sourceLabel:"official",
   lastVerified:"2026-11-07",verificationNote:"Verify the current notice.",initials:"S",tone:"blue",rules:[],documents:[]
 };
-describe("deadline calendar",()=>{
+describe("deadline calendar",()=>{\n it("formats the local calendar date instead of the UTC date",()=>{\n  const date = new Date(2026, 10, 7, 0, 15);\n  expect(localDateISO(date)).toBe("2026-11-07");\n });
  it("parses explicitly stated dates and ignores vague deadlines",()=>{
   expect(parseExplicitDeadline("Close date: 30 Nov 2026")).toBe("2026-11-30");
   expect(parseExplicitDeadline("2026-12-01")).toBe("2026-12-01");
