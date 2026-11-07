@@ -36,7 +36,8 @@ export function filterScholarships(input: {
     if (input.scope === "Saved" && !saved.has(s.id)) return false;
     if (input.scope === "Applications" && !applications.has(s.id)) return false;
     if (input.category !== "All" && s.category !== input.category) return false;
-    const text = searchableText(s);\n    return terms.length === 0 || terms.every(term => text.includes(term));
+    const text = searchableText(s);
+    return terms.length === 0 || terms.every(term => text.includes(term));
   });
   return filtered.sort((a, b) => {
     if (input.sort === "amount") return b.amountValue - a.amountValue || a.name.localeCompare(b.name);
