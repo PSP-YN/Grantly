@@ -8,12 +8,12 @@ The GRANTLY prompt asks for a unified scholarship discovery and management exper
 
 | Judging dimension | What Grantly demonstrates | Evidence / judge action |
 |---|---|---|
-| UI / UX | Clear information hierarchy, forest-green / parchment / academic-gold education palette, consistent cards, responsive shell and purposeful empty states. | Open Discover; compare desktop and 320px mobile layout. |
+| UI / UX | Clear information hierarchy, ink navy / warm ivory / terracotta education palette, consistent cards, responsive shell and purposeful empty states. | Open Discover; compare desktop and 320px mobile layout. |
 | Functionality | Search, category filtering, sorting, save, profile editor, dynamic criteria checks, application stages, document checklist and JSON export. | Run the walkthrough in SUBMISSION.md. |
 | Creativity | Explainable eligibility screening. No fabricated percentages. Missing values remain unknown; incomplete schemes require official review. | Edit the profile and show CSSS rule outcomes changing. |
 | Problem alignment | Discovery and application preparation are connected rather than separate features. | Save a scheme, add it to tracker, check documents and change stage. |
-| Code quality | React + TypeScript, typed catalogue, isolated matching module, defensive localStorage parsing, data migration, lint/typecheck/tests and CI. | Review src/matching.ts, src/data.ts, src/dataSupplement.ts, src/catalog.ts and GitHub Actions workflow. |
-| Responsiveness / accessibility | Mobile navigation, semantic landmarks, labelled controls, focus-visible outlines, dialog focus trap/restoration, Escape dismissal, reduced-motion CSS and browser contrast checks. | Keyboard through a dialog; inspect 320px layout. |
+| Code quality | React + TypeScript, typed catalogue, isolated matching module, defensive localStorage parsing, data migration, lint/typecheck/tests and CI. | Review src/matching.ts, src/data.ts, src/dataSupplement.ts, src/dataRegional.ts, src/catalog.ts and GitHub Actions workflow. |
+| Responsiveness / accessibility | Mobile navigation, semantic landmarks, labelled controls, focus-visible outlines, dialog focus trap/restoration, Escape dismissal, reduced-motion CSS and palette contrast regression tests; browser contrast audit still required. | Keyboard through a dialog; inspect 320px layout. |
 
 ## Strongest demo sequence (about 3 minutes)
 

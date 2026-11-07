@@ -26,7 +26,7 @@ The current release is a browser-first prototype. It does not have user accounts
 
 ## Design system
 
-The interface uses an academic navy (`#17324D`), warm ivory (`#FBF8F1`) and terracotta (`#B85C38`) palette. The colours form a restrained three-colour identity with neutral supporting text and borders. Layouts are responsive and designed for keyboard and touch use.
+The interface uses an academic navy (`#17324D`), warm ivory (`#F6F1E6`) and terracotta (`#B05230`) palette. The colours form a restrained three-colour identity with neutral supporting text and borders. Layouts are responsive and designed for keyboard and touch use.
 
 ## Engineering
 
@@ -35,6 +35,8 @@ The interface uses an academic navy (`#17324D`), warm ivory (`#FBF8F1`) and terr
 - Rule evaluation is deterministic and tested; incomplete rules remain unknown / manual review.
 - Local persistence is normalized and defensive; exports are user-triggered.
 - Lint, typecheck, tests, production build and dependency audit run in CI.
+- Scholarship filtering is memoized and date handling uses the student's local calendar day.
+- Vercel security headers, canonical metadata, robots.txt and sitemap.xml are configured.
 - Accessible controls, keyboard support, focus management and reduced-motion support are regression-tested.
 
 ### Development

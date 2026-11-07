@@ -34,6 +34,16 @@ describe("scholarship catalogue quality", () => {
     }
   });
 
+
+  it("keeps all catalogue categories discoverable and verifies PM CARES scope", () => {
+    for (const item of scholarships) expect(categories, item.id).toContain(item.category);
+    const pmcares = scholarships.find(item => item.id === "pmcares-children-scholarship");
+    expect(pmcares).toBeDefined();
+    expect(pmcares?.amountValue).toBe(20000);
+    expect(pmcares?.source).toContain("spniwcd.wcd.gov.in");
+    expect(pmcares?.eligibility.join(" ")).toMatch(/not a general scholarship/i);
+  });
+
   it("keeps key NSP AY 2026–27 deadline dates source-linked", () => {
     const byId = new Map(scholarships.map(item => [item.id, item]));
     for (const id of ["aicte-swanath-degree", "aicte-swanath-diploma", "pmss-capf", "pmss-police-martyred", "postmatric-disability", "top-class-disability", "national-pg-scholarship"]) {

@@ -36,14 +36,12 @@ Grantly is a student-first scholarship discovery and application workspace. It b
 
 ## QA evidence
 
-- 14 automated tests across two test files.
-- Zero lint warnings / errors.
-- TypeScript build passes.
-- Production build succeeds; JavaScript bundle is approximately 270 KB uncompressed / 83 KB gzip.
-- npm audit reports zero vulnerabilities at the moderate threshold.
-- Browser-tested at 320–1440 CSS pixels with no horizontal overflow.
-- Keyboard focus trap, Escape dismissal, profile-to-match flow and document persistence verified.
-- Browser contrast measurement found no visible text below the normal-text 4.5:1 threshold on discovery, profile and details views after the final color adjustments.
+- GitHub Actions runs lint, TypeScript typecheck, automated tests, production build and dependency audit. Refer to the latest workflow result for exact status.
+- Tests cover eligibility rules, catalogue metadata and unique IDs, profile/workspace persistence, scholarship filtering, funding calculations, statement word count, deadline calendar logic and palette anchor contrast.
+- axe-core semantic checks run in jsdom; its color-contrast rule is excluded because jsdom cannot reliably compute rendered contrast. The palette-token contrast test is not a full UI contrast audit.
+- Previous browser smoke checks covered responsive and keyboard flows; repeat them against the next live deployment after the current Vercel quota restriction clears.
+- The latest live deployment has not yet been verified against the merged 90-record catalogue and new response headers. Do not claim the current live site contains changes until a fresh deployment is ready and tested.
+- npm audit status is recorded in the latest CI run; avoid hardcoding a zero-vulnerability claim without rechecking.
 
 ## Final submission checklist
 
