@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { Activity, AlertTriangle, Calculator, CheckCircle2, FileText, Gauge, Wallet } from "lucide-react";
-import type { Profile, AppRecord, Stage } from "../workspace/store";
+import type { Profile, AppRecord } from "../workspace/store";
 import { scholarships } from "../../catalog";
 import { calculateFundingSnapshot, reviewNarrative, normalizeFundingInputs, DEFAULT_FUNDING_INPUTS, FUNDING_INTELLIGENCE_STORAGE_KEY, type FundingInputs } from "./analysis";
 
@@ -25,7 +25,7 @@ function NumberField({ label, value, onChange, suffix }: {
 }) {
   return <label className="intelligence-field">
     <span>{label}</span>
-    <div><input type="number" min="0" step={step} value={value} onChange={event => onChange(Math.max(0, Number(event.target.value) || 0))}/><small>{suffix ?? "₹ / year"}</small></div>
+    <div><input aria-label={label} type="number" min="0" step={step} value={value} onChange={event => onChange(Math.max(0, Number(event.target.value) || 0))}/><small>{suffix ?? "₹ / year"}</small></div>
   </label>;
 }
 
