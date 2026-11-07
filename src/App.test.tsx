@@ -60,6 +60,18 @@ describe("Grantly workspace", () => {
     expect(screen.getByText(/Workspace, funding plan and statement draft restored/)).toBeInTheDocument();
   });
 
+
+  it("opens the student guide with official portal links and accessible guidance", async () => {
+    render(<App />);
+    fireEvent.click(screen.getByRole("button", { name: /Student guide/ }));
+    expect(screen.getByRole("heading", { name: "Student application guide", level: 1 })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "A clearer path from discovery to application." })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /National Scholarship Portal \(NSP\)/ })).toHaveAttribute("href", "https://scholarships.gov.in/");
+    expect(screen.getByText(/Do not share OTPs, passwords, PINs/)).toBeInTheDocument();
+    const results = await axe.run(document.body, { runOnly: { type: "tag", values: ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"] }, rules: { "color-contrast": { enabled: false } } });
+    expect(results.violations.map(item => item.id)).toEqual([]);
+  });
+
   it("filters scholarship cards by category", () => {
     render(<App />);
     fireEvent.click(screen.getByRole("button", { name: "Science & research" }));
