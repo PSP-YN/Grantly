@@ -1,5 +1,15 @@
 # Changelog
 
+## Unreleased — engineering hardening
+- Memoized scholarship filtering and state/level visibility to reduce repeated rule checks.
+- Fixed deadline sorting and calendar export to use local calendar dates instead of UTC boundaries.
+- Added timezone regression coverage.
+- Added Vercel CSP, HSTS, nosniff, frame protection, referrer, permissions and COOP headers.
+- Added canonical metadata, sitemap.xml and robots.txt.
+- Bumped the service-worker cache to refresh the shell after release.
+- Aligned PWA manifest and icons with the navy / ivory / terracotta palette.
+- Updated PM CARES education assistance amount/source from the MWCD FAQ.
+
 ## Unreleased — India-wide student product expansion\n- Added 15 additional UGC, Karnataka welfare, PM CARES and private-foundation records (77 total curated entries).\n- Added separate catalog composition module to isolate supplemental scholarship data from the original data file.\n- Added filter categories for state schemes, private foundations and fellowships.\n- Replaced the navy/blue UI with forest green, parchment and academic gold across CSS, browser theme metadata, PWA manifest and icons.\n- Documented a conflicting NSP CSSS renewal deadline snapshot instead of silently choosing one date.\n\n## Previous India-wide student product expansion
 - Added 9 central / UGC scholarship and fellowship records in the previous update (62 records at that point).
 - Added searchable portal starting points for all 28 states and 8 union territories.
