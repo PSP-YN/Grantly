@@ -20,3 +20,8 @@
 - Added a complete JSON backup of saved scholarships, tracker state, profile, funding planner and statement draft.
 - Added a file-based restore flow with 2 MB size limit and data normalization for known scheme IDs, tracker stages, checklist items, budget values and essay fields.
 - Added unit and UI regression tests for import validation and complete restore.
+
+## Unreleased — NSP AY 2026–27 coverage expansion
+- Expanded the directory to 41 records and separated AICTE Pragati/Saksham degree and diploma entries.
+- Added PM-USP SSS J&K/Ladakh, PMSS Railways, PM YASASVI school scheme, NMMSS, worker-family pre/post-matric assistance, pre-matric disability, ICAR NTS-PG/JRF/SRF, ISI stipend, renewable energy fellowship and Free Coaching scheme records.
+- Recorded open/closed application windows as NSP snapshots and added explicit state-specific / school-level cautions.
