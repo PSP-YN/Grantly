@@ -43,7 +43,7 @@ Profile context → discover programmes → inspect criteria/source → shortlis
 - Remote storage or cross-device synchronization.
 - Official scholarship portal login/application submission.
 - Real-time deadlines or notification delivery.
-- AI eligibility decisions, essay generation or recommendation scores.
+- AI eligibility decisions, AI essay generation or recommendation scores.
 - Uploading and storing certificates or identity documents.
 - Automatic verification of student or institution claims.
 
