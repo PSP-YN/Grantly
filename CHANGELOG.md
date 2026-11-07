@@ -4,6 +4,11 @@ All notable changes to Grantly are documented here.
 
 ## [Unreleased] — 2026-11-07
 
+### Product
+- Added a live four-step student journey panel that turns profile completion, saved opportunities, tracked applications and required-document checklist state into actionable next steps.
+- Added a pure progress derivation module and unit tests; progress is explicitly not presented as eligibility, award probability or provider readiness.
+- Added responsive layout, keyboard-visible actions and an accessible progress indicator.
+
 ### Documentation
 - Rewrote the README around the product's real student journey, current feature set, architecture, data boundaries, quality gates and governance.
 - Added the requested FAIE seven-pillar 100-point target framework and retained the separate FQE six-module 40-point target framework; both are explicitly marked as targets, not achieved evaluator scores.
