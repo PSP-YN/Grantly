@@ -10,7 +10,7 @@ This roadmap describes proposed product evolution. Items below are not implement
 - [x] Browser-local workspace export.
 - [x] Funding gap calculator based on user-entered values.
 - [x] Searchable state/UT portal directory (28 states + 8 UTs).
-- [x] Curated catalogue expanded to 82 scholarship / fellowship / education assistance records.
+- [x] Curated catalogue expanded to 90 scholarship / fellowship / education assistance records.
 - [x] PWA shell and service-worker offline fallback after an online visit.
 - [x] Workspace state and common mutations extracted into a tested hook.
 - [x] Responsive UI and automated unit/component/accessibility checks.
