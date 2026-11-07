@@ -1,12 +1,12 @@
-# FundNavi — judging strategy and evidence
+# Grantly — judging strategy and evidence
 
 ## Challenge fit
 
-The GRANTLY prompt asks for a unified scholarship discovery and management experience. FundNavi presents one connected workflow: profile → discovery → eligibility review → shortlist → document preparation → application stage tracking → official provider handoff.
+The GRANTLY prompt asks for a unified scholarship discovery and management experience. Grantly presents one connected workflow: profile → discovery → eligibility review → shortlist → document preparation → application stage tracking → official provider handoff.
 
 ## Rubric mapping
 
-| Judging dimension | What FundNavi demonstrates | Evidence / judge action |
+| Judging dimension | What Grantly demonstrates | Evidence / judge action |
 |---|---|---|
 | UI / UX | Clear information hierarchy, restrained education-focused palette, consistent cards, responsive shell and purposeful empty states. | Open Discover; compare desktop and 320px mobile layout. |
 | Functionality | Search, category filtering, sorting, save, profile editor, dynamic criteria checks, application stages, document checklist and JSON export. | Run the walkthrough in SUBMISSION.md. |
