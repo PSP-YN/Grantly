@@ -43,7 +43,7 @@ describe("narrative review", () => {
 
   it("counts words and identifies generic phrases without claiming AI detection", () => {
     const result = reviewNarrative("I have always been my dream to help. I learned from my family and community.");
-    expect(result.words).toBe(14);
+    expect(result.words).toBe(15);
     expect(result.firstPersonReferences).toBeGreaterThan(0);
     expect(result.cliches).toContain("always been my dream");
   });
