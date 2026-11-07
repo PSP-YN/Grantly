@@ -49,3 +49,8 @@
 - Expanded the directory to 41 records and separated AICTE Pragati/Saksham degree and diploma entries.
 - Added PM-USP SSS J&K/Ladakh, PMSS Railways, PM YASASVI school scheme, NMMSS, worker-family pre/post-matric assistance, pre-matric disability, ICAR NTS-PG/JRF/SRF, ISI stipend, renewable energy fellowship and Free Coaching scheme records.
 - Recorded open/closed application windows as NSP snapshots and added explicit state-specific / school-level cautions.
+
+## Unreleased — India-wide product polish
+- Applied a three-part academic palette: ink navy, warm ivory and academic green; updated app icon and browser theme color.
+- Added a PM CARES Children education allowance listing sourced from the official WCD FAQ, with beneficiary-specific eligibility and no automated match.
+- Added catalogue tests for category coverage and beneficiary-scope safeguards.
