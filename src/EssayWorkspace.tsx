@@ -11,11 +11,11 @@ function load(): EssayDraft {
     return { ...empty, ...value, limit: typeof value.limit === "number" && value.limit >= 1 && value.limit <= 10000 ? Math.round(value.limit) : 500 };
   } catch { return empty; }
 }
-const words = (text: string) => text.trim() ? text.trim().split(/\s+/).length : 0;
+export const countWords = (text: string) => text.trim() ? text.trim().split(/\s+/).length : 0;
 
 export default function EssayWorkspace() {
   const [draft, setDraft] = useState<EssayDraft>(load);
-  const count = useMemo(() => words(draft.draft), [draft.draft]);
+  const count = useMemo(() => countWords(draft.draft), [draft.draft]);
   const update = (field: keyof EssayDraft, value: string | number) => {
     const next = { ...draft, [field]: value };
     setDraft(next);
