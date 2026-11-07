@@ -35,7 +35,9 @@ The interface uses an academic navy (`#17324D`), warm ivory (`#FBF8F1`) and terr
 - Rule evaluation is deterministic and tested; incomplete rules remain unknown / manual review.
 - Local persistence is normalized and defensive; exports are user-triggered.
 - Lint, typecheck, tests, production build and dependency audit run in CI.
-- Accessible controls, keyboard support, focus management and reduced-motion support are regression-tested.\n- Local-timezone-aware deadline sorting/calendar export.\n- Security headers, canonical metadata, sitemap and robots rules.
+- Accessible controls, keyboard support, focus management and reduced-motion support are regression-tested.
+- Local-timezone-aware deadline sorting and calendar export.
+- Vercel security headers, canonical metadata, sitemap and robots rules.\n- Local-timezone-aware deadline sorting/calendar export.\n- Security headers, canonical metadata, sitemap and robots rules.
 
 ### Development
 
