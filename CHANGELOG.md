@@ -49,3 +49,13 @@
 - Expanded the directory to 41 records and separated AICTE Pragati/Saksham degree and diploma entries.
 - Added PM-USP SSS J&K/Ladakh, PMSS Railways, PM YASASVI school scheme, NMMSS, worker-family pre/post-matric assistance, pre-matric disability, ICAR NTS-PG/JRF/SRF, ISI stipend, renewable energy fellowship and Free Coaching scheme records.
 - Recorded open/closed application windows as NSP snapshots and added explicit state-specific / school-level cautions.
+
+
+## Unreleased — engineering hardening and additional scholarships
+- Expanded the curated catalogue to 92 records with LIC Golden Jubilee and National Overseas Scholarship for ST Students.
+- Updated PM CARES school education support from the Ministry of Women & Child Development FAQ and restricted it to eligible beneficiaries.
+- Added the overseas-study category and regression coverage.
+- Memoized scholarship discovery and profile eligibility summaries.
+- Fixed deadline sorting/calendar filtering to use IST and added cross-timezone tests.
+- Added canonical metadata, robots/sitemap, Vercel security headers, HSTS and safe asset caching.
+- Bumped the service-worker shell cache and added the academic design-system document.
