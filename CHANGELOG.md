@@ -1,5 +1,15 @@
 # Changelog
 
+## Unreleased — India-wide student product expansion
+- Added 9 additional central / UGC scholarship and fellowship records (catalogue now contains 50 programme records).
+- Added searchable portal starting points for all 28 states and 8 union territories.
+- Reworked the visual palette to academic navy, warm ivory and restrained gold.
+- Added PWA manifest and same-origin service-worker shell caching with offline navigation fallback.
+- Added online/offline connectivity notices.
+- Extracted workspace persistence and tracker actions into a custom hook.
+- Added portal directory and workspace hook regression tests.
+- Enabled axe color-contrast checking in the app accessibility test.
+
 ## Unreleased — Product workspace improvements
 - Added an annual Funding Planner for education costs, existing aid and hypothetical scholarship scenarios.
 - Added uncovered funding, coverage and surplus calculations with clear limitations.
