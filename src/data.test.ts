@@ -52,6 +52,17 @@ describe("scholarship catalogue quality", () => {
       expect(item.amountValue, item.id).toBeGreaterThanOrEqual(0);
     }
   });
+  it("keeps programme names unique and every record dated with a source review", () => {
+    const names = scholarships.map(item => item.name.trim().toLocaleLowerCase());
+    expect(new Set(names).size).toBe(names.length);
+    for (const item of scholarships) {
+      expect(item.lastVerified, item.id).toMatch(/^\\d{4}-\\d{2}-\\d{2}$/);
+      expect(Number.isNaN(Date.parse(item.lastVerified)), item.id).toBe(false);
+      expect(item.region.trim(), item.id).not.toBe("");
+      expect(item.sourceLabel.trim(), item.id).not.toBe("");
+    }
+  });
+
   it("does not infer eligibility for supplemental records without reviewed rules", () => {
     const supplemental = scholarships.filter(item => item.id !== "csss");
     for (const item of supplemental) {
