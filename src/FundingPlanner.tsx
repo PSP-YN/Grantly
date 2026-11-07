@@ -1,28 +1,12 @@
 import { useMemo, useState } from "react";
 import { Calculator, Download, ShieldCheck } from "lucide-react";
-import { calculateFundingGap, type Budget } from "./features/funding-planner/calculations";
+import { calculateFundingGap, normalizeBudget, DEFAULT_BUDGET, FUNDING_PLANNER_STORAGE_KEY, type Budget } from "./features/funding-planner/calculations";
 
-const initialBudget: Budget = {
-  tuition: 0, housing: 0, food: 0, books: 0, transport: 0, other: 0,
-  existingAid: 0, scholarship: 0
-};
-const storageKey = "grantly:funding-planner:v1";
 const money = (value: number) => new Intl.NumberFormat("en-IN", {
   style: "currency", currency: "INR", maximumFractionDigits: 0
 }).format(value);
 
-function loadBudget(): Budget {
-  try {
-    const value = JSON.parse(localStorage.getItem(storageKey) ?? "null") as Partial<Budget> | null;
-    if (!value || typeof value !== "object") return initialBudget;
-    return Object.fromEntries(Object.keys(initialBudget).map(key => {
-      const raw = value[key as keyof Budget];
-      return [key, typeof raw === "number" && Number.isFinite(raw) ? Math.max(0, Math.min(raw, 1_000_000_000)) : 0];
-    })) as Budget;
-  } catch {
-    return initialBudget;
-  }
-}
+function loadBudget(): Budget { try { return normalizeBudget(JSON.parse(localStorage.getItem(FUNDING_PLANNER_STORAGE_KEY) ?? "null")); } catch { return DEFAULT_BUDGET; } }
 
 export default function FundingPlanner() {
   const [budget, setBudget] = useState<Budget>(loadBudget);
@@ -42,7 +26,7 @@ export default function FundingPlanner() {
     const value = raw === "" ? 0 : Number.isFinite(parsed) ? Math.max(0, Math.min(parsed, 1_000_000_000)) : 0;
     const next = { ...budget, [key]: value };
     setBudget(next);
-    try { localStorage.setItem(storageKey, JSON.stringify(next)); } catch { /* Current session remains usable. */ }
+    try { localStorage.setItem(FUNDING_PLANNER_STORAGE_KEY, JSON.stringify(next)); } catch { /* Current session remains usable. */ }
   };
   const exportPlan = () => {
     const data = { product: "Grantly Funding Planner", exportedAt: new Date().toISOString(), currency: "INR", budget, result };
