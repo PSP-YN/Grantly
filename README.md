@@ -2,84 +2,128 @@
 
 **Discover funding. Navigate your future.**
 
-Grantly is a frontend-only scholarship discovery and application workspace built for The Outpost — Frontend Mission (GRANTLY challenge). It helps students explore source-linked Indian scholarship programmes, review profile-based eligibility checks, prepare documents, shortlist opportunities and track application progress.
+Grantly is a student-first education funding workspace. It helps learners discover scholarship opportunities, understand how selected profile details compare with published criteria, prepare application documents, track progress and plan the cost of education in one place.
 
-## Product capabilities
+Grantly is being developed as a long-term product concept—not only as a competition demo. The current release is a privacy-conscious browser prototype designed to validate the discovery-to-application journey before introducing accounts, cloud services or sensitive document handling.
 
-- Scholarship discovery with keyword search, category filters and sorting.
-- Transparent, deterministic eligibility checks show met, not-met and unknown criteria. Missing information is never treated as eligible; schemes without fully encoded rules are labelled for official review.
-- Official-source handoff. Students apply on provider sites; Grantly does not collect application credentials.
-- Application tracker: Interested → Preparing → Submitted → Under review → Awarded.
-- Per-opportunity document preparation checklist, persisted with the application record.
-- Optional student profile used only for local rule evaluation.
-- Workspace export as JSON.
-- No account, server, database, analytics, external API or remote profile transmission.
-- Semantic landmarks, labelled controls, visible keyboard focus, Escape-dismissable dialogs, focus trapping/restoration and reduced-motion support.
-- Responsive desktop, tablet and narrow mobile layouts.
+## The problem
 
-## Stack
+Students often need to visit multiple government, institutional and private scholarship portals, interpret eligibility rules independently, keep track of documents and deadlines, and estimate how funding affects their education costs. The information and workflow are fragmented.
+
+Grantly brings the preparation process into a single workspace while keeping official application and final eligibility decisions with scholarship providers.
+
+## Product experience
+
+### Scholarship discovery
+- Search by scholarship name, provider and keyword.
+- Filter by programme category and sort by profile-check status, amount or name.
+- Review source-linked scheme descriptions, application requirements and verification notes.
+
+### Explainable profile screening
+- Compare selected profile fields against explicitly encoded scholarship rules.
+- Display criteria as met, not met or unknown.
+- Keep missing data distinct from a mismatch.
+- Route programmes with incomplete or unverified rule coverage to official review instead of generating a fabricated eligibility score.
+
+### Application workspace
+- Save opportunities and add them to a personal tracker.
+- Track Interested → Preparing → Submitted → Under review → Awarded.
+- Check off required documents for each tracked opportunity.
+- Keep the workspace on the current device and export a JSON backup.
+
+### Funding planner
+- Enter annual tuition, living, transport, books and other education costs.
+- Add existing aid and a scholarship scenario.
+- Calculate total costs, support, estimated uncovered amount and coverage percentage.
+- Export a funding-plan JSON snapshot.
+- Keep the model transparent: this is a planning estimate, not an award prediction, institutional COA determination or financial advice.
+
+## Product principles
+
+1. **Evidence over false certainty.** Every automated screening result is limited to rules that are explicitly represented.
+2. **Student agency.** Grantly supports preparation; it does not submit applications or impersonate applicants.
+3. **Privacy by default.** The current app requires no account and sends no profile data to a server.
+4. **Progressive trust.** Incomplete or outdated scholarship information must be disclosed, not hidden behind a confidence score.
+5. **Accessible, responsive workflows.** Keyboard support, semantic controls, readable layouts and reduced-motion preferences are product requirements.
+6. **No fabricated integrations.** A capability is described as implemented only when it is present in the code and verified.
+
+## Technology
 
 - React 19 + TypeScript
 - Vite
 - Lucide React
-- Vitest + React Testing Library + jsdom
-- axe-core semantic accessibility regression tests
+- Vitest
+- React Testing Library
+- jsdom
+- axe-core accessibility regression checks
+- Oxlint
 
 ## Run locally
 
 Requirements: Node.js 22.12+ and npm 10.9+.
 
-    npm ci
-    npm run dev
+```bash
+npm ci
+npm run dev
+```
 
-## Quality gates
+## Quality checks
 
-    npm run lint
-    npm run typecheck
-    npm test
-    npm run build
-    npm audit --audit-level=moderate
+```bash
+npm run lint
+npm run typecheck
+npm test
+npm run build
+npm audit --audit-level=moderate
+```
 
-## Browser QA
+Or run the full quality gate:
 
-The production build was opened in a browser and exercised at 320, 360, 390, 430, 768, 1024 and 1440 CSS pixels with no horizontal overflow. The student profile, rule-based match updates, document checklist persistence, data export action, dialog focus trap and Escape dismissal were exercised. Visible text contrast was measured in the browser on discovery, profile and detail views. Automated axe checks cover semantic WCAG A/AA rules; jsdom contrast rules are excluded because jsdom has no browser layout/canvas. This is not a claim of formal WCAG certification.
+```bash
+npm run check
+```
 
-## Data integrity
+## Architecture at a glance
 
-Catalogue records link to official sources and include a source-review date. Scheme criteria and dates can change. A profile check is a screening aid, not a legal or administrative eligibility decision. Where the complete current criteria are not encoded and verified, Grantly deliberately requires official review rather than displaying a fabricated match percentage.
+```
+src/
+  App.tsx                 Workspace shell, discovery and application tracker
+  FundingPlanner.tsx      Annual education-cost planning UI and calculations
+  data.ts                 Source-linked scholarship catalogue and encoded rules
+  matching.ts             Explainable eligibility rule evaluation
+  styles.css              Responsive visual system and interaction styles
+  App.test.tsx            Workspace interaction and accessibility tests
+  FundingPlanner.test.ts  Funding calculation tests
+  matching.test.ts        Eligibility engine unit tests
+```
 
-The 2026–27 National Scholarship Portal pages and current programme notices should be checked before applying. The project does not scrape or claim real-time availability. Never rely on a sample or cached record as the sole basis for an application.
+See [ARCHITECTURE.md](ARCHITECTURE.md) for design decisions and boundaries, [PRODUCT.md](PRODUCT.md) for product direction, and [ROADMAP.md](ROADMAP.md) for staged development.
 
-## Privacy and security model
+## Data quality and scholarship sources
 
-Grantly is intentionally frontend-only to align with the event's frontend mission. The profile, saved list, application stages and document checklist remain in browser localStorage. Local storage is not encrypted, authenticated or suitable for identity documents, bank details, certificates or other sensitive records. Do not enter such information. Use the export action only on a trusted device.
+The catalogue is a curated, source-linked snapshot—not a live API. Scholarship terms, dates, institution lists and award amounts can change. Each record includes a source and review note; applicants must verify current conditions with the official provider.
 
-No secrets or API keys are required. No backend security or production account security is claimed.
+See [DATA_SOURCES.md](DATA_SOURCES.md).
 
-## Architecture
+## Privacy and security
 
-    src/
-      App.tsx          Application shell, views, local workflows and accessible dialogs
-      data.ts          Typed source-linked scholarship catalogue and evidence notes
-      matching.ts      Deterministic eligibility rule engine
-      styles.css       Responsive design system and motion preferences
-      App.test.tsx     Component and workflow regression tests
-      matching.test.ts Eligibility engine unit tests
-      main.tsx         React entry point
+The current app is a frontend-only prototype:
+- Profile, saved items, tracker and planner data are stored in browser localStorage.
+- There is no authentication, backend, database, analytics or cloud synchronization.
+- localStorage is not encrypted and is accessible to scripts running in the same origin.
+- Do not enter Aadhaar numbers, bank details, credentials, certificates, identity documents or other sensitive data.
+- No remote document vault or secure account is implemented.
 
-## Official sources reviewed
+Read [SECURITY.md](SECURITY.md) before using the prototype with personal information.
 
-- National Scholarship Portal: https://scholarships.gov.in/Students and https://scholarships.gov.in/All-Scholarships
-- Ministry of Education — PM-USP CSSS FAQ (AY 2025–26): https://www.education.gov.in/sites/upload_files/mhrd/files/upload_document/FAQs_PM_USP_CSSS_scheme_AY_2025_26.pdf
-- INSPIRE-SHE official FAQ: https://www.online-inspire.gov.in/Account/FAQ
-- UGC — Ishan Uday scheme: https://www.ugc.gov.in/Scholarships/stu_Scholarship5
-- Department of Social Justice & Empowerment — Top Class Education for SC Students: https://socialjustice.gov.in/schemes/27
-- AICTE: https://www.aicte-india.org/
+## Product status
 
-## Submission status
+**Current:** local browser workspace for scholarship discovery, transparent screening, application preparation and funding-gap estimates.
 
-Source and tests are prepared for review. A live deployment is intentionally not included because the owner explicitly requested no deployment yet. Add the verified public deployment URL to the event submission only after deployment is separately authorized and smoke-tested.
+**Not currently implemented:** real-time scholarship ingestion, verified deadline alerts, official application submission, authenticated user accounts, cloud sync, secure file storage, financial institution integrations, AI-generated essays or live award predictions.
+
+See [ROADMAP.md](ROADMAP.md) for the proposed path from prototype to a dependable service. Roadmap items are plans, not promises or existing features.
 
 ## License
 
-MIT. See LICENSE.
+MIT. See [LICENSE](LICENSE).

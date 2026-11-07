@@ -26,3 +26,39 @@
 .card-match.match-warning{background:#fbefe7;color:#985329}
 .card-match.match-neutral{background:#f1f3ef;color:#526055}
 .source-label{font-size:9px;color:#5e6c60;margin:-8px 0 12px}
+
+/* Funding planner: functional financial-planning surface */
+.funding-planner{margin:26px 0 34px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:24px}
+.planner-intro{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.planner-icon{width:46px;height:46px;flex:none;border-radius:12px;background:var(--mint);color:var(--green);display:grid;place-items:center}
+.planner-intro h2{font-size:22px;letter-spacing:-.6px;margin:0 0 5px;color:var(--ink)}
+.planner-intro p{font-size:12px;color:var(--muted);margin:0;line-height:1.6}
+.planner-disclaimer{display:flex;align-items:flex-start;gap:9px;background:#fbf4eb;border:1px solid #f0dfcd;color:#755334;border-radius:8px;padding:12px 14px;font-size:11px;line-height:1.55;margin-bottom:20px}
+.planner-disclaimer svg{flex:none;margin-top:1px}
+.planner-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(240px,.8fr);gap:22px}
+.planner-fields h3{font-size:15px;margin:0 0 5px;color:var(--ink)}
+.planner-help{font-size:11px;color:var(--muted);margin:0 0 15px}
+.planner-input-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.planner-field{display:grid;gap:6px;font-size:11px;font-weight:600;color:var(--ink)}
+.planner-input-wrap{display:flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:7px;height:39px;padding:0 10px;color:var(--muted);background:#fff}
+.planner-input-wrap:focus-within{border-color:#9bbda5;box-shadow:0 0 0 2px #9bbda522}
+.planner-input-wrap input{border:0;outline:none!important;box-shadow:none!important;min-width:0;width:100%;height:100%;font-size:12px;color:var(--ink);background:transparent}
+.planner-input-wrap input::-webkit-inner-spin-button,.planner-input-wrap input::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
+.planner-input-wrap input[type=number]{-moz-appearance:textfield}
+.support-field{color:var(--green)}
+.planner-export{margin-top:16px}
+.planner-results{background:#264a37;border-radius:12px;padding:22px;color:#fff;align-self:stretch;display:flex;flex-direction:column}
+.planner-result-label{font-size:11px;color:#d3e0d4}
+.planner-gap{font-size:clamp(25px,3vw,36px);line-height:1.2;letter-spacing:-1px;margin:9px 0 17px;color:#fff;overflow-wrap:anywhere}
+.planner-meter{height:8px;border-radius:20px;background:#55715f;overflow:hidden}
+.planner-meter span{height:100%;display:block;background:#e9bd83;border-radius:20px;transition:width .2s ease}
+.planner-coverage{font-size:10px;color:#d3e0d4;margin-top:8px}
+.planner-breakdown{display:grid;gap:12px;margin:24px 0 0}
+.planner-breakdown div{display:flex;justify-content:space-between;gap:10px;font-size:11px;border-bottom:1px solid #55715f;padding-bottom:10px}
+.planner-breakdown dt{color:#d3e0d4}
+.planner-breakdown dd{margin:0;font-weight:700;text-align:right}
+.planner-surplus,.planner-empty{font-size:11px;line-height:1.55;color:#f4d9b5;background:#365a44;border-radius:7px;padding:10px;margin-top:16px}
+.planner-empty{color:#d3e0d4}
+@media(max-width:850px){.planner-grid{grid-template-columns:1fr}.planner-results{min-height:240px}.funding-planner{padding:18px}}
+@media(max-width:480px){.planner-input-grid{grid-template-columns:1fr}.planner-intro h2{font-size:19px}.planner-intro{align-items:flex-start}}
+@media(prefers-reduced-motion:reduce){.planner-meter span{transition:none}}
