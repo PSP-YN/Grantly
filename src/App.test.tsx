@@ -39,16 +39,25 @@ describe("Grantly workspace", () => {
   });
 
 
-  it("imports a validated workspace JSON file and persists its records", async () => {
+  it("imports a validated workspace JSON file and restores the full local workspace", async () => {
     render(<App />);
-    const payload = { product: "Grantly", exportedAt: "2026-11-07T00:00:00Z", workspace: {
-      saved: ["csss"], applications: [{ id: "csss", stage: "Preparing", completedDocuments: [] }],
-      profile: { course: "B.E. Computer Science", year: "2nd year" }
-    }};
+    const payload = {
+      product: "Grantly",
+      exportedAt: "2026-11-07T00:00:00Z",
+      workspace: {
+        saved: ["csss"],
+        applications: [{ id: "csss", stage: "Preparing", completedDocuments: [] }],
+        profile: { course: "B.E. Computer Science", year: "2nd year" }
+      },
+      fundingPlanner: { tuition: 12345 },
+      essayWorkspace: { draft: "My personal statement", limit: 250 }
+    };
     const file = new File([JSON.stringify(payload)], "grantly-workspace.json", { type: "application/json" });
     fireEvent.change(screen.getByLabelText("Import Grantly workspace JSON"), { target: { files: [file] } });
     await waitFor(() => expect(JSON.parse(localStorage.getItem("grantly:workspace:v1") || "{}").saved).toEqual(["csss"]));
-    expect(JSON.parse(localStorage.getItem("grantly:funding-planner:v1") || "{}").tuition).toBe(12345);\n    expect(JSON.parse(localStorage.getItem("grantly:essay-workspace:v1") || "{}").draft).toBe("My personal statement");\n    expect(screen.getByText(/Workspace, funding plan and statement draft restored/)).toBeInTheDocument();
+    expect(JSON.parse(localStorage.getItem("grantly:funding-planner:v1") || "{}").tuition).toBe(12345);
+    expect(JSON.parse(localStorage.getItem("grantly:essay-workspace:v1") || "{}").draft).toBe("My personal statement");
+    expect(screen.getByText(/Workspace, funding plan and statement draft restored/)).toBeInTheDocument();
   });
 
   it("filters scholarship cards by category", () => {
