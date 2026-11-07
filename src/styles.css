@@ -143,3 +143,23 @@ a{color:#1d3557}
 @media(max-width:680px){.directory-coverage{align-items:flex-start;flex-direction:column}.directory-links{flex-direction:row;flex-wrap:wrap}}
 
 .sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+
+/* Palette harmonization: use the education navy/ivory/gold system consistently. */
+.hero-panel{background:#1d3557}
+.hero-panel:before{background:radial-gradient(ellipse at 82% 35%,rgba(196,154,69,.20),transparent 36%),linear-gradient(115deg,transparent 55%,rgba(9,22,41,.38)}
+.hero-kicker{color:#e5cf9d}
+.hero-copy h2 em{color:#e6c16e}
+.hero-copy p{color:#e5eaf0}
+.hero-cta{background:#d7b35d;color:#1d2f4a}
+.hero-cta:hover{background:#e5c77f}
+.hero-sun{background:linear-gradient(145deg,#e5c16d,#d7b35d);opacity:.18}
+.hero-book{background:linear-gradient(145deg,#fffdf8,#f2ead8);color:#1d3557;border:1px solid rgba(215,179,93,.5)}
+.float-card{color:#1d3557}
+.float-two{color:#1d3557}
+.float-check{background:#f2ead8;color:#1d3557}
+.hero-stamp{color:rgba(229,207,157,.7)}
+.provider-logo.sage,.provider-logo.blue,.provider-logo.rose,.provider-logo.violet,.provider-logo.gold,.provider-logo.teal{background:#f2ead8;color:#1d3557}
+.scholarship-card:hover{border-color:#c49a45;box-shadow:0 9px 24px rgba(29,53,87,.08)}
+.stat-icon.peach,.stat-icon.lilac{background:#f2ead8;color:#1d3557}
+.stat-card strong{color:#1d3557}
+.stat-card>div:nth-child(2)>span,.stat-card strong small{color:#59677b}
