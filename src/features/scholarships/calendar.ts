@@ -7,6 +7,15 @@ const MONTHS: Record<string, string> = {
   nov:"11", november:"11", dec:"12", december:"12"
 };
 
+export function localDateISO(date = new Date(), timeZone?: string): string {
+  if (timeZone) {
+    const parts = new Intl.DateTimeFormat("en-CA", { timeZone, year: "numeric", month: "2-digit", day: "2-digit" }).formatToParts(date);
+    const part = (type: string) => parts.find(item => item.type === type)?.value ?? "";
+    return `${part("year")}-${part("month")}-${part("day")}`;
+  }
+  return `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,"0")}-${String(date.getDate()).padStart(2,"0")}`;
+}
+
 export function parseExplicitDeadline(value: string): string | null {
   const iso = value.match(/\b(20\d{2})-(\d{2})-(\d{2})\b/);
   if (iso) return iso[0];
@@ -26,7 +35,7 @@ function escapeIcs(value: string): string {
 
 export function buildDeadlineCalendar(items: Scholarship[], generatedAt = new Date()): string {
   const stamp = generatedAt.toISOString().replace(/[-:]/g,"").replace(/\.\d{3}Z$/,"Z");
-  const today = generatedAt.toISOString().slice(0,10);
+  const today = localDateISO(generatedAt, "Asia/Kolkata");
   const events = items.flatMap(item => {
     const date = parseExplicitDeadline(item.deadline);
     if (!date || date < today) return [];
