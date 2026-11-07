@@ -15,9 +15,15 @@
       ]
     },
     {
-      "source": "/(.*)\\.(js|css|svg|png|webp|ico|woff2?)",
+      "source": "/assets/(.*)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/(favicon.svg|grantly-icon.svg|manifest.webmanifest|sw.js)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=86400" }
       ]
     }
   ]
