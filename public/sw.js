@@ -1,5 +1,5 @@
 const CACHE_NAME = "grantly-shell-v2";
-const CORE_ASSETS = ["/", "/index.html", "/favicon.svg", "/grantly-icon.svg", "/manifest.webmanifest"];
+const CORE_ASSETS = ["/", "/index.html", "/grantly-icon.svg", "/manifest.webmanifest"];
 
 self.addEventListener("install", event => {
   event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(CORE_ASSETS)).then(() => self.skipWaiting()));
