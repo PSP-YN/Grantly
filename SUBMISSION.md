@@ -18,7 +18,10 @@ Current production URL (verify deployment commit before each submission): https:
 5. Edit the student profile and show how explicit rule outcomes change.
 6. Save an opportunity, add it to the application tracker, update its stage and mark a document checklist item.
 7. Open the funding planner. Enter sample annual INR costs and support; explain the estimated gap, coverage and surplus.
-8. Open Funding Intelligence. Enter actual annual costs and aid, then show the current gap, proposed-award scenario, potential surplus warning and illustrative EMI.\n9. Move one tracked opportunity between pipeline stages.\n10. Open the statement workspace and demonstrate its outline, word counter and local draft export.\n11. Show the local statement diagnostics and explain that they are not AI-authorship or plagiarism detection.
+8. Open Funding Intelligence. Enter actual annual costs and aid, then show the current gap, proposed-award scenario, potential surplus warning and illustrative EMI.
+9. Move one tracked opportunity between pipeline stages.
+10. Open the statement workspace and demonstrate its outline, word counter and local draft export.
+11. Show the local statement diagnostics and explain that they are not AI-authorship or plagiarism detection.
 9. Open the state / UT portal directory and show how the student reaches the official provider portal.
 10. Explain that final eligibility and applications remain with the scholarship provider.
 
@@ -29,7 +32,10 @@ Current production URL (verify deployment commit before each submission): https:
 - Deterministic eligibility checks for a subset of encoded programme criteria.
 - Saved opportunities, application stages and document checklist.
 - Browser-local profile, planner and statement draft.
-- Funding-gap arithmetic using user-entered annual INR values.\n- Funding Intelligence scenario model with support aggregation, potential overfunding review, reducing-balance EMI estimate and application pipeline board.\n- Local statement clarity diagnostics and a neutral provider inquiry draft.\n- Persisted funding scenarios included in workspace backup/restore.
+- Funding-gap arithmetic using user-entered annual INR values.
+- Funding Intelligence scenario model with support aggregation, potential overfunding review, reducing-balance EMI estimate and application pipeline board.
+- Local statement clarity diagnostics and a neutral provider inquiry draft.
+- Persisted funding scenarios included in workspace backup/restore.
 - Validated workspace export/import and dated calendar export.
 - Responsive React + TypeScript application with lazy-loaded secondary workspaces.
 - CI checks for lint, TypeScript, tests, production build and dependency audit.
@@ -40,7 +46,8 @@ Current production URL (verify deployment commit before each submission): https:
 - A source review date does not establish that a scholarship is currently open.
 - The eligibility tool is not an award decision or legal eligibility determination.
 - Funding calculations are estimates based on student-entered figures.
-- The statement workspace does not generate essays or score AI authenticity. The new narrative diagnostics are local heuristic feedback, not AI-authorship or plagiarism detection.\n- Loan repayment estimates are illustrative calculations, not a lender quote or financial advice. A potential surplus is not a legal finding of scholarship displacement.
+- The statement workspace does not generate essays or score AI authenticity. The new narrative diagnostics are local heuristic feedback, not AI-authorship or plagiarism detection.
+- Loan repayment estimates are illustrative calculations, not a lender quote or financial advice. A potential surplus is not a legal finding of scholarship displacement.
 - There is no account authentication, backend database, cloud sync, secure document vault or official application submission.
 - Browser localStorage is not encrypted or an appropriate store for identity documents, bank details or credentials.
 
