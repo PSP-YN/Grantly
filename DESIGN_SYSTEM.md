@@ -1,30 +1,49 @@
 # Grantly Design System
 
-## Brand intent
-Education-focused, credible, calm and practical. Avoid gradients, glassmorphism, excessive motion and nested cards.
+## Brand direction
+Grantly is a student-first education funding product. The visual language should feel academic, trustworthy, warm and contemporary. The UI prioritizes scholarship details, eligibility limitations and next steps over decoration.
 
-## Three anchor colors
-| Color | Hex | Usage |
+## Three anchor colours
+
+| Token | Hex | Role |
 |---|---|---|
-| Forest green | `#183D2B` | Primary text, navigation and action emphasis |
-| Parchment | `#F7F4EA` | Page and content surfaces |
-| Academic gold | `#C89B3C` | Highlights and progress; not normal body text on parchment |
+| Ink Navy | `#17324D` | Brand, navigation, hierarchy and primary text |
+| Warm Ivory | `#F6F1E6` | Main canvas and neutral surfaces |
+| Terracotta | `#B05230` | Primary accent, actions and selective emphasis |
 
-Use neutrals and tints/shades derived from these three anchors. Gold on light surfaces should use a contrast-safe dark-gold text token rather than the bright accent.
+Supporting colours are neutrals and tints/shades:
+- Slate: `#35485A`
+- Muted text: `#66717D`
+- Soft terracotta: `#F2E1D8`
+- Dark terracotta: `#9D4B2E`
+- Near-white: `#FFFEFA`
 
-## Typography and hierarchy
-- Inter/system sans-serif.
-- Readable headings and scholarship names.
-- Keep award amount, deadline, eligibility caveat and source visible and scannable.
+Do not add a fourth brand anchor without revisiting the palette.
+
+## Contrast
+- Ink navy on warm ivory: approximately 11.6:1.
+- Terracotta on warm ivory: approximately 4.55:1.
+- Warm ivory on terracotta: approximately 4.55:1.
+- Muted slate on near-white: approximately 4.9:1.
+- Dark terracotta on soft terracotta: approximately 4.75:1.
+
+Palette contrast is regression-tested in `src/colorContrast.test.ts`. Automated checks are not a formal WCAG certification.
+
+## Typography
+- Inter/system sans-serif for UI, forms and scholarship metadata.
+- Headings use restrained weight and concise sentence case.
+- Scholarship titles, award amounts, source and application status should be easy to scan.
 
 ## Layout and interaction
-- Responsive sidebar and mobile navigation.
-- Modest borders and consistent spacing.
-- Visible keyboard focus, keyboard-operable dialogs and reduced-motion support.
-- Status must not be conveyed by color alone.
-- Avoid hover-only eligibility/source information.
+- Desktop navigation collapses to mobile navigation.
+- Touch targets, visible keyboard focus and reduced-motion behavior are required.
+- Status must not be communicated by color alone.
+- Avoid hiding eligibility limitations behind hover-only controls.
+- Keep source and review information near scholarship content.
 
-## Trust and accessibility
-- Do not imply award eligibility or approval.
-- Unknown criteria remain unknown/manual review.
-- This specification is not a WCAG certification; contrast and screen-reader behavior require real testing.
+## Content design
+- No guaranteed eligibility claims or fake recommendation scores.
+- Unknown eligibility stays unknown / official review.
+- Use “check current notice” when live availability is not confirmed.
+- Explain why an application needs official verification.
+- Do not label the catalogue exhaustive.
