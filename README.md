@@ -78,7 +78,6 @@ grantly/
 ├── .github/
 │   └── workflows/ci.yml                 # GitHub Actions quality pipeline
 ├── public/
-│   ├── favicon.svg
 │   ├── manifest.webmanifest             # Installable web app metadata
 │   ├── robots.txt
 │   ├── sitemap.xml
