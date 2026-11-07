@@ -1,11 +1,11 @@
 # Grantly scholarship catalogue
 
-> Catalogue snapshot: 7 November 2026. This is the complete set of **82 records currently indexed by Grantly**, not a claim that every scholarship available in India is listed. Scheme status, eligibility, amount and deadlines can change. Always confirm on the official provider portal before applying.
+> Catalogue snapshot: 7 November 2026. This is the complete set of **90 records currently indexed by Grantly**, not a claim that every scholarship available in India is listed. Scheme status, eligibility, amount and deadlines can change. Always confirm on the official provider portal before applying.
 
 ## Coverage summary
 
-- **82 indexed records** across central government, state schemes, UGC/AICTE, research fellowships and selected private foundations.
-- **82 unique programme names and stable IDs** at the time of this snapshot.
+- **90 indexed records** across central government, state schemes, UGC/AICTE, research fellowships and selected private foundations.
+- **90 unique stable IDs** at the time of this snapshot.
 - Official portal starting points for all 28 states and 8 union territories are separately available in the application.
 - Records with incomplete current-cycle rules are marked for manual review; a catalogue listing does not mean a student is eligible or that applications are open.
 
@@ -89,7 +89,7 @@
 - **UGC Savitribai Jyotirao Phule Fellowship for Single Girl Child** — University Grants Commission. Region: All India. Award: JRF ₹37,000/month for 2 years; SRF ₹42,000/month thereafter (UGC scheme page). Deadline/status: Check current UGC fellowship call and award notice. [UGC — Savitribai Jyotirao Phule Fellowship](https://www.ugc.gov.in/Fellowship/stu_Fellowship3/stu_Fellowship3)
 - **UGC Junior Research Fellowship (NET-JRF)** — University Grants Commission / National Testing Agency. Region: All India. Award: JRF ₹37,000/month for 2 years; SRF ₹42,000/month thereafter (UGC scheme page). Deadline/status: Award is linked to NET-JRF result and current UGC award rules. [UGC — Junior Research Fellowship](https://www.ugc.gov.in/Fellowship/stu_Fellowship1)
 
-## State scheme (9)
+## State scheme (17)
 
 - **Karnataka Mukhyamantri Raitha Vidya Nidhi** — Government of Karnataka — Department of Agriculture. Region: Karnataka. Award: Course-dependent annual support; check current SSP guidelines. Deadline/status: Check current Karnataka SSP / Agriculture Department notice. [Karnataka State Scholarship Portal](https://ssp.postmatric.karnataka.gov.in/homepage.aspx)
 - **Karnataka Labour Welfare Board Education Assistance** — Government of Karnataka — Labour Welfare Board. Region: Karnataka. Award: Check current board scholarship / education assistance notice. Deadline/status: Check current Labour Welfare Board application cycle. [Karnataka Labour Welfare Board](https://klwb.karnataka.gov.in/)
@@ -100,6 +100,14 @@
 - **West Bengal — OASIS Post-Matric Scholarship (SC / ST / OBC)** — Government of West Bengal · Backward Classes Welfare Department. Region: West Bengal. Award: Varies by category, course and applicable government rate. Deadline/status: 2026–27 applications are shown on the official portal; verify the live closing date. [OASIS — Government of West Bengal](https://www.oasis.wb.gov.in/)
 - **Jharkhand — e-Kalyan Post-Matric Scholarship** — Government of Jharkhand · Department of Scheduled Tribe, Scheduled Caste, Minority and Backward Class Welfare. Region: Jharkhand. Award: Varies by category, course and current state notification. Deadline/status: Check the current e-Kalyan application cycle. [e-Kalyan — Government of Jharkhand](https://ekalyan.cgg.gov.in/)
 - **Chhattisgarh — Post-Matric Scholarship** — Government of Chhattisgarh. Region: Chhattisgarh. Award: As per category, course and current state notification. Deadline/status: Check the current state portal application window. [Chhattisgarh Post-Matric Scholarship Portal](https://postmatric-scholarship.cg.nic.in/)
+- **Haryana — Consolidated Stipend Scheme for SC Students** — Government of Haryana · Directorate of Higher Education. Region: Haryana. Award: As per current Haryana scheme guidelines. Deadline/status: 2026–27 portal notice lists applications open through 31 Dec 2026; recheck before applying. [Har-Chhatravratti — Government of Haryana](https://harchhatravratti.highereduhry.ac.in/Eligibility)
+- **Haryana — Consolidated Stipend Scheme for Grandchildren of Freedom Fighters** — Government of Haryana · Directorate of Higher Education. Region: Haryana. Award: As per current Haryana scheme guidelines. Deadline/status: 2026–27 portal notice lists applications open through 31 Dec 2026; recheck before applying. [Har-Chhatravratti — Government of Haryana](https://harchhatravratti.highereduhry.ac.in/Eligibility)
+- **Haryana — Free Books for SC Students** — Government of Haryana · Directorate of Higher Education. Region: Haryana. Award: As per current Haryana scheme guidelines. Deadline/status: 2026–27 portal notice lists applications open through 31 Dec 2026; recheck before applying. [Har-Chhatravratti — Government of Haryana](https://harchhatravratti.highereduhry.ac.in/Eligibility)
+- **Haryana — State Merit Scholarship to Undergraduate Girls** — Government of Haryana · Directorate of Higher Education. Region: Haryana. Award: As per current Haryana scheme guidelines. Deadline/status: 2026–27 portal notice lists applications open through 31 Dec 2026; recheck before applying. [Har-Chhatravratti — Government of Haryana](https://harchhatravratti.highereduhry.ac.in/Eligibility)
+- **Haryana — State Meritorious Incentives Scheme** — Government of Haryana · Directorate of Higher Education. Region: Haryana. Award: As per current Haryana scheme guidelines. Deadline/status: 2026–27 portal notice lists applications open through 31 Dec 2026; recheck before applying. [Har-Chhatravratti — Government of Haryana](https://harchhatravratti.highereduhry.ac.in/Eligibility)
+- **Haryana — State Meritorious Incentives Scheme (CBSE)** — Government of Haryana · Directorate of Higher Education. Region: Haryana. Award: As per current Haryana scheme guidelines. Deadline/status: 2026–27 portal notice lists applications open through 31 Dec 2026; recheck before applying. [Har-Chhatravratti — Government of Haryana](https://harchhatravratti.highereduhry.ac.in/Eligibility)
+- **Haryana — State Merit Scholarship to UG/PG Students** — Government of Haryana · Directorate of Higher Education. Region: Haryana. Award: As per current Haryana scheme guidelines. Deadline/status: 2026–27 portal notice lists applications open through 31 Dec 2026; recheck before applying. [Har-Chhatravratti — Government of Haryana](https://harchhatravratti.highereduhry.ac.in/Eligibility)
+- **Haryana — Lower Income Group Scholarship Scheme** — Government of Haryana · Directorate of Higher Education. Region: Haryana. Award: As per current Haryana scheme guidelines. Deadline/status: 2026–27 portal notice lists applications open through 31 Dec 2026; recheck before applying. [Har-Chhatravratti — Government of Haryana](https://harchhatravratti.highereduhry.ac.in/Eligibility)
 
 ## Private foundation (8)
 
@@ -126,6 +134,7 @@
 - [National Scholarship Portal — Students](https://scholarships.gov.in/Students)
 - [UGC Student Corner](https://www.ugc.gov.in/Home/student_Corner)
 - [AICTE](https://www.aicte-india.org/)
+- [Haryana Har-Chhatravratti](https://harchhatravratti.highereduhry.ac.in/Index/1000)
 - [Karnataka SSP](https://ssp.postmatric.karnataka.gov.in/homepage.aspx)
 - [MahaDBT](https://mahadbt.maharashtra.gov.in/)
 - [Telangana ePASS](https://telanganaepass.cgg.gov.in/)
